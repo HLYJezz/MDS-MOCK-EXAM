@@ -1,4 +1,4 @@
-/* Subject chooser: renders one card per registered subject plus attempt history. */
+/* Subject chooser: papers grouped by course, plus recent attempt history. */
 (function () {
   var grid = document.getElementById('subjectGrid');
   var statsPanel = document.getElementById('statsPanel');
@@ -21,25 +21,33 @@
     return n;
   }
 
-  function subjectCard(exam) {
+  function subjectCard(s) {
     var card = el('a', 'subject-card');
-    card.href = 'exam.html?subject=' + encodeURIComponent(exam.id);
-    if (exam.accent) card.style.setProperty('--card-accent', exam.accent);
+    card.href = 'exam.html?subject=' + encodeURIComponent(s.id);
+    if (s.accent) card.style.setProperty('--card-accent', s.accent);
 
-    card.appendChild(el('div', 'icon', exam.icon));
-    card.appendChild(el('div', 'name', exam.name));
-    card.appendChild(el('div', 'desc', exam.description));
+    var head = el('div', 'card-head');
+    head.appendChild(el('span', 'icon', s.icon));
+    var titles = el('div');
+    titles.appendChild(el('div', 'name', s.name));
+    if (s.subtitle) titles.appendChild(el('div', 'sub muted small', s.subtitle));
+    head.appendChild(titles);
+    card.appendChild(head);
+
+    card.appendChild(el('div', 'desc', s.description));
 
     var chips = el('div', 'chips');
-    chips.appendChild(el('span', 'chip', exam.questions.length + ' questions'));
-    chips.appendChild(el('span', 'chip', exam.durationMinutes + ' min'));
-    chips.appendChild(el('span', 'chip', 'Pass ' + exam.passMark + '%'));
+    chips.appendChild(el('span', 'chip', s.questionCount + ' questions'));
+    chips.appendChild(el('span', 'chip', s.durationMinutes + ' min'));
+    chips.appendChild(el('span', 'chip', 'Pass ' + s.passMark + '%'));
 
-    var best = Store.bestFor(exam.id);
+    var best = Store.bestFor(s.id);
     if (best) chips.appendChild(el('span', 'chip best', 'Best ' + best.percent + '%'));
 
-    var saved = Store.progress(exam.id);
-    if (saved && !saved.submitted) chips.appendChild(el('span', 'chip resume', 'In progress'));
+    var saved = Store.progress(s.id);
+    if (saved && !saved.submitted && saved.endsAt > Date.now()) {
+      chips.appendChild(el('span', 'chip resume', 'In progress'));
+    }
 
     card.appendChild(chips);
     return card;
@@ -59,18 +67,46 @@
   }
 
   function render() {
-    var exams = MockExam.all();
+    var subjects = MockExam.subjects();
+    var courses = MockExam.courses();
     grid.innerHTML = '';
-    if (!exams.length) {
+
+    if (!subjects.length) {
       var empty = el('div', 'card');
       empty.appendChild(el('h2', null, 'No papers loaded yet'));
       empty.appendChild(el('p', 'muted',
-        'Add a subject file inside the data/ folder and list it in data/manifest.js. ' +
-        'See README.md for the question format.'));
+        'Put the exam PDFs in source-papers/ and run tools/convert_papers.py. See README.md.'));
       grid.appendChild(empty);
-    } else {
-      exams.forEach(function (e) { grid.appendChild(subjectCard(e)); });
+      return;
     }
+
+    /* Any paper whose course is not listed still gets shown, under its own heading. */
+    var groups = courses.slice();
+    subjects.forEach(function (s) {
+      if (!groups.some(function (c) { return c.id === s.course; })) {
+        groups.push({ id: s.course, title: s.course || 'Other papers', accent: s.accent });
+      }
+    });
+
+    groups.forEach(function (course) {
+      var papers = subjects.filter(function (s) { return s.course === course.id; });
+      if (!papers.length) return;
+
+      var section = el('section', 'course');
+      var head = el('div', 'course-head');
+      var title = el('h2', 'course-title', course.title);
+      if (course.accent) title.style.setProperty('--card-accent', course.accent);
+      head.appendChild(title);
+      var count = papers.reduce(function (n, p) { return n + p.questionCount; }, 0);
+      head.appendChild(el('span', 'muted small',
+        papers.length + ' papers · ' + count.toLocaleString() + ' questions'));
+      section.appendChild(head);
+
+      var row = el('div', 'course-grid');
+      papers.forEach(function (p) { row.appendChild(subjectCard(p)); });
+      section.appendChild(row);
+      grid.appendChild(section);
+    });
 
     var results = Store.results();
     historyList.innerHTML = '';
@@ -78,5 +114,5 @@
     results.slice(0, 8).forEach(function (r) { historyList.appendChild(historyRow(r)); });
   }
 
-  MockExam.ready(render);
+  render();
 })();

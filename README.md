@@ -1,112 +1,128 @@
 # MDS Mock Exam
 
-A small static website where friends can sit timed mock exams. Pick a subject on the
-home page, sit the paper under exam conditions, then get a score and a full answer review.
+A static website for sitting timed mock exams. Pick a paper, sit it under exam
+conditions, then get a score and a full answer review with explanations.
 
 No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## Running it
 
-- **Locally:** open `index.html` in a browser (double-click works — no server needed).
-- **Sharing it with friends:** push this repo and turn on GitHub Pages
-  (Settings → Pages → Deploy from branch → `main` / root). The site is then live at
-  `https://<username>.github.io/<repo>/`.
+- **Locally:** open `index.html` in a browser (double-click works).
+- **Sharing it:** Settings → Pages → Deploy from branch → root. The site is then live
+  at `https://<username>.github.io/<repo>/`.
 
-## What it does
+## The papers
 
-- Subject chooser with question count, duration and pass mark on each card
-- Timed paper with a countdown that turns amber at 5 minutes and red at 1 minute
-- One question at a time, with a question navigator showing answered / flagged state
-- Flag questions for review, jump around freely, arrow keys move between questions
-- Answers auto-save — closing the tab by accident does not lose the attempt
-- Auto-submit when time runs out
-- Score, pass/fail against the paper's pass mark, and a per-question review with explanations
-- Attempt history and best score per subject, stored in the browser only
-- Light and dark theme
+10 papers, 1,643 questions, generated from the PDFs in `source-papers/`:
 
-## Adding a real exam
+| Course | Paper | Questions | Time |
+|---|---|---|---|
+| MDS211 — Nervous System | Neuro Past Paper | 249 | 185 min |
+| | The Professor's Gauntlet | 300 | 225 min |
+| | SA1 Hint Exam | 102 | 75 min |
+| MDS220 — Musculo 1 | Full Practice Exam | 202 | 150 min |
+| | Hard Practice Exam | 151 | 115 min |
+| | Comprehensive Exam | 171 | 130 min |
+| | Musculo Hard Exam | 87 | 65 min |
+| MDS221 — Musculo 2 | Comprehensive Exam | 130 | 100 min |
+| | Master Past Paper | 131 | 100 min |
+| | Standard Mock Paper II | 120 | 90 min |
 
-1. Create a file in `data/`, e.g. `data/anatomy.js`.
-2. Add it to the list in `data/manifest.js`.
+All papers are single best answer, timed at 45 seconds per question, pass mark 60%,
+with questions and options shuffled on every attempt.
 
-That's it — the subject card appears automatically.
+Two questions from the MDS211 past paper (originally numbered 105 and 238) are left
+out: they are recorded as illegible in the source archive and have no answer to mark
+against.
 
-### File format
+## What the site does
+
+- Papers grouped by course, each card showing question count, time and best score
+- Countdown that turns amber at 5 minutes and red at 1 minute, and auto-submits at zero
+- One question at a time, with a navigator showing answered and flagged questions
+- Flag for review, jump around freely, arrow keys to move between questions
+- Answers auto-save — closing the tab does not lose the attempt, reopening offers to resume
+- Score against the pass mark, then a per-question review with the source explanations
+- Attempt history and best score per paper, stored in the browser only
+- Light and dark theme, works on phones
+
+## Rebuilding the papers from the PDFs
+
+The files in `data/` are generated. To change how a paper is converted, or to add a
+new one, edit `tools/convert_papers.py` and re-run it:
+
+```bash
+pip install pypdf
+python3 tools/convert_papers.py            # rewrite data/
+python3 tools/convert_papers.py --check    # parse and report, write nothing
+```
+
+Each paper has an entry in the `PAPERS` list saying where its questions and answer key
+are and how they are written. The script checks its own work: it compares the number of
+questions parsed against the number the paper claims, confirms every question has a
+valid answer letter, and cross-checks the answer text quoted in the key against the
+option it names. Anything that does not line up is reported per question.
+
+To add a paper: drop the PDF in `source-papers/`, add an entry to `PAPERS`, run the
+script, and check the report is clean.
+
+## Writing a paper by hand
+
+You can also write a `data/*.js` file yourself and add it to `data/manifest.js`.
+Options are labelled A, B, C… in the order written, and `answer` refers to those letters.
 
 ```js
 registerExam({
-  id: 'anatomy',                 // unique, used in the URL
-  name: 'Anatomy',
-  icon: '🦴',                    // any emoji
-  accent: '#2f5bd6',             // card colour (optional)
-  description: 'Paper 1 — head and neck.',
-  durationMinutes: 90,
-  passMark: 60,                  // percent
-  shuffleQuestions: false,       // optional
-  shuffleOptions: false,         // optional
-  sections: [                    // optional, groups the navigator
-    { id: 'a', title: 'Section A — MCQ' }
-  ],
-  questions: [ /* see below */ ]
+  id: 'my-paper',                // unique, used in the URL
+  name: 'My Paper',
+  course: 'MDS211',              // grouping on the home page
+  subtitle: 'Lectures 1–5',
+  icon: '📘',
+  accent: '#2f5bd6',
+  description: 'What this paper covers.',
+  durationMinutes: 60,
+  passMark: 60,
+  shuffleQuestions: true,
+  shuffleOptions: true,
+  sections: [{ id: 's1', title: 'Section A' }],
+  questions: [
+    {
+      id: 'q1',
+      section: 's1',             // optional
+      marks: 1,                  // optional, default 1
+      passage: 'Optional case stem shown above the question.',
+      image: 'assets/img/fig1.png',   // optional
+      stem: 'Which nerve supplies the muscles of mastication?',
+      options: ['Facial', 'Mandibular division of trigeminal', 'Vagus'],
+      answer: 'B',
+      explanation: 'Shown in the review after submitting.'
+    },
+    { type: 'multi', stem: 'Select TWO…', options: ['…','…','…'], answer: ['A', 'C'] },
+    { type: 'truefalse', stem: 'Enamel contains no living cells.', answer: true },
+    { type: 'short', stem: 'Name the hardest tissue.', answer: ['enamel', 'dental enamel'] }
+  ]
 });
 ```
 
-### Question types
-
-Options are labelled **A, B, C…** in the order you write them, and the `answer` refers
-to those letters.
-
-**Single answer**
-```js
-{
-  type: 'single',
-  section: 'a',                  // optional
-  marks: 1,                      // optional, default 1
-  passage: 'Optional case stem or scenario shown above the question.',
-  image: 'assets/img/fig1.png',  // optional
-  stem: 'Which nerve supplies the muscles of mastication?',
-  options: ['Facial', 'Mandibular division of trigeminal', 'Glossopharyngeal', 'Vagus'],
-  answer: 'B',
-  explanation: 'Shown in the review after submitting.'
-}
-```
-
-**Multiple answer** — the paper tells the candidate how many to pick, and marks are
-all-or-nothing.
-```js
-{ type: 'multi', stem: 'Select TWO…', options: ['…','…','…','…'], answer: ['A', 'C'] }
-```
-
-**True / false**
-```js
-{ type: 'truefalse', stem: 'Enamel contains no living cells.', answer: true }
-```
-
-**Short written answer** — matched case-insensitively, ignoring spacing and punctuation.
-List every wording you will accept.
-```js
-{ type: 'short', stem: 'Name the hardest tissue in the body.', answer: ['enamel', 'dental enamel'] }
-```
-
-### Tips
-
-- Keep each subject in its own file so papers are easy to swap in and out.
-- Put figures in `assets/img/` and reference them with `image:`.
-- Use `passage:` for shared case stems; repeat it on each question that needs it.
-- `marks:` lets a long question count for more than one mark; the percentage uses marks,
-  not question count.
+Short answers are matched case-insensitively, ignoring spacing and punctuation, so list
+every wording you will accept.
 
 ## Project layout
 
 ```
-index.html            subject chooser
+index.html            paper chooser, grouped by course
 exam.html             instructions → paper → results
 assets/css/style.css  all styling
 assets/js/store.js    localStorage (progress, results, theme)
-assets/js/registry.js registerExam() + normalising the question format
-assets/js/loader.js   loads the files listed in the manifest
-assets/js/home.js     subject cards and attempt history
+assets/js/registry.js registerExam() and question normalising
+assets/js/loader.js   loads one paper's questions on demand
+assets/js/home.js     course groups, paper cards, attempt history
 assets/js/exam.js     timer, paper, navigator, marking, review
-data/manifest.js      list of exam files to load
-data/*.js             one file per subject
+data/manifest.js      paper metadata for the home page (generated)
+data/*.js             one file per paper (generated)
+source-papers/        the original exam PDFs
+tools/convert_papers.py   PDF → data/*.js converter
 ```
+
+The home page loads `data/manifest.js` only — metadata, a few kilobytes. The questions
+for a paper (up to ~320 KB) load when that paper is opened.

@@ -1,30 +1,30 @@
-/* Loads every data file listed in data/manifest.js, then fires MockExam.ready(). */
-(function () {
-  var files = (window.EXAM_FILES || []).slice();
-  var waiting = [];
-  var done = false;
+/* Loads exam data on demand.
 
-  window.MockExam.ready = function (fn) {
-    if (done) fn(); else waiting.push(fn);
+   data/manifest.js holds metadata only (name, question count, duration), which is
+   all the home page needs. The questions for a paper are a few hundred kilobytes
+   each, so exam.html loads just the one paper being sat. */
+(function () {
+  window.MockExam = window.MockExam || {};
+
+  window.MockExam.subjects = function () { return window.SUBJECTS || []; };
+  window.MockExam.courses = function () { return window.COURSES || []; };
+  window.MockExam.subjectMeta = function (id) {
+    return (window.SUBJECTS || []).filter(function (s) { return s.id === id; })[0] || null;
   };
 
-  function finish() {
-    done = true;
-    waiting.splice(0).forEach(function (fn) { fn(); });
-  }
+  /* Load one paper's questions, then call done(exam) — or done(null) if it fails. */
+  window.MockExam.load = function (id, done) {
+    var meta = window.MockExam.subjectMeta(id);
+    if (!meta) return done(null);
+    if (window.MockExam.get(id)) return done(window.MockExam.get(id));
 
-  function next() {
-    if (!files.length) return finish();
-    var src = files.shift();
     var s = document.createElement('script');
-    s.src = src;
-    s.onload = next;
+    s.src = meta.file;
+    s.onload = function () { done(window.MockExam.get(id)); };
     s.onerror = function () {
-      console.error('Could not load exam data file: ' + src);
-      next();
+      console.error('Could not load ' + meta.file);
+      done(null);
     };
     document.head.appendChild(s);
-  }
-
-  next();
+  };
 })();

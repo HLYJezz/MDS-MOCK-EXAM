@@ -39,12 +39,20 @@
   function questionsInOrder() {
     return state.order.map(function (i) { return exam.questions[i]; });
   }
+  /* Options as the candidate sees them. When the paper shuffles its options the
+     letters are re-lettered A, B, C… down the page, so the labels stay in order;
+     the option's own id is what gets stored and marked. */
   function optionsFor(q) {
     var order = state.optionOrder[q.id];
-    if (!order) return q.options;
-    return order.map(function (oid) {
-      return q.options.filter(function (o) { return o.id === oid; })[0];
-    }).filter(Boolean);
+    var list = q.options;
+    if (order) {
+      list = order.map(function (oid) {
+        return q.options.filter(function (o) { return o.id === oid; })[0];
+      }).filter(Boolean);
+    }
+    return list.map(function (o, i) {
+      return { id: o.id, text: o.text, letter: order ? String.fromCharCode(65 + i) : o.id };
+    });
   }
 
   /* ---------- marking ---------- */
@@ -105,7 +113,11 @@
     var meta = el('div', 'q-meta');
     meta.appendChild(el('div', 'q-number', 'Question ' + (state.current + 1) + ' of ' + qs.length));
     var tags = el('div', 'q-tags');
-    if (q.section) tags.appendChild(el('span', 'chip', sectionTitle(q.section)));
+    if (q.section) {
+      var sec = el('span', 'chip section', sectionTitle(q.section));
+      sec.title = sectionTitle(q.section);   // full text on hover; the chip truncates
+      tags.appendChild(sec);
+    }
     tags.appendChild(el('span', 'chip', q.marks + (q.marks === 1 ? ' mark' : ' marks')));
     if (q.type === 'multi') tags.appendChild(el('span', 'chip', 'Select ' + q.answer.length));
     meta.appendChild(tags);
@@ -159,7 +171,7 @@
           renderPalette();
         });
         label.appendChild(input);
-        label.appendChild(el('span', 'letter', opt.id + '.'));
+        label.appendChild(el('span', 'letter', opt.letter + '.'));
         label.appendChild(el('span', null, opt.text));
         wrap.appendChild(label);
       });
@@ -184,8 +196,9 @@
     var grid = $('paletteGrid');
     grid.innerHTML = '';
     var lastSection = null;
+    var showSections = !exam.shuffleQuestions;   // headings mean nothing once shuffled
     qs.forEach(function (q, i) {
-      if (q.section && q.section !== lastSection) {
+      if (showSections && q.section && q.section !== lastSection) {
         grid.appendChild(el('div', 'pal-section', sectionTitle(q.section)));
         lastSection = q.section;
       }
@@ -335,11 +348,11 @@
       var chosenList = Array.isArray(chosen) ? chosen : (chosen ? [chosen] : []);
       var correctList = Array.isArray(q.answer) ? q.answer : [q.answer];
       var box = el('div', 'opt-review');
-      q.options.forEach(function (opt) {
+      optionsFor(q).forEach(function (opt) {
         var isRight = correctList.indexOf(opt.id) !== -1;
         var picked = chosenList.indexOf(opt.id) !== -1;
         var row = el('div', isRight ? 'is-correct' : (picked ? 'is-chosen-wrong' : ''));
-        row.textContent = opt.id + '. ' + opt.text +
+        row.textContent = opt.letter + '. ' + opt.text +
           (isRight ? '  ✓ correct answer' : '') + (picked && !isRight ? '  ✗ your answer' : '');
         box.appendChild(row);
       });
@@ -431,16 +444,16 @@
     return new URLSearchParams(window.location.search).get(name);
   }
 
-  function boot() {
+  function boot(loaded) {
     var id = param('subject');
-    exam = id ? MockExam.get(id) : null;
+    exam = loaded || null;
 
     if (!exam) {
       $('examTitle').textContent = 'Paper not found';
       $('introTitle').textContent = 'That paper is not available';
       $('introDesc').textContent = id
-        ? 'No subject with the id "' + id + '" is registered. Check data/manifest.js.'
-        : 'No subject was selected.';
+        ? 'The paper "' + id + '" could not be loaded. It may have been renamed — go back and pick it again.'
+        : 'No paper was selected.';
       $('startBtn').classList.add('hidden');
       showScreen('screenIntro');
       return;
@@ -448,15 +461,18 @@
 
     document.title = exam.name + ' · MDS Mock Exam';
     $('examTitle').textContent = exam.icon + ' ' + exam.name;
-    $('examSub').textContent = exam.questions.length + ' questions · ' + exam.totalMarks + ' marks';
+    $('examSub').textContent = (exam.course ? exam.course + ' · ' : '') +
+      exam.questions.length + ' questions';
     $('introTitle').textContent = exam.name;
     $('introDesc').textContent = exam.description;
 
+    var everyQuestionOneMark = exam.totalMarks === exam.questions.length;
     var facts = [
       ['Questions', exam.questions.length],
-      ['Total marks', exam.totalMarks],
-      ['Time allowed', exam.durationMinutes + ' minutes'],
-      ['Pass mark', exam.passMark + '%']
+      ['Time allowed', fmtDuration(exam.durationMinutes * 60000)],
+      ['Pass mark', exam.passMark + '%'],
+      everyQuestionOneMark ? ['Format', 'Single best answer']
+                           : ['Total marks', exam.totalMarks]
     ];
     var ul = $('introFacts');
     ul.innerHTML = '';
@@ -480,5 +496,18 @@
     showScreen('screenIntro');
   }
 
-  MockExam.ready(boot);
+  /* The questions for one paper are a few hundred KB, so they load here rather
+     than on the home page. */
+  var wanted = param('subject');
+  var meta = wanted && MockExam.subjectMeta(wanted);
+  if (meta) {
+    $('examTitle').textContent = meta.icon + ' ' + meta.name;
+    $('introTitle').textContent = meta.name;
+    $('introDesc').textContent = 'Loading the paper…';
+    $('startBtn').disabled = true;
+  }
+  MockExam.load(wanted, function (loaded) {
+    $('startBtn').disabled = false;
+    boot(loaded);
+  });
 })();

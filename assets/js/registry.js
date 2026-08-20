@@ -45,6 +45,8 @@
     var normalised = {
       id: id,
       name: exam.name || id,
+      course: exam.course || null,
+      subtitle: exam.subtitle || '',
       icon: exam.icon || '📘',
       accent: exam.accent || null,
       description: exam.description || '',
