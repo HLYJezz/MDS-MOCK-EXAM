@@ -99,6 +99,7 @@
       optionOrder: optionOrder,
       answers: {},
       flags: [],
+      revealed: [],        // practice mode: questions whose answer has been confirmed
       current: 0,
       startedAt: Date.now(),
       mode: Store.mode(),
@@ -139,6 +140,8 @@
       card.appendChild(img);
     }
 
+    var revealedNow = isRevealed(q);
+
     if (q.type === 'short') {
       var input = el('input', 'short-input');
       input.type = 'text';
@@ -150,12 +153,29 @@
       });
       card.appendChild(input);
       card.appendChild(el('div', 'hint muted small', 'Spelling is matched loosely, but write the full term.'));
+      if (revealedNow) {
+        input.disabled = true;
+        var right = el('div', 'reveal ' + (isCorrect(q) ? 'right' : 'wrong'));
+        right.appendChild(el('span', 'tag ' + (isCorrect(q) ? 'correct' : 'wrong'),
+          isCorrect(q) ? 'Correct' : 'Incorrect'));
+        var acc = el('div', 'answer-line');
+        acc.appendChild(el('span', 'k', 'Accepted:'));
+        acc.appendChild(el('span', null, [].concat(q.answer).join(' / ')));
+        right.appendChild(acc);
+        if (q.explanation) {
+          var exs = el('div', 'explanation');
+          exs.appendChild(el('strong', null, 'Explanation: '));
+          exs.appendChild(document.createTextNode(q.explanation));
+          right.appendChild(exs);
+        }
+        card.appendChild(right);
+      }
     } else {
       var wrap = el('div', 'options');
       var multi = q.type === 'multi';
       /* In practice mode an answered question is marked there and then, and
          locked so the revealed answer cannot be edited afterwards. */
-      var revealed = isPractice() && isAnswered(q);
+      var revealed = isRevealed(q);
       var correctList = Array.isArray(q.answer) ? q.answer : [q.answer];
       optionsFor(q).forEach(function (opt) {
         var label = el('label', 'option');
@@ -192,7 +212,6 @@
           save();
           renderQuestion();
           renderPalette();
-          if (isPractice()) renderTally();
         });
         label.appendChild(input);
         label.appendChild(el('span', 'letter', opt.letter + '.'));
@@ -216,6 +235,13 @@
         card.appendChild(box);
       }
     }
+
+    var confirmBtn = $('confirmBtn');
+    confirmBtn.classList.toggle('hidden', !isPractice() || revealedNow);
+    confirmBtn.disabled = !isAnswered(q);
+    confirmBtn.textContent = isAnswered(q) ? 'Confirm answer' : 'Choose an answer';
+    $('nextBtn').classList.toggle('secondary-btn', isPractice() && !revealedNow);
+    $('nextBtn').classList.toggle('primary-btn', !(isPractice() && !revealedNow));
 
     $('prevBtn').disabled = state.current === 0;
     $('nextBtn').textContent = state.current === qs.length - 1 ? 'Review & submit' : 'Next →';
@@ -275,7 +301,7 @@
   /* Practice mode shows how many are right so far where the clock would be. */
   function renderTally() {
     var qs = questionsInOrder();
-    var answered = qs.filter(isAnswered);
+    var answered = qs.filter(isRevealed);
     var right = answered.filter(isCorrect).length;
     var t = $('timer');
     t.classList.remove('warning', 'danger');
@@ -287,6 +313,8 @@
   function tick() {
     var left = state.endsAt - Date.now();
     var t = $('timer');
+    t.classList.remove('tally');     // a practice attempt may have set this
+    t.title = 'Time remaining';
     t.textContent = fmtClock(left);
     t.classList.toggle('warning', left <= 5 * 60000 && left > 60000);
     t.classList.toggle('danger', left <= 60000);
@@ -424,7 +452,8 @@
 
   var MODES = [
     { id: 'exam', label: 'Exam', blurb: 'Timed, with the score and answers at the end — like the real paper.' },
-    { id: 'practice', label: 'Practice', blurb: 'Check each answer as you go, with its explanation. Untimed.' }
+    { id: 'practice', label: 'Practice',
+      blurb: 'Answer, then confirm to reveal whether you were right, with the explanation. Untimed.' }
   ];
 
   /* Marking mode. Practice reveals each answer as it is given, so it runs
@@ -452,13 +481,30 @@
 
   function isPractice() { return (state ? state.mode : Store.mode()) === 'practice'; }
 
+  /* Practice mode holds the answer back until it is confirmed, so a choice can
+     still be changed while thinking it over. */
+  function isRevealed(q) {
+    return isPractice() && state.revealed && state.revealed.indexOf(q.id) !== -1;
+  }
+
+  function confirmAnswer() {
+    var q = questionsInOrder()[state.current];
+    if (!isPractice() || isRevealed(q) || !isAnswered(q)) return;
+    if (!state.revealed) state.revealed = [];   // attempts saved before this existed
+    state.revealed.push(q.id);
+    save();
+    renderQuestion();
+    renderPalette();
+    renderTally();
+  }
+
   /* The rules describe whichever mode is selected, so the start screen never
      promises a countdown that practice mode will not show. */
   function renderRules() {
     var practice = Store.mode() === 'practice';
     var rules = practice
-      ? ['Each answer is marked as soon as you give it, with the explanation.',
-         'An answer cannot be changed once it has been marked.',
+      ? ['Choose an answer, then press Confirm to reveal it with the explanation.',
+         'You can change your choice freely until you confirm it, and not after.',
          'There is no time limit — the header keeps a running score instead.',
          'You can move freely between questions and flag any for review.',
          'Answers are saved as you go — if the tab closes, reopen it to resume.']
@@ -559,6 +605,7 @@
     if (at === -1) state.flags.push(q.id); else state.flags.splice(at, 1);
     save(); renderQuestion(); renderPalette();
   });
+  $('confirmBtn').addEventListener('click', confirmAnswer);
   $('submitBtn').addEventListener('click', confirmSubmit);
   $('paletteToggle').addEventListener('click', function () {
     $('palette').classList.toggle('collapsed');
