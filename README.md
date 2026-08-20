@@ -48,6 +48,33 @@ against.
 - Attempt history and best score per paper, stored in the browser only
 - Light and dark theme, works on phones
 
+## Seeing how people use it (optional, off by default)
+
+The site sends nothing anywhere as shipped — no analytics, no fonts, no third-party
+scripts. Every answer and score lives in the visitor's own browser.
+
+To count visits, open `assets/js/analytics.js` and fill in `CONFIG.site`:
+
+1. Make a free account at [goatcounter.com](https://www.goatcounter.com) (free for
+   personal use) and pick a code, e.g. `mds-mock`.
+2. Put that code in `CONFIG.site` and push.
+3. Watch the dashboard at `https://<code>.goatcounter.com`.
+
+It uses no cookies, so no consent banner is needed. Papers are reported by name —
+`/exam/mds211-gauntlet` rather than one lump of `exam.html` hits — so you can see
+which papers actually get opened, along with visitor counts, referrers and countries.
+
+Cloudflare Web Analytics works too: set `provider` to `'cloudflare'` and put your
+token in `site`. It cannot label papers by name.
+
+**Scores are never sent, under either provider** — visit counting and exam results are
+completely separate. While counting is switched on, the footer says so; switch it off
+and the line disappears.
+
+If you ever do want the scores themselves, that needs somewhere to store them (a Google
+Sheet via Apps Script is the usual free route) and your friends should be told, since
+exam results are personal.
+
 ## Rebuilding the papers from the PDFs
 
 The files in `data/` are generated. To change how a paper is converted, or to add a
@@ -120,6 +147,7 @@ assets/js/registry.js registerExam() and question normalising
 assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     course groups, paper cards, attempt history
 assets/js/exam.js     timer, paper, navigator, marking, review
+assets/js/analytics.js    optional visit counting (off until configured)
 data/manifest.js      paper metadata for the home page (generated)
 data/*.js             one file per paper (generated)
 source-papers/        the original exam PDFs
