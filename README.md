@@ -61,6 +61,7 @@ against.
 - Flag for review, jump around freely, arrow keys to move between questions
 - Answers auto-save — closing the tab does not lose the attempt, reopening offers to resume
 - Score against the pass mark, then a per-question review with the source explanations
+- Report a question that looks wrong, from the paper or from the review
 - Attempt history and best score per paper, stored in the browser only
 - Light and dark theme, works on phones
 
@@ -90,6 +91,35 @@ and the line disappears.
 If you ever do want the scores themselves, that needs somewhere to store them (a Google
 Sheet via Apps Script is the usual free route) and your friends should be told, since
 exam results are personal.
+
+## Question reports (needs a Google Form)
+
+Every question carries a small **⚠ Report a problem** link, on the question itself and
+again on each item in the answer review. It opens a short dialog: what kind of problem,
+a comment, and an optional name that is remembered for next time.
+
+Each report is saved in the reader's browser **and** opens a prefilled Google Form, so
+the report reaches you. Until the form is set up the report is only saved locally, so do
+set it up:
+
+1. Make a form at [forms.google.com](https://forms.google.com) with six short-answer
+   questions: **Paper**, **Question**, **Problem**, **Comment**, **Name**, **Details**.
+   (Fewer is fine — see below.)
+2. In the form's ⋮ menu choose **Get pre-filled link**, type something into every field,
+   press **Get link**, and copy it. It looks like:
+   `…/viewform?usp=pp_url&entry.111=a&entry.222=b&…`
+3. Open `assets/js/feedback.js` and fill in `CONFIG`: `formUrl` is the form link up to
+   and including `/viewform`, and each `entries` value is the matching `entry.NNN`.
+4. In the form, **Responses → Link to Sheets** collects everything in a spreadsheet.
+
+Any field you leave blank in `entries` still gets through: everything is also written
+into `details` as one block of text, so a one-question form works if you set only
+`entries.details`.
+
+**The answer is never included while it is still hidden.** A report sent during an exam
+question, or a practice question that has not been confirmed yet, deliberately leaves the
+answer out, so the form cannot be used to peek. Reports from the review screen — where
+the answer is already on display — include it.
 
 ## Rebuilding the papers from the PDFs
 
@@ -164,6 +194,7 @@ assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     course groups, paper cards, attempt history
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
+assets/js/feedback.js     question reports → Google Form (off until configured)
 data/manifest.js      paper metadata for the home page (generated)
 data/*.js             one file per paper (generated)
 source-papers/        the original exam PDFs

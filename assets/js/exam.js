@@ -111,6 +111,49 @@
   }
   function save() { if (state) Store.saveProgress(exam.id, state); }
 
+  /* A report carries the recorded answer only when the reader has already seen
+     it — otherwise the prefilled form would hand them the answer mid-exam. */
+  function reportContext(q, index, answerVisible) {
+    var opts = optionsFor(q);
+    var given = state.answers[q.id];
+    var givenText = '';
+    if (q.type === 'short') givenText = given || '';
+    else if (given != null) {
+      givenText = [].concat(given).map(function (id) {
+        var o = opts.filter(function (x) { return x.id === id; })[0];
+        return o ? o.letter + '. ' + o.text : id;
+      }).join(', ');
+    }
+    var recorded = '';
+    if (answerVisible) {
+      recorded = q.type === 'short'
+        ? [].concat(q.answer).join(' / ')
+        : [].concat(q.answer).map(function (id) {
+            var o = opts.filter(function (x) { return x.id === id; })[0];
+            return o ? o.letter + '. ' + o.text : id;
+          }).join(', ');
+    }
+    return {
+      paper: exam.id, paperName: exam.name,
+      questionId: q.id, questionNumber: index + 1,
+      stem: q.stem,
+      options: opts.map(function (o) { return o.letter + '. ' + o.text; }),
+      givenAnswer: givenText,
+      recordedAnswer: recorded
+    };
+  }
+
+  function reportButton(q, index, answerVisible) {
+    var b = el('button', 'report-btn', '⚠ Report a problem');
+    b.type = 'button';
+    b.title = 'Tell the author this question looks wrong';
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      Feedback.open(reportContext(q, index, answerVisible));
+    });
+    return b;
+  }
+
   /* ---------- rendering: the paper ---------- */
   function renderQuestion() {
     var qs = questionsInOrder();
@@ -235,6 +278,8 @@
         card.appendChild(box);
       }
     }
+
+    card.appendChild(reportButton(q, state.current, revealedNow));
 
     var confirmBtn = $('confirmBtn');
     confirmBtn.classList.toggle('hidden', !isPractice() || revealedNow);
@@ -447,6 +492,7 @@
       ex.appendChild(document.createTextNode(q.explanation));
       item.appendChild(ex);
     }
+    item.appendChild(reportButton(q, i, true));
     return item;
   }
 

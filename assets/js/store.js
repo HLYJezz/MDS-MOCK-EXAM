@@ -33,6 +33,17 @@
     /* Seconds allowed per question, chosen on the exam's start screen. */
     pace: function () { return read('pace', 45); },
     setPace: function (seconds) { write('pace', seconds); },
+    /* Question reports: kept here as well as sent, so nothing is lost if the
+       form is closed or the person is offline. */
+    reports: function () { return read('reports', []); },
+    addReport: function (report) {
+      var all = read('reports', []);
+      all.unshift(report);
+      write('reports', all.slice(0, 100));
+    },
+    clearReports: function () { drop('reports'); },
+    reporterName: function () { return read('reporterName', ''); },
+    setReporterName: function (n) { write('reporterName', n || ''); },
     /* 'exam' marks everything at the end; 'practice' checks each answer as it
        is given. Chosen on the start screen. */
     mode: function () { return read('mode', 'exam') === 'practice' ? 'practice' : 'exam'; },

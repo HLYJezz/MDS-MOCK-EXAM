@@ -219,6 +219,33 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .reveal .explanation { margin-top: .6rem; }
 .timer.tally { background: var(--accent-soft); color: var(--accent); }
 
+/* ---------- question reports ---------- */
+.report-btn {
+  background: none; border: 0; padding: .35rem 0; margin-top: .9rem;
+  color: var(--muted); font-size: .8rem; text-decoration: underline;
+  text-underline-offset: 3px; align-self: flex-start;
+}
+.report-btn:hover { color: var(--bad); }
+.review-item .report-btn { margin-top: .6rem; }
+.report-issues { display: grid; gap: .4rem; margin: .9rem 0; }
+.report-issues .pace-btn { text-align: left; justify-content: flex-start; }
+.report-comment {
+  width: 100%; font: inherit; padding: .7rem .9rem; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  resize: vertical; margin-bottom: .6rem;
+}
+.report-comment:focus, .report-name:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.report-target { margin: 0 0 .2rem; }
+#reportModal .modal-box { max-width: 480px; }
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  background: var(--text); color: var(--bg); padding: .7rem 1.1rem;
+  border-radius: 10px; box-shadow: var(--shadow); z-index: 60;
+  font-size: .9rem; max-width: calc(100vw - 40px); text-align: center;
+  transition: opacity .5s;
+}
+.toast.leaving { opacity: 0; }
+
 .rules ul { color: var(--muted); padding-left: 1.1rem; margin: .4rem 0 0; }
 .rules li { margin-bottom: .3rem; }
 .intro-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
