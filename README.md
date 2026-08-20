@@ -13,15 +13,16 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-12 papers, 1,797 questions, generated from the PDFs in `source-papers/`:
+12 papers, 1,797 questions, generated from the PDFs in `source-papers/`. Cards appear in
+the order the papers are listed in `tools/convert_papers.py`:
 
 | Course | Paper | Questions | Time |
 |---|---|---|---|
-| MDS211 — Nervous System | Neuro Past Paper | 249 | 185 min |
+| MDS211 — Nervous System | SA1 Mock Exam 1 | 77 | 60 min |
+| | SA1 Mock Exam 2 | 77 | 60 min |
+| | Neuro Past Paper | 249 | 185 min |
 | | The Professor's Gauntlet | 300 | 225 min |
 | | SA1 Hint Exam | 102 | 75 min |
-| | SA1 Mock Exam 1 | 77 | 60 min |
-| | SA1 Mock Exam 2 | 77 | 60 min |
 | MDS220 — Musculo 1 | Full Practice Exam | 202 | 150 min |
 | | Hard Practice Exam | 151 | 115 min |
 | | Comprehensive Exam | 171 | 130 min |

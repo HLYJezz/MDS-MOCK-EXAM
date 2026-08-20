@@ -44,6 +44,36 @@ PAGE_FURNITURE = r'^\s*Page\s+\d+\s*$|^\s*\d{1,3}\s*$'
 
 PAPERS = [
     {
+        'file': 'MDS211 SA1 MockExam 77Q.pdf',
+        'id': 'mds211-sa1-mock-1',
+        'name': 'SA1 Mock Exam 1',
+        'subtitle': 'Real SA1 structure · 77 questions',
+        'course': 'MDS211',
+        'icon': '📝',
+        'expected': 77,
+        'key_start': 'Answer Key & Explanations',
+        'key_mode': 'q_correct',
+        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+\(\d+\s+questions?\)\s*$',
+        'drop_re': r'^MDS211_SA1_MockExam_77Q\.pdf$|' + PAGE_FURNITURE,
+        'description': 'Mirrors the real SA1 exam structure: 77 questions spread across Lectures 1–16 in proportion '
+                       'to lecture hours, drawn from the verified question bank.',
+    },
+    {
+        'file': 'MDS211 SA1 MockExam 77Q v2.pdf',
+        'id': 'mds211-sa1-mock-2',
+        'name': 'SA1 Mock Exam 2',
+        'subtitle': 'Second set · no overlap with Mock 1',
+        'course': 'MDS211',
+        'icon': '📝',
+        'expected': 77,
+        'key_start': 'Answer Key & Explanations',
+        'key_mode': 'q_correct',
+        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+\(\d+\s+questions?\)\s*$',
+        'drop_re': r'^MDS211_SA1_MockExam_77Q_v2\.pdf$|' + PAGE_FURNITURE,
+        'description': 'A second, fully independent SA1 set with no overlap with Mock Exam 1, using the same real '
+                       'exam weighting.',
+    },
+    {
         'file': 'MDS211 Neuro PastPaper Lec1-16 CorrectedKey.pdf',
         'id': 'mds211-past-paper',
         'name': 'Neuro Past Paper',
@@ -87,36 +117,6 @@ PAPERS = [
         'drop_re': r'^MDS211_SA1_HintExam_ProfKanokporn\.pdf$|' + PAGE_FURNITURE,
         'description': "Built directly from the topics Prof. Kanokporn named as exam hints, with 'Prof's Emphasis' "
                        'notes flagging the exact distinctions she tends to test.',
-    },
-    {
-        'file': 'MDS211 SA1 MockExam 77Q.pdf',
-        'id': 'mds211-sa1-mock-1',
-        'name': 'SA1 Mock Exam 1',
-        'subtitle': 'Real SA1 structure · 77 questions',
-        'course': 'MDS211',
-        'icon': '📝',
-        'expected': 77,
-        'key_start': 'Answer Key & Explanations',
-        'key_mode': 'q_correct',
-        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+\(\d+\s+questions?\)\s*$',
-        'drop_re': r'^MDS211_SA1_MockExam_77Q\.pdf$|' + PAGE_FURNITURE,
-        'description': 'Mirrors the real SA1 exam structure: 77 questions spread across Lectures 1–16 in proportion '
-                       'to lecture hours, drawn from the verified question bank.',
-    },
-    {
-        'file': 'MDS211 SA1 MockExam 77Q v2.pdf',
-        'id': 'mds211-sa1-mock-2',
-        'name': 'SA1 Mock Exam 2',
-        'subtitle': 'Second set · no overlap with Mock 1',
-        'course': 'MDS211',
-        'icon': '📝',
-        'expected': 77,
-        'key_start': 'Answer Key & Explanations',
-        'key_mode': 'q_correct',
-        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+\(\d+\s+questions?\)\s*$',
-        'drop_re': r'^MDS211_SA1_MockExam_77Q_v2\.pdf$|' + PAGE_FURNITURE,
-        'description': 'A second, fully independent SA1 set with no overlap with Mock Exam 1, using the same real '
-                       'exam weighting.',
     },
     {
         'file': 'MDS220 Full Practice Exam 202Q.pdf',
