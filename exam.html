@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam · MDS Mock Exam</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+/* Set the theme before first paint so dark-mode users never see a white flash. */
+(function () {
+  var t; try { t = JSON.parse(localStorage.getItem('mds-mock:theme')); } catch (e) {}
+  if (!t) t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+</head>
+<body class="exam-body">
+
+<!-- Exam chrome -->
+<header class="exam-header" id="examHeader">
+  <div class="exam-header-inner">
+    <div class="exam-id">
+      <a class="back-link" href="index.html" title="Back to subjects">←</a>
+      <div>
+        <div class="exam-title" id="examTitle">—</div>
+        <div class="exam-sub muted small" id="examSub"></div>
+      </div>
+    </div>
+    <div class="exam-tools">
+      <div class="timer" id="timer" title="Time remaining">--:--</div>
+      <button id="paletteToggle" class="ghost-btn small" type="button">Questions</button>
+      <button id="submitBtn" class="primary-btn small" type="button">Submit</button>
+    </div>
+  </div>
+  <div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+</header>
+
+<!-- Screen 1: instructions -->
+<main id="screenIntro" class="wrap screen">
+  <div class="card intro-card">
+    <h1 id="introTitle">—</h1>
+    <p id="introDesc" class="lede"></p>
+    <ul class="fact-list" id="introFacts"></ul>
+    <div class="rules">
+      <h2>Exam rules</h2>
+      <ul>
+        <li>The timer starts as soon as you press <strong>Start exam</strong> and does not pause.</li>
+        <li>You can move freely between questions and flag any question for review.</li>
+        <li>The paper is submitted automatically when the time runs out.</li>
+        <li>Answers are saved as you go — if the tab closes, reopen it to resume.</li>
+      </ul>
+    </div>
+    <div class="intro-actions">
+      <button id="startBtn" class="primary-btn" type="button">Start exam</button>
+      <button id="resumeBtn" class="secondary-btn hidden" type="button">Resume saved attempt</button>
+      <a class="secondary-btn" href="index.html">Back to subjects</a>
+    </div>
+  </div>
+</main>
+
+<!-- Screen 2: the paper -->
+<main id="screenExam" class="screen hidden">
+  <div class="exam-layout">
+    <section class="question-pane">
+      <article class="card question-card" id="questionCard"></article>
+      <nav class="question-nav">
+        <button id="prevBtn" class="secondary-btn" type="button">← Previous</button>
+        <button id="flagBtn" class="ghost-btn" type="button">⚑ Flag for review</button>
+        <button id="nextBtn" class="primary-btn" type="button">Next →</button>
+      </nav>
+    </section>
+    <aside class="palette" id="palette">
+      <h2 class="palette-title">Question navigator</h2>
+      <div class="palette-grid" id="paletteGrid"></div>
+      <ul class="legend">
+        <li><span class="dot answered"></span> Answered</li>
+        <li><span class="dot flagged"></span> Flagged</li>
+        <li><span class="dot"></span> Not answered</li>
+      </ul>
+      <div class="palette-summary muted small" id="paletteSummary"></div>
+    </aside>
+  </div>
+</main>
+
+<!-- Screen 3: results -->
+<main id="screenResult" class="wrap screen hidden">
+  <div class="card result-card" id="resultCard"></div>
+  <section id="reviewList" class="review-list"></section>
+</main>
+
+<!-- Confirm dialog -->
+<div class="modal hidden" id="modal">
+  <div class="modal-box card">
+    <h2 id="modalTitle">Submit paper?</h2>
+    <p id="modalBody" class="muted"></p>
+    <div class="modal-actions">
+      <button id="modalCancel" class="secondary-btn" type="button">Keep working</button>
+      <button id="modalConfirm" class="primary-btn" type="button">Submit now</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/store.js"></script>
+<script src="assets/js/registry.js"></script>
+<script src="data/manifest.js"></script>
+<script src="assets/js/loader.js"></script>
+<script src="assets/js/exam.js"></script>
+</body>
+</html>
