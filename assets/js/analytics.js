@@ -23,7 +23,7 @@
 (function () {
   var CONFIG = {
     provider: 'goatcounter',   // 'goatcounter' | 'cloudflare' | '' to disable
-    site: ''                   // your GoatCounter code, or Cloudflare token
+    site: 'hlyjezz'            // your GoatCounter code, or Cloudflare token
   };
 
   if (!CONFIG.site) return;    // not configured: do nothing, contact nobody
