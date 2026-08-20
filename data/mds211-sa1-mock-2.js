@@ -15,11 +15,16 @@ registerExam({
   sections: [
     { id: "s1", title: "Lecture 1 — Introduction & Organization of the CNS" },
     { id: "s2", title: "Lecture 2 — Neurohistology (Neuron & Neuroglia)" },
-    { id: "s3", title: "Lecture 4 — Metabolic Pathways of Neurons & Nervous Tissue" },
-    { id: "s4", title: "Lecture 7 — Spinal Cord & Blood Supply" },
-    { id: "s5", title: "Lecture 8 — PNS: Cranial & Spinal Nerves, Nerve Plexuses" },
-    { id: "s6", title: "Lecture 11 — Special Sense Organs & Its Development" },
-    { id: "s7", title: "Lecture 14 — Sensory Receptor Transduction & Neurotransmitters" },
+    { id: "s3", title: "Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction" },
+    { id: "s4", title: "Lecture 4 — Metabolic Pathways of Neurons & Nervous Tissue" },
+    { id: "s5", title: "the Eye" },
+    { id: "s6", title: "Lecture 7 — Spinal Cord & Blood Supply" },
+    { id: "s7", title: "Lecture 8 — PNS: Cranial & Spinal Nerves, Nerve Plexuses" },
+    { id: "s8", title: "Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation" },
+    { id: "s9", title: "Lecture 11 — Special Sense Organs & Its Development" },
+    { id: "s10", title: "Lectures 12–13 — Somatosensory Pathways / Taste Sensation" },
+    { id: "s11", title: "Lecture 14 — Sensory Receptor Transduction & Neurotransmitters" },
+    { id: "s12", title: "Lectures 15–16 — Visual System / Auditory & Vestibular Systems" },
   ],
   questions: [
     {
@@ -129,14 +134,14 @@ registerExam({
         "Schwann cell",
         "Oligodendrocyte",
         "Astrocyte",
-        "Ependymal cell Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction (5 questions)",
+        "Ependymal cell",
       ],
       answer: "A",
       explanation: "Microglia are mesoderm/yolk-sac-derived resident CNS immune cells that phagocytose debris and pathogens and mediate neuroinflammation. ✗ D is wrong: Astrocytes support the BBB, metabolism, and repair (glial scarring) but are not the primary phagocytic immune surveillance cell — that’s specifically microglia’s job.",
     },
     {
       id: "q9",
-      section: "s2",
+      section: "s3",
       stem: "Which of the following correctly describes when Na+/K+-ATPase activity increases the most?",
       options: [
         "During periods of high neuronal firing, to restore ionic gradients dissipated by Na+ influx/K+ efflux",
@@ -150,7 +155,7 @@ registerExam({
     },
     {
       id: "q10",
-      section: "s2",
+      section: "s3",
       stem: "When depolarizations from multiple simultaneous synaptic inputs on different parts of a neuron add together, this is called:",
       options: [
         "Temporal summation",
@@ -164,7 +169,7 @@ registerExam({
     },
     {
       id: "q11",
-      section: "s2",
+      section: "s3",
       stem: "All of the following are true of chemical synapses EXCEPT:",
       options: [
         "They involve a synaptic delay of roughly 0.5-1 ms",
@@ -178,7 +183,7 @@ registerExam({
     },
     {
       id: "q12",
-      section: "s2",
+      section: "s3",
       stem: "Which statement about graded potentials is INCORRECT?",
       options: [
         "They decay in amplitude with distance (decremental conduction)",
@@ -192,7 +197,7 @@ registerExam({
     },
     {
       id: "q13",
-      section: "s2",
+      section: "s3",
       stem: "During the absolute refractory period, why can no new action potential be generated no matter how strong the stimulus?",
       options: [
         "All voltage-gated K+ channels are closed",
@@ -206,7 +211,7 @@ registerExam({
     },
     {
       id: "q14",
-      section: "s3",
+      section: "s4",
       stem: "Why can hyperammonemia impair neuronal function even though ammonia detoxification happens mainly in astrocytes rather than neurons?",
       options: [
         "Because astrocyte dysfunction/swelling disrupts the glutamate-glutamine cycle and lactate shuttle that neurons depend on for neurotransmitter recycling and fuel",
@@ -220,7 +225,7 @@ registerExam({
     },
     {
       id: "q15",
-      section: "s3",
+      section: "s4",
       stem: "Which transporter class is primarily responsible for astrocytic uptake of the lactate that astrocytes then export to neurons?",
       options: [
         "GLUT3",
@@ -234,7 +239,7 @@ registerExam({
     },
     {
       id: "q16",
-      section: "s3",
+      section: "s4",
       stem: "Which glucose transporter is characteristic of astrocytes, versus the one preferentially expressed in neurons?",
       options: [
         "Astrocyte: GLUT1; Neuron: GLUT3",
@@ -248,7 +253,7 @@ registerExam({
     },
     {
       id: "q17",
-      section: "s3",
+      section: "s4",
       stem: "The pentose phosphate pathway (PPP), activated in neurons especially under high glucose availability, primarily generates which product important for antioxidant defense?",
       options: [
         "ATP directly",
@@ -262,7 +267,7 @@ registerExam({
     },
     {
       id: "q18",
-      section: "s3",
+      section: "s4",
       stem: "Which micronutrient deficiency is classically associated with Wernicke-Korsakoff syndrome, disrupting neuronal energy metabolism?",
       options: [
         "Vitamin B1 (thiamine)",
@@ -276,7 +281,7 @@ registerExam({
     },
     {
       id: "q19",
-      section: "s3",
+      section: "s5",
       stem: "Which embryonic structure gives rise to the pineal gland?",
       options: [
         "Roof of the diencephalon (epithalamus)",
@@ -290,7 +295,7 @@ registerExam({
     },
     {
       id: "q20",
-      section: "s3",
+      section: "s5",
       stem: "Which functional component is characteristic of neurons in the hypoglossal nucleus, located at the level of the myelencephalon (medulla)?",
       options: [
         "GSA (general somatic afferent)",
@@ -304,7 +309,7 @@ registerExam({
     },
     {
       id: "q21",
-      section: "s3",
+      section: "s5",
       stem: "Which structure does the optic cup differentiate into?",
       options: [
         "Lens",
@@ -318,7 +323,7 @@ registerExam({
     },
     {
       id: "q22",
-      section: "s3",
+      section: "s5",
       stem: "Failure of the choroid (retinal) fissure to fuse normally results in which congenital anomaly?",
       options: [
         "Coloboma (a gap/cleft in the iris, retina, or optic disc)",
@@ -332,7 +337,7 @@ registerExam({
     },
     {
       id: "q23",
-      section: "s3",
+      section: "s5",
       stem: "The spinal trigeminal nucleus (carrying facial pain/temperature) is derived from which embryonic structure?",
       options: [
         "Telencephalon",
@@ -346,7 +351,7 @@ registerExam({
     },
     {
       id: "q24",
-      section: "s4",
+      section: "s6",
       stem: "A 53-year-old man is hospitalized for acute spinal cord infarction (anterior spinal artery territory). Which sensory modality is characteristically SPARED?",
       options: [
         "Pain",
@@ -360,7 +365,7 @@ registerExam({
     },
     {
       id: "q25",
-      section: "s4",
+      section: "s6",
       stem: "Which of the following is NOT part of the central nervous system?",
       options: [
         "Spinal cord",
@@ -374,7 +379,7 @@ registerExam({
     },
     {
       id: "q26",
-      section: "s4",
+      section: "s6",
       stem: "If the anterior spinal artery is occluded, which structure/function is spared, consistent with its blood supply territory?",
       options: [
         "Corticospinal tract function",
@@ -388,7 +393,7 @@ registerExam({
     },
     {
       id: "q27",
-      section: "s4",
+      section: "s6",
       stem: "Which finding is a primary MOTOR symptom of a complete spinal cord lesion (transection) below the level of injury?",
       options: [
         "Loss of pain sensation",
@@ -402,7 +407,7 @@ registerExam({
     },
     {
       id: "q28",
-      section: "s4",
+      section: "s6",
       stem: "Which structure extends from the pia mater to the dura mater along the lateral aspect of the spinal cord, anchoring it and separating dorsal (posterior) from ventral (anterior) spinal nerve roots?",
       options: [
         "Denticulate ligament",
@@ -416,7 +421,7 @@ registerExam({
     },
     {
       id: "q29",
-      section: "s5",
+      section: "s7",
       stem: "Which functional component is NOT found in the facial nerve (CN VII)?",
       options: [
         "SVE (motor to muscles of facial expression)",
@@ -430,7 +435,7 @@ registerExam({
     },
     {
       id: "q30",
-      section: "s5",
+      section: "s7",
       stem: "Which spinal nerves are NOT included in a somatic nerve plexus?",
       options: [
         "C1-C4 (cervical plexus)",
@@ -444,21 +449,21 @@ registerExam({
     },
     {
       id: "q31",
-      section: "s5",
+      section: "s7",
       stem: "A 41-year-old woman has recurring episodes of sharp, electric-shock-like facial pain triggered by chewing and touching her cheek. Which nerve is most likely involved?",
       options: [
         "Facial nerve (Bell’s palsy)",
         "Trigeminal nerve (trigeminal neuralgia)",
         "Glossopharyngeal nerve",
         "Vagus nerve",
-        "Accessory nerve Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation (10 questions)",
+        "Accessory nerve",
       ],
       answer: "B",
       explanation: "This is the classic presentation of trigeminal neuralgia — brief, severe, electric-shock-like facial pain in a trigeminal (V2/V3 most commonly) distribution, often triggered by light touch, chewing, or talking.",
     },
     {
       id: "q32",
-      section: "s5",
+      section: "s8",
       stem: "Which tract’s second-order neurons cross the midline at the level of the medulla oblongata (rather than immediately upon entering the spinal cord)?",
       options: [
         "Lateral spinothalamic tract (crosses within 1-2 spinal segments)",
@@ -472,7 +477,7 @@ registerExam({
     },
     {
       id: "q33",
-      section: "s5",
+      section: "s8",
       stem: "Damage to which major component of the Ascending Reticular Activating System (ARAS) most directly impairs consciousness?",
       options: [
         "Cerebellum",
@@ -486,7 +491,7 @@ registerExam({
     },
     {
       id: "q34",
-      section: "s5",
+      section: "s8",
       stem: "What is the major anatomical site whose bilateral damage produces coma via ARAS disruption?",
       options: [
         "Cerebral cortex alone, unilaterally",
@@ -500,7 +505,7 @@ registerExam({
     },
     {
       id: "q35",
-      section: "s5",
+      section: "s8",
       stem: "A patient presents with altered consciousness, irregular breathing patterns, and decorticate/decerebrate posturing. This clinical picture most directly suggests dysfunction at which level?",
       options: [
         "Peripheral nerve only",
@@ -514,7 +519,7 @@ registerExam({
     },
     {
       id: "q36",
-      section: "s5",
+      section: "s8",
       stem: "Which cranial nerve nuclei are found at the level of the pons (not the medulla or midbrain)?",
       options: [
         "CN III, IV",
@@ -528,7 +533,7 @@ registerExam({
     },
     {
       id: "q37",
-      section: "s5",
+      section: "s8",
       stem: "Which structure, if damaged bilaterally in the pons, classically produces 'locked-in syndrome’ (preserved consciousness and vertical eye movement, but quadriplegia and inability to speak)?",
       options: [
         "Bilateral ventral pons (corticospinal and corticobulbar tracts), sparing the tegmentum/reticular formation",
@@ -542,7 +547,7 @@ registerExam({
     },
     {
       id: "q38",
-      section: "s5",
+      section: "s8",
       stem: "Why does a lesion of the medial longitudinal fasciculus (MLF) classically cause internuclear ophthalmoplegia (INO)?",
       options: [
         "The MLF connects the abducens nucleus on one side to the contralateral oculomotor (medial rectus) subnucleus, coordinating conjugate horizontal gaze",
@@ -556,7 +561,7 @@ registerExam({
     },
     {
       id: "q39",
-      section: "s5",
+      section: "s8",
       stem: "Which best explains why a lesion of one medial longitudinal fasciculus impairs ADDUCTION of the ipsilateral eye specifically, rather than some other eye movement?",
       options: [
         "Because the MLF specifically carries the signal from the contralateral abducens nucleus to the ipsilateral oculomotor nucleus’s medial rectus subnucleus, which is what drives eye adduction during conjugate horizontal gaze",
@@ -570,7 +575,7 @@ registerExam({
     },
     {
       id: "q40",
-      section: "s5",
+      section: "s8",
       stem: "Which region does the Ascending Reticular Activating System (ARAS) NOT directly project to?",
       options: [
         "Thalamus (intralaminar nuclei)",
@@ -584,7 +589,7 @@ registerExam({
     },
     {
       id: "q41",
-      section: "s5",
+      section: "s8",
       stem: "What is the general term for the diffuse network of interconnected neurons running through the core of the brainstem, from the medulla to the midbrain?",
       options: [
         "Reticular formation",
@@ -598,7 +603,7 @@ registerExam({
     },
     {
       id: "q42",
-      section: "s6",
+      section: "s9",
       stem: "Cochlear hair cells are innervated by bipolar neurons whose cell bodies reside in which structure?",
       options: [
         "Geniculate ganglion",
@@ -612,7 +617,7 @@ registerExam({
     },
     {
       id: "q43",
-      section: "s6",
+      section: "s9",
       stem: "Inner hair cells make up what proportion of the afferent fibers of the cochlear nerve, despite being far fewer in number than outer hair cells?",
       options: [
         "About 5%",
@@ -626,7 +631,7 @@ registerExam({
     },
     {
       id: "q44",
-      section: "s6",
+      section: "s9",
       stem: "Stereocilia of vestibular/cochlear hair cells are anchored where, and how do they relate to the kinocilium in mechanotransduction?",
       options: [
         "They are embedded in an overlying membrane (e.g., tectorial membrane in the cochlea) and their deflection relative to the kinocilium determines depolarization vs. hyperpolarization",
@@ -640,7 +645,7 @@ registerExam({
     },
     {
       id: "q45",
-      section: "s6",
+      section: "s9",
       stem: "The three semicircular canals detect which type of head movement?",
       options: [
         "Linear acceleration only (e.g., gravity, forward/backward motion)",
@@ -654,7 +659,7 @@ registerExam({
     },
     {
       id: "q46",
-      section: "s6",
+      section: "s9",
       stem: "Which histological feature distinguishes the utricle and saccule (otolith organs) from the semicircular canal ampullae?",
       options: [
         "The maculae of the utricle/saccule have an otolithic membrane embedded with calcium carbonate crystals (otoconia), adding inertial mass; the ampullary crista instead has a gelatinous cupula with no crystals",
@@ -668,7 +673,7 @@ registerExam({
     },
     {
       id: "q47",
-      section: "s6",
+      section: "s9",
       stem: "Which structure supports the organ of Corti and is set into vibration by traveling sound waves, with different regions tuned to different frequencies (tonotopic organization)?",
       options: [
         "Tectorial membrane",
@@ -682,7 +687,7 @@ registerExam({
     },
     {
       id: "q48",
-      section: "s6",
+      section: "s9",
       stem: "Presbycusis (age-related hearing loss) classically affects which frequency range first, and which cochlear structure is most vulnerable?",
       options: [
         "Low frequencies first, affecting the cochlear apex",
@@ -696,7 +701,7 @@ registerExam({
     },
     {
       id: "q49",
-      section: "s6",
+      section: "s9",
       stem: "Which structure transmits sound vibrations from the tympanic membrane to the oval window, providing mechanical impedance matching between air and cochlear fluid?",
       options: [
         "The three ossicles (malleus, incus, stapes) acting as a lever system",
@@ -710,7 +715,7 @@ registerExam({
     },
     {
       id: "q50",
-      section: "s6",
+      section: "s10",
       stem: "Which structure is responsible for relaying UNCONSCIOUS proprioceptive information from the lower limb (via the dorsal spinocerebellar tract) toward the cerebellum, synapsing first at Clarke’s nucleus (C8-L2/3)?",
       options: [
         "Dorsal root ganglion neurons directly to the cerebellum, with no relay",
@@ -724,7 +729,7 @@ registerExam({
     },
     {
       id: "q51",
-      section: "s6",
+      section: "s10",
       stem: "What structure is responsible for unconscious proprioceptive input from the SACRAL spinal cord levels (S2-S4), given that Clarke’s nucleus does not extend this far caudally?",
       options: [
         "Direct dorsal column ascent with no relay",
@@ -738,7 +743,7 @@ registerExam({
     },
     {
       id: "q52",
-      section: "s6",
+      section: "s10",
       stem: "Which pathway carries CONSCIOUS proprioception, fine touch, and vibration sense, as opposed to the unconscious proprioceptive spinocerebellar pathways?",
       options: [
         "Lateral spinothalamic tract",
@@ -752,7 +757,7 @@ registerExam({
     },
     {
       id: "q53",
-      section: "s6",
+      section: "s10",
       stem: "A lesion of the dorsal columns bilaterally (e.g., from vitamin B12 deficiency, subacute combined degeneration) would be expected to cause which finding?",
       options: [
         "Loss of pain sensation with normal proprioception",
@@ -766,7 +771,7 @@ registerExam({
     },
     {
       id: "q54",
-      section: "s6",
+      section: "s10",
       stem: "Which spinal cord tract carries fine touch, vibration, and conscious proprioception from the LOWER limb specifically, ascending in the most medial part of the dorsal columns?",
       options: [
         "Fasciculus cuneatus (upper limb)",
@@ -780,7 +785,7 @@ registerExam({
     },
     {
       id: "q55",
-      section: "s6",
+      section: "s10",
       stem: "An unpleasant or distorted taste sensation is medically termed:",
       options: [
         "Dysphagia",
@@ -794,7 +799,7 @@ registerExam({
     },
     {
       id: "q56",
-      section: "s6",
+      section: "s10",
       stem: "When stereocilia of a taste/hair cell bend TOWARD the kinocilium, what is the physiological result?",
       options: [
         "Hyperpolarization occurs",
@@ -808,7 +813,7 @@ registerExam({
     },
     {
       id: "q57",
-      section: "s6",
+      section: "s10",
       stem: "In the Gate-Control theory of pain, activated inhibitory spinal interneurons release enkephalins that act by:",
       options: [
         "Blocking Na+ channels presynaptically",
@@ -822,7 +827,7 @@ registerExam({
     },
     {
       id: "q58",
-      section: "s7",
+      section: "s11",
       stem: "What is the term for the time delay between an action potential arriving at a presynaptic terminal and its effect on the postsynaptic membrane?",
       options: [
         "Synaptic delay",
@@ -833,7 +838,7 @@ registerExam({
     },
     {
       id: "q59",
-      section: "s7",
+      section: "s11",
       stem: "Which of the following receptors is ionotropic (directly gates an ion channel upon ligand binding)?",
       options: [
         "AMPA receptor",
@@ -846,7 +851,7 @@ registerExam({
     },
     {
       id: "q60",
-      section: "s7",
+      section: "s11",
       stem: "What is the mechanism of fluoxetine?",
       options: [
         "Selective serotonin reuptake inhibitor (blocks SERT)",
@@ -858,7 +863,7 @@ registerExam({
     },
     {
       id: "q61",
-      section: "s7",
+      section: "s11",
       stem: "What is the mechanism of the antiemetic drug ondansetron?",
       options: [
         "Selective serotonin reuptake inhibitor",
@@ -870,7 +875,7 @@ registerExam({
     },
     {
       id: "q62",
-      section: "s7",
+      section: "s11",
       stem: "What is the mechanism of haloperidol?",
       options: [
         "Selective serotonin reuptake inhibitor",
@@ -882,7 +887,7 @@ registerExam({
     },
     {
       id: "q63",
-      section: "s7",
+      section: "s11",
       stem: "A patient is splashed with hot cooking oil. Which channel is the primary receptor for NOXIOUS heat in this scenario?",
       options: [
         "TRPV2 (very high heat threshold, extreme noxious heat)",
@@ -894,7 +899,7 @@ registerExam({
     },
     {
       id: "q64",
-      section: "s7",
+      section: "s11",
       stem: "A woman presents with fatigue, social withdrawal, and depressed mood. Which neurotransmitter system is most likely implicated?",
       options: [
         "Dopamine",
@@ -908,7 +913,7 @@ registerExam({
     },
     {
       id: "q65",
-      section: "s7",
+      section: "s11",
       stem: "Anosmia and ageusia (loss of smell and taste) can result from downregulation of which receptor, also notable for its role as the entry receptor for SARS-CoV-2?",
       options: [
         "Dopamine D2 receptor",
@@ -922,7 +927,7 @@ registerExam({
     },
     {
       id: "q66",
-      section: "s7",
+      section: "s11",
       stem: "Which neurotransmitter-transporter pairing is correct?",
       options: [
         "VGAT - GABA (correct vesicular pairing)",
@@ -936,7 +941,7 @@ registerExam({
     },
     {
       id: "q67",
-      section: "s7",
+      section: "s11",
       stem: "A patient overdoses on a drug that directly opens GABA-A chloride channels even in the complete absence of GABA, causing profound, potentially fatal respiratory depression. Which drug class does this describe, and why is it more dangerous than benzodiazepines in overdose?",
       options: [
         "Benzodiazepines, because they always require GABA to be present",
@@ -950,7 +955,7 @@ registerExam({
     },
     {
       id: "q68",
-      section: "s7",
+      section: "s12",
       stem: "Which correctly arranges retinal layers from the rod/cone (photoreceptor) layer toward the optic nerve fiber layer?",
       options: [
         "Rods/cones → Inner nuclear → Outer nuclear → Ganglion cell → Optic nerve fiber",
@@ -963,7 +968,7 @@ registerExam({
     },
     {
       id: "q69",
-      section: "s7",
+      section: "s12",
       stem: "A patient has a left pupil that does not constrict and is larger than the right, with associated ptosis and 'down and out’ eye deviation. Where is the lesion?",
       options: [
         "Optic tract",
@@ -977,7 +982,7 @@ registerExam({
     },
     {
       id: "q70",
-      section: "s7",
+      section: "s12",
       stem: "Surface ectoderm gives rise to which eye structure?",
       options: [
         "Lens",
@@ -991,7 +996,7 @@ registerExam({
     },
     {
       id: "q71",
-      section: "s7",
+      section: "s12",
       stem: "Which specialization of the fovea centralis increases visual acuity there?",
       options: [
         "Abundant blood vessels overlying it",
@@ -1004,7 +1009,7 @@ registerExam({
     },
     {
       id: "q72",
-      section: "s7",
+      section: "s12",
       stem: "What structure is damaged to produce a RIGHT homonymous hemianopia?",
       options: [
         "Left optic tract (or fibers further downstream on the left visual pathway)",
@@ -1017,7 +1022,7 @@ registerExam({
     },
     {
       id: "q73",
-      section: "s7",
+      section: "s12",
       stem: "What structure detects vertical linear acceleration, as when an elevator starts moving up or down?",
       options: [
         "Superior semicircular canal",
@@ -1031,7 +1036,7 @@ registerExam({
     },
     {
       id: "q74",
-      section: "s7",
+      section: "s12",
       stem: "What structure primarily detects tilting the head UP (vertical linear head position change)?",
       options: [
         "Utricle",
@@ -1045,7 +1050,7 @@ registerExam({
     },
     {
       id: "q75",
-      section: "s7",
+      section: "s12",
       stem: "What structure is primarily activated by nodding the head forward (in the sagittal/vertical rotational plane)?",
       options: [
         "Utricle",
@@ -1059,7 +1064,7 @@ registerExam({
     },
     {
       id: "q76",
-      section: "s7",
+      section: "s12",
       stem: "When you extend your head backward (posterior tilt), which vestibular receptor is primarily stimulated?",
       options: [
         "Superior semicircular canal",
@@ -1073,7 +1078,7 @@ registerExam({
     },
     {
       id: "q77",
-      section: "s7",
+      section: "s12",
       stem: "Where is the vomiting center located?",
       options: [
         "Vestibular nuclei",

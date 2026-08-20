@@ -14,13 +14,13 @@ registerExam({
   shuffleOptions: true,
   sections: [
     { id: "s1", title: "Neck: Triangles, Vessels & Nerves" },
-    { id: "s2", title: "Scalp, Face, Parotid & Cranial Fossae" },
-    { id: "s3", title: "Development Of Head And Neck" },
-    { id: "s4", title: "Temporal & Infratemporal Fossa, Jaw Joint" },
-    { id: "s5", title: "Extraocular Muscles & Innervation" },
-    { id: "s6", title: "Thoracic Wall And Muscles" },
-    { id: "s7", title: "Anterior Abdominal Wall & Hernia" },
-    { id: "s8", title: "Muscle Physiology" },
+    { id: "s2", title: "Scalp, Face, Parotid & Cranial Fossae Lectures 3-4" },
+    { id: "s3", title: "Development Of Head And Neck Lecture 5" },
+    { id: "s4", title: "Temporal & Infratemporal Fossa, Jaw Joint Lecture 6" },
+    { id: "s5", title: "Extraocular Muscles & Innervation Lecture 7" },
+    { id: "s6", title: "Thoracic Wall And Muscles Lecture 8" },
+    { id: "s7", title: "Anterior Abdominal Wall & Hernia Lecture 9" },
+    { id: "s8", title: "Muscle Physiology Lectures 10-12" },
   ],
   questions: [
     {

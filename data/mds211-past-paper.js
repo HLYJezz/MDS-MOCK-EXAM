@@ -28,6 +28,7 @@ registerExam({
     { id: "s13", title: "Lecture 14 — Sensory Receptors & Neurotransmitters" },
     { id: "s14", title: "Lecture 15 — Visual System" },
     { id: "s15", title: "Lecture 16 — Auditory & Vestibular Systems" },
+    { id: "s16", title: "Mixed / Other Topics" },
   ],
   questions: [
     {
@@ -2728,14 +2729,14 @@ registerExam({
       options: [
         ">90 dB",
         "25-50 dB",
-        ">50 dB Mixed / Other Topics (49 questions)",
+        ">50 dB",
       ],
       answer: "B",
       explanation: "Presbycusis progresses gradually, with threshold shifts typically beginning in the mild-to-moderate 25-50 dB range.",
     },
     {
       id: "q203",
-      section: "s15",
+      section: "s16",
       stem: "A lumbar puncture consists of a needle being inserted through a space into the lumbar cistern, and aims to retrieve a sample of cerebrospinal fluid (CSF). Which of the following is the most likely level for the insertion of this needle?",
       options: [
         "S2-S3",
@@ -2749,7 +2750,7 @@ registerExam({
     },
     {
       id: "q204",
-      section: "s15",
+      section: "s16",
       stem: "Space that connects between the lateral and the third ventricles is called . . .",
       options: [
         "interventricular foramen",
@@ -2763,7 +2764,7 @@ registerExam({
     },
     {
       id: "q205",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following types of nerve fibers has the fastest conduction velocity?",
       options: [
         "Group II fibers",
@@ -2777,7 +2778,7 @@ registerExam({
     },
     {
       id: "q206",
-      section: "s15",
+      section: "s16",
       stem: "The labyrinthine artery is an important source of blood supply to the inner ear. Which of the following arteries represents the major vessel from which this branch usually arises?",
       options: [
         "Anterior inferior cerebellar",
@@ -2790,7 +2791,7 @@ registerExam({
     },
     {
       id: "q207",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following would be expected to see signs and symptoms of the patient from the lesion below?",
       options: [
         "Nystagmus occurs normally in the right eye.",
@@ -2804,7 +2805,7 @@ registerExam({
     },
     {
       id: "q208",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following sensation losses on the ipsilateral side of the lesion and at the only the level L2?",
       options: [
         "Pain",
@@ -2818,7 +2819,7 @@ registerExam({
     },
     {
       id: "q209",
-      section: "s15",
+      section: "s16",
       stem: "A patient was diagnosed with meningitis by lumbar puncture. Which of the following sites is the most commonly used for CSF collection?",
       options: [
         "T10-T11",
@@ -2832,7 +2833,7 @@ registerExam({
     },
     {
       id: "q210",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following receptor type receptors detect the tension of muscle and tendon? (only 4 choices)",
       options: [
         "Nearby external receptor",
@@ -2845,7 +2846,7 @@ registerExam({
     },
     {
       id: "q211",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following region is the most common of the encephalocele?",
       options: [
         "Lumbar",
@@ -2858,7 +2859,7 @@ registerExam({
     },
     {
       id: "q212",
-      section: "s15",
+      section: "s16",
       stem: "A 43-year-old woman was sent to consult the doctor with drooping of right side of mount, could not smile symmetrically. However, she can close both eye lids tightly and elevate her eyebrows () and forehead (). Where is the most likely specific site of lesion?",
       options: [
         "Internal capsule",
@@ -2871,7 +2872,7 @@ registerExam({
     },
     {
       id: "q213",
-      section: "s15",
+      section: "s16",
       stem: "A 65-year-old man has a pernicious anemia and memory problem. Which of the following compounds in blood is higher than normal and linked to memory problem in this man?",
       options: [
         "folate",
@@ -2884,7 +2885,7 @@ registerExam({
     },
     {
       id: "q214",
-      section: "s15",
+      section: "s16",
       stem: "If the right Edinger Westphal nucleus is damaged from whatever, what is (are) the testing results?",
       options: [
         "When light shines into Rt. eye, Rt pupil constricts, but Lt. not respond.",
@@ -2897,7 +2898,7 @@ registerExam({
     },
     {
       id: "q215",
-      section: "s15",
+      section: "s16",
       stem: "Which fibers carry the first pain after injecting a needle into the skin? (only 4 choices)",
       options: [
         "C fibers",
@@ -2910,7 +2911,7 @@ registerExam({
     },
     {
       id: "q216",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following types of nerve fibers has the fastest conduction velocity?",
       options: [
         "II",
@@ -2924,7 +2925,7 @@ registerExam({
     },
     {
       id: "q217",
-      section: "s15",
+      section: "s16",
       stem: "What type of transport is involved in the rabies virus, and by which specific molecular motor is it mediated?",
       options: [
         "Anterograde - dynein mediated",
@@ -2937,7 +2938,7 @@ registerExam({
     },
     {
       id: "q218",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following conditions is primarily characterised by the presence of plaques in the periventricular regions?",
       options: [
         "Alzheimer's disease",
@@ -2950,7 +2951,7 @@ registerExam({
     },
     {
       id: "q219",
-      section: "s15",
+      section: "s16",
       stem: "What is the type of synapse between an axon and another axon called?",
       options: [
         "Axo-dendritic",
@@ -2963,7 +2964,7 @@ registerExam({
     },
     {
       id: "q220",
-      section: "s15",
+      section: "s16",
       stem: "What is the percent of the body’s glucose used by the brain?",
       options: [
         "25%",
@@ -2976,7 +2977,7 @@ registerExam({
     },
     {
       id: "q221",
-      section: "s15",
+      section: "s16",
       stem: "What causes glutamate toxicity to happen?",
       options: [
         "hypoglycemia",
@@ -2987,7 +2988,7 @@ registerExam({
     },
     {
       id: "q222",
-      section: "s15",
+      section: "s16",
       stem: "What would be the result of a lesion to the Corticospinal tract in the pons?",
       options: [
         "motor loss on the right side",
@@ -3000,7 +3001,7 @@ registerExam({
     },
     {
       id: "q223",
-      section: "s15",
+      section: "s16",
       stem: "Which tract does not pass through the inferior cerebellar peduncle?",
       options: [
         "ventral spinocerebellar",
@@ -3013,7 +3014,7 @@ registerExam({
     },
     {
       id: "q224",
-      section: "s15",
+      section: "s16",
       stem: "Mechanoreceptors of the skin transmit signals via which type of nerve fiber?",
       options: [
         "A beta",
@@ -3026,7 +3027,7 @@ registerExam({
     },
     {
       id: "q225",
-      section: "s15",
+      section: "s16",
       stem: "What doesn’t synapse at the spinal trigeminal nucleus?",
       options: [
         "pain temp from trigeminal",
@@ -3040,7 +3041,7 @@ registerExam({
     },
     {
       id: "q226",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following is an epicritic sensation?",
       options: [
         "pain",
@@ -3052,7 +3053,7 @@ registerExam({
     },
     {
       id: "q227",
-      section: "s15",
+      section: "s16",
       stem: "What receptor is responsible for the sensory adaptation experienced when wearing a necklace or watch?",
       options: [
         "Meissner’s receptor",
@@ -3066,7 +3067,7 @@ registerExam({
     },
     {
       id: "q228",
-      section: "s15",
+      section: "s16",
       stem: "What transports glutamate into a glial cell?",
       options: [
         "EAAT",
@@ -3079,7 +3080,7 @@ registerExam({
     },
     {
       id: "q229",
-      section: "s15",
+      section: "s16",
       stem: "Transportation of Rabies occured as which of the following directions and by which specific molecular motor?",
       options: [
         "Anterograde - dynein mediated",
@@ -3092,7 +3093,7 @@ registerExam({
     },
     {
       id: "q230",
-      section: "s15",
+      section: "s16",
       stem: "Which part of the brain specializes for motor control of our body, limb and eye movement?",
       options: [
         "Limbic lobe",
@@ -3106,7 +3107,7 @@ registerExam({
     },
     {
       id: "q231",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following non-CNS structures is located in the Longitudinal fissure?",
       options: [
         "Septum pellucidum",
@@ -3119,7 +3120,7 @@ registerExam({
     },
     {
       id: "q232",
-      section: "s15",
+      section: "s16",
       stem: "In normal condition, which of the following is used by a neuron to produce ATP?",
       options: [
         "glucose",
@@ -3133,7 +3134,7 @@ registerExam({
     },
     {
       id: "q233",
-      section: "s15",
+      section: "s16",
       stem: "What is the condition where meninges and brain tissue protrude?",
       options: [
         "Cranium bifidum with meningohydroencephalocele",
@@ -3145,7 +3146,7 @@ registerExam({
     },
     {
       id: "q234",
-      section: "s15",
+      section: "s16",
       stem: "Which reflex test is appropriate for the C5-6 segment?",
       options: [
         "Knee jerk",
@@ -3159,7 +3160,7 @@ registerExam({
     },
     {
       id: "q235",
-      section: "s15",
+      section: "s16",
       stem: "Neuroblasts from the alar plate can migrate ventrally to form which of the following structures?",
       options: [
         "Pontine nucleus",
@@ -3173,7 +3174,7 @@ registerExam({
     },
     {
       id: "q236",
-      section: "s15",
+      section: "s16",
       stem: "What disease is characterized by the absence of iris? .",
       options: [
         "Coloboma",
@@ -3187,7 +3188,7 @@ registerExam({
     },
     {
       id: "q237",
-      section: "s15",
+      section: "s16",
       stem: "A 58-year-old patient has a drooping left eyelid and cannot wrinkle their forehead. What is the cause of the lesion?",
       options: [
         "motor cn5",
@@ -3199,7 +3200,7 @@ registerExam({
     },
     {
       id: "q239",
-      section: "s15",
+      section: "s16",
       stem: "All statements are true about corneal epithelium ’except’",
       options: [
         "Nourish by tears and aqueous humor",
@@ -3213,7 +3214,7 @@ registerExam({
     },
     {
       id: "q240",
-      section: "s15",
+      section: "s16",
       stem: "Which nerve fiber is most sensitive to anesthesia?",
       options: [
         "A alpha fiber",
@@ -3226,7 +3227,7 @@ registerExam({
     },
     {
       id: "q241",
-      section: "s15",
+      section: "s16",
       stem: "A 25-year-old man came to the hospital. He dropped a pan on his legs (splashed with hot water). Which receptor is involved?",
       options: [
         "TPRA1",
@@ -3240,7 +3241,7 @@ registerExam({
     },
     {
       id: "q242",
-      section: "s15",
+      section: "s16",
       stem: "A baby boy has a certain condition. The mother has no history of taking folic acid supplements and has no other abnormalities. Which disease is related?",
       options: [
         "Holoprosencephaly",
@@ -3254,7 +3255,7 @@ registerExam({
     },
     {
       id: "q243",
-      section: "s15",
+      section: "s16",
       stem: "What receptor is related to ptosis and double vision?",
       options: [
         "N1",
@@ -3268,7 +3269,7 @@ registerExam({
     },
     {
       id: "q244",
-      section: "s15",
+      section: "s16",
       stem: "What is the target for Opioid drugs?",
       options: [
         "Thalamus",
@@ -3282,7 +3283,7 @@ registerExam({
     },
     {
       id: "q245",
-      section: "s15",
+      section: "s16",
       stem: "A person turns their head to the right, but their eyes remain looking forward. The left eye moves to the left, while the right eye stays in the middle. When turning the head to the left, both eyes move to the right. Where is the abnormality?",
       options: [
         "Right occulomotor",
@@ -3294,7 +3295,7 @@ registerExam({
     },
     {
       id: "q246",
-      section: "s15",
+      section: "s16",
       stem: "Which molecular motor is used for rabies transport?",
       options: [
         "Dynein",
@@ -3305,7 +3306,7 @@ registerExam({
     },
     {
       id: "q247",
-      section: "s15",
+      section: "s16",
       stem: "What is a gated-channel control?",
       options: [
         "electrical synapse",
@@ -3319,7 +3320,7 @@ registerExam({
     },
     {
       id: "q248",
-      section: "s15",
+      section: "s16",
       stem: "Which of these is part of the paleocerebellum?",
       options: [
         "vermis and anterior lobe",
@@ -3332,7 +3333,7 @@ registerExam({
     },
     {
       id: "q249",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following is an affective/protopathic sensation?",
       options: [
         "Vibration",
@@ -3346,7 +3347,7 @@ registerExam({
     },
     {
       id: "q250",
-      section: "s15",
+      section: "s16",
       stem: "A patient with Benedikt syndrome would exhibit ipsilateral CN III palsy and what other sign?",
       options: [
         "Contralateral loss of pain and temperature",
@@ -3360,7 +3361,7 @@ registerExam({
     },
     {
       id: "q251",
-      section: "s15",
+      section: "s16",
       stem: "A 40-year-old patient has a plaque in the periventricular area seen on MRI. What is the diagnosis?",
       options: [
         "Alzheimer's disease",

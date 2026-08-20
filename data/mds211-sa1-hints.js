@@ -13,14 +13,30 @@ registerExam({
   shuffleQuestions: true,
   shuffleOptions: true,
   sections: [
-    { id: "s1", title: "Ear Pressure Equalization" },
-    { id: "s2", title: "Eye Tissue Layers: Light Absorption & Phototransduction" },
-    { id: "s3", title: "Somatosensory Tracts" },
-    { id: "s4", title: "Taste (Gustatory) Pathway" },
+    { id: "s1", title: "Inner Ear Stimulation Pathway & Nystagmus" },
+    { id: "s2", title: "Conjugate Eye Movement" },
+    { id: "s3", title: "Vestibulo-Ocular Reflex (VOR)" },
+    { id: "s4", title: "Sound-Dampening Mechanism" },
+    { id: "s5", title: "Ear Pressure Equalization" },
+    { id: "s6", title: "Cochlear Base/Apex Frequency Tuning" },
+    { id: "s7", title: "Head Rotation — Which Structure Responds" },
+    { id: "s8", title: "Elevator / Driving — Linear Acceleration" },
+    { id: "s9", title: "Eye Tissue Layers: Light Absorption & Phototransduction" },
+    { id: "s10", title: "Visual Pathway Lesions — Specific Terminology" },
+    { id: "s11", title: "Meyer's Loop & Macula Sparing — Prof's Emphasis" },
+    { id: "s12", title: "Tri-Germ-Layer Structures (Tympanic Membrane)" },
+    { id: "s13", title: "Ectoderm / Mesoderm / Endoderm — General Derivatives" },
+    { id: "s14", title: "Protopathic vs. Epicritic Sensation" },
+    { id: "s15", title: "The Four Types of Pain" },
+    { id: "s16", title: "Muscle Spindle & Golgi Tendon Organ — Fiber Types" },
+    { id: "s17", title: "Free Nerve Ending + A-delta / C Fibers" },
+    { id: "s18", title: "Somatosensory Tracts" },
+    { id: "s19", title: "Taste (Gustatory) Pathway" },
   ],
   questions: [
     {
       id: "q1",
+      section: "s1",
       stem: "What is the correct order of the auditory pathway, from first-order neuron onward?",
       options: [
         "Spiral ganglion (1st) → cochlear nucleus (2nd) → trapezoid body & superior olivary nucleus → lateral lemniscus → inferior colliculus (3rd) → medial geniculate body (4th) → primary auditory cortex",
@@ -34,6 +50,7 @@ registerExam({
     },
     {
       id: "q2",
+      section: "s1",
       stem: "Sound wave transduction: put these structures in the correct order the sound signal actually passes through.",
       options: [
         "Ear drum → middle ear ossicles → footplate of stapes (~20x force amplification) → hair cells → spiral ganglia → CN VIII → CNS",
@@ -47,6 +64,7 @@ registerExam({
     },
     {
       id: "q3",
+      section: "s1",
       stem: "Physiologic nystagmus, as part of the vestibulo-ocular reflex, is characterized by which two-phase pattern?",
       options: [
         "A slow phase of alternating smooth pursuit in one direction, and a fast (saccadic) phase resetting in the other direction",
@@ -60,6 +78,7 @@ registerExam({
     },
     {
       id: "q4",
+      section: "s1",
       stem: "What differentiates pathologic nystagmus from physiologic nystagmus?",
       options: [
         "Pathologic nystagmus results from damage to one or more vestibular system components — semicircular canals, otolith organs, or the vestibulocerebellum — rather than being a normal VOR response to head movement",
@@ -73,6 +92,7 @@ registerExam({
     },
     {
       id: "q5",
+      section: "s1",
       stem: "A patient’s left vestibular nerve is completely severed. Which of the following is TRUE?",
       options: [
         "This does not produce contralateral (right-sided) nystagmus — the resulting nystagmus/imbalance pattern reflects the LOSS of tonic input from the damaged (left) side, not a mirrored effect on the opposite side",
@@ -86,19 +106,21 @@ registerExam({
     },
     {
       id: "q6",
+      section: "s1",
       stem: "Damage to the vestibular system (semicircular canals, otolith organs, or vestibulocerebellum) can produce pathologic nystagmus. Which structure is NOT one of these three sources?",
       options: [
         "Semicircular canals",
         "Otolith organs (utricle/saccule)",
         "Vestibulocerebellum",
         "Primary auditory cortex",
-        "None — all three listed sources are correct Conjugate Eye Movement (5 questions)",
+        "None — all three listed sources are correct",
       ],
       answer: "D",
       explanation: "Pathologic nystagmus specifically traces to damage in the semicircular canals, otolith organs, or vestibulocerebellum — the primary auditory cortex is part of the hearing pathway, not balance, and its damage would not produce this pattern.",
     },
     {
       id: "q7",
+      section: "s2",
       stem: "Which cranial nerves are involved in HORIZONTAL conjugate eye movement?",
       options: [
         "CN III and CN VI",
@@ -112,6 +134,7 @@ registerExam({
     },
     {
       id: "q8",
+      section: "s2",
       stem: "Which cranial nerves are involved in VERTICAL conjugate eye movement?",
       options: [
         "CN III and CN IV",
@@ -125,6 +148,7 @@ registerExam({
     },
     {
       id: "q9",
+      section: "s2",
       stem: "What structure carries the signal connecting the cranial nerve nuclei (III, IV, VI) that move the eyeball, coordinating conjugate gaze?",
       options: [
         "Medial longitudinal fasciculus (MLF)",
@@ -138,6 +162,7 @@ registerExam({
     },
     {
       id: "q10",
+      section: "s2",
       stem: "Where is the horizontal gaze center (saccadic center) that generates the fast, voluntary horizontal eye movements (saccades)?",
       options: [
         "PPRF (Paramedian pontine reticular formation)",
@@ -151,19 +176,21 @@ registerExam({
     },
     {
       id: "q11",
+      section: "s2",
       stem: "A lesion of the right MLF causes failure of the right eye to adduct on attempted LEFTward conjugate gaze, with nystagmus in the abducting (left) eye. What is this classically called?",
       options: [
         "Internuclear ophthalmoplegia (INO)",
         "Horizontal gaze palsy",
         "One-and-a-half syndrome",
         "Vertical gaze palsy",
-        "Complete CN III palsy Vestibulo-Ocular Reflex (VOR) (5 questions)",
+        "Complete CN III palsy",
       ],
       answer: "A",
       explanation: "This is the textbook definition of internuclear ophthalmoplegia — an MLF lesion disconnects the abducens nucleus (driving the contralateral eye’s abduction) from the ipsilateral oculomotor medial rectus subnucleus, so the affected eye fails to adduct on conjugate gaze toward the side opposite the lesion.",
     },
     {
       id: "q12",
+      section: "s3",
       stem: "During the horizontal vestibulo-ocular reflex, if the head turns LEFT, what happens to the eyes, and what is the nystagmus called?",
       options: [
         "Both eyes turn RIGHT (slow phase, compensatory), and the resulting nystagmus is named ‘to the left’ (by its fast/reset phase)",
@@ -177,6 +204,7 @@ registerExam({
     },
     {
       id: "q13",
+      section: "s3",
       stem: "Which pathway mediates the horizontal VOR? Put it in the correct order.",
       options: [
         "Lateral crista ampullares (of the horizontal semicircular canal) → vestibular nuclei in the medulla → oculomotor nucleus & abducens nucleus",
@@ -190,6 +218,7 @@ registerExam({
     },
     {
       id: "q14",
+      section: "s3",
       stem: "Which pathway mediates the vertical VOR (head moves up → eyes move down, and vice versa)? Put it in the correct order.",
       options: [
         "Superior and posterior crista ampullares → vestibular nuclei in the pons (superior) → oculomotor nucleus & trochlear nucleus",
@@ -203,6 +232,7 @@ registerExam({
     },
     {
       id: "q15",
+      section: "s3",
       stem: "A patient’s head moves UP. What happens to the eyes via the vertical VOR?",
       options: [
         "Eyes move DOWN (compensatory, to keep gaze fixed on the target)",
@@ -216,19 +246,21 @@ registerExam({
     },
     {
       id: "q16",
+      section: "s3",
       stem: "Which nuclei stimulate the medial and lateral rectus muscles for horizontal VOR, based on the vestibular-nuclei-to-extraocular-muscle wiring?",
       options: [
         "Oculomotor nucleus (medial rectus) and abducens nucleus (lateral rectus)",
         "Trochlear nucleus and abducens nucleus",
         "Oculomotor nucleus and trochlear nucleus",
         "Facial nucleus and abducens nucleus",
-        "Vestibular nucleus directly innervates the muscles with no relay Sound-Dampening Mechanism (5 questions)",
+        "Vestibular nucleus directly innervates the muscles with no relay",
       ],
       answer: "A",
       explanation: "The oculomotor nucleus drives the medial rectus (adduction) and the abducens nucleus drives the lateral rectus (abduction) — together producing the conjugate horizontal eye movement of the VOR.",
     },
     {
       id: "q17",
+      section: "s4",
       stem: "What is the physiological purpose of the sound-reduction (“glai lod siang”) mechanism involving the stapedius and tensor tympani reflexes?",
       options: [
         "To inhibit hair cell response to certain frequencies, sharpening perception of other, wanted frequencies — e.g. hearing a friend talk in a noisy room",
@@ -242,6 +274,7 @@ registerExam({
     },
     {
       id: "q18",
+      section: "s4",
       stem: "What does contraction of the stapedius muscle (stapedius reflex) mechanically accomplish?",
       options: [
         "It holds the stapes firm, preventing the oval window from vibrating too vigorously",
@@ -255,6 +288,7 @@ registerExam({
     },
     {
       id: "q19",
+      section: "s4",
       stem: "What does contraction of the tensor tympani muscle accomplish?",
       options: [
         "It holds the malleus firm, adjusting the tension of the tympanic membrane so it doesn’t vibrate too easily, tuning which frequency range is received well",
@@ -268,6 +302,7 @@ registerExam({
     },
     {
       id: "q20",
+      section: "s4",
       stem: "What is the pathway/circuit driving the sound-reduction (stapedius + tensor tympani) reflex, per your professor’s diagram?",
       options: [
         "Cochlear nucleus → superior olivary nucleus → reticular formation → CN V (innervating tensor tympani) and CN VII (innervating stapedius)",
@@ -281,6 +316,7 @@ registerExam({
     },
     {
       id: "q21",
+      section: "s4",
       stem: "A patient has facial nerve (CN VII) damage and develops hyperacusis (sounds seem abnormally loud). Which specific reflex is lost, and why?",
       options: [
         "The stapedius reflex, because CN VII innervates the stapedius muscle",
@@ -294,7 +330,7 @@ registerExam({
     },
     {
       id: "q22",
-      section: "s1",
+      section: "s5",
       stem: "What structure equalizes air pressure between the middle ear cavity and the atmosphere (e.g., the 'ear popping’ sensation during altitude changes)?",
       options: [
         "Eustachian (auditory/pharyngotympanic) tube, connecting the middle ear to the nasopharynx",
@@ -308,7 +344,7 @@ registerExam({
     },
     {
       id: "q23",
-      section: "s1",
+      section: "s5",
       stem: "Blockage of the Eustachian tube (e.g., from an upper respiratory infection) would be expected to cause which type of hearing change?",
       options: [
         "Conductive hearing changes, from altered middle-ear pressure and reduced tympanic membrane mobility",
@@ -322,21 +358,21 @@ registerExam({
     },
     {
       id: "q24",
-      section: "s1",
+      section: "s5",
       stem: "Which best distinguishes the round window’s function from the oval window’s, in the context of pressure within the cochlea?",
       options: [
         "The oval window is where the stapes pushes fluid IN; the round window bulges OUT to release that pressure wave, allowing continued fluid movement",
         "Both windows do exactly the same job",
         "The round window is where sound enters; the oval window releases pressure",
         "Neither window has anything to do with pressure",
-        "The oval window releases CSF pressure, unrelated to sound Cochlear Base/Apex Frequency Tuning (4 questions)",
+        "The oval window releases CSF pressure, unrelated to sound",
       ],
       answer: "A",
       explanation: "The stapes footplate pushes fluid inward at the oval window; because cochlear fluid is incompressible, the round window membrane must bulge outward to accommodate that pressure wave, allowing continuous fluid movement through the cochlea. PROF'S EMPHASIS: Oval = IN (stapes pushes). Round = OUT (releases the wave). This is a completely different pressure system from the Eustachian tube (air pressure) — don’t confuse the two 'pressure’ questions.",
     },
     {
       id: "q25",
-      section: "s1",
+      section: "s6",
       stem: "Which part of the cochlea responds best to HIGH-frequency sound, and why?",
       options: [
         "The base — the basilar membrane there is short and taut (stiff)",
@@ -350,7 +386,7 @@ registerExam({
     },
     {
       id: "q26",
-      section: "s1",
+      section: "s6",
       stem: "Which part of the cochlea responds best to LOW-frequency sound, and why?",
       options: [
         "The apex — the basilar membrane fibers there are long and loose (floppy)",
@@ -364,7 +400,7 @@ registerExam({
     },
     {
       id: "q27",
-      section: "s1",
+      section: "s6",
       stem: "Why is knowing the cochlea’s tonotopic (base=high, apex=low) organization clinically useful when a patient has a middle-ear injury affecting only part of the cochlea?",
       options: [
         "The pattern of which frequencies are lost on a hearing test can localize WHERE along the cochlea the damage occurred",
@@ -378,21 +414,21 @@ registerExam({
     },
     {
       id: "q28",
-      section: "s1",
+      section: "s6",
       stem: "A patient develops high-frequency hearing loss first (as in presbycusis). Based on cochlear tonotopy, which region is most affected?",
       options: [
         "The base of the cochlea",
         "The apex of the cochlea",
         "The vestibule, not the cochlea",
         "The semicircular canals",
-        "The round window membrane exclusively Head Rotation — Which Structure Responds (5 questions)",
+        "The round window membrane exclusively",
       ],
       answer: "A",
       explanation: "High-frequency loss localizes to the cochlear base, which is tuned to high frequencies — matching presbycusis’s classic pattern of cumulative base-first hair cell damage.",
     },
     {
       id: "q29",
-      section: "s1",
+      section: "s7",
       stem: "Rotating the head horizontally (e.g., shaking the head 'no') primarily stimulates which structure?",
       options: [
         "The lateral (horizontal) semicircular canal",
@@ -406,7 +442,7 @@ registerExam({
     },
     {
       id: "q30",
-      section: "s1",
+      section: "s7",
       stem: "Flexing the head to touch the chin toward the shoulder (a diagonal/vertical-plane rotational movement) stimulates which structure, per your professor’s example?",
       options: [
         "Posterior semicircular canal",
@@ -420,7 +456,7 @@ registerExam({
     },
     {
       id: "q31",
-      section: "s1",
+      section: "s7",
       stem: "During which condition do the semicircular canals NOT generate extra afferent nerve impulses above baseline?",
       options: [
         "Constant-velocity rotation (steady-state spinning), because the canals only detect DYNAMIC changes in velocity — acceleration and deceleration — not constant velocity itself",
@@ -434,7 +470,7 @@ registerExam({
     },
     {
       id: "q32",
-      section: "s1",
+      section: "s7",
       stem: "Which vestibular nucleus receives input from the posterior semicircular canal AND the saccule?",
       options: [
         "Inferior vestibular nucleus",
@@ -448,21 +484,21 @@ registerExam({
     },
     {
       id: "q33",
-      section: "s1",
+      section: "s7",
       stem: "Which vestibular nucleus receives input from the superior/lateral semicircular canals AND the utricle?",
       options: [
         "Superior vestibular nucleus",
         "Inferior vestibular nucleus",
         "Dorsal vestibular nucleus (not a standard nucleus)",
         "Only the lateral vestibular nucleus",
-        "None of these structures synapse in the brainstem at all Elevator / Driving — Linear Acceleration (4 questions)",
+        "None of these structures synapse in the brainstem at all",
       ],
       answer: "A",
       explanation: "Per your lecture material, the superior vestibular nucleus receives input from the superior and lateral semicircular canals plus the utricle — the complementary pairing to the inferior vestibular nucleus (posterior canal + saccule).",
     },
     {
       id: "q34",
-      section: "s1",
+      section: "s8",
       stem: "Riding in an elevator that suddenly accelerates upward primarily stimulates which structure?",
       options: [
         "The saccule (vertical linear acceleration)",
@@ -476,7 +512,7 @@ registerExam({
     },
     {
       id: "q35",
-      section: "s1",
+      section: "s8",
       stem: "A car accelerating forward from a stop primarily stimulates which structure?",
       options: [
         "The utricle (horizontal linear acceleration)",
@@ -490,7 +526,7 @@ registerExam({
     },
     {
       id: "q36",
-      section: "s1",
+      section: "s8",
       stem: "What are the otolith organs (utricle and saccule) structurally specialized with, that gives them the inertial mass needed to detect linear acceleration?",
       options: [
         "Otoconia (calcium carbonate crystals) embedded in an otolithic membrane overlying the hair cell stereocilia",
@@ -504,21 +540,21 @@ registerExam({
     },
     {
       id: "q37",
-      section: "s1",
+      section: "s8",
       stem: "Walking forward at a steady pace (repeated small forward accelerations/decelerations with each step) is most associated with stimulation of which structure(s), based on horizontal linear movement?",
       options: [
         "Utricle (macula)",
         "Saccule (macula)",
         "Posterior semicircular canal",
         "Superior semicircular canal",
-        "Cochlea PART 2 — Eye",
+        "Cochlea",
       ],
       answer: "A",
-      explanation: "Walking forward involves horizontal linear acceleration/deceleration with each stride, detected by the utricle, consistent with the same horizontal-linear-acceleration logic as a car pulling away. PROF'S EMPHASIS: Anchor this with the same rule as 'driving a car’ — forward/horizontal linear acceleration always points to the utricle. PART 2 — Eye",
+      explanation: "Walking forward involves horizontal linear acceleration/deceleration with each stride, detected by the utricle, consistent with the same horizontal-linear-acceleration logic as a car pulling away. PROF'S EMPHASIS: Anchor this with the same rule as 'driving a car’ — forward/horizontal linear acceleration always points to the utricle.",
     },
     {
       id: "q38",
-      section: "s2",
+      section: "s9",
       stem: "The eye is composed of three tissue layers (tunics). Which layer is the middle layer, and what does it consist of?",
       options: [
         "Tunica vasculosa (uvea) — choroid, ciliary body, and iris",
@@ -532,7 +568,7 @@ registerExam({
     },
     {
       id: "q39",
-      section: "s2",
+      section: "s9",
       stem: "Which layer of the eye is primarily responsible for ABSORBING stray light, preventing internal scatter/reflection that would blur the image?",
       options: [
         "Choroid (heavily pigmented, part of the tunica vasculosa)",
@@ -546,7 +582,7 @@ registerExam({
     },
     {
       id: "q40",
-      section: "s2",
+      section: "s9",
       stem: "Which structure actually converts light energy into a nerve impulse (phototransduction)?",
       options: [
         "Photoreceptor cells (rods and cones) in the retina, via their photopigments",
@@ -560,7 +596,7 @@ registerExam({
     },
     {
       id: "q41",
-      section: "s2",
+      section: "s9",
       stem: "Put the phototransduction cascade events in the CORRECT order, from light hitting the photopigment to the final electrical change.",
       options: [
         "Structural change of the photopigment → activation of transducin → activation of phosphodiesterase → decreased intracellular cGMP → closure of Na+ channel",
@@ -574,7 +610,7 @@ registerExam({
     },
     {
       id: "q42",
-      section: "s2",
+      section: "s9",
       stem: "Unlike most sensory receptors, photoreceptors respond to their stimulus (light) with which membrane change?",
       options: [
         "Hyperpolarization (light closes Na+ channels, reducing the dark current)",
@@ -588,7 +624,7 @@ registerExam({
     },
     {
       id: "q43",
-      section: "s2",
+      section: "s9",
       stem: "Which retinal cell layer contains the cell bodies of the photoreceptors themselves?",
       options: [
         "Outer nuclear layer",
@@ -602,21 +638,21 @@ registerExam({
     },
     {
       id: "q44",
-      section: "s2",
+      section: "s9",
       stem: "Correctly order the retinal layers from the rod/cone layer toward the optic nerve fiber layer.",
       options: [
         "Rods/cones → outer nuclear layer → inner nuclear layer → ganglion cell layer → optic nerve fiber layer",
         "Rods/cones → inner nuclear layer → outer nuclear layer → ganglion cell layer → optic nerve fiber layer",
         "Rods/cones → ganglion cell layer → inner nuclear layer → optic nerve fiber layer",
         "Rods/cones → outer nuclear layer → ganglion cell layer → inner nuclear layer → optic nerve fiber layer",
-        "Optic nerve fiber layer → ganglion cell layer → inner nuclear layer → outer nuclear layer → rods/cones (reverse order) Visual Pathway Lesions — Specific Terminology (10 questions)",
+        "Optic nerve fiber layer → ganglion cell layer → inner nuclear layer → outer nuclear layer → rods/cones (reverse order)",
       ],
       answer: "A",
       explanation: "Correct order from photoreceptor segments toward the vitreous: rods/cones → outer nuclear layer (photoreceptor bodies) → inner nuclear layer (bipolar/horizontal/amacrine bodies) → ganglion cell layer → optic nerve fiber layer.",
     },
     {
       id: "q45",
-      section: "s2",
+      section: "s10",
       stem: "A lesion of the OPTIC NERVE (before the chiasm) causes which type of visual field defect?",
       options: [
         "Monocular blindness (or a monocular field defect) in the eye on the same side as the lesion",
@@ -630,7 +666,7 @@ registerExam({
     },
     {
       id: "q46",
-      section: "s2",
+      section: "s10",
       stem: "A lesion at the MIDLINE of the optic chiasm (e.g., from a pituitary tumor pressing upward) classically causes which visual field defect?",
       options: [
         "Bitemporal heteronymous hemianopia",
@@ -644,7 +680,7 @@ registerExam({
     },
     {
       id: "q47",
-      section: "s2",
+      section: "s10",
       stem: "A lesion at the LATERAL part of the optic chiasm (e.g., bilateral compressive lesions from the sides) classically causes which visual field defect?",
       options: [
         "Binasal heteronymous hemianopia",
@@ -658,7 +694,7 @@ registerExam({
     },
     {
       id: "q48",
-      section: "s2",
+      section: "s10",
       stem: "A lesion of the OPTIC TRACT (just after the chiasm) causes which visual field defect?",
       options: [
         "Homonymous hemianopia (complete half-field loss in both eyes, on the side opposite the lesion), WITHOUT macular sparing",
@@ -672,7 +708,7 @@ registerExam({
     },
     {
       id: "q49",
-      section: "s2",
+      section: "s10",
       stem: "A lesion of the OPTIC RADIATION (complete, affecting both the parietal and temporal fibers) causes which visual field defect?",
       options: [
         "Homonymous hemianopia (on the side opposite the lesion)",
@@ -686,7 +722,7 @@ registerExam({
     },
     {
       id: "q50",
-      section: "s2",
+      section: "s10",
       stem: "A SELECTIVE lesion of the optic radiation fibers (i.e., only part of it, such as Meyer’s loop alone) causes which visual field defect?",
       options: [
         "A quadrantanopia (loss of one specific quadrant of the visual field)",
@@ -700,7 +736,7 @@ registerExam({
     },
     {
       id: "q51",
-      section: "s2",
+      section: "s10",
       stem: "Which structure, if damaged, produces a homonymous hemianopia WITH macular sparing — the pattern your professor specifically emphasizes?",
       options: [
         "The occipital (visual) cortex — because the macular region has a dual blood supply (both MCA and PCA collateral flow), it’s often spared even when the rest of the visual cortex is infarcted",
@@ -714,7 +750,7 @@ registerExam({
     },
     {
       id: "q52",
-      section: "s2",
+      section: "s10",
       stem: "A patient has a RIGHT occipital lobe infarct (PCA territory). What visual field defect is expected?",
       options: [
         "Left homonymous hemianopia WITH macular sparing",
@@ -728,7 +764,7 @@ registerExam({
     },
     {
       id: "q53",
-      section: "s2",
+      section: "s10",
       stem: "A lesion of the RIGHT Meyer’s loop (temporal lobe portion of the optic radiation) causes which specific visual field defect?",
       options: [
         "Left homonymous SUPERIOR quadrantanopia (pie in the sky)",
@@ -742,21 +778,21 @@ registerExam({
     },
     {
       id: "q54",
-      section: "s2",
+      section: "s10",
       stem: "A lesion of the PARIETAL lobe fibers of the optic radiation (superior fibers, NOT Meyer’s loop) causes which visual field defect?",
       options: [
         "A contralateral INFERIOR quadrantanopia (pie on the floor)",
         "A contralateral SUPERIOR quadrantanopia",
         "A complete homonymous hemianopia always",
         "Bitemporal hemianopia",
-        "No visual field defect Meyer's Loop & Macula Sparing — Prof's Emphasis (5 questions)",
+        "No visual field defect",
       ],
       answer: "A",
       explanation: "Parietal lobe optic radiation fibers carry the contralateral INFERIOR visual field — damage here gives the mirror-image quadrant defect to a Meyer’s loop lesion.",
     },
     {
       id: "q55",
-      section: "s2",
+      section: "s11",
       stem: "Why does the OPTIC TRACT lesion NOT spare the macula, while an OCCIPITAL CORTEX lesion classically DOES?",
       options: [
         "The optic tract is a single, compact bundle with a single blood supply and no built-in redundancy for any part of the visual field, including the macula; the occipital cortex’s macular representation specifically benefits from dual (MCA + PCA) blood supply not available further upstream",
@@ -770,7 +806,7 @@ registerExam({
     },
     {
       id: "q56",
-      section: "s2",
+      section: "s11",
       stem: "A 65-year-old patient has a stroke and is found to have a complete left homonymous hemianopia, but central (macular) vision is preserved in both eyes. Where does this localize the lesion, and to which side?",
       options: [
         "Right occipital cortex (likely right PCA territory)",
@@ -784,7 +820,7 @@ registerExam({
     },
     {
       id: "q57",
-      section: "s2",
+      section: "s11",
       stem: "A lesion of the right optic tract (as opposed to the right occipital cortex) causes left homonymous hemianopia. What KEY difference distinguishes this from a right occipital cortex lesion on exam?",
       options: [
         "The optic tract lesion does NOT spare the macula, while the occipital cortex lesion classically DOES",
@@ -798,7 +834,7 @@ registerExam({
     },
     {
       id: "q58",
-      section: "s2",
+      section: "s11",
       stem: "Which best describes why 'macula sparing’ is clinically valuable, beyond just being a testable fact?",
       options: [
         "It helps localize a homonymous hemianopia to the cortex (implying a vascular/PCA stroke mechanism) rather than to the optic tract (implying a different, often compressive or different-vascular-territory process), guiding further workup",
@@ -812,21 +848,21 @@ registerExam({
     },
     {
       id: "q59",
-      section: "s2",
+      section: "s11",
       stem: "Combining what you know: a patient has a LEFT homonymous INFERIOR quadrantanopia. Which structure is most likely damaged, and on which side?",
       options: [
         "Right parietal lobe optic radiation fibers (carrying the contralateral inferior field)",
         "Right Meyer’s loop (temporal lobe)",
         "Left parietal lobe optic radiation fibers",
         "Left Meyer’s loop",
-        "Right occipital cortex, complete PART 3 — Ear Development Tri-Germ-Layer Structures (Tympanic Membrane) (4 questions)",
+        "Right occipital cortex, complete",
       ],
       answer: "A",
       explanation: "Inferior quadrant defects come from PARIETAL lobe optic radiation fibers (not Meyer’s loop, which gives superior defects); since it’s a homonymous (post-chiasmal) defect on the LEFT, the lesion must be on the RIGHT side. PROF'S EMPHASIS: Work every quadrantanopia question the same way: (1) which quadrant is affected? (2) is it superior (temporal/Meyer’s) or inferior (parietal)? (3) which SIDE (opposite the lesion, since it’s homonymous/post-chiasmal)? Three-step logic, every time, rather than memorizing each combination as a separate fact.",
     },
     {
       id: "q60",
-      section: "s2",
+      section: "s12",
       stem: "The tympanic membrane (eardrum) is a rare structure that develops from all THREE germ layers. Match each layer to the tympanic membrane component it forms.",
       options: [
         "Outer layer = ectoderm (from the 1st pharyngeal cleft); middle layer = mesoderm (fibrous connective tissue); inner layer = endoderm (from the 1st pharyngeal pouch)",
@@ -840,7 +876,7 @@ registerExam({
     },
     {
       id: "q61",
-      section: "s2",
+      section: "s12",
       stem: "Which structure marks the boundary between the ectoderm-derived external ear and the endoderm-derived middle ear during development?",
       options: [
         "The tympanic membrane",
@@ -854,7 +890,7 @@ registerExam({
     },
     {
       id: "q62",
-      section: "s2",
+      section: "s12",
       stem: "Which ear structures develop from the first pharyngeal CLEFT (ectoderm)?",
       options: [
         "The external auditory meatus (and contributes to the outer layer of the tympanic membrane)",
@@ -868,21 +904,21 @@ registerExam({
     },
     {
       id: "q63",
-      section: "s2",
+      section: "s12",
       stem: "Which ear structures develop from the first pharyngeal POUCH (endoderm)?",
       options: [
         "The tympanic cavity (middle ear space) and auditory (Eustachian) tube, plus the inner epithelial layer of the tympanic membrane",
         "The external auditory meatus",
         "The pinna cartilage",
         "The cochlear duct",
-        "The vestibular nerve Ectoderm / Mesoderm / Endoderm — General Derivatives (6 questions)",
+        "The vestibular nerve",
       ],
       answer: "A",
       explanation: "The first pharyngeal pouch, lined by endoderm, expands to form the tympanic cavity and auditory tube, and contributes the inner epithelial lining of the tympanic membrane — the endodermal counterpart to the ectodermal external ear.",
     },
     {
       id: "q64",
-      section: "s2",
+      section: "s13",
       stem: "In general terms, what does surface ECTODERM give rise to, among structures relevant to the special senses?",
       options: [
         "Lens of the eye, corneal epithelium, external ear/auditory meatus, olfactory epithelium, and (with endoderm/mesoderm) the outer tympanic membrane layer",
@@ -896,7 +932,7 @@ registerExam({
     },
     {
       id: "q65",
-      section: "s2",
+      section: "s13",
       stem: "What does NEUROectoderm give rise to, among special-sense structures?",
       options: [
         "The retina, optic nerve, and the otic vesicle/membranous labyrinth (inner ear) — both being direct outgrowths of neural tissue",
@@ -910,7 +946,7 @@ registerExam({
     },
     {
       id: "q66",
-      section: "s2",
+      section: "s13",
       stem: "What does MESODERM contribute to the special sense organs?",
       options: [
         "Connective tissue and vascular contributions — e.g., the fibrous/vascular coats of the eye, the middle layer of the tympanic membrane, and (with neural crest) much of the periocular/perilabyrinthine mesenchyme",
@@ -924,7 +960,7 @@ registerExam({
     },
     {
       id: "q67",
-      section: "s2",
+      section: "s13",
       stem: "What does ENDODERM contribute to the ear, specifically?",
       options: [
         "The middle ear cavity (tympanic cavity) and auditory tube, plus the inner layer of the tympanic membrane, all via the first pharyngeal pouch",
@@ -938,7 +974,7 @@ registerExam({
     },
     {
       id: "q68",
-      section: "s2",
+      section: "s13",
       stem: "Which eye structures are neural CREST derivatives (as opposed to surface ectoderm, neuroectoderm, or mesoderm proper)?",
       options: [
         "Corneal endothelium, choroid, sclera, and much of the corneal stroma",
@@ -952,21 +988,21 @@ registerExam({
     },
     {
       id: "q69",
-      section: "s2",
+      section: "s13",
       stem: "True or false framing: since the tympanic membrane draws on all three germ layers, which single statement correctly captures why this is considered a notable/unusual embryological fact worth testing?",
       options: [
         "Most individual adult structures are derived from predominantly ONE germ layer; the tympanic membrane is a rare example of a single structure requiring coordinated contribution from all three (ectoderm, mesoderm, endoderm), reflecting its position exactly at the ectoderm/endoderm boundary between external and middle ear",
         "All structures in the body draw equally from all three germ layers, so this is not actually unusual",
         "The tympanic membrane is entirely mesodermal and this is a trick question",
         "Germ layer origin has no bearing on adult structure at all",
-        "This fact applies to every membrane in the body equally PART 4 — Somatosense Protopathic vs. Epicritic Sensation (5 questions)",
+        "This fact applies to every membrane in the body equally",
       ],
       answer: "A",
-      explanation: "Most mature structures trace predominantly to a single germ layer (or germ layer + neural crest); the tympanic membrane’s requirement for all three primary germ layers is what makes it a favorite 'integrative embryology’ teaching example — a direct physical record of it forming exactly at the ecto/endoderm boundary between the pharyngeal cleft and pouch. PART 4 — Somatosense Protopathic vs.",
+      explanation: "Most mature structures trace predominantly to a single germ layer (or germ layer + neural crest); the tympanic membrane’s requirement for all three primary germ layers is what makes it a favorite 'integrative embryology’ teaching example — a direct physical record of it forming exactly at the ecto/endoderm boundary between the pharyngeal cleft and pouch.",
     },
     {
       id: "q70",
-      section: "s2",
+      section: "s14",
       stem: "Which sensations are classified as PROTOPATHIC (affective) sensation, per your professor’s table?",
       options: [
         "Pain, hot & cold (temperature extremes), crude/gross touch",
@@ -980,7 +1016,7 @@ registerExam({
     },
     {
       id: "q71",
-      section: "s2",
+      section: "s14",
       stem: "Which sensations are classified as DISCRIMINATIVE (epicritic) sensation?",
       options: [
         "Fine/light touch, pressure, vibration, two-point discrimination, and proprioceptive sense",
@@ -994,7 +1030,7 @@ registerExam({
     },
     {
       id: "q72",
-      section: "s2",
+      section: "s14",
       stem: "Structurally, how do protopathic and epicritic receptors/fibers differ?",
       options: [
         "Protopathic: no receptor covering, nonmyelinated axon, branching nerve endings. Epicritic: receptor has a covering/capsule, myelinated axon, NO branching of the nerve ending",
@@ -1008,7 +1044,7 @@ registerExam({
     },
     {
       id: "q73",
-      section: "s2",
+      section: "s14",
       stem: "Within the dorsal root of a spinal nerve, epicritic and protopathic fibers enter via different divisions. Which is correct?",
       options: [
         "Epicritic fibers (large, myelinated) enter the MEDIAL division of the posterior rootlet; protopathic fibers (small, nonmyelinated) enter the LATERAL division",
@@ -1022,21 +1058,21 @@ registerExam({
     },
     {
       id: "q74",
-      section: "s2",
+      section: "s14",
       stem: "Within the dorsal root/spinal cord entry zone, sensory fiber types are also organized medial-to-lateral by MODALITY. Which is the correct medial-to-lateral order?",
       options: [
         "Unconscious proprioception → conscious proprioception → touch/pressure → pain & temperature",
         "Pain & temperature → touch/pressure → conscious proprioception → unconscious proprioception",
         "Touch/pressure → pain & temperature → proprioception (both types)",
         "All modalities enter at the exact same mediolateral position",
-        "Pain & temperature → unconscious proprioception → conscious proprioception → touch/pressure The Four Types of Pain (6 questions)",
+        "Pain & temperature → unconscious proprioception → conscious proprioception → touch/pressure",
       ],
       answer: "A",
       explanation: "Per your lecture’s diagram, the medial-to-lateral order at the dorsal root entry zone is: unconscious proprioception, then conscious proprioception, then touch/pressure, then pain & temperature (most lateral) — consistent with pain/temperature being protopathic (lateral-entering) fibers. PROF'S EMPHASIS: Medial-to-lateral: (unconscious) proprioception → (conscious) proprioception → touch/pressure → pain/temperature. Pain and temperature fibers are the MOST LATERAL of the group — consistent with protopathic fibers entering the lateral division discussed above.",
     },
     {
       id: "q75",
-      section: "s2",
+      section: "s15",
       stem: "Your professor’s lecture describes FOUR types of pain. Which of the following correctly lists all four?",
       options: [
         "Superficial pain (with fast and slow subtypes), Deep pain, Visceral pain, and Referred pain",
@@ -1050,7 +1086,7 @@ registerExam({
     },
     {
       id: "q76",
-      section: "s2",
+      section: "s15",
       stem: "SUPERFICIAL pain arises from which germ layer, and what are its two subtypes?",
       options: [
         "Ectoderm; fast pain (myelinated A-delta fibers, sharp/well-localized) and slow pain (unmyelinated C fibers, dull/poorly localized)",
@@ -1064,7 +1100,7 @@ registerExam({
     },
     {
       id: "q77",
-      section: "s2",
+      section: "s15",
       stem: "DEEP pain arises from which germ layer and which structures, and what is its characteristic clinical presentation?",
       options: [
         "Mesoderm; from muscle, tendon, joint, periosteum, and ligament (e.g., ischemia/muscle cramp); poorly localized, deep/dull ache over a wide area, often WITH autonomic symptoms (nausea, sweating, low BP, slow HR)",
@@ -1078,7 +1114,7 @@ registerExam({
     },
     {
       id: "q78",
-      section: "s2",
+      section: "s15",
       stem: "VISCERAL pain has which characteristic features, per your lecture?",
       options: [
         "Triggered by mechanical distension or ischemia; few receptors so poorly localized; conducted via CN VII, IX, X and the autonomic nervous system to the thalamus and then postcentral gyrus (areas 3,1,2)",
@@ -1092,7 +1128,7 @@ registerExam({
     },
     {
       id: "q79",
-      section: "s2",
+      section: "s15",
       stem: "What is REFERRED pain, and what theory explains it?",
       options: [
         "Somatic pain felt in a body region that shares the same dermatome as an internal organ experiencing visceral or deep pain, explained by convergence theory and facilitation theory",
@@ -1106,21 +1142,21 @@ registerExam({
     },
     {
       id: "q80",
-      section: "s2",
+      section: "s15",
       stem: "Which theory of referred pain proposes that visceral and somatic sensory afferents converge onto the SAME second-order (or higher) neuron in the CNS, causing the brain to misattribute the pain’s true source?",
       options: [
         "Convergence theory",
         "Facilitation theory (exclusively, with no role for convergence)",
         "Gate-control theory",
         "Specificity theory",
-        "Pattern theory Muscle Spindle & Golgi Tendon Organ — Fiber Types (6 questions)",
+        "Pattern theory",
       ],
       answer: "A",
       explanation: "Convergence theory explains referred pain via shared second-order (or higher) neurons receiving input from both the affected viscera/deep structure AND a separate somatic dermatome — since the brain can’t distinguish which source triggered the shared neuron, pain is perceived as coming from the somatic region instead.",
     },
     {
       id: "q81",
-      section: "s2",
+      section: "s16",
       stem: "Which afferent fiber type detects stretch of the muscle SPINDLE (intrafusal fibers)?",
       options: [
         "Ia afferent fiber",
@@ -1134,7 +1170,7 @@ registerExam({
     },
     {
       id: "q82",
-      section: "s2",
+      section: "s16",
       stem: "Which afferent fiber type detects stretch/tension of the GOLGI TENDON ORGAN?",
       options: [
         "Ib afferent fiber",
@@ -1148,7 +1184,7 @@ registerExam({
     },
     {
       id: "q83",
-      section: "s2",
+      section: "s16",
       stem: "Regarding the Achilles tendon reflex, which statement is correct?",
       options: [
         "The receptor is the muscle spindle (not the Golgi tendon organ, despite the tendon in the name)",
@@ -1162,7 +1198,7 @@ registerExam({
     },
     {
       id: "q84",
-      section: "s2",
+      section: "s16",
       stem: "Regarding nuclear bag and nuclear chain intrafusal fibers within the muscle spindle, which correctly describes their afferent innervation?",
       options: [
         "Nuclear bag fibers carry both static and dynamic responses (Ia primary afferent, with dynamic bag fibers giving the dynamic component); nuclear chain fibers carry mainly static response (Ia and II afferents)",
@@ -1176,7 +1212,7 @@ registerExam({
     },
     {
       id: "q85",
-      section: "s2",
+      section: "s16",
       stem: "What is the function of GAMMA motor neurons in relation to the muscle spindle?",
       options: [
         "They maintain the sensitivity of the muscle spindle (by adjusting intrafusal fiber tension) during muscle shortening, so the spindle keeps detecting stretch even as the whole muscle contracts",
@@ -1190,21 +1226,21 @@ registerExam({
     },
     {
       id: "q86",
-      section: "s2",
+      section: "s16",
       stem: "When dynamic gamma motor neurons are co-activated together with alpha motor neurons during a voluntary contraction, what is the effect on Ia afferent firing, compared to alpha activation alone?",
       options: [
         "MORE Ia impulses are generated (gamma coactivation keeps the spindle taut and responsive, preventing it from falling silent as the muscle shortens)",
         "FEWER Ia impulses are generated",
         "Ia inhibition occurs completely, silencing the afferent",
         "Clonus always results",
-        "The muscle fails to contract at all Free Nerve Ending + A-delta / C Fibers (4 questions)",
+        "The muscle fails to contract at all",
       ],
       answer: "A",
       explanation: "Alpha-gamma coactivation means that as alpha motor neurons drive extrafusal contraction (shortening the whole muscle), gamma motor neurons simultaneously contract the intrafusal fibers, keeping spindle tension/sensitivity high — resulting in MORE, not fewer, Ia impulses than alpha activation alone would produce.",
     },
     {
       id: "q87",
-      section: "s2",
+      section: "s17",
       stem: "Free nerve endings are found in the clefts between epidermal cells and convey which type of information?",
       options: [
         "Nociceptive (pain) and thermal information related to cellular injury",
@@ -1218,7 +1254,7 @@ registerExam({
     },
     {
       id: "q88",
-      section: "s2",
+      section: "s17",
       stem: "A pinprick to the skin activates which fiber type FIRST, producing fast/first pain?",
       options: [
         "A-delta fibers",
@@ -1232,7 +1268,7 @@ registerExam({
     },
     {
       id: "q89",
-      section: "s2",
+      section: "s17",
       stem: "A dull, persistent ache that follows a muscle pull results from activation of which fiber type?",
       options: [
         "C fibers",
@@ -1246,7 +1282,7 @@ registerExam({
     },
     {
       id: "q90",
-      section: "s2",
+      section: "s17",
       stem: "Which chemical mediators are associated with activating/sensitizing free nerve ending nociceptors, per your lecture?",
       options: [
         "Histamine, substance P, prostaglandin, and K+",
@@ -1260,7 +1296,7 @@ registerExam({
     },
     {
       id: "q91",
-      section: "s3",
+      section: "s18",
       stem: "Which THREE major ascending sensory pathways carry general somatic afferent (GSA) information (touch, pressure, vibration, pain, temperature, stretch/position)?",
       options: [
         "(1) Anterolateral system (anterior + lateral spinothalamic tracts), (2) Dorsal column-medial lemniscus system (fasciculus gracilis + cuneatus), (3) Somatosensory-to-cerebellum pathways (ventral/dorsal spinocerebellar, cuneocerebellar)",
@@ -1274,7 +1310,7 @@ registerExam({
     },
     {
       id: "q92",
-      section: "s3",
+      section: "s18",
       stem: "Which tract carries CONSCIOUS proprioception, fine/discriminative touch, and vibration sense?",
       options: [
         "Dorsal column-medial lemniscus pathway (fasciculus gracilis + cuneatus)",
@@ -1288,7 +1324,7 @@ registerExam({
     },
     {
       id: "q93",
-      section: "s3",
+      section: "s18",
       stem: "Which tract carries pain and temperature sensation, and where does it cross the midline?",
       options: [
         "Lateral spinothalamic tract, crossing within 1-2 segments of entering the cord (via the anterior white commissure)",
@@ -1302,7 +1338,7 @@ registerExam({
     },
     {
       id: "q94",
-      section: "s3",
+      section: "s18",
       stem: "Which somatosensory tract synapses at Clarke’s nucleus, carrying UNCONSCIOUS proprioception from the lower limb to the cerebellum?",
       options: [
         "Dorsal spinocerebellar tract",
@@ -1316,7 +1352,7 @@ registerExam({
     },
     {
       id: "q95",
-      section: "s3",
+      section: "s18",
       stem: "Regarding touch sensation specifically, which statement correctly identifies the SECOND-order neuron’s synapse location?",
       options: [
         "The second-order neuron for touch (via the dorsal column pathway) synapses in the cuneate (or gracile) nucleus of the brainstem/medulla",
@@ -1330,7 +1366,7 @@ registerExam({
     },
     {
       id: "q96",
-      section: "s3",
+      section: "s18",
       stem: "For touch sensation, in which structure does the FOURTH-order neuron reside?",
       options: [
         "Primary somatosensory (somesthetic) area of the cerebral cortex",
@@ -1344,7 +1380,7 @@ registerExam({
     },
     {
       id: "q97",
-      section: "s3",
+      section: "s18",
       stem: "Which tract carries pain and temperature information from the FACE (via the spinal trigeminal nucleus), functionally analogous to the spinothalamic tract for the body?",
       options: [
         "Ventral trigeminothalamic tract",
@@ -1358,7 +1394,7 @@ registerExam({
     },
     {
       id: "q98",
-      section: "s4",
+      section: "s19",
       stem: "What is the correct taste (gustatory) pathway from receptor to cortex?",
       options: [
         "Taste receptor cells (CN VII, IX, X) → Geniculate/Petrosal/Inferior(nodose) ganglia → Solitary nucleus (rostral/upper part) → Solitary tract → VPM of thalamus → Gustatory area of cerebral cortex (area 43, near the midline)",
@@ -1372,7 +1408,7 @@ registerExam({
     },
     {
       id: "q99",
-      section: "s4",
+      section: "s19",
       stem: "Which ganglia house the first-order taste neurons for CN VII, IX, and X respectively?",
       options: [
         "CN VII = Geniculate ganglion; CN IX = Petrosal ganglion; CN X = Inferior (nodose) ganglion",
@@ -1386,7 +1422,7 @@ registerExam({
     },
     {
       id: "q100",
-      section: "s4",
+      section: "s19",
       stem: "Which part of the solitary nucleus specifically handles TASTE information, as opposed to general visceral/cardiorespiratory information?",
       options: [
         "The rostral (upper) part of the solitary nucleus",
@@ -1400,7 +1436,7 @@ registerExam({
     },
     {
       id: "q101",
-      section: "s4",
+      section: "s19",
       stem: "What is the medical term for an unpleasant or distorted taste sensation?",
       options: [
         "Dysgeusia",
@@ -1414,7 +1450,7 @@ registerExam({
     },
     {
       id: "q102",
-      section: "s4",
+      section: "s19",
       stem: "Which stem cell type regenerates sensory receptor cells in BOTH the tongue (taste buds) and the olfactory epithelium?",
       options: [
         "Basal cells",

@@ -43,6 +43,34 @@ PASS_MARK = 60
 
 PAGE_FURNITURE = r'^\s*Page\s+\d+\s*$|^\s*\d{1,3}\s*$'
 
+# Headings every paper shares a shape for, whatever its own section_re says:
+# "PART 3 — Ear Development", "Taste (Gustatory) Pathway (5 questions)",
+# "SECTION B -- Gross Anatomy". Recognising these keeps them out of the option
+# and explanation text even where a paper's own pattern does not describe them.
+GENERIC_SECTION = re.compile(
+    r'^(?:PART\s+\d+\s*[—–-].*'
+    r'|.{3,80}\(\d+\s+questions?\)'
+    r'|SECTION\s+[A-Z0-9]+\s*(?:--|—|–).*'
+    r'|Section\s+\d+\s*[·•].*)$'
+)
+
+
+# A heading can wrap onto a second line, so its first line lacks the trailing
+# "(12 questions)" that GENERIC_SECTION looks for. These prefixes catch the
+# opening line; the rest is swallowed until the next question or option.
+SECTION_START = re.compile(
+    r'^(?:PART\s+\d+\s*[—–-]'
+    r'|Lectures?\s+[\d\s,–—-]+[—–-]\s*\S'
+    r'|SECTION\s+[A-Z0-9]+\s*(?:--|—|–)'
+    r'|Section\s+\d+\s*[·•])'
+)
+
+
+def is_section(line, section_re):
+    return bool((section_re and section_re.match(line))
+                or GENERIC_SECTION.match(line)
+                or SECTION_START.match(line))
+
 PAPERS = [
     {
         'file': 'MDS211 SA1 MockExam 77Q.pdf',
@@ -301,6 +329,7 @@ def parse_questions(lines, cfg):
     section_re = re.compile(cfg['section_re']) if cfg.get('section_re') else None
     questions = []
     section = None
+    section_parts = []
     cur = None            # question being built
     target = None         # 'stem' or an option dict
 
@@ -308,9 +337,10 @@ def parse_questions(lines, cfg):
         if not line:
             continue
 
-        if section_re and section_re.match(line):
+        if is_section(line, section_re):
+            section_parts = [line]
             section = tidy_section(line)
-            target = None
+            target = 'section'      # keep eating until a question or option starts
             continue
 
         if NOISE_RE.match(line):
@@ -337,7 +367,10 @@ def parse_questions(lines, cfg):
             target = opt
             continue
 
-        if target == 'stem':
+        if target == 'section':
+            section_parts.append(line)
+            section = tidy_section(' '.join(section_parts))
+        elif target == 'stem':
             cur['stem_parts'].append(line)
         elif isinstance(target, dict):
             target['parts'].append(line)
@@ -412,7 +445,7 @@ def parse_key(lines, cfg, raw_lines=None):
         # The key repeats the paper's section headings between entries. Without
         # this they land on the end of the preceding explanation — and because a
         # heading can wrap onto a second line, skip until the next entry starts.
-        if section_re and section_re.match(line):
+        if is_section(line, section_re):
             skipping = True
             continue
         if skipping:

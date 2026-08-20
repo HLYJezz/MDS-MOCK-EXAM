@@ -26,8 +26,9 @@ registerExam({
     { id: "s11", title: "Lecture 11 — Special Sense Organs: Histology & Development" },
     { id: "s12", title: "Lecture 12 — Somatosensory Pathways" },
     { id: "s13", title: "Lecture 13 — Taste, Sensory Receptors & Neurotransmitters" },
-    { id: "s14", title: "Lecture 15 — Visual System" },
-    { id: "s15", title: "Lecture 16 — Auditory & Vestibular Systems" },
+    { id: "s14", title: "Lecture 14 — Sensory Receptors, Neurotransmitters & Pharmacology" },
+    { id: "s15", title: "Lecture 15 — Visual System" },
+    { id: "s16", title: "Lecture 16 — Auditory & Vestibular Systems" },
   ],
   questions: [
     {
@@ -3350,7 +3351,7 @@ registerExam({
     },
     {
       id: "q238",
-      section: "s13",
+      section: "s14",
       stem: "A woman presents with depressive symptoms and suicidal thoughts. Which neurotransmitter is classically implicated as abnormal in this case?",
       options: [
         "Glutamate",
@@ -3364,7 +3365,7 @@ registerExam({
     },
     {
       id: "q239",
-      section: "s13",
+      section: "s14",
       stem: "What is the mechanism of action of botulinum toxin?",
       options: [
         "Increased sodium channel activity at the presynaptic neuron",
@@ -3378,7 +3379,7 @@ registerExam({
     },
     {
       id: "q240",
-      section: "s13",
+      section: "s14",
       stem: "An 80-year-old man has progressive short-term memory loss and word-finding difficulty, diagnosed with Alzheimer disease. Which statement about its pathogenesis is INCORRECT?",
       options: [
         "Atrophy of gyri in the cerebral cortex",
@@ -3392,7 +3393,7 @@ registerExam({
     },
     {
       id: "q241",
-      section: "s13",
+      section: "s14",
       stem: "A patient arrives with continuous generalized tonic-clonic seizures for 15 minutes (status epilepticus). What is the most appropriate FIRST-line treatment?",
       options: [
         "Diazepam (benzodiazepine)",
@@ -3406,7 +3407,7 @@ registerExam({
     },
     {
       id: "q242",
-      section: "s13",
+      section: "s14",
       stem: "The summation of EPSPs arriving from numerous different presynaptic fibers converging onto the same postsynaptic neuron at roughly the same moment is called:",
       options: [
         "Spatial summation",
@@ -3420,7 +3421,7 @@ registerExam({
     },
     {
       id: "q243",
-      section: "s13",
+      section: "s14",
       stem: "A 20-year-old college student has depressive symptoms including sleep disturbance and anorexia for 1 month, with no prior mood disorder history. What is the mechanism of the drug most appropriate for this patient (an SSRI)?",
       options: [
         "Stimulation of GABA receptors",
@@ -3434,7 +3435,7 @@ registerExam({
     },
     {
       id: "q244",
-      section: "s13",
+      section: "s14",
       stem: "A woman presents with progressive muscle weakness, dysphagia, and ptosis that worsens with repeated blinking. Which finding is most likely present?",
       options: [
         "Ryanodine receptor antibody",
@@ -3448,7 +3449,7 @@ registerExam({
     },
     {
       id: "q245",
-      section: "s13",
+      section: "s14",
       stem: "A 45-year-old man has a deep gardening wound, then develops jaw stiffness (lockjaw) and muscle spasms. Which mechanism best explains the responsible toxin’s action?",
       options: [
         "Directly inhibits neurotransmitter release at the neuromuscular junction",
@@ -3461,7 +3462,7 @@ registerExam({
     },
     {
       id: "q246",
-      section: "s13",
+      section: "s14",
       stem: "A chemotherapy patient has nausea and vomiting. Which antiemetic receptor target is most appropriate?",
       options: [
         "5-HT3 receptor (e.g., ondansetron)",
@@ -3475,7 +3476,7 @@ registerExam({
     },
     {
       id: "q247",
-      section: "s13",
+      section: "s14",
       stem: "Which of the following agents does NOT stimulate nociceptors (i.e., is not itself an inflammatory/pain-sensitizing mediator)?",
       options: [
         "Prostaglandin",
@@ -3489,7 +3490,7 @@ registerExam({
     },
     {
       id: "q248",
-      section: "s13",
+      section: "s14",
       stem: "What is the term for the time delay between an action potential arriving at a presynaptic terminal and its effect on the postsynaptic membrane?",
       options: [
         "Synaptic delay",
@@ -3500,7 +3501,7 @@ registerExam({
     },
     {
       id: "q249",
-      section: "s13",
+      section: "s14",
       stem: "Which of the following receptors is ionotropic (directly gates an ion channel upon ligand binding)?",
       options: [
         "AMPA receptor",
@@ -3513,7 +3514,7 @@ registerExam({
     },
     {
       id: "q250",
-      section: "s13",
+      section: "s14",
       stem: "What is the mechanism of fluoxetine?",
       options: [
         "Selective serotonin reuptake inhibitor (blocks SERT)",
@@ -3525,7 +3526,7 @@ registerExam({
     },
     {
       id: "q251",
-      section: "s13",
+      section: "s14",
       stem: "What is the mechanism of the antiemetic drug ondansetron?",
       options: [
         "Selective serotonin reuptake inhibitor",
@@ -3537,7 +3538,7 @@ registerExam({
     },
     {
       id: "q252",
-      section: "s13",
+      section: "s14",
       stem: "What is the mechanism of haloperidol?",
       options: [
         "Selective serotonin reuptake inhibitor",
@@ -3549,7 +3550,7 @@ registerExam({
     },
     {
       id: "q253",
-      section: "s13",
+      section: "s14",
       stem: "A patient is splashed with hot cooking oil. Which channel is the primary receptor for NOXIOUS heat in this scenario?",
       options: [
         "TRPV2 (very high heat threshold, extreme noxious heat)",
@@ -3561,7 +3562,7 @@ registerExam({
     },
     {
       id: "q254",
-      section: "s13",
+      section: "s14",
       stem: "A woman presents with fatigue, social withdrawal, and depressed mood. Which neurotransmitter system is most likely implicated?",
       options: [
         "Dopamine",
@@ -3575,7 +3576,7 @@ registerExam({
     },
     {
       id: "q255",
-      section: "s13",
+      section: "s14",
       stem: "Anosmia and ageusia (loss of smell and taste) can result from downregulation of which receptor, also notable for its role as the entry receptor for SARS-CoV-2?",
       options: [
         "Dopamine D2 receptor",
@@ -3589,7 +3590,7 @@ registerExam({
     },
     {
       id: "q256",
-      section: "s13",
+      section: "s14",
       stem: "Which neurotransmitter-transporter pairing is correct?",
       options: [
         "VGAT - GABA (correct vesicular pairing)",
@@ -3603,7 +3604,7 @@ registerExam({
     },
     {
       id: "q257",
-      section: "s13",
+      section: "s14",
       stem: "A patient overdoses on a drug that directly opens GABA-A chloride channels even in the complete absence of GABA, causing profound, potentially fatal respiratory depression. Which drug class does this describe, and why is it more dangerous than benzodiazepines in overdose?",
       options: [
         "Benzodiazepines, because they always require GABA to be present",
@@ -3617,7 +3618,7 @@ registerExam({
     },
     {
       id: "q258",
-      section: "s13",
+      section: "s14",
       stem: "Why does chronic SSRI use often take 2-4 weeks to produce clinical antidepressant benefit, even though synaptic serotonin levels rise within hours of the first dose?",
       options: [
         "The delay reflects downstream neuroadaptive changes — including desensitization of presynaptic serotonin autoreceptors (allowing sustained increased release) and slower changes in postsynaptic receptor density/signaling and neurotrophic factors (e.g., BDNF) — not simply the acute rise in synaptic serotonin itself",
@@ -3631,7 +3632,7 @@ registerExam({
     },
     {
       id: "q259",
-      section: "s13",
+      section: "s14",
       stem: "Which best explains the clinical observation that opioid analgesics are highly effective for nociceptive (tissue-injury) pain but often less effective for neuropathic pain?",
       options: [
         "Opioids primarily act on mu-opioid receptors in the pain-modulating circuits (periaqueductal gray, dorsal horn) engaged by normal nociceptive signaling, whereas neuropathic pain often involves aberrant, opioid-less-responsive mechanisms (ectopic firing, central sensitization, altered ion channel expression) in damaged nerves themselves",
@@ -3645,7 +3646,7 @@ registerExam({
     },
     {
       id: "q260",
-      section: "s14",
+      section: "s15",
       stem: "A patient exhibits a near-vision reflex defect. Which of the following is NOT a normal characteristic of the near vision reflex?",
       options: [
         "Medial deviation (convergence) of both eyes",
@@ -3658,7 +3659,7 @@ registerExam({
     },
     {
       id: "q261",
-      section: "s14",
+      section: "s15",
       stem: "A patient has a tumor compressing the optic chiasm. Which visual field defect results?",
       options: [
         "Left homonymous hemianopia",
@@ -3671,7 +3672,7 @@ registerExam({
     },
     {
       id: "q262",
-      section: "s14",
+      section: "s15",
       stem: "Which part of the retina has NO photoreceptor cells at all?",
       options: [
         "Macula lutea",
@@ -3685,7 +3686,7 @@ registerExam({
     },
     {
       id: "q263",
-      section: "s14",
+      section: "s15",
       stem: "What structure in the eye is primarily responsible for absorbing stray light, reducing internal reflection/glare?",
       options: [
         "Choroid (its pigmented layer)",
@@ -3698,7 +3699,7 @@ registerExam({
     },
     {
       id: "q264",
-      section: "s14",
+      section: "s15",
       stem: "Which condition is indicated by an intraocular pressure (IOP) greater than 25 mmHg?",
       options: [
         "Cataract",
@@ -3711,7 +3712,7 @@ registerExam({
     },
     {
       id: "q265",
-      section: "s14",
+      section: "s15",
       stem: "Which correctly arranges retinal layers from the rod/cone (photoreceptor) layer toward the optic nerve fiber layer?",
       options: [
         "Rods/cones → Inner nuclear → Outer nuclear → Ganglion cell → Optic nerve fiber",
@@ -3724,7 +3725,7 @@ registerExam({
     },
     {
       id: "q266",
-      section: "s14",
+      section: "s15",
       stem: "A patient has a left pupil that does not constrict and is larger than the right, with associated ptosis and 'down and out’ eye deviation. Where is the lesion?",
       options: [
         "Optic tract",
@@ -3738,7 +3739,7 @@ registerExam({
     },
     {
       id: "q267",
-      section: "s14",
+      section: "s15",
       stem: "Surface ectoderm gives rise to which eye structure?",
       options: [
         "Lens",
@@ -3752,7 +3753,7 @@ registerExam({
     },
     {
       id: "q268",
-      section: "s14",
+      section: "s15",
       stem: "Which specialization of the fovea centralis increases visual acuity there?",
       options: [
         "Abundant blood vessels overlying it",
@@ -3765,7 +3766,7 @@ registerExam({
     },
     {
       id: "q269",
-      section: "s14",
+      section: "s15",
       stem: "What structure is damaged to produce a RIGHT homonymous hemianopia?",
       options: [
         "Left optic tract (or fibers further downstream on the left visual pathway)",
@@ -3778,7 +3779,7 @@ registerExam({
     },
     {
       id: "q270",
-      section: "s14",
+      section: "s15",
       stem: "Which abnormality of retinal cells causes the majority of color blindness cases?",
       options: [
         "Abnormal rod cells",
@@ -3792,7 +3793,7 @@ registerExam({
     },
     {
       id: "q271",
-      section: "s14",
+      section: "s15",
       stem: "What is the effect of sympathetic fiber activation on the eye?",
       options: [
         "Pupillary constriction (miosis)",
@@ -3806,7 +3807,7 @@ registerExam({
     },
     {
       id: "q272",
-      section: "s14",
+      section: "s15",
       stem: "What is the physiological effect of retinal detachment?",
       options: [
         "Loss of blood supply to the photoreceptor layer (from the choroid), causing photoreceptor ischemia/degeneration",
@@ -3818,7 +3819,7 @@ registerExam({
     },
     {
       id: "q273",
-      section: "s14",
+      section: "s15",
       stem: "A lesion of the RIGHT Meyer’s loop (temporal lobe optic radiation) causes which visual field defect?",
       options: [
         "Left homonymous SUPERIOR quadrantanopia",
@@ -3832,7 +3833,7 @@ registerExam({
     },
     {
       id: "q274",
-      section: "s14",
+      section: "s15",
       stem: "A patient with a right temporal lobe lesion (affecting Meyer’s loop) most likely shows which visual field defect?",
       options: [
         "Right homonymous hemianopia",
@@ -3846,7 +3847,7 @@ registerExam({
     },
     {
       id: "q275",
-      section: "s14",
+      section: "s15",
       stem: "Touching the RIGHT cornea produces no blink in either eye; touching the LEFT cornea produces bilateral blinking. Where is the lesion?",
       options: [
         "Left facial nerve",
@@ -3860,7 +3861,7 @@ registerExam({
     },
     {
       id: "q276",
-      section: "s14",
+      section: "s15",
       stem: "A patient has anisocoria noted incidentally — pupils differ in size — but reacts normally to light and accommodation, worse in dim light. This mild, benign finding without other neurological signs most likely represents:",
       options: [
         "A dangerous CN III compression requiring emergent imaging",
@@ -3874,7 +3875,7 @@ registerExam({
     },
     {
       id: "q277",
-      section: "s14",
+      section: "s15",
       stem: "Which layer of the eye is most directly responsible for providing nutrients to the outer retina via diffusion (choriocapillaris), making it critical in conditions like age-related macular degeneration?",
       options: [
         "Sclera",
@@ -3888,7 +3889,7 @@ registerExam({
     },
     {
       id: "q278",
-      section: "s14",
+      section: "s15",
       stem: "Why does damage to the optic nerve (before the chiasm) cause a MONOCULAR visual deficit, while damage to the optic tract (after the chiasm) causes a BINOCULAR (but homonymous) deficit?",
       options: [
         "Because the chiasm is the point where fibers from both eyes’ nasal retinas cross and combine with the intact temporal retina fibers of the other eye, so everything AFTER the chiasm carries information from BOTH eyes; everything BEFORE the chiasm carries information from only ONE eye",
@@ -3902,7 +3903,7 @@ registerExam({
     },
     {
       id: "q279",
-      section: "s15",
+      section: "s16",
       stem: "Which structure is found at the level of the rostral pons?",
       options: [
         "Cerebral aqueduct",
@@ -3916,7 +3917,7 @@ registerExam({
     },
     {
       id: "q280",
-      section: "s15",
+      section: "s16",
       stem: "A patient has facial nerve damage resulting in hyperacusis (abnormally loud perception of sound). Which structure’s function is most likely interrupted?",
       options: [
         "Trapezoid body",
@@ -3930,7 +3931,7 @@ registerExam({
     },
     {
       id: "q281",
-      section: "s15",
+      section: "s16",
       stem: "Which vestibular nucleus sends axons directly to the oculomotor nucleus (contributing to the vestibulo-ocular reflex)?",
       options: [
         "Medial vestibular nucleus",
@@ -3943,7 +3944,7 @@ registerExam({
     },
     {
       id: "q282",
-      section: "s15",
+      section: "s16",
       stem: "Which structure releases (dissipates) the pressure wave of sound energy out of the inner ear, allowing continued fluid movement within the cochlea?",
       options: [
         "Eardrum (tympanic membrane)",
@@ -3957,7 +3958,7 @@ registerExam({
     },
     {
       id: "q283",
-      section: "s15",
+      section: "s16",
       stem: "Which statement regarding sound stimulation and cochlear transduction is TRUE?",
       options: [
         "Vibration within the endolymph of the scala vestibuli is transmitted through the vestibular (Reissner’s) membrane",
@@ -3970,7 +3971,7 @@ registerExam({
     },
     {
       id: "q284",
-      section: "s15",
+      section: "s16",
       stem: "What structure detects vertical linear acceleration, as when an elevator starts moving up or down?",
       options: [
         "Superior semicircular canal",
@@ -3984,7 +3985,7 @@ registerExam({
     },
     {
       id: "q285",
-      section: "s15",
+      section: "s16",
       stem: "What structure primarily detects tilting the head UP (vertical linear head position change)?",
       options: [
         "Utricle",
@@ -3998,7 +3999,7 @@ registerExam({
     },
     {
       id: "q286",
-      section: "s15",
+      section: "s16",
       stem: "What structure is primarily activated by nodding the head forward (in the sagittal/vertical rotational plane)?",
       options: [
         "Utricle",
@@ -4012,7 +4013,7 @@ registerExam({
     },
     {
       id: "q287",
-      section: "s15",
+      section: "s16",
       stem: "When you extend your head backward (posterior tilt), which vestibular receptor is primarily stimulated?",
       options: [
         "Superior semicircular canal",
@@ -4026,7 +4027,7 @@ registerExam({
     },
     {
       id: "q288",
-      section: "s15",
+      section: "s16",
       stem: "Where is the vomiting center located?",
       options: [
         "Vestibular nuclei",
@@ -4040,7 +4041,7 @@ registerExam({
     },
     {
       id: "q289",
-      section: "s15",
+      section: "s16",
       stem: "What structure reduces sensitivity to background/surrounding sound (by inhibiting outer hair cells) to help focus on speech in a noisy environment?",
       options: [
         "Stapedius muscle (and the broader olivocochlear efferent system inhibiting outer hair cells)",
@@ -4054,7 +4055,7 @@ registerExam({
     },
     {
       id: "q290",
-      section: "s15",
+      section: "s16",
       stem: "Trouble hearing LOW-frequency sounds suggests a possible lesion/occlusion where along the basilar membrane?",
       options: [
         "Apex of the vestibular (Reissner’s) membrane",
@@ -4068,7 +4069,7 @@ registerExam({
     },
     {
       id: "q291",
-      section: "s15",
+      section: "s16",
       stem: "Which of the following correctly describes the central auditory pathway?",
       options: [
         "Cochlear nerve → Cochlear nucleus → Superior olivary complex → Medial geniculate body (of the thalamus)",
@@ -4081,7 +4082,7 @@ registerExam({
     },
     {
       id: "q292",
-      section: "s15",
+      section: "s16",
       stem: "An 80-year-old patient presents with presbycusis (age-related hearing loss, 50-8000 Hz range affected). Which structure is most likely damaged?",
       options: [
         "Endolymph",
@@ -4095,7 +4096,7 @@ registerExam({
     },
     {
       id: "q293",
-      section: "s15",
+      section: "s16",
       stem: "A man slips and is about to fall; he reflexively extends his upper and lower limbs to catch himself. Which pathway mediates this reflex?",
       options: [
         "Lateral spinovestibular tract (not a standard named tract)",
@@ -4109,7 +4110,7 @@ registerExam({
     },
     {
       id: "q294",
-      section: "s15",
+      section: "s16",
       stem: "What is the underlying pathological cause of presbycusis?",
       options: [
         "Damage to the tympanic membrane",
@@ -4123,7 +4124,7 @@ registerExam({
     },
     {
       id: "q295",
-      section: "s15",
+      section: "s16",
       stem: "What is INCORRECT about stimulation of the crista ampullaris (within the semicircular canal ampulla)?",
       options: [
         "It detects angular acceleration of the head",
@@ -4136,7 +4137,7 @@ registerExam({
     },
     {
       id: "q296",
-      section: "s15",
+      section: "s16",
       stem: "Which tract can inhibit/modulate the vestibulospinal reflex’s effect on limb muscles, allowing voluntary override of purely reflexive postural responses?",
       options: [
         "Medial vestibular tract (not the modulating pathway being asked about)",
@@ -4148,7 +4149,7 @@ registerExam({
     },
     {
       id: "q297",
-      section: "s15",
+      section: "s16",
       stem: "A presbycusis test is performed on patients aged 45, 60, and 90. At which decibel (dB) level does hearing loss typically begin to be noticeable in this progressive, age-related pattern?",
       options: [
         ">90 dB",
@@ -4160,7 +4161,7 @@ registerExam({
     },
     {
       id: "q298",
-      section: "s15",
+      section: "s16",
       stem: "Why does damage to the outer hair cells (rather than inner hair cells) cause a disproportionately large loss of hearing SENSITIVITY, even though outer hair cells carry only ~5% of the afferent auditory signal?",
       options: [
         "Outer hair cells function as the cochlear amplifier — using electromotility to actively amplify basilar membrane vibration at specific frequencies BEFORE inner hair cells transduce it, so losing them means inner hair cells receive a much weaker mechanical signal to begin with",
@@ -4174,7 +4175,7 @@ registerExam({
     },
     {
       id: "q299",
-      section: "s15",
+      section: "s16",
       stem: "Why does conductive hearing loss (e.g., from otosclerosis or a perforated eardrum) typically preserve the ability to hear via bone conduction, while sensorineural hearing loss impairs BOTH air and bone conduction?",
       options: [
         "Conductive loss is a problem in the outer/middle ear mechanical transmission pathway (which bone conduction bypasses entirely by vibrating the skull/cochlea directly); sensorineural loss is a problem in the cochlea/nerve itself, which bone conduction cannot bypass",
@@ -4188,7 +4189,7 @@ registerExam({
     },
     {
       id: "q300",
-      section: "s15",
+      section: "s16",
       stem: "Why does spinning in place and then suddenly stopping cause a strong sensation of continued rotation (post-rotatory vertigo/nystagmus)?",
       options: [
         "Endolymph in the semicircular canals has inertia and continues moving briefly after the head stops, still deflecting the cupula and signaling rotation even though the head is now still",

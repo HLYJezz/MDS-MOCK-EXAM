@@ -15,11 +15,16 @@ registerExam({
   sections: [
     { id: "s1", title: "Lecture 1 — Introduction & Organization of the CNS" },
     { id: "s2", title: "Lecture 2 — Neurohistology (Neuron & Neuroglia)" },
-    { id: "s3", title: "Lecture 4 — Metabolic Pathways of Neurons & Nervous Tissue" },
-    { id: "s4", title: "Lecture 7 — Spinal Cord & Blood Supply" },
-    { id: "s5", title: "Lecture 8 — PNS: Cranial & Spinal Nerves, Nerve Plexuses" },
-    { id: "s6", title: "Lecture 11 — Special Sense Organs & Its Development" },
-    { id: "s7", title: "Lecture 14 — Sensory Receptor Transduction & Neurotransmitters" },
+    { id: "s3", title: "Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction" },
+    { id: "s4", title: "Lecture 4 — Metabolic Pathways of Neurons & Nervous Tissue" },
+    { id: "s5", title: "the Eye" },
+    { id: "s6", title: "Lecture 7 — Spinal Cord & Blood Supply" },
+    { id: "s7", title: "Lecture 8 — PNS: Cranial & Spinal Nerves, Nerve Plexuses" },
+    { id: "s8", title: "Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation" },
+    { id: "s9", title: "Lecture 11 — Special Sense Organs & Its Development" },
+    { id: "s10", title: "Lectures 12–13 — Somatosensory Pathways / Taste Sensation" },
+    { id: "s11", title: "Lecture 14 — Sensory Receptor Transduction & Neurotransmitters" },
+    { id: "s12", title: "Lectures 15–16 — Visual System / Auditory & Vestibular Systems" },
   ],
   questions: [
     {
@@ -129,14 +134,14 @@ registerExam({
         "DCT",
         "IAATS",
         "TCT",
-        "EAATs Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction (5 questions)",
+        "EAATs",
       ],
       answer: "E",
       explanation: "Excitatory Amino-Acid Transporters (EAATs, especially EAAT-2/GLT-1) on astrocytic membranes clear synaptic glutamate to prevent excitotoxicity. ✗ A is wrong: MCT (monocarboxylate transporter) moves lactate/pyruvate/ketone bodies, not glutamate — easy to confuse since both transporters live on astrocytes and both are exam favorites.",
     },
     {
       id: "q9",
-      section: "s2",
+      section: "s3",
       stem: "A 40-year-old male needs an urgent hand suture and is given lidocaine as local anesthesia. What is its mechanism of action?",
       options: [
         "Activation of ligand-gated potassium channels",
@@ -150,7 +155,7 @@ registerExam({
     },
     {
       id: "q10",
-      section: "s2",
+      section: "s3",
       stem: "Hyperpolarization of the postsynaptic membrane in response to glycine or GABA-A receptor activation is produced by the opening of which channel?",
       options: [
         "Na+ channels",
@@ -164,7 +169,7 @@ registerExam({
     },
     {
       id: "q11",
-      section: "s2",
+      section: "s3",
       stem: "A 35-year-old male receives a lidocaine injection before incision and drainage of a buttock abscess. Which best describes lidocaine’s mechanism?",
       options: [
         "Blocks voltage-gated K+ channels",
@@ -178,7 +183,7 @@ registerExam({
     },
     {
       id: "q12",
-      section: "s2",
+      section: "s3",
       stem: "A patient develops muscle weakness that worsens through the afternoon and evening but is nearly absent in the morning. Which pathology is most consistent?",
       options: [
         "Guillain-Barré syndrome",
@@ -192,7 +197,7 @@ registerExam({
     },
     {
       id: "q13",
-      section: "s2",
+      section: "s3",
       stem: "What is the major consumer of energy (ATP) in the resting brain?",
       options: [
         "DNA replication in neurons",
@@ -206,7 +211,7 @@ registerExam({
     },
     {
       id: "q14",
-      section: "s3",
+      section: "s4",
       stem: "Which of the following is INCORRECT regarding neuronal metabolism?",
       options: [
         "Neurons preferentially utilize aerobic oxidative phosphorylation for ATP production",
@@ -220,7 +225,7 @@ registerExam({
     },
     {
       id: "q15",
-      section: "s3",
+      section: "s4",
       stem: "What enzyme hydrolyzes glutamine to glutamate inside the presynaptic neuron, regenerating the neurotransmitter pool?",
       options: [
         "Glutamine synthetase",
@@ -234,7 +239,7 @@ registerExam({
     },
     {
       id: "q16",
-      section: "s3",
+      section: "s4",
       stem: "Excess extracellular glutamate causes excitotoxic neuronal injury primarily through excessive intracellular accumulation of which ion?",
       options: [
         "Na+",
@@ -248,7 +253,7 @@ registerExam({
     },
     {
       id: "q17",
-      section: "s3",
+      section: "s4",
       stem: "A 58-year-old man with cirrhosis develops confusion and drowsiness with markedly elevated serum ammonia (hepatic encephalopathy). Which cell is primarily responsible for detoxifying the ammonia in the brain, and how?",
       options: [
         "Neurons, via glutaminase",
@@ -262,7 +267,7 @@ registerExam({
     },
     {
       id: "q18",
-      section: "s3",
+      section: "s4",
       stem: "In the same hepatic encephalopathy scenario, why does excessive glutamine accumulation in astrocytes become harmful rather than simply protective?",
       options: [
         "Glutamine is directly neurotoxic to Na+ channels",
@@ -276,7 +281,7 @@ registerExam({
     },
     {
       id: "q19",
-      section: "s3",
+      section: "s5",
       stem: "Which embryonic structure gives rise to the substantia nigra?",
       options: [
         "Metencephalon",
@@ -290,7 +295,7 @@ registerExam({
     },
     {
       id: "q20",
-      section: "s3",
+      section: "s5",
       stem: "The optic cup is an evagination (outgrowth) of which structure?",
       options: [
         "Surface ectoderm",
@@ -304,7 +309,7 @@ registerExam({
     },
     {
       id: "q21",
-      section: "s3",
+      section: "s5",
       stem: "A meningocele is characterized by protrusion of which structure(s) through a vertebral/cranial defect?",
       options: [
         "Meninges and CSF only, no neural tissue",
@@ -318,7 +323,7 @@ registerExam({
     },
     {
       id: "q22",
-      section: "s3",
+      section: "s5",
       stem: "Sustained high intracranial pressure classically produces which triad of findings (Cushing’s triad)?",
       options: [
         "Hypertension, bradycardia, irregular respirations",
@@ -332,7 +337,7 @@ registerExam({
     },
     {
       id: "q23",
-      section: "s3",
+      section: "s5",
       stem: "What does the ventral (inferior) part of the optic vesicle, at the point where it connects to the forebrain, give rise to?",
       options: [
         "The lens",
@@ -346,7 +351,7 @@ registerExam({
     },
     {
       id: "q24",
-      section: "s4",
+      section: "s6",
       stem: "An MRI shows right-sided hemisection of the spinal cord (Brown-Séquard syndrome) at L2. Which finding is expected on the SAME (right) side at and below L2?",
       options: [
         "Loss of pain and temperature",
@@ -360,7 +365,7 @@ registerExam({
     },
     {
       id: "q25",
-      section: "s4",
+      section: "s6",
       stem: "A 65-year-old man has lost vibration, position sense, and joint discrimination in the legs, with preserved pain and temperature sensation. Which tract/pathway is most likely damaged?",
       options: [
         "Lateral spinothalamic tract",
@@ -374,7 +379,7 @@ registerExam({
     },
     {
       id: "q26",
-      section: "s4",
+      section: "s6",
       stem: "Nuchal rigidity (stiff neck) in a patient is a compensatory sign classically seen with which condition?",
       options: [
         "Simple tension headache",
@@ -388,7 +393,7 @@ registerExam({
     },
     {
       id: "q27",
-      section: "s4",
+      section: "s6",
       stem: "An injury damages the LATERAL HORN of the spinal cord gray matter (present at T1-L2/L3). Which function is most directly lost?",
       options: [
         "Somatic motor function to skeletal muscle",
@@ -402,7 +407,7 @@ registerExam({
     },
     {
       id: "q28",
-      section: "s4",
+      section: "s6",
       stem: "All of the following statements concerning the anterior spinal artery are correct EXCEPT:",
       options: [
         "It supplies the anterior two-thirds of the spinal cord cross-section",
@@ -416,7 +421,7 @@ registerExam({
     },
     {
       id: "q29",
-      section: "s5",
+      section: "s7",
       stem: "Which functional component is found in the hypoglossal nucleus?",
       options: [
         "GSA",
@@ -430,7 +435,7 @@ registerExam({
     },
     {
       id: "q30",
-      section: "s5",
+      section: "s7",
       stem: "According to the organization of the PNS, which statement below is INCORRECT?",
       options: [
         "Spinal nerves are formed by the union of anterior and posterior nerve roots",
@@ -444,21 +449,21 @@ registerExam({
     },
     {
       id: "q31",
-      section: "s5",
+      section: "s7",
       stem: "Collections of nerve cell bodies located inside the peripheral nervous system are called:",
       options: [
         "Tracts",
         "Nerve fibers",
         "Ganglia",
         "Nerves",
-        "Nuclei Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation (10 questions)",
+        "Nuclei",
       ],
       answer: "C",
       explanation: "Ganglia = PNS cell body clusters. The CNS equivalent term is 'nucleus'; a bundle of axons is a 'tract’ in the CNS or a 'nerve’ in the PNS. ✗ E is wrong: 'Nuclei’ is the correct term, but specifically for CNS cell body collections — a PNS collection is called a ganglion, not a nucleus. TIP: Cell bodies: CNS = nucleus, PNS = ganglion. Axon bundles: CNS = tract, PNS = nerve. Four terms, two locations, memorize the grid.",
     },
     {
       id: "q32",
-      section: "s5",
+      section: "s8",
       stem: "An MRI shows a tumor compressing the right tuberculum cinereum at the closed (caudal) medulla. Which nerve’s nucleus is most directly compressed?",
       options: [
         "Trigeminal nerve (spinal trigeminal nucleus/tract)",
@@ -472,7 +477,7 @@ registerExam({
     },
     {
       id: "q33",
-      section: "s5",
+      section: "s8",
       stem: "Which reflex test best represents intact function of the medulla oblongata?",
       options: [
         "Gag reflex",
@@ -486,7 +491,7 @@ registerExam({
     },
     {
       id: "q34",
-      section: "s5",
+      section: "s8",
       stem: "A 20-year-old man has loss of muscle power on the LEFT side of his body plus strabismus and ptosis of the RIGHT eye. Where is the lesion?",
       options: [
         "Left cerebral cortex",
@@ -500,7 +505,7 @@ registerExam({
     },
     {
       id: "q35",
-      section: "s5",
+      section: "s8",
       stem: "Which neuronal pathway performs voluntary control of body and limb movements?",
       options: [
         "Reticulospinal tract",
@@ -514,7 +519,7 @@ registerExam({
     },
     {
       id: "q36",
-      section: "s5",
+      section: "s8",
       stem: "Which CNS structure lies at approximately the same horizontal (axial) level as the tentorial notch/incisura, useful for localizing herniation syndromes?",
       options: [
         "Medulla oblongata",
@@ -528,7 +533,7 @@ registerExam({
     },
     {
       id: "q37",
-      section: "s5",
+      section: "s8",
       stem: "A 32-year-old man has loss of muscle power and a positive Babinski sign on the LEFT side, with right-sided tongue deviation on protrusion. Where is the lesion?",
       options: [
         "Left cerebral cortex",
@@ -542,7 +547,7 @@ registerExam({
     },
     {
       id: "q38",
-      section: "s5",
+      section: "s8",
       stem: "A patient has a left pupil larger than the right, plus ptosis and an eye deviated 'down and out.' Which structure is most likely compressed?",
       options: [
         "Left optic nerve",
@@ -556,7 +561,7 @@ registerExam({
     },
     {
       id: "q39",
-      section: "s5",
+      section: "s8",
       stem: "A patient has loss of pain and temperature sensation on the CONTRALATERAL body plus an IPSILATERAL facial pain/temperature deficit, plus ipsilateral ataxia, Horner’s syndrome, and hoarseness. This constellation is:",
       options: [
         "Weber syndrome",
@@ -570,7 +575,7 @@ registerExam({
     },
     {
       id: "q40",
-      section: "s5",
+      section: "s8",
       stem: "Which of the following correctly pairs a reticular formation column with its function?",
       options: [
         "Median column (raphe nuclei) — ascending projections for arousal and attention",
@@ -584,7 +589,7 @@ registerExam({
     },
     {
       id: "q41",
-      section: "s5",
+      section: "s8",
       stem: "Fibers from which reticular formation structure synapse with the motor nuclei of CN V and CN VII to help mediate brainstem reflexes like the jaw jerk and blink?",
       options: [
         "Median column (raphe nuclei)",
@@ -598,7 +603,7 @@ registerExam({
     },
     {
       id: "q42",
-      section: "s6",
+      section: "s9",
       stem: "The inner ear (membranous labyrinth) develops embryologically from which structure?",
       options: [
         "First pharyngeal cleft",
@@ -612,7 +617,7 @@ registerExam({
     },
     {
       id: "q43",
-      section: "s6",
+      section: "s9",
       stem: "The external auditory meatus develops from which embryonic structure?",
       options: [
         "First pharyngeal pouch",
@@ -626,7 +631,7 @@ registerExam({
     },
     {
       id: "q44",
-      section: "s6",
+      section: "s9",
       stem: "The malleus and incus (middle ear ossicles) are derived embryologically from which cartilage?",
       options: [
         "Reichert’s cartilage (2nd arch)",
@@ -640,7 +645,7 @@ registerExam({
     },
     {
       id: "q45",
-      section: "s6",
+      section: "s9",
       stem: "Which cell type in the olfactory epithelium serves as the stem cell population for continuous regeneration of olfactory receptor neurons?",
       options: [
         "Sustentacular cells",
@@ -654,7 +659,7 @@ registerExam({
     },
     {
       id: "q46",
-      section: "s6",
+      section: "s9",
       stem: "The nasal placodes are induced by signals from which adjacent embryonic structure?",
       options: [
         "The developing forebrain (telencephalon)",
@@ -668,7 +673,7 @@ registerExam({
     },
     {
       id: "q47",
-      section: "s6",
+      section: "s9",
       stem: "Which taste bud cell type is directly responsible for chemoreceptive taste transduction?",
       options: [
         "Basal (Type IV) cells",
@@ -682,7 +687,7 @@ registerExam({
     },
     {
       id: "q48",
-      section: "s6",
+      section: "s9",
       stem: "Which special sense epithelium is uniquely capable of continuous neurogenesis (producing new sensory NEURONS, not just supporting cells) throughout adult life?",
       options: [
         "Cochlea (organ of Corti)",
@@ -696,7 +701,7 @@ registerExam({
     },
     {
       id: "q49",
-      section: "s6",
+      section: "s9",
       stem: "The cochlear duct (scala media) contains which fluid, and how does its ionic composition differ from the adjacent scalae?",
       options: [
         "Perilymph, similar in composition to CSF",
@@ -710,7 +715,7 @@ registerExam({
     },
     {
       id: "q50",
-      section: "s6",
+      section: "s10",
       stem: "An MRI shows right-sided hemisection of the spinal cord (Brown-Séquard syndrome) at L2. Which neuronal tract/fasciculus passes through the anterior white commissure at the level of decussation?",
       options: [
         "Corticospinal tract",
@@ -724,7 +729,7 @@ registerExam({
     },
     {
       id: "q51",
-      section: "s6",
+      section: "s10",
       stem: "A patient has loss of proprioception on the LEFT side and loss of pain/temperature on the RIGHT side of the body below a spinal lesion. This pattern is most consistent with:",
       options: [
         "Complete cord transection",
@@ -738,7 +743,7 @@ registerExam({
     },
     {
       id: "q52",
-      section: "s6",
+      section: "s10",
       stem: "Which tract lesion classically gives a positive Romberg test (patient sways/falls with eyes closed but is stable with eyes open)?",
       options: [
         "Corticospinal tract",
@@ -752,7 +757,7 @@ registerExam({
     },
     {
       id: "q53",
-      section: "s6",
+      section: "s10",
       stem: "Which of the following conditions primarily affects the PNS rather than the CNS?",
       options: [
         "Multiple sclerosis",
@@ -766,7 +771,7 @@ registerExam({
     },
     {
       id: "q54",
-      section: "s6",
+      section: "s10",
       stem: "A patient has right-sided pain and temperature loss below T12, and left-sided pain and temperature loss below T10 (staggered levels). What does this pattern suggest about the lesion?",
       options: [
         "A single, precise transverse hemisection at exactly one level",
@@ -780,7 +785,7 @@ registerExam({
     },
     {
       id: "q55",
-      section: "s6",
+      section: "s10",
       stem: "The ganglia housing first-order taste neurons are located in which structures?",
       options: [
         "Geniculate, Petrosal, Nodose ganglia (for CN VII, IX, X respectively)",
@@ -794,7 +799,7 @@ registerExam({
     },
     {
       id: "q56",
-      section: "s6",
+      section: "s10",
       stem: "Which stem cell type regenerates sensory receptor cells in BOTH the tongue (taste buds) and the olfactory epithelium?",
       options: [
         "Satellite cells",
@@ -808,7 +813,7 @@ registerExam({
     },
     {
       id: "q57",
-      section: "s6",
+      section: "s10",
       stem: "The gustatory (taste) pathway includes all of the following EXCEPT:",
       options: [
         "Solitary nucleus (rostral/gustatory part)",
@@ -822,7 +827,7 @@ registerExam({
     },
     {
       id: "q58",
-      section: "s7",
+      section: "s11",
       stem: "A woman presents with depressive symptoms and suicidal thoughts. Which neurotransmitter is classically implicated as abnormal in this case?",
       options: [
         "Glutamate",
@@ -836,7 +841,7 @@ registerExam({
     },
     {
       id: "q59",
-      section: "s7",
+      section: "s11",
       stem: "What is the mechanism of action of botulinum toxin?",
       options: [
         "Increased sodium channel activity at the presynaptic neuron",
@@ -850,7 +855,7 @@ registerExam({
     },
     {
       id: "q60",
-      section: "s7",
+      section: "s11",
       stem: "An 80-year-old man has progressive short-term memory loss and word-finding difficulty, diagnosed with Alzheimer disease. Which statement about its pathogenesis is INCORRECT?",
       options: [
         "Atrophy of gyri in the cerebral cortex",
@@ -864,7 +869,7 @@ registerExam({
     },
     {
       id: "q61",
-      section: "s7",
+      section: "s11",
       stem: "A patient arrives with continuous generalized tonic-clonic seizures for 15 minutes (status epilepticus). What is the most appropriate FIRST-line treatment?",
       options: [
         "Diazepam (benzodiazepine)",
@@ -878,7 +883,7 @@ registerExam({
     },
     {
       id: "q62",
-      section: "s7",
+      section: "s11",
       stem: "The summation of EPSPs arriving from numerous different presynaptic fibers converging onto the same postsynaptic neuron at roughly the same moment is called:",
       options: [
         "Spatial summation",
@@ -892,7 +897,7 @@ registerExam({
     },
     {
       id: "q63",
-      section: "s7",
+      section: "s11",
       stem: "A 20-year-old college student has depressive symptoms including sleep disturbance and anorexia for 1 month, with no prior mood disorder history. What is the mechanism of the drug most appropriate for this patient (an SSRI)?",
       options: [
         "Stimulation of GABA receptors",
@@ -906,7 +911,7 @@ registerExam({
     },
     {
       id: "q64",
-      section: "s7",
+      section: "s11",
       stem: "A woman presents with progressive muscle weakness, dysphagia, and ptosis that worsens with repeated blinking. Which finding is most likely present?",
       options: [
         "Ryanodine receptor antibody",
@@ -920,7 +925,7 @@ registerExam({
     },
     {
       id: "q65",
-      section: "s7",
+      section: "s11",
       stem: "A 45-year-old man has a deep gardening wound, then develops jaw stiffness (lockjaw) and muscle spasms. Which mechanism best explains the responsible toxin’s action?",
       options: [
         "Directly inhibits neurotransmitter release at the neuromuscular junction",
@@ -933,7 +938,7 @@ registerExam({
     },
     {
       id: "q66",
-      section: "s7",
+      section: "s11",
       stem: "A chemotherapy patient has nausea and vomiting. Which antiemetic receptor target is most appropriate?",
       options: [
         "5-HT3 receptor (e.g., ondansetron)",
@@ -947,21 +952,21 @@ registerExam({
     },
     {
       id: "q67",
-      section: "s7",
+      section: "s11",
       stem: "Which of the following agents does NOT stimulate nociceptors (i.e., is not itself an inflammatory/pain-sensitizing mediator)?",
       options: [
         "Prostaglandin",
         "K+",
         "Substance P",
         "Histamine",
-        "Vibration Lectures 15–16 — Visual System / Auditory & Vestibular Systems (10 questions)",
+        "Vibration",
       ],
       answer: "E",
       explanation: "Vibration is a MECHANICAL stimulus detected by mechanoreceptors (like Pacinian corpuscles), not a chemical inflammatory mediator that sensitizes/activates nociceptors — the other four are all classic chemical mediators of the 'inflammatory soup’ that sensitizes pain fibers. TIP: The 'inflammatory soup’ sensitizing nociceptors: prostaglandins, bradykinin, K+, H+, histamine, substance P, ATP — memorize this list as a set, since 'which of these does NOT belong’ questions are extremely common.",
     },
     {
       id: "q68",
-      section: "s7",
+      section: "s12",
       stem: "A patient exhibits a near-vision reflex defect. Which of the following is NOT a normal characteristic of the near vision reflex?",
       options: [
         "Medial deviation (convergence) of both eyes",
@@ -974,7 +979,7 @@ registerExam({
     },
     {
       id: "q69",
-      section: "s7",
+      section: "s12",
       stem: "A patient has a tumor compressing the optic chiasm. Which visual field defect results?",
       options: [
         "Left homonymous hemianopia",
@@ -987,7 +992,7 @@ registerExam({
     },
     {
       id: "q70",
-      section: "s7",
+      section: "s12",
       stem: "Which part of the retina has NO photoreceptor cells at all?",
       options: [
         "Macula lutea",
@@ -1001,7 +1006,7 @@ registerExam({
     },
     {
       id: "q71",
-      section: "s7",
+      section: "s12",
       stem: "What structure in the eye is primarily responsible for absorbing stray light, reducing internal reflection/glare?",
       options: [
         "Choroid (its pigmented layer)",
@@ -1014,7 +1019,7 @@ registerExam({
     },
     {
       id: "q72",
-      section: "s7",
+      section: "s12",
       stem: "Which condition is indicated by an intraocular pressure (IOP) greater than 25 mmHg?",
       options: [
         "Cataract",
@@ -1027,7 +1032,7 @@ registerExam({
     },
     {
       id: "q73",
-      section: "s7",
+      section: "s12",
       stem: "Which structure is found at the level of the rostral pons?",
       options: [
         "Cerebral aqueduct",
@@ -1041,7 +1046,7 @@ registerExam({
     },
     {
       id: "q74",
-      section: "s7",
+      section: "s12",
       stem: "A patient has facial nerve damage resulting in hyperacusis (abnormally loud perception of sound). Which structure’s function is most likely interrupted?",
       options: [
         "Trapezoid body",
@@ -1055,7 +1060,7 @@ registerExam({
     },
     {
       id: "q75",
-      section: "s7",
+      section: "s12",
       stem: "Which vestibular nucleus sends axons directly to the oculomotor nucleus (contributing to the vestibulo-ocular reflex)?",
       options: [
         "Medial vestibular nucleus",
@@ -1068,7 +1073,7 @@ registerExam({
     },
     {
       id: "q76",
-      section: "s7",
+      section: "s12",
       stem: "Which structure releases (dissipates) the pressure wave of sound energy out of the inner ear, allowing continued fluid movement within the cochlea?",
       options: [
         "Eardrum (tympanic membrane)",
@@ -1082,7 +1087,7 @@ registerExam({
     },
     {
       id: "q77",
-      section: "s7",
+      section: "s12",
       stem: "Which statement regarding sound stimulation and cochlear transduction is TRUE?",
       options: [
         "Vibration within the endolymph of the scala vestibuli is transmitted through the vestibular (Reissner’s) membrane",

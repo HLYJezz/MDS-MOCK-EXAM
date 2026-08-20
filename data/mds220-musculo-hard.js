@@ -14,7 +14,7 @@ registerExam({
   shuffleOptions: true,
   sections: [
     { id: "s1", title: "Histology, Cartilage, Bone, and Integument" },
-    { id: "s2", title: "Gross Anatomy (Back, Upper and Lower Limb, Joints, Vertebral" },
+    { id: "s2", title: "Gross Anatomy (Back, Upper and Lower Limb, Joints, Vertebral Column)" },
     { id: "s3", title: "Embryology and Development" },
   ],
   questions: [
