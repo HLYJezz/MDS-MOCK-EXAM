@@ -11,7 +11,7 @@
 (function () {
   var CONFIG = {
     /* The Apps Script web app URL, ending in /exec */
-    endpoint: ''
+    endpoint: 'https://script.google.com/macros/s/AKfycbx-Oh6ZVsR-3Td7_SAV2-MTL77OasZf9BTksKGJxLbbTtxrIHInYttyUHiEoJLgMx4v/exec'
   };
 
   var ISSUES = [
