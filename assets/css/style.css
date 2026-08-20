@@ -140,7 +140,14 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .history-row .score { font-weight: 700; }
 .history-row .score.pass { color: var(--good); }
 .history-row .score.fail { color: var(--bad); }
-.site-footer { border-top: 1px solid var(--line); padding: 1.2rem 0; }
+.site-footer { border-top: 1px solid var(--line); padding: 1.2rem 0 1.6rem; }
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.footer-inner p { margin: 0; }
+.credit { color: var(--muted); white-space: nowrap; }
+.credit strong { color: var(--text); font-weight: 650; }
 
 /* ---------- exam chrome ---------- */
 .exam-body { padding-top: 0; }
