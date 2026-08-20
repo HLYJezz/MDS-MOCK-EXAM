@@ -1,26 +1,17 @@
-/* "This question looks wrong" reports.
+/* "This question looks wrong" reports, sent to a Google Sheet.
    ---------------------------------------------------------------------------
-   Every report is kept in the reader's browser, and — once the Google Form
-   below is filled in — also opens a prefilled form so the report reaches you.
+   Reports are written to the reader's browser first, then posted to a Google
+   Apps Script web app that appends them to a sheet. Anything that fails to send
+   — offline, endpoint down — stays queued and is retried next time the site is
+   opened, so a report is never lost.
 
-   To set the form up, see the "Question reports" section of README.md. Until
-   CONFIG.formUrl is filled in, reports are still recorded on the device but
-   cannot reach anyone, so do fill it in.
+   Setup: deploy tools/feedback-sheet.gs as a web app and paste its /exec URL
+   below. See the "Question reports" section of README.md.
    --------------------------------------------------------------------------- */
 (function () {
   var CONFIG = {
-    /* The form's public link, ending in /viewform */
-    formUrl: '',
-    /* Field ids from the form's "Get pre-filled link" (entry.123456789).
-       Any you leave blank are folded into `details` instead. */
-    entries: {
-      paper: '',
-      question: '',
-      issue: '',
-      comment: '',
-      name: '',
-      details: ''
-    }
+    /* The Apps Script web app URL, ending in /exec */
+    endpoint: ''
   };
 
   var ISSUES = [
@@ -37,49 +28,31 @@
     return n;
   }
 
-  /* Everything worth knowing about the report, as one block of text. Used for
-     the `details` field, and as the fallback when a form has fewer fields. */
-  function asText(r) {
-    var lines = [
-      'Paper: ' + r.paperName + ' (' + r.paper + ')',
-      'Question ' + r.questionNumber + ' [' + r.questionId + ']',
-      'Problem: ' + r.issue,
-      '',
-      'Question: ' + r.stem
-    ];
-    if (r.options && r.options.length) lines.push('Options: ' + r.options.join(' | '));
-    if (r.givenAnswer) lines.push('Their answer: ' + r.givenAnswer);
-    if (r.recordedAnswer) lines.push('Answer on file: ' + r.recordedAnswer);
-    if (r.comment) lines.push('', 'Comment: ' + r.comment);
-    if (r.name) lines.push('From: ' + r.name);
-    return lines.join('\n');
+  /* ---------- sending ----------
+     Apps Script does not answer CORS preflight, so the request is kept "simple"
+     (text/plain, no custom headers) and sent no-cors. That means the response
+     cannot be read: a resolved promise means the request left the browser, which
+     is the most this arrangement can tell us. The local copy is what makes it
+     safe — nothing is deleted on the strength of a send. */
+  function post(report) {
+    if (!CONFIG.endpoint) return Promise.reject(new Error('no endpoint configured'));
+    return fetch(CONFIG.endpoint, {
+      method: 'POST',
+      mode: 'no-cors',
+      cache: 'no-store',
+      keepalive: true,             // survives the tab closing right afterwards
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(report)
+    });
   }
 
-  function formUrlFor(r) {
-    if (!CONFIG.formUrl) return null;
-    var e = CONFIG.entries;
-    var values = {
-      paper: r.paperName,
-      question: 'Q' + r.questionNumber + ' — ' + r.stem,
-      issue: r.issue,
-      comment: r.comment,
-      name: r.name,
-      details: asText(r)
-    };
-    var parts = ['usp=pp_url'];
-    var missing = [];
-    Object.keys(values).forEach(function (k) {
-      if (k === 'details') return;
-      if (e[k]) parts.push(encodeURIComponent(e[k]) + '=' + encodeURIComponent(values[k] || ''));
-      else if (values[k]) missing.push(k);
+  /* Retry anything still queued from an earlier visit. Quiet: no toasts. */
+  function flush() {
+    if (!CONFIG.endpoint) return;
+    var pending = Store.reports().filter(function (r) { return !r.sent; });
+    pending.forEach(function (r) {
+      post(r).then(function () { Store.markReportSent(r.id); }, function () {});
     });
-    /* Anything the form has no field for still travels, in the details field. */
-    if (e.details) parts.push(encodeURIComponent(e.details) + '=' + encodeURIComponent(values.details));
-    else if (missing.length && e.comment) {
-      parts = parts.filter(function (p) { return p.indexOf(encodeURIComponent(e.comment) + '=') !== 0; });
-      parts.push(encodeURIComponent(e.comment) + '=' + encodeURIComponent(values.details));
-    }
-    return CONFIG.formUrl + (CONFIG.formUrl.indexOf('?') === -1 ? '?' : '&') + parts.join('&');
   }
 
   /* ---------- the dialog ---------- */
@@ -140,20 +113,23 @@
   }
 
   /* context: { paper, paperName, questionId, questionNumber, stem, options,
-                givenAnswer, recordedAnswer }
-     recordedAnswer must be left out while the answer is still hidden, so a
-     report cannot be used to peek at the answer mid-exam. */
+                givenAnswer, recordedAnswer, mode }
+     recordedAnswer is left out while the answer is still hidden, so a report
+     cannot be used to peek at the answer mid-exam. */
   function open(context) {
     var box = dialog();
     var p = box._parts;
     box.querySelector('.report-target').textContent =
       context.paperName + ' · question ' + context.questionNumber;
     p.comment.value = '';
+    p.send.disabled = false;
+    p.send.textContent = 'Send report';
     box.classList.remove('hidden');
     p.comment.focus();
 
     p.send.onclick = function () {
       var report = {
+        id: 'r' + Date.now() + Math.random().toString(36).slice(2, 7),
         date: Date.now(),
         paper: context.paper,
         paperName: context.paperName,
@@ -163,18 +139,32 @@
         options: context.options,
         givenAnswer: context.givenAnswer || '',
         recordedAnswer: context.recordedAnswer || '',
+        mode: context.mode || '',
         issue: (p.issues.querySelector('.selected') || {}).dataset.issue || ISSUES[0],
         comment: p.comment.value.trim(),
-        name: p.name.value.trim()
+        name: p.name.value.trim(),
+        sent: false
       };
       Store.addReport(report);
       Store.setReporterName(report.name);
 
-      var url = formUrlFor(report);
-      if (url) window.open(url, '_blank', 'noopener');
-      close();
-      toast(url ? 'Thanks — the report form is opening in a new tab.'
-                : 'Thanks — your report has been saved.');
+      p.send.disabled = true;
+      p.send.textContent = 'Sending…';
+
+      if (!CONFIG.endpoint) {
+        close();
+        toast('Thanks — your report has been saved.');
+        return;
+      }
+      post(report).then(function () {
+        Store.markReportSent(report.id);
+        close();
+        toast('Thanks — your report has been sent.');
+      }, function () {
+        /* Kept in the queue; it goes out next time the site is opened. */
+        close();
+        toast('Thanks — saved. It will be sent when you are back online.');
+      });
     };
   }
 
@@ -185,5 +175,15 @@
     setTimeout(function () { t.remove(); }, 3800);
   }
 
-  window.Feedback = { open: open, asText: asText, configured: function () { return !!CONFIG.formUrl; } };
+  window.Feedback = {
+    open: open,
+    flush: flush,
+    configured: function () { return !!CONFIG.endpoint; }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', flush);
+  } else {
+    flush();
+  }
 })();

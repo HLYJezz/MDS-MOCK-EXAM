@@ -42,6 +42,11 @@
       write('reports', all.slice(0, 100));
     },
     clearReports: function () { drop('reports'); },
+    markReportSent: function (id) {
+      var all = read('reports', []);
+      all.forEach(function (r) { if (r.id === id) r.sent = true; });
+      write('reports', all);
+    },
     reporterName: function () { return read('reporterName', ''); },
     setReporterName: function (n) { write('reporterName', n || ''); },
     /* 'exam' marks everything at the end; 'practice' checks each answer as it

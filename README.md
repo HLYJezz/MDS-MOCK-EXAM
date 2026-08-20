@@ -92,33 +92,37 @@ If you ever do want the scores themselves, that needs somewhere to store them (a
 Sheet via Apps Script is the usual free route) and your friends should be told, since
 exam results are personal.
 
-## Question reports (needs a Google Form)
+## Question reports (needs a Google Sheet)
 
 Every question carries a small **⚠ Report a problem** link, on the question itself and
 again on each item in the answer review. It opens a short dialog: what kind of problem,
 a comment, and an optional name that is remembered for next time.
 
-Each report is saved in the reader's browser **and** opens a prefilled Google Form, so
-the report reaches you. Until the form is set up the report is only saved locally, so do
-set it up:
+Reports go straight into a Google Sheet you own — no form to fill in, no account needed
+by whoever is reporting. Set it up once:
 
-1. Make a form at [forms.google.com](https://forms.google.com) with six short-answer
-   questions: **Paper**, **Question**, **Problem**, **Comment**, **Name**, **Details**.
-   (Fewer is fine — see below.)
-2. In the form's ⋮ menu choose **Get pre-filled link**, type something into every field,
-   press **Get link**, and copy it. It looks like:
-   `…/viewform?usp=pp_url&entry.111=a&entry.222=b&…`
-3. Open `assets/js/feedback.js` and fill in `CONFIG`: `formUrl` is the form link up to
-   and including `/viewform`, and each `entries` value is the matching `entry.NNN`.
-4. In the form, **Responses → Link to Sheets** collects everything in a spreadsheet.
+1. Make a Google Sheet to hold the reports.
+2. In it: **Extensions → Apps Script**, delete the sample code, paste in
+   `tools/feedback-sheet.gs`, and save.
+3. **Deploy → New deployment → Web app**, with *Execute as* **Me** and *Who has access*
+   **Anyone**. Authorise it, then copy the `/exec` URL.
+4. Put that URL in `CONFIG.endpoint` in `assets/js/feedback.js` and push.
 
-Any field you leave blank in `entries` still gets through: everything is also written
-into `details` as one block of text, so a one-question form works if you set only
-`entries.details`.
+Opening the `/exec` URL in a browser should answer `{"ok":true,...}`. Each report becomes
+a row: when it arrived, the paper, the question number and text, the options, what they
+answered, what the key says, the problem, their comment and their name.
+
+Re-deploy with **Manage deployments → edit → New version** after changing the script,
+otherwise the old version keeps running.
+
+**Nothing is lost if a send fails.** Every report is written to the reader's browser
+first; if the network is down the report is queued and goes out next time they open the
+site. Until `CONFIG.endpoint` is filled in, reports are only kept on the device and the
+message says "saved" rather than claiming they were sent.
 
 **The answer is never included while it is still hidden.** A report sent during an exam
 question, or a practice question that has not been confirmed yet, deliberately leaves the
-answer out, so the form cannot be used to peek. Reports from the review screen — where
+answer out, so a report cannot be used to peek. Reports from the review screen — where
 the answer is already on display — include it.
 
 ## Rebuilding the papers from the PDFs
@@ -194,7 +198,8 @@ assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     course groups, paper cards, attempt history
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
-assets/js/feedback.js     question reports → Google Form (off until configured)
+assets/js/feedback.js     question reports → Google Sheet (off until configured)
+tools/feedback-sheet.gs   Apps Script that receives them
 data/manifest.js      paper metadata for the home page (generated)
 data/*.js             one file per paper (generated)
 source-papers/        the original exam PDFs

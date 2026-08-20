@@ -139,7 +139,8 @@
       stem: q.stem,
       options: opts.map(function (o) { return o.letter + '. ' + o.text; }),
       givenAnswer: givenText,
-      recordedAnswer: recorded
+      recordedAnswer: recorded,
+      mode: state.mode || 'exam'
     };
   }
 
