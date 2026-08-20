@@ -37,6 +37,7 @@
     card.appendChild(el('div', 'desc', s.description));
 
     var chips = el('div', 'chips');
+    if (s.badge) chips.appendChild(el('span', 'chip badge', s.badge));
     chips.appendChild(el('span', 'chip', s.questionCount + ' questions'));
     chips.appendChild(el('span', 'chip', s.durationMinutes + ' min'));
     chips.appendChild(el('span', 'chip', 'Pass ' + s.passMark + '%'));

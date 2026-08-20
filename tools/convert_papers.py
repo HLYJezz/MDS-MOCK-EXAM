@@ -38,6 +38,7 @@ PASS_MARK = 60
 #   section_re    optional; matches a section/lecture heading in the questions
 #   sec_key_re    optional; the same headings as they appear inside the key
 #   drop_re       page furniture to throw away
+#   badge         optional label shown on the card, e.g. 'Start here'
 # --------------------------------------------------------------------------
 
 PAGE_FURNITURE = r'^\s*Page\s+\d+\s*$|^\s*\d{1,3}\s*$'
@@ -46,6 +47,7 @@ PAPERS = [
     {
         'file': 'MDS211 SA1 MockExam 77Q.pdf',
         'id': 'mds211-sa1-mock-1',
+        'badge': 'Start here',
         'name': 'SA1 Mock Exam 1',
         'subtitle': 'Real SA1 structure · 77 questions',
         'course': 'MDS211',
@@ -61,6 +63,7 @@ PAPERS = [
     {
         'file': 'MDS211 SA1 MockExam 77Q v2.pdf',
         'id': 'mds211-sa1-mock-2',
+        'badge': 'Start here',
         'name': 'SA1 Mock Exam 2',
         'subtitle': 'Second set · no overlap with Mock 1',
         'course': 'MDS211',
@@ -672,6 +675,8 @@ def write_manifest(summaries):
         lines.append('  {')
         for k in ('id', 'name', 'subtitle', 'course', 'icon', 'accent', 'description'):
             lines.append('    %s: %s,' % (k, js_literal(s[k])))
+        if s.get('badge'):
+            lines.append('    badge: %s,' % js_literal(s['badge']))
         lines.append('    questionCount: %d,' % s['questionCount'])
         lines.append('    durationMinutes: %d,' % s['durationMinutes'])
         lines.append('    passMark: %d,' % s['passMark'])
@@ -699,6 +704,7 @@ def main():
             'course': cfg['course'], 'icon': cfg['icon'],
             'accent': COURSES[cfg['course']]['accent'],
             'description': cfg['description'], 'questionCount': len(questions),
+            'badge': cfg.get('badge'),
             'durationMinutes': minutes, 'passMark': PASS_MARK,
             'file': 'data/%s.js' % cfg['id'],
         })
