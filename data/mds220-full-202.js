@@ -582,7 +582,7 @@ registerExam({
         "Bone",
       ],
       answer: "A",
-      explanation: "A synovial tendon sheath surrounds a tendon to reduce friction; lacerating it implicates the enclosed tendon. Section 2 · Cartilage, Bone & Integument (Lec 4–6)",
+      explanation: "A synovial tendon sheath surrounds a tendon to reduce friction; lacerating it implicates the enclosed tendon.",
     },
     {
       id: "q41",
@@ -1044,7 +1044,7 @@ registerExam({
         "Sebaceous gland",
       ],
       answer: "B",
-      explanation: "Hypertrichosis (excess hair) reflects abnormal hair-follicle development/activity. Section 3 · Back Muscles, Suboccipital Triangle & Vertebral Column (Lec 7–9)",
+      explanation: "Hypertrichosis (excess hair) reflects abnormal hair-follicle development/activity.",
     },
     {
       id: "q74",
@@ -1394,7 +1394,7 @@ registerExam({
         "A pars defect, no slip",
       ],
       answer: "A",
-      explanation: "Spondylolisthesis is anterior slippage of a vertebral body on the one below (often after bilateral pars defects). Section 4 · Scapular, Deltoid, Pectoral & Axilla (Lec 10–11)",
+      explanation: "Spondylolisthesis is anterior slippage of a vertebral body on the one below (often after bilateral pars defects).",
     },
     {
       id: "q99",
@@ -1562,7 +1562,7 @@ registerExam({
         "Internal jugular vein",
       ],
       answer: "A",
-      explanation: "The cephalic vein pierces the clavipectoral fascia to join the axillary vein. Section 5 · Arm, Forearm & Cubital Fossa (Lec 12–13)",
+      explanation: "The cephalic vein pierces the clavipectoral fascia to join the axillary vein.",
     },
     {
       id: "q111",
@@ -1870,7 +1870,7 @@ registerExam({
         "Wrist",
       ],
       answer: "B",
-      explanation: "The brachial artery bifurcates at the apex of the cubital fossa (neck of radius). Section 6 · Hand & Joints of Upper Limb (Lec 14–15)",
+      explanation: "The brachial artery bifurcates at the apex of the cubital fossa (neck of radius).",
     },
     {
       id: "q133",
@@ -2150,7 +2150,7 @@ registerExam({
         "Lunate",
       ],
       answer: "C",
-      explanation: "The snuffbox floor is the scaphoid and trapezium; its content is the radial artery (2nd part). Section 7 · Development of Bone, Skin & Muscle (Lec 16–17)",
+      explanation: "The snuffbox floor is the scaphoid and trapezium; its content is the radial artery (2nd part).",
     },
     {
       id: "q153",
@@ -2290,7 +2290,7 @@ registerExam({
         "Calcaneus",
       ],
       answer: "C",
-      explanation: "Clubfoot involves a talar deformity, with the foot plantarflexed and inverted (equinovarus). Section 8 · Gluteal Region, Posterior Thigh & Popliteal Fossa (Lec 18–19)",
+      explanation: "Clubfoot involves a talar deformity, with the foot plantarflexed and inverted (equinovarus).",
     },
     {
       id: "q163",
@@ -2458,7 +2458,7 @@ registerExam({
         "The pubofemoral ligament",
       ],
       answer: "D",
-      explanation: "The sacrotuberous and sacrospinous ligaments form the greater and lesser sciatic foramina. Section 9 · Anterior/Medial Thigh, Leg, Foot & Lower-limb Joints (Lec 20–23)",
+      explanation: "The sacrotuberous and sacrospinous ligaments form the greater and lesser sciatic foramina.",
     },
     {
       id: "q175",

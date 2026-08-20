@@ -90,7 +90,7 @@ registerExam({
         "Central canal",
       ],
       answer: "B",
-      explanation: "The interventricular foramen (of Monro) connects each lateral ventricle to the third ventricle — the next stop on the CSF circuit. ✗ A is wrong: The fourth ventricle is two stops away — CSF must still cross the cerebral aqueduct (of Sylvius) from the third ventricle before reaching the fourth. TIP: Know the full CSF circuit cold: Lateral ventricles → (foramen of Monro) → 3rd ventricle → (cerebral aqueduct) → 4th ventricle → (foramina of Luschka/Magendie) → subarachnoid space → arachnoid granulations → venous sinuses. Lecture 2 — Neurohistology (Neuron & Neuroglia) (3 questions)",
+      explanation: "The interventricular foramen (of Monro) connects each lateral ventricle to the third ventricle — the next stop on the CSF circuit. ✗ A is wrong: The fourth ventricle is two stops away — CSF must still cross the cerebral aqueduct (of Sylvius) from the third ventricle before reaching the fourth. TIP: Know the full CSF circuit cold: Lateral ventricles → (foramen of Monro) → 3rd ventricle → (cerebral aqueduct) → 4th ventricle → (foramina of Luschka/Magendie) → subarachnoid space → arachnoid granulations → venous sinuses.",
     },
     {
       id: "q6",
@@ -132,7 +132,7 @@ registerExam({
         "EAATs Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction (5 questions)",
       ],
       answer: "E",
-      explanation: "Excitatory Amino-Acid Transporters (EAATs, especially EAAT-2/GLT-1) on astrocytic membranes clear synaptic glutamate to prevent excitotoxicity. ✗ A is wrong: MCT (monocarboxylate transporter) moves lactate/pyruvate/ketone bodies, not glutamate — easy to confuse since both transporters live on astrocytes and both are exam favorites. Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction (5 questions)",
+      explanation: "Excitatory Amino-Acid Transporters (EAATs, especially EAAT-2/GLT-1) on astrocytic membranes clear synaptic glutamate to prevent excitotoxicity. ✗ A is wrong: MCT (monocarboxylate transporter) moves lactate/pyruvate/ketone bodies, not glutamate — easy to confuse since both transporters live on astrocytes and both are exam favorites.",
     },
     {
       id: "q9",
@@ -202,7 +202,7 @@ registerExam({
         "Protein degradation",
       ],
       answer: "B",
-      explanation: "The largest share of brain ATP consumption goes to running the Na+/K+-ATPase, restoring the Na+/K+ gradients dissipated by action potentials and synaptic currents — the brain is metabolically expensive largely because of this pump. Lecture 4 — Metabolic Pathways of Neurons & Nervous Tissue (5 questions)",
+      explanation: "The largest share of brain ATP consumption goes to running the Na+/K+-ATPase, restoring the Na+/K+ gradients dissipated by action potentials and synaptic currents — the brain is metabolically expensive largely because of this pump.",
     },
     {
       id: "q14",
@@ -272,7 +272,7 @@ registerExam({
         "Glutamine has no downstream effect once formed",
       ],
       answer: "B",
-      explanation: "Glutamine is osmotically active; when astrocytes are forced to make large amounts of it to buffer ammonia, intracellular osmolarity rises and water follows, causing astrocyte (and eventually brain) swelling — a major contributor to the cerebral edema seen in acute hepatic encephalopathy. Lectures 5–6 — Embryonic Development of the Nervous System / Development of the Eye (5 questions)",
+      explanation: "Glutamine is osmotically active; when astrocytes are forced to make large amounts of it to buffer ammonia, intracellular osmolarity rises and water follows, causing astrocyte (and eventually brain) swelling — a major contributor to the cerebral edema seen in acute hepatic encephalopathy.",
     },
     {
       id: "q19",
@@ -342,7 +342,7 @@ registerExam({
         "The lacrimal gland",
       ],
       answer: "B",
-      explanation: "The ventral surface of the optic vesicle/stalk/cup develops a groove — the retinal (choroid) fissure — allowing the hyaloid artery/vein to enter and supply the developing inner eye structures before it normally closes. Lecture 7 — Spinal Cord & Blood Supply (5 questions)",
+      explanation: "The ventral surface of the optic vesicle/stalk/cup develops a groove — the retinal (choroid) fissure — allowing the hyaloid artery/vein to enter and supply the developing inner eye structures before it normally closes.",
     },
     {
       id: "q24",
@@ -412,7 +412,7 @@ registerExam({
         "It is reinforced only at the cervical level, with no other reinforcing radicular arteries lower down",
       ],
       answer: "E",
-      explanation: "This is FALSE (hence the correct EXCEPT answer): the anterior spinal artery is reinforced along its length by multiple segmental radicular arteries, most famously the large artery of Adamkiewicz in the lower thoracic/upper lumbar region — reinforcement is not limited to the cervical level. TIP: Artery of Adamkiewicz (major radicular artery, usually T9-T12) is a classic exam name-drop — its damage (e.g., during aortic surgery) causes anterior spinal artery syndrome affecting the lower cord. Lecture 8 — PNS: Cranial & Spinal Nerves, Nerve Plexuses (3 questions)",
+      explanation: "This is FALSE (hence the correct EXCEPT answer): the anterior spinal artery is reinforced along its length by multiple segmental radicular arteries, most famously the large artery of Adamkiewicz in the lower thoracic/upper lumbar region — reinforcement is not limited to the cervical level. TIP: Artery of Adamkiewicz (major radicular artery, usually T9-T12) is a classic exam name-drop — its damage (e.g., during aortic surgery) causes anterior spinal artery syndrome affecting the lower cord.",
     },
     {
       id: "q29",
@@ -454,7 +454,7 @@ registerExam({
         "Nuclei Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation (10 questions)",
       ],
       answer: "C",
-      explanation: "Ganglia = PNS cell body clusters. The CNS equivalent term is 'nucleus'; a bundle of axons is a 'tract’ in the CNS or a 'nerve’ in the PNS. ✗ E is wrong: 'Nuclei’ is the correct term, but specifically for CNS cell body collections — a PNS collection is called a ganglion, not a nucleus. TIP: Cell bodies: CNS = nucleus, PNS = ganglion. Axon bundles: CNS = tract, PNS = nerve. Four terms, two locations, memorize the grid. Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation (10 questions)",
+      explanation: "Ganglia = PNS cell body clusters. The CNS equivalent term is 'nucleus'; a bundle of axons is a 'tract’ in the CNS or a 'nerve’ in the PNS. ✗ E is wrong: 'Nuclei’ is the correct term, but specifically for CNS cell body collections — a PNS collection is called a ganglion, not a nucleus. TIP: Cell bodies: CNS = nucleus, PNS = ganglion. Axon bundles: CNS = tract, PNS = nerve. Four terms, two locations, memorize the grid.",
     },
     {
       id: "q32",
@@ -594,7 +594,7 @@ registerExam({
         "Substantia nigra",
       ],
       answer: "B",
-      explanation: "The medial (central) reticular column provides the local, intrinsic interneuronal connections linking sensory input to motor cranial nerve nuclei for brainstem reflexes (eye movements, swallowing, and other coordinated reflex arcs). Lecture 11 — Special Sense Organs & Its Development (8 questions)",
+      explanation: "The medial (central) reticular column provides the local, intrinsic interneuronal connections linking sensory input to motor cranial nerve nuclei for brainstem reflexes (eye movements, swallowing, and other coordinated reflex arcs).",
     },
     {
       id: "q42",
@@ -706,7 +706,7 @@ registerExam({
         "The same fluid as the scala vestibuli and scala tympani",
       ],
       answer: "B",
-      explanation: "The cochlear duct (scala media) is filled with endolymph, notable for its high K+ / low Na+ composition (unlike typical extracellular fluid) — this unusual ionic gradient, maintained by the stria vascularis, is what actually drives the receptor (transduction) current when hair cell channels open. TIP: Endolymph (scala media) = high K+, resembles intracellular fluid. Perilymph (scala vestibuli & scala tympani) = low K+/high Na+, resembles typical extracellular fluid/CSF. This K+-driven transduction current (not Na+, unusually) is a favorite physiology trick question. Lectures 12–13 — Somatosensory Pathways / Taste Sensation (8 questions)",
+      explanation: "The cochlear duct (scala media) is filled with endolymph, notable for its high K+ / low Na+ composition (unlike typical extracellular fluid) — this unusual ionic gradient, maintained by the stria vascularis, is what actually drives the receptor (transduction) current when hair cell channels open. TIP: Endolymph (scala media) = high K+, resembles intracellular fluid. Perilymph (scala vestibuli & scala tympani) = low K+/high Na+, resembles typical extracellular fluid/CSF. This K+-driven transduction current (not Na+, unusually) is a favorite physiology trick question.",
     },
     {
       id: "q50",
@@ -818,7 +818,7 @@ registerExam({
         "Trapezoid body",
       ],
       answer: "E",
-      explanation: "The trapezoid body is part of the AUDITORY pathway (a brainstem relay in the ascending auditory pathway), not the gustatory pathway — a structure-swap trap between two unrelated special sense pathways. TIP: Full gustatory pathway ladder: Taste bud → CN VII/IX/X → Geniculate/petrosal/nodose ganglion → Solitary nucleus (rostral part) → VPM thalamus → Insula/frontal operculum (gustatory cortex). Five steps, memorize the whole chain, not just pieces. Lecture 14 — Sensory Receptor Transduction & Neurotransmitters (10 questions)",
+      explanation: "The trapezoid body is part of the AUDITORY pathway (a brainstem relay in the ascending auditory pathway), not the gustatory pathway — a structure-swap trap between two unrelated special sense pathways. TIP: Full gustatory pathway ladder: Taste bud → CN VII/IX/X → Geniculate/petrosal/nodose ganglion → Solitary nucleus (rostral part) → VPM thalamus → Insula/frontal operculum (gustatory cortex). Five steps, memorize the whole chain, not just pieces.",
     },
     {
       id: "q58",
@@ -957,7 +957,7 @@ registerExam({
         "Vibration Lectures 15–16 — Visual System / Auditory & Vestibular Systems (10 questions)",
       ],
       answer: "E",
-      explanation: "Vibration is a MECHANICAL stimulus detected by mechanoreceptors (like Pacinian corpuscles), not a chemical inflammatory mediator that sensitizes/activates nociceptors — the other four are all classic chemical mediators of the 'inflammatory soup’ that sensitizes pain fibers. TIP: The 'inflammatory soup’ sensitizing nociceptors: prostaglandins, bradykinin, K+, H+, histamine, substance P, ATP — memorize this list as a set, since 'which of these does NOT belong’ questions are extremely common. Lectures 15–16 — Visual System / Auditory & Vestibular Systems (10 questions)",
+      explanation: "Vibration is a MECHANICAL stimulus detected by mechanoreceptors (like Pacinian corpuscles), not a chemical inflammatory mediator that sensitizes/activates nociceptors — the other four are all classic chemical mediators of the 'inflammatory soup’ that sensitizes pain fibers. TIP: The 'inflammatory soup’ sensitizing nociceptors: prostaglandins, bradykinin, K+, H+, histamine, substance P, ATP — memorize this list as a set, since 'which of these does NOT belong’ questions are extremely common.",
     },
     {
       id: "q68",

@@ -450,7 +450,7 @@ registerExam({
         "Its bulb contains living dividing cells",
       ],
       answer: "E",
-      explanation: "Only the hair bulb contains living, dividing matrix cells; the follicle originates from dermis and the shaft is keratinised dead tissue. SECTION B -- Gross Anatomy (Back, Upper and Lower Limb, Joints, Vertebral Column)",
+      explanation: "Only the hair bulb contains living, dividing matrix cells; the follicle originates from dermis and the shaft is keratinised dead tissue.",
     },
     {
       id: "q32",
@@ -1108,7 +1108,7 @@ registerExam({
         "The axis and the third cervical",
       ],
       answer: "C",
-      explanation: "There is no intervertebral disc between C1 (atlas) and C2 (axis). SECTION C -- Embryology and Development",
+      explanation: "There is no intervertebral disc between C1 (atlas) and C2 (axis).",
     },
     {
       id: "q79",

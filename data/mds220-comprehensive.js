@@ -1024,7 +1024,7 @@ registerExam({
         "Hair papilla",
       ],
       answer: "D",
-      explanation: "The cortex holds melanin and moisture; the medulla is the spongy air-containing core. SECTION B -- Gross Anatomy (Back, Upper and Lower Limb, Joints, Vertebral Column)",
+      explanation: "The cortex holds melanin and moisture; the medulla is the spongy air-containing core.",
     },
     {
       id: "q73",
@@ -2144,7 +2144,7 @@ registerExam({
         "Cervical and thoracic curves",
       ],
       answer: "D",
-      explanation: "The thoracic and sacral kyphoses are primary curvatures; the cervical and lumbar lordoses are secondary. SECTION C -- Embryology and Development",
+      explanation: "The thoracic and sacral kyphoses are primary curvatures; the cervical and lumbar lordoses are secondary.",
     },
     {
       id: "q153",

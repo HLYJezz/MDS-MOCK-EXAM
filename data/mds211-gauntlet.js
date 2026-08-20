@@ -308,7 +308,7 @@ registerExam({
         "Within the ventricles (intraventricular)",
       ],
       answer: "A",
-      explanation: "Epidural hematomas classically form between the skull and dura, often from a tear in the middle meningeal artery after temporal bone (pterion) trauma — arterial bleeding into this potential space produces the classic rapidly-expanding, lens (biconvex)-shaped hematoma on CT. ✗ B is wrong: Subdural hematomas instead form between dura and arachnoid, typically from torn bridging VEINS (not the artery), producing a slower-onset, crescent-shaped hematoma — a classic paired distinction (epidural=artery=fast=biconvex vs subdural=vein=slow=crescent) tested constantly. † original question, not a verified past-exam item PROF’S TRICK: Epidural = artery = biconvex/lens-shaped = fast, dramatic. Subdural = bridging veins = crescent-shaped = slower, especially in the elderly/atrophied brain where veins are more stretched and vulnerable. This lens-vs-crescent shape distinction is one of the highest-yield facts in all of neuroanatomy/radiology. Lecture 2 — Neurohistology (Neuron & Neuroglia) (20 questions)",
+      explanation: "Epidural hematomas classically form between the skull and dura, often from a tear in the middle meningeal artery after temporal bone (pterion) trauma — arterial bleeding into this potential space produces the classic rapidly-expanding, lens (biconvex)-shaped hematoma on CT. ✗ B is wrong: Subdural hematomas instead form between dura and arachnoid, typically from torn bridging VEINS (not the artery), producing a slower-onset, crescent-shaped hematoma — a classic paired distinction (epidural=artery=fast=biconvex vs subdural=vein=slow=crescent) tested constantly. † original question, not a verified past-exam item PROF’S TRICK: Epidural = artery = biconvex/lens-shaped = fast, dramatic. Subdural = bridging veins = crescent-shaped = slower, especially in the elderly/atrophied brain where veins are more stretched and vulnerable. This lens-vs-crescent shape distinction is one of the highest-yield facts in all of neuroanatomy/radiology.",
     },
     {
       id: "q21",
@@ -588,7 +588,7 @@ registerExam({
         "Astrocytes are always more vulnerable than oligodendrocytes in every scenario",
       ],
       answer: "A",
-      explanation: "Immature/maturing oligodendrocytes have high metabolic demands (myelin synthesis) and limited antioxidant defenses, making them especially vulnerable to hypoxic-ischemic and excitotoxic injury during a specific developmental window — this vulnerability underlies periventricular leukomalacia, a classic white matter injury pattern in premature infants. † original question, not a verified past-exam item Lecture 3 — Neuron Properties: RMP & Action Potential (20 questions)",
+      explanation: "Immature/maturing oligodendrocytes have high metabolic demands (myelin synthesis) and limited antioxidant defenses, making them especially vulnerable to hypoxic-ischemic and excitotoxic injury during a specific developmental window — this vulnerability underlies periventricular leukomalacia, a classic white matter injury pattern in premature infants. † original question, not a verified past-exam item",
     },
     {
       id: "q41",
@@ -868,7 +868,7 @@ registerExam({
         "No known physiological role",
       ],
       answer: "B",
-      explanation: "T-type Ca2+ channels underlie the rhythmic burst-firing behavior of thalamocortical neurons implicated in absence seizure generation — this is exactly the target of ethosuximide, a first-line absence seizure medication. † original question, not a verified past-exam item Lecture 4 — Metabolic Pathways of Neurons (20 questions)",
+      explanation: "T-type Ca2+ channels underlie the rhythmic burst-firing behavior of thalamocortical neurons implicated in absence seizure generation — this is exactly the target of ethosuximide, a first-line absence seizure medication. † original question, not a verified past-exam item",
     },
     {
       id: "q61",
@@ -1148,7 +1148,7 @@ registerExam({
         "Only dietary cholesterol",
       ],
       answer: "A",
-      explanation: "During prolonged fasting or ketogenic states, ketone bodies (produced by the liver from fatty acid oxidation) can cross the blood-brain barrier and be used by neurons as an alternative oxidative fuel source when glucose/lactate supply is limited — the physiological basis of ketogenic diets in some epilepsy treatment. ✗ B is wrong: Free fatty acids themselves cross the BBB very poorly — the liver must first convert them into ketone bodies, which ARE able to cross efficiently; this distinction is exactly why ketone bodies (not fatty acids directly) are the brain’s fasting-adapted alternative fuel. † original question, not a verified past-exam item Lecture 5 — Embryonic Development of the Nervous System (18 questions)",
+      explanation: "During prolonged fasting or ketogenic states, ketone bodies (produced by the liver from fatty acid oxidation) can cross the blood-brain barrier and be used by neurons as an alternative oxidative fuel source when glucose/lactate supply is limited — the physiological basis of ketogenic diets in some epilepsy treatment. ✗ B is wrong: Free fatty acids themselves cross the BBB very poorly — the liver must first convert them into ketone bodies, which ARE able to cross efficiently; this distinction is exactly why ketone bodies (not fatty acids directly) are the brain’s fasting-adapted alternative fuel. † original question, not a verified past-exam item",
     },
     {
       id: "q81",
@@ -1400,7 +1400,7 @@ registerExam({
         "Foramen magnum; obstruction always causes brain death immediately",
       ],
       answer: "B",
-      explanation: "The cerebral aqueduct is a narrow channel especially vulnerable to obstruction (e.g., by a tumor compressing the tectal plate/quadrigeminal region); blocking it causes CSF to back up into the lateral and third ventricles, producing obstructive (non-communicating) hydrocephalus while the fourth ventricle remains normal-sized. † original question, not a verified past-exam item Lecture 6 — Development of the Eye (18 questions)",
+      explanation: "The cerebral aqueduct is a narrow channel especially vulnerable to obstruction (e.g., by a tumor compressing the tectal plate/quadrigeminal region); blocking it causes CSF to back up into the lateral and third ventricles, producing obstructive (non-communicating) hydrocephalus while the fourth ventricle remains normal-sized. † original question, not a verified past-exam item",
     },
     {
       id: "q99",
@@ -1652,7 +1652,7 @@ registerExam({
         "This triad has no known common explanation",
       ],
       answer: "A",
-      explanation: "The lens, inner ear, and heart are all undergoing critical, vulnerable morphogenesis during a similar early gestational window; a single teratogen (rubella virus) crossing the placenta during that window can disrupt all three simultaneously — illustrating the general teratology principle that WHEN an insult occurs matters as much as WHAT the insult is. † original question, not a verified past-exam item Lecture 7 — Spinal Cord: Blood Supply & Clinical Correlation (18 questions)",
+      explanation: "The lens, inner ear, and heart are all undergoing critical, vulnerable morphogenesis during a similar early gestational window; a single teratogen (rubella virus) crossing the placenta during that window can disrupt all three simultaneously — illustrating the general teratology principle that WHEN an insult occurs matters as much as WHAT the insult is. † original question, not a verified past-exam item",
     },
     {
       id: "q117",
@@ -1904,7 +1904,7 @@ registerExam({
         "The cord extends to the sacral hiatus in adults",
       ],
       answer: "A",
-      explanation: "Due to differential growth rates between the vertebral column and spinal cord during development, the adult conus medullaris typically terminates around L1-L2 — lumbar puncture is therefore performed at L3-L4 or L4-L5 to safely avoid the cord itself. † original question, not a verified past-exam item Lecture 8 — PNS: Cranial & Spinal Nerve Organization (18 questions)",
+      explanation: "Due to differential growth rates between the vertebral column and spinal cord during development, the adult conus medullaris typically terminates around L1-L2 — lumbar puncture is therefore performed at L3-L4 or L4-L5 to safely avoid the cord itself. † original question, not a verified past-exam item",
     },
     {
       id: "q135",
@@ -2156,7 +2156,7 @@ registerExam({
         "Loss of hearing",
       ],
       answer: "A",
-      explanation: "The recurrent laryngeal nerve supplies most intrinsic laryngeal muscles (controlling vocal cord movement); its injury (e.g., during thyroid surgery, given its close anatomical relationship to the thyroid gland) classically causes hoarseness or vocal cord paralysis. † original question, not a verified past-exam item Lecture 9 — Brainstem I: Internal Structures & Localization (17 questions)",
+      explanation: "The recurrent laryngeal nerve supplies most intrinsic laryngeal muscles (controlling vocal cord movement); its injury (e.g., during thyroid surgery, given its close anatomical relationship to the thyroid gland) classically causes hoarseness or vocal cord paralysis. † original question, not a verified past-exam item",
     },
     {
       id: "q153",
@@ -2394,7 +2394,7 @@ registerExam({
         "Only spinal cord lesions can be lateralized, brainstem lesions cannot",
       ],
       answer: "A",
-      explanation: "Understanding exactly WHERE a tract crosses (the decussation) relative to a lesion is what lets you correctly predict whether a deficit will be ipsilateral or contralateral to that lesion — since corticospinal fibers cross at the cervicomedullary junction (pyramidal decussation), any lesion ABOVE this point (cortex, internal capsule, midbrain, pons, upper medulla) produces CONTRALATERAL weakness, while a lesion BELOW this point (in the spinal cord, after crossing) produces IPSILATERAL weakness. † original question, not a verified past-exam item PROF’S TRICK: This single organizing question — 'has this tract crossed yet at the level of the lesion?' — is THE master key for localizing ANY motor or sensory deficit anywhere in the CNS. Work it out from first principles (where does this tract cross?) rather than memorizing lesion-by-lesion lists, and you can solve localization questions you’ve never even seen before. Lecture 10 — Reticular Formation & ARAS (17 questions)",
+      explanation: "Understanding exactly WHERE a tract crosses (the decussation) relative to a lesion is what lets you correctly predict whether a deficit will be ipsilateral or contralateral to that lesion — since corticospinal fibers cross at the cervicomedullary junction (pyramidal decussation), any lesion ABOVE this point (cortex, internal capsule, midbrain, pons, upper medulla) produces CONTRALATERAL weakness, while a lesion BELOW this point (in the spinal cord, after crossing) produces IPSILATERAL weakness. † original question, not a verified past-exam item PROF’S TRICK: This single organizing question — 'has this tract crossed yet at the level of the lesion?' — is THE master key for localizing ANY motor or sensory deficit anywhere in the CNS. Work it out from first principles (where does this tract cross?) rather than memorizing lesion-by-lesion lists, and you can solve localization questions you’ve never even seen before.",
     },
     {
       id: "q170",
@@ -2632,7 +2632,7 @@ registerExam({
         "Because arousal and autonomic control are handled by completely separate, distant brain regions with no overlap",
       ],
       answer: "A",
-      explanation: "Unlike the cortex (where different functions are more spatially segregated across different lobes/gyri), the reticular formation’s arousal (median), reflex/intrinsic (medial), and autonomic (lateral) columns are packed closely together within the compact brainstem — this anatomical proximity is exactly why brainstem strokes/injuries so often produce the dangerous combination of depressed consciousness PLUS respiratory/cardiovascular instability simultaneously, unlike a cortical stroke of similar size. † original question, not a verified past-exam item Lecture 11 — Special Sense Organs: Histology & Development (17 questions)",
+      explanation: "Unlike the cortex (where different functions are more spatially segregated across different lobes/gyri), the reticular formation’s arousal (median), reflex/intrinsic (medial), and autonomic (lateral) columns are packed closely together within the compact brainstem — this anatomical proximity is exactly why brainstem strokes/injuries so often produce the dangerous combination of depressed consciousness PLUS respiratory/cardiovascular instability simultaneously, unlike a cortical stroke of similar size. † original question, not a verified past-exam item",
     },
     {
       id: "q187",
@@ -2870,7 +2870,7 @@ registerExam({
         "The eye; tear drainage",
       ],
       answer: "A",
-      explanation: "The Eustachian tube connects the middle ear cavity to the nasopharynx, allowing pressure equalization (e.g., the 'ear popping’ sensation during altitude changes) — dysfunction here (e.g., from congestion) is a common cause of middle ear pressure symptoms and conductive hearing changes. † original question, not a verified past-exam item Lecture 12 — Somatosensory Pathways (17 questions)",
+      explanation: "The Eustachian tube connects the middle ear cavity to the nasopharynx, allowing pressure equalization (e.g., the 'ear popping’ sensation during altitude changes) — dysfunction here (e.g., from congestion) is a common cause of middle ear pressure symptoms and conductive hearing changes. † original question, not a verified past-exam item",
     },
     {
       id: "q204",
@@ -3108,7 +3108,7 @@ registerExam({
         "This information is only useful for the brainstem, never the spinal cord",
       ],
       answer: "A",
-      explanation: "This is the unifying principle behind essentially every lesion-localization question in this entire exam: dorsal columns cross late (medulla) so lesions below that point cause ipsilateral loss; spinothalamic tracts cross early (within 1-2 cord segments) so a cord lesion causes contralateral loss; corticospinal tracts cross at the pyramidal decussation, so lesions above it cause contralateral weakness and lesions below it cause ipsilateral weakness. Master this one framework, and you can work out the expected findings for a lesion ANYWHERE in the neuraxis, for ANY tract, without memorizing each scenario as an isolated fact. † original question, not a verified past-exam item PROF’S TRICK: If you remember only ONE big-picture lesson from this entire 300-question set, make it this one: always ask 'has this specific tract crossed the midline yet at this specific level?' That single question, applied systematically, is more powerful than memorizing hundreds of individual lesion-symptom pairings — and it’s exactly the kind of first-principles thinking that separates a good doctor from a memorization machine. You’ve got this. Lecture 13 — Taste, Sensory Receptors & Neurotransmitters (17 questions)",
+      explanation: "This is the unifying principle behind essentially every lesion-localization question in this entire exam: dorsal columns cross late (medulla) so lesions below that point cause ipsilateral loss; spinothalamic tracts cross early (within 1-2 cord segments) so a cord lesion causes contralateral loss; corticospinal tracts cross at the pyramidal decussation, so lesions above it cause contralateral weakness and lesions below it cause ipsilateral weakness. Master this one framework, and you can work out the expected findings for a lesion ANYWHERE in the neuraxis, for ANY tract, without memorizing each scenario as an isolated fact. † original question, not a verified past-exam item PROF’S TRICK: If you remember only ONE big-picture lesson from this entire 300-question set, make it this one: always ask 'has this specific tract crossed the midline yet at this specific level?' That single question, applied systematically, is more powerful than memorizing hundreds of individual lesion-symptom pairings — and it’s exactly the kind of first-principles thinking that separates a good doctor from a memorization machine. You’ve got this.",
     },
     {
       id: "q221",
@@ -3346,7 +3346,7 @@ registerExam({
         "Because only visual input can trigger a gag reflex",
       ],
       answer: "A",
-      explanation: "Just as pain pathways branch off to trigger fast spinal reflexes (withdrawal) in parallel with the slower pathway to conscious perception, gustatory afferents synapsing in the solitary nucleus can also trigger brainstem-level protective reflexes (gagging, salivation changes) via local connections to motor nuclei — a general principle across sensory systems where 'fast, local reflex’ and 'slower, conscious perception’ pathways run in parallel from the same initial sensory input. † original question, not a verified past-exam item PROF’S TRICK: This parallel-pathway principle — a sensory input branching into both a fast subconscious reflex arc AND a slower conscious perceptual pathway — shows up again and again across the nervous system (pain/withdrawal, taste/gag, light/pupillary reflex vs. conscious vision). Recognizing this as a recurring design pattern, rather than a series of unrelated facts, is exactly the kind of big-picture thinking a great professor is trying to cultivate. Lecture 14 — Sensory Receptors, Neurotransmitters & Pharmacology (22 questions)",
+      explanation: "Just as pain pathways branch off to trigger fast spinal reflexes (withdrawal) in parallel with the slower pathway to conscious perception, gustatory afferents synapsing in the solitary nucleus can also trigger brainstem-level protective reflexes (gagging, salivation changes) via local connections to motor nuclei — a general principle across sensory systems where 'fast, local reflex’ and 'slower, conscious perception’ pathways run in parallel from the same initial sensory input. † original question, not a verified past-exam item PROF’S TRICK: This parallel-pathway principle — a sensory input branching into both a fast subconscious reflex arc AND a slower conscious perceptual pathway — shows up again and again across the nervous system (pain/withdrawal, taste/gag, light/pupillary reflex vs. conscious vision). Recognizing this as a recurring design pattern, rather than a series of unrelated facts, is exactly the kind of big-picture thinking a great professor is trying to cultivate.",
     },
     {
       id: "q238",
@@ -3641,7 +3641,7 @@ registerExam({
         "Nociceptive pain does not involve any receptors",
       ],
       answer: "A",
-      explanation: "Nociceptive pain (from ongoing tissue injury/inflammation activating normal nociceptor pathways) responds well to opioids acting at mu-receptors along the normal pain-modulating circuitry; neuropathic pain instead often arises from damaged nerve fibers generating aberrant signals through mechanisms (ectopic ion channel expression, central sensitization) that aren’t primarily opioid-receptor-dependent — explaining why neuropathic pain often instead responds better to anticonvulsants (e.g., gabapentin, targeting Ca2+ channels) or antidepressants (e.g., SNRIs, boosting descending inhibition) than to opioids alone. † original question, not a verified past-exam item PROF’S TRICK: This mechanistic 'why does drug X work for pain type A but not pain type B’ reasoning is exactly the sort of integrative pharmacology-meets-physiology question that separates surface-level memorization from the kind of understanding you’ll actually need as a practicing physician choosing pain medications. Lecture 15 — Visual System (19 questions)",
+      explanation: "Nociceptive pain (from ongoing tissue injury/inflammation activating normal nociceptor pathways) responds well to opioids acting at mu-receptors along the normal pain-modulating circuitry; neuropathic pain instead often arises from damaged nerve fibers generating aberrant signals through mechanisms (ectopic ion channel expression, central sensitization) that aren’t primarily opioid-receptor-dependent — explaining why neuropathic pain often instead responds better to anticonvulsants (e.g., gabapentin, targeting Ca2+ channels) or antidepressants (e.g., SNRIs, boosting descending inhibition) than to opioids alone. † original question, not a verified past-exam item PROF’S TRICK: This mechanistic 'why does drug X work for pain type A but not pain type B’ reasoning is exactly the sort of integrative pharmacology-meets-physiology question that separates surface-level memorization from the kind of understanding you’ll actually need as a practicing physician choosing pain medications.",
     },
     {
       id: "q260",
@@ -3898,7 +3898,7 @@ registerExam({
         "Chiasm crossing is irrelevant to this distinction",
       ],
       answer: "A",
-      explanation: "This is the master organizing principle of the entire visual pathway: pre-chiasmal structures (optic nerve) are eye-specific (one nerve = one eye’s full visual field), while the chiasm reorganizes fibers by VISUAL FIELD rather than by eye — so everything post-chiasmal (tract, radiation, cortex) carries a mixed, binocular representation of one half of visual space, explaining why post-chiasmal lesions always produce homonymous (matching, same-side) field cuts in both eyes rather than a single blind eye. † original question, not a verified past-exam item PROF’S TRICK: This single principle — 'before the chiasm = organized by EYE, after the chiasm = organized by VISUAL FIELD’ — is the master key that lets you derive EVERY visual field defect pattern from first principles instead of memorizing them individually. Once you truly understand this, questions about optic nerve vs. chiasm vs. tract vs. radiation lesions become logic problems, not memorization problems. Lecture 16 — Auditory & Vestibular Systems (22 questions)",
+      explanation: "This is the master organizing principle of the entire visual pathway: pre-chiasmal structures (optic nerve) are eye-specific (one nerve = one eye’s full visual field), while the chiasm reorganizes fibers by VISUAL FIELD rather than by eye — so everything post-chiasmal (tract, radiation, cortex) carries a mixed, binocular representation of one half of visual space, explaining why post-chiasmal lesions always produce homonymous (matching, same-side) field cuts in both eyes rather than a single blind eye. † original question, not a verified past-exam item PROF’S TRICK: This single principle — 'before the chiasm = organized by EYE, after the chiasm = organized by VISUAL FIELD’ — is the master key that lets you derive EVERY visual field defect pattern from first principles instead of memorizing them individually. Once you truly understand this, questions about optic nerve vs. chiasm vs. tract vs. radiation lesions become logic problems, not memorization problems.",
     },
     {
       id: "q279",

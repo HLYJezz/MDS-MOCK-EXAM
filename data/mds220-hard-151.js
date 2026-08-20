@@ -156,7 +156,7 @@ registerExam({
         "Type II — hyaline & elastic cartilage",
       ],
       answer: "A",
-      explanation: "Tendon is dominated by Type I collagen, not Type IV. Type IV is the mesh of the basal lamina. The other pairings are all correct as taught. Section 2 · Cartilage, Bone & Integument (Lec 4–6)",
+      explanation: "Tendon is dominated by Type I collagen, not Type IV. Type IV is the mesh of the basal lamina. The other pairings are all correct as taught.",
     },
     {
       id: "q10",
@@ -296,7 +296,7 @@ registerExam({
         "Absence of melanocytes in the skin",
       ],
       answer: "C",
-      explanation: "In albinism, melanocytes are present but cannot make melanin because tyrosinase (which converts tyrosine → melanin) is deficient/absent. This is distinct from vitiligo (loss of melanocytes). Section 3 · Back, Suboccipital Triangle & Vertebral Column (Lec 7–9)",
+      explanation: "In albinism, melanocytes are present but cannot make melanin because tyrosinase (which converts tyrosine → melanin) is deficient/absent. This is distinct from vitiligo (loss of melanocytes).",
     },
     {
       id: "q20",
@@ -450,7 +450,7 @@ registerExam({
         "Nucleus pulposus ; anulus fibrosus",
       ],
       answer: "E",
-      explanation: "The nucleus pulposus is the semifluid central shock-absorbing core; the anulus fibrosus is the surrounding fibrocartilaginous ring (thinner/less numerous lamellae posteriorly — hence posterolateral herniation). Section 4 · Scapular, Deltoid, Pectoral & Axilla (Lec 10–11)",
+      explanation: "The nucleus pulposus is the semifluid central shock-absorbing core; the anulus fibrosus is the surrounding fibrocartilaginous ring (thinner/less numerous lamellae posteriorly — hence posterolateral herniation).",
     },
     {
       id: "q31",
@@ -520,7 +520,7 @@ registerExam({
         "Serratus anterior",
       ],
       answer: "B",
-      explanation: "Trapezius is the accessory-nerve (CN XI) muscle of the superficial back; its paralysis drops the shoulder and weakens elevation/retraction of the scapula. Section 5 · Arm, Forearm & Cubital Fossa (Lec 12–13)",
+      explanation: "Trapezius is the accessory-nerve (CN XI) muscle of the superficial back; its paralysis drops the shoulder and weakens elevation/retraction of the scapula.",
     },
     {
       id: "q36",
@@ -646,7 +646,7 @@ registerExam({
         "At the apex of the cubital fossa",
       ],
       answer: "E",
-      explanation: "The brachial artery bifurcates into radial and ulnar arteries at the apex of the cubital fossa, at the level of the neck of the radius. Section 6 · Hand & Joints of Upper Limb (Lec 14–15)",
+      explanation: "The brachial artery bifurcates into radial and ulnar arteries at the apex of the cubital fossa, at the level of the neck of the radius.",
     },
     {
       id: "q45",
@@ -786,7 +786,7 @@ registerExam({
         "Interosseous membrane",
       ],
       answer: "C",
-      explanation: "The anular ligament encircles the radial head at the proximal radio-ulnar (pivot) joint; in young children axial traction lets the radial head slip from under the loose anular ligament — nursemaid's elbow. Section 7 · Development of Bone, Skin & Muscle (Lec 16–17)",
+      explanation: "The anular ligament encircles the radial head at the proximal radio-ulnar (pivot) joint; in young children axial traction lets the radial head slip from under the loose anular ligament — nursemaid's elbow.",
     },
     {
       id: "q55",
@@ -870,7 +870,7 @@ registerExam({
         "Poland syndrome",
       ],
       answer: "A",
-      explanation: "Prune-belly (Eagle–Barrett) syndrome features deficient/absent abdominal-wall muscle, giving the wrinkled 'prune' appearance. Section 8 · Gluteal Region, Posterior Thigh & Popliteal Fossa (Lec 18–19)",
+      explanation: "Prune-belly (Eagle–Barrett) syndrome features deficient/absent abdominal-wall muscle, giving the wrinkled 'prune' appearance.",
     },
     {
       id: "q61",
@@ -982,7 +982,7 @@ registerExam({
         "Superior gluteal nerve",
       ],
       answer: "B",
-      explanation: "Gluteus maximus is supplied by the inferior gluteal nerve and extends and laterally rotates the thigh (important for rising from sitting and climbing). Section 9 · Anterior/Medial Thigh, Leg, Foot & Lower-limb Joints (Lec 20–23)",
+      explanation: "Gluteus maximus is supplied by the inferior gluteal nerve and extends and laterally rotates the thigh (important for rising from sitting and climbing).",
     },
     {
       id: "q69",
@@ -1192,7 +1192,7 @@ registerExam({
         "Neutral with the toes flexed",
       ],
       answer: "D",
-      explanation: "The trochlea of the talus is wider anteriorly; in dorsiflexion the broad anterior talus wedges into the mortise, making the joint most stable. Plantarflexion brings the narrow posterior part into the mortise — less stable, more prone to sprain (typically inversion in plantarflexion). Section 10 · Integrative Histology, Cartilage & Bone — Challenge Round",
+      explanation: "The trochlea of the talus is wider anteriorly; in dorsiflexion the broad anterior talus wedges into the mortise, making the joint most stable. Plantarflexion brings the narrow posterior part into the mortise — less stable, more prone to sprain (typically inversion in plantarflexion).",
     },
     {
       id: "q84",
@@ -1276,7 +1276,7 @@ registerExam({
         "They become osteocytes when trapped",
       ],
       answer: "C",
-      explanation: "Osteoblasts FORM bone (osteoid, alkaline phosphatase) and become osteocytes when surrounded by matrix; they do NOT resorb bone with a ruffled border (that is the osteoclast). Section 11 · Upper-limb Nerve Lesions — Differentiation Round",
+      explanation: "Osteoblasts FORM bone (osteoid, alkaline phosphatase) and become osteocytes when surrounded by matrix; they do NOT resorb bone with a ruffled border (that is the osteoclast).",
     },
     {
       id: "q90",
@@ -1374,7 +1374,7 @@ registerExam({
         "Biceps brachii",
       ],
       answer: "D",
-      explanation: "Biceps brachii is the strong flexor/supinator of the forearm; resisted flexion in supination loads it maximally, so pain there localises to biceps. Brachioradialis is tested in mid-pronation; brachialis flexes in all positions but is deep. Section 12 · Forearm & Hand Detail — Precision Round",
+      explanation: "Biceps brachii is the strong flexor/supinator of the forearm; resisted flexion in supination loads it maximally, so pain there localises to biceps. Brachioradialis is tested in mid-pronation; brachialis flexes in all positions but is deep.",
     },
     {
       id: "q97",
@@ -1472,7 +1472,7 @@ registerExam({
         "Anterior interosseous; recurrent branches",
       ],
       answer: "B",
-      explanation: "The deep palmar arch is the continuation of the radial artery (3rd part) anastomosing with the deep branch of the ulnar artery; it gives the princeps pollicis and radialis indicis and palmar metacarpal arteries. Section 13 · Joints — Classification & Movement Round",
+      explanation: "The deep palmar arch is the continuation of the radial artery (3rd part) anastomosing with the deep branch of the ulnar artery; it gives the princeps pollicis and radialis indicis and palmar metacarpal arteries.",
     },
     {
       id: "q104",
@@ -1542,7 +1542,7 @@ registerExam({
         "Clavicle and 1st rib; numbness",
       ],
       answer: "D",
-      explanation: "The subacromial/subdeltoid bursa sits between the acromion, coraco-acromial ligament and deltoid (above) and the supraspinatus tendon (below). Bursitis there causes painful, restricted abduction (impingement-type pain). Section 14 · Lower-limb Compartments, Vessels & Gait — Applied Round",
+      explanation: "The subacromial/subdeltoid bursa sits between the acromion, coraco-acromial ligament and deltoid (above) and the supraspinatus tendon (below). Bursitis there causes painful, restricted abduction (impingement-type pain).",
     },
     {
       id: "q109",
@@ -1626,7 +1626,7 @@ registerExam({
         "Dorsalis pedis branches",
       ],
       answer: "D",
-      explanation: "The hip joint is supplied by the retinacular arteries, the artery to the head of the femur (in the ligamentum teres), and the medial and lateral circumflex femoral arteries — the medial circumflex being the dominant supply to the head. Section 15 · Spine, Development & Integrative — Final Challenge",
+      explanation: "The hip joint is supplied by the retinacular arteries, the artery to the head of the femur (in the ligamentum teres), and the medial and lateral circumflex femoral arteries — the medial circumflex being the dominant supply to the head.",
     },
     {
       id: "q115",
@@ -1766,7 +1766,7 @@ registerExam({
         "Through the umbilical ring",
       ],
       answer: "C",
-      explanation: "A femoral hernia passes through the femoral canal, emerging below the inguinal ligament and lateral/inferior to the pubic tubercle — distinguishing it from an inguinal hernia, which is above the ligament and medial to the tubercle. Section 16 · Mixed Clinical Vignettes — Capstone Round",
+      explanation: "A femoral hernia passes through the femoral canal, emerging below the inguinal ligament and lateral/inferior to the pubic tubercle — distinguishing it from an inguinal hernia, which is above the ligament and medial to the tubercle.",
     },
     {
       id: "q125",
@@ -1976,7 +1976,7 @@ registerExam({
         "Tibial → plantarflex/invert loss; fibular → foot drop",
       ],
       answer: "E",
-      explanation: "Tibial nerve injury abolishes plantarflexion and inversion and sole sensation (calcaneal/plantar branches). Common fibular injury abolishes dorsiflexion (deep branch) and eversion (superficial branch) → foot drop. Mixing these is a classic exam error. Section 17 · Rapid High-Yield Round",
+      explanation: "Tibial nerve injury abolishes plantarflexion and inversion and sole sensation (calcaneal/plantar branches). Common fibular injury abolishes dorsiflexion (deep branch) and eversion (superficial branch) → foot drop. Mixing these is a classic exam error.",
     },
     {
       id: "q140",

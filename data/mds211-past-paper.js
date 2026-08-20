@@ -70,7 +70,7 @@ registerExam({
         "Peritrichial receptor (hair root plexus)",
       ],
       answer: "B",
-      explanation: "Pacinian corpuscles are rapidly-adapting (phasic) receptors — they fire at the onset of a stimulus and then stop, which is exactly why sustained pressure from a ring or watch fades from awareness. Lecture 2 — Neurohistology (Neuron & Neuroglia) (19 questions)",
+      explanation: "Pacinian corpuscles are rapidly-adapting (phasic) receptors — they fire at the onset of a stimulus and then stop, which is exactly why sustained pressure from a ring or watch fades from awareness.",
     },
     {
       id: "q4",
@@ -323,7 +323,7 @@ registerExam({
         "Bundle",
       ],
       answer: "B",
-      explanation: "Same core question as Q18 but this one was extracted consistently as 'Myelin sheath' — see the Q18 flag above for the inconsistency between these two near-identical questions. Lecture 3 — Neuron Properties: RMP & Action Potential (10 questions)",
+      explanation: "Same core question as Q18 but this one was extracted consistently as 'Myelin sheath' — see the Q18 flag above for the inconsistency between these two near-identical questions.",
     },
     {
       id: "q23",
@@ -459,7 +459,7 @@ registerExam({
         "They decrease in intensity with distance.",
       ],
       answer: "D",
-      explanation: "This is the FALSE statement. Graded potentials are explicitly decremental — they lose strength with distance. Signals that travel long distances WITHOUT decrementing are action potentials, not graded potentials. Lecture 4 — Metabolic Pathways of Neurons (5 questions)",
+      explanation: "This is the FALSE statement. Graded potentials are explicitly decremental — they lose strength with distance. Signals that travel long distances WITHOUT decrementing are action potentials, not graded potentials.",
     },
     {
       id: "q33",
@@ -524,7 +524,7 @@ registerExam({
         "Glutamate decarboxylase",
       ],
       answer: "A",
-      explanation: "Same as Q35 — glutaminase. Lecture 5 — Embryonic Development of the NS (12 questions)",
+      explanation: "Same as Q35 — glutaminase.",
     },
     {
       id: "q38",
@@ -682,7 +682,7 @@ registerExam({
         "Neuroectoderm",
       ],
       answer: "A",
-      explanation: "The lens develops from surface ectoderm via the lens placode, induced by the underlying optic vesicle. Lecture 6 — Development of the Eye (4 questions)",
+      explanation: "The lens develops from surface ectoderm via the lens placode, induced by the underlying optic vesicle.",
     },
     {
       id: "q50",
@@ -731,7 +731,7 @@ registerExam({
         "Surface ectoderm",
       ],
       answer: "B",
-      explanation: "Sensory brainstem nuclei (including the spinal trigeminal nucleus) derive from the alar plate (dorsal, sensory-associated); motor nuclei derive from the ventral basal plate. Lecture 7 — Spinal Cord & Blood Supply (16 questions)",
+      explanation: "Sensory brainstem nuclei (including the spinal trigeminal nucleus) derive from the alar plate (dorsal, sensory-associated); motor nuclei derive from the ventral basal plate.",
     },
     {
       id: "q54",
@@ -946,7 +946,7 @@ registerExam({
         "denticulate ligament",
       ],
       answer: "D",
-      explanation: "The denticulate ligaments are lateral, tooth-like pial extensions piercing the arachnoid to attach to the dura, anatomically separating the dorsal and ventral nerve roots. Lecture 8 — PNS: Cranial & Spinal Nerves (16 questions)",
+      explanation: "The denticulate ligaments are lateral, tooth-like pial extensions piercing the arachnoid to attach to the dura, anatomically separating the dorsal and ventral nerve roots.",
     },
     {
       id: "q70",
@@ -1163,7 +1163,7 @@ registerExam({
         "General Visceral Efferent (GVE)",
       ],
       answer: "E",
-      explanation: "Both increased salivation (parasympathetic) and bladder sphincter effects are autonomic — GVE. Lecture 9 — Brainstem Structures (17 questions)",
+      explanation: "Both increased salivation (parasympathetic) and bladder sphincter effects are autonomic — GVE.",
     },
     {
       id: "q86",
@@ -1391,7 +1391,7 @@ registerExam({
         "Cerebellum",
       ],
       answer: "A",
-      explanation: "FLAGGED, moderate confidence the archive is wrong. Altered consciousness + irregular breathing + abnormal limb posturing together is the classic triad for BRAINSTEM (reticular formation) dysfunction — most directly implicating the pons/midbrain, where ARAS, respiratory pattern centers, and descending motor pathways for posturing all coexist. The archive answer 'Cerebrum' (A) isn't wrong in every interpretation (a large cerebral lesion CAN secondarily cause this triad via herniation/brainstem compression), but if the question is asking for the most DIRECT localization, Midbrain (B) is the classically-taught answer. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material. Lecture 10 — Reticular Formation (3 questions)",
+      explanation: "FLAGGED, moderate confidence the archive is wrong. Altered consciousness + irregular breathing + abnormal limb posturing together is the classic triad for BRAINSTEM (reticular formation) dysfunction — most directly implicating the pons/midbrain, where ARAS, respiratory pattern centers, and descending motor pathways for posturing all coexist. The archive answer 'Cerebrum' (A) isn't wrong in every interpretation (a large cerebral lesion CAN secondarily cause this triad via herniation/brainstem compression), but if the question is asking for the most DIRECT localization, Midbrain (B) is the classically-taught answer. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
       id: "q103",
@@ -1525,7 +1525,7 @@ registerExam({
         "dorsal column",
       ],
       answer: "D",
-      explanation: "The dorsal spinocerebellar tract's second-order neurons ARE the Clarke's nucleus neurons (for the levels where Clarke's nucleus exists, C8-L2/3). Lecture 13 — Taste (Gustatory) Sensation (6 questions)",
+      explanation: "The dorsal spinocerebellar tract's second-order neurons ARE the Clarke's nucleus neurons (for the levels where Clarke's nucleus exists, C8-L2/3).",
     },
     {
       id: "q114",
@@ -1608,7 +1608,7 @@ registerExam({
         "Facial nerve → Cochlear nucleus → Superior olivary complex → Inferior colliculus → Primary auditory cortex.",
       ],
       answer: "A",
-      explanation: "CN VII (chorda tympani) → geniculate ganglion → rostral solitary nucleus → VPM thalamus → gustatory cortex is the correct pathway for anterior 2/3 tongue taste. Lecture 14 — Sensory Receptors & Neurotransmitters (35 questions)",
+      explanation: "CN VII (chorda tympani) → geniculate ganglion → rostral solitary nucleus → VPM thalamus → gustatory cortex is the correct pathway for anterior 2/3 tongue taste.",
     },
     {
       id: "q120",
@@ -2079,7 +2079,7 @@ registerExam({
         "Glutaminase - Glutamine",
       ],
       answer: "A",
-      explanation: "VGAT loads GABA into synaptic vesicles — a correctly matched pair. The other four options mismatch a transporter/enzyme with the wrong neurotransmitter. Lecture 15 — Visual System (27 questions)",
+      explanation: "VGAT loads GABA into synaptic vesicles — a correctly matched pair. The other four options mismatch a transporter/enzyme with the wrong neurotransmitter.",
     },
     {
       id: "q155",
@@ -2445,7 +2445,7 @@ registerExam({
         "Right oculomotor nerve",
       ],
       answer: "C",
-      explanation: "Touching the RIGHT cornea produces no blink in either eye (afferent failure), while touching the LEFT cornea produces normal bilateral blinking — localizing to the right trigeminal nerve (afferent limb). Lecture 16 — Auditory & Vestibular Systems (21 questions)",
+      explanation: "Touching the RIGHT cornea produces no blink in either eye (afferent failure), while touching the LEFT cornea produces normal bilateral blinking — localizing to the right trigeminal nerve (afferent limb).",
     },
     {
       id: "q182",
@@ -2731,7 +2731,7 @@ registerExam({
         ">50 dB Mixed / Other Topics (49 questions)",
       ],
       answer: "B",
-      explanation: "Presbycusis progresses gradually, with threshold shifts typically beginning in the mild-to-moderate 25-50 dB range. Mixed / Other Topics (49 questions)",
+      explanation: "Presbycusis progresses gradually, with threshold shifts typically beginning in the mild-to-moderate 25-50 dB range.",
     },
     {
       id: "q203",

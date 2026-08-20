@@ -90,7 +90,7 @@ registerExam({
         "Only autonomic dysfunction",
       ],
       answer: "C",
-      explanation: "The posterior (dorsal) root is sensory and the anterior (ventral) root is motor; damaging both together at a spinal nerve level knocks out both modalities in that dermatome/myotome. ✗ A is wrong: This only accounts for the dorsal root — ignoring the ventral (motor) root damage described in the stem. TIP: Dorsal = sensory (Dorsal = Down = sensory comes down from the periphery... or just remember 'Bell-Magendie law': dorsal root sensory, ventral root motor. Lecture 2 — Neurohistology (Neuron & Neuroglia) (3 questions)",
+      explanation: "The posterior (dorsal) root is sensory and the anterior (ventral) root is motor; damaging both together at a spinal nerve level knocks out both modalities in that dermatome/myotome. ✗ A is wrong: This only accounts for the dorsal root — ignoring the ventral (motor) root damage described in the stem. TIP: Dorsal = sensory (Dorsal = Down = sensory comes down from the periphery... or just remember 'Bell-Magendie law': dorsal root sensory, ventral root motor.",
     },
     {
       id: "q6",
@@ -132,7 +132,7 @@ registerExam({
         "Ependymal cell Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction (5 questions)",
       ],
       answer: "A",
-      explanation: "Microglia are mesoderm/yolk-sac-derived resident CNS immune cells that phagocytose debris and pathogens and mediate neuroinflammation. ✗ D is wrong: Astrocytes support the BBB, metabolism, and repair (glial scarring) but are not the primary phagocytic immune surveillance cell — that’s specifically microglia’s job. Lecture 3 — Properties of Neuron: RMP, Action Potential, Conduction (5 questions)",
+      explanation: "Microglia are mesoderm/yolk-sac-derived resident CNS immune cells that phagocytose debris and pathogens and mediate neuroinflammation. ✗ D is wrong: Astrocytes support the BBB, metabolism, and repair (glial scarring) but are not the primary phagocytic immune surveillance cell — that’s specifically microglia’s job.",
     },
     {
       id: "q9",
@@ -202,7 +202,7 @@ registerExam({
         "The neuron has run out of neurotransmitter",
       ],
       answer: "B",
-      explanation: "Na+ channels have an inactivation gate that closes shortly after opening and won’t reset (become available again) until the membrane has repolarized back toward resting potential — no stimulus, however strong, can force them open during this state. ✗ C is wrong: That describes the RELATIVE refractory period (a stronger-than-normal stimulus CAN trigger an AP), not the absolute refractory period where triggering a new AP is flatly impossible. TIP: Absolute refractory = impossible, period (Na+ channels inactivated). Relative refractory = possible but needs a bigger stimulus (partially hyperpolarized + some channels still inactivated). Lecture 4 — Metabolic Pathways of Neurons & Nervous Tissue (5 questions)",
+      explanation: "Na+ channels have an inactivation gate that closes shortly after opening and won’t reset (become available again) until the membrane has repolarized back toward resting potential — no stimulus, however strong, can force them open during this state. ✗ C is wrong: That describes the RELATIVE refractory period (a stronger-than-normal stimulus CAN trigger an AP), not the absolute refractory period where triggering a new AP is flatly impossible. TIP: Absolute refractory = impossible, period (Na+ channels inactivated). Relative refractory = possible but needs a bigger stimulus (partially hyperpolarized + some channels still inactivated).",
     },
     {
       id: "q14",
@@ -272,7 +272,7 @@ registerExam({
         "Vitamin D",
       ],
       answer: "A",
-      explanation: "Thiamine is a required cofactor for pyruvate dehydrogenase and α-ketoglutarate dehydrogenase (both key TCA cycle enzymes); its deficiency (classically in chronic alcoholism) starves neurons of ATP production and causes the classic triad of confusion, ataxia, and ophthalmoplegia. TIP: Thiamine deficiency = TCA cycle bottleneck (can’t run pyruvate/α-KG dehydrogenase efficiently) = ATP crisis in the most metabolically-demanding brain regions first (mammillary bodies, thalamus) — that’s why Wernicke’s classically involves those structures. Lectures 5–6 — Embryonic Development of the Nervous System / Development of the Eye (5 questions)",
+      explanation: "Thiamine is a required cofactor for pyruvate dehydrogenase and α-ketoglutarate dehydrogenase (both key TCA cycle enzymes); its deficiency (classically in chronic alcoholism) starves neurons of ATP production and causes the classic triad of confusion, ataxia, and ophthalmoplegia. TIP: Thiamine deficiency = TCA cycle bottleneck (can’t run pyruvate/α-KG dehydrogenase efficiently) = ATP crisis in the most metabolically-demanding brain regions first (mammillary bodies, thalamus) — that’s why Wernicke’s classically involves those structures.",
     },
     {
       id: "q19",
@@ -342,7 +342,7 @@ registerExam({
         "Notochord",
       ],
       answer: "B",
-      explanation: "Sensory brainstem nuclei (including the spinal trigeminal nucleus) derive from the alar plate — the dorsal, sensory-associated portion of the developing neural tube; motor nuclei derive from the ventral basal plate. ✗ C is wrong: The basal plate gives rise to MOTOR nuclei — the sulcus limitans is the developmental landmark separating dorsal alar (sensory) from ventral basal (motor), and this pattern holds throughout the brainstem and spinal cord. TIP: Alar = Afferent/sensory (dorsal). Basal = Basically motor (ventral). This alar/basal split, established early in neural tube development, explains the entire dorsal-sensory/ventral-motor organization you see throughout the spinal cord and brainstem. Lecture 7 — Spinal Cord & Blood Supply (5 questions)",
+      explanation: "Sensory brainstem nuclei (including the spinal trigeminal nucleus) derive from the alar plate — the dorsal, sensory-associated portion of the developing neural tube; motor nuclei derive from the ventral basal plate. ✗ C is wrong: The basal plate gives rise to MOTOR nuclei — the sulcus limitans is the developmental landmark separating dorsal alar (sensory) from ventral basal (motor), and this pattern holds throughout the brainstem and spinal cord. TIP: Alar = Afferent/sensory (dorsal). Basal = Basically motor (ventral). This alar/basal split, established early in neural tube development, explains the entire dorsal-sensory/ventral-motor organization you see throughout the spinal cord and brainstem.",
     },
     {
       id: "q24",
@@ -412,7 +412,7 @@ registerExam({
         "Falx cerebri",
       ],
       answer: "A",
-      explanation: "The denticulate ligaments are lateral, tooth-like pial extensions that pierce the arachnoid to attach to the dura, stabilizing the spinal cord within the subarachnoid space and providing a useful surgical landmark between dorsal and ventral roots. ✗ B is wrong: The filum terminale anchors the CAUDAL tip of the spinal cord/conus medullaris to the coccyx — a longitudinal, midline structure, not the lateral tooth-like structures separating the roots. Lecture 8 — PNS: Cranial & Spinal Nerves, Nerve Plexuses (3 questions)",
+      explanation: "The denticulate ligaments are lateral, tooth-like pial extensions that pierce the arachnoid to attach to the dura, stabilizing the spinal cord within the subarachnoid space and providing a useful surgical landmark between dorsal and ventral roots. ✗ B is wrong: The filum terminale anchors the CAUDAL tip of the spinal cord/conus medullaris to the coccyx — a longitudinal, midline structure, not the lateral tooth-like structures separating the roots.",
     },
     {
       id: "q29",
@@ -454,7 +454,7 @@ registerExam({
         "Accessory nerve Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation (10 questions)",
       ],
       answer: "B",
-      explanation: "This is the classic presentation of trigeminal neuralgia — brief, severe, electric-shock-like facial pain in a trigeminal (V2/V3 most commonly) distribution, often triggered by light touch, chewing, or talking. Lectures 9–10 — Brainstem: External & Internal Structures / Reticular Formation (10 questions)",
+      explanation: "This is the classic presentation of trigeminal neuralgia — brief, severe, electric-shock-like facial pain in a trigeminal (V2/V3 most commonly) distribution, often triggered by light touch, chewing, or talking.",
     },
     {
       id: "q32",
@@ -594,7 +594,7 @@ registerExam({
         "Corpus callosum",
       ],
       answer: "A",
-      explanation: "The reticular formation is exactly this: a diffuse, interconnected neuronal network extending through the core of the brainstem from the medulla up through the midbrain, involved in arousal, autonomic regulation, and motor/reflex modulation. Lecture 11 — Special Sense Organs & Its Development (8 questions)",
+      explanation: "The reticular formation is exactly this: a diffuse, interconnected neuronal network extending through the core of the brainstem from the medulla up through the midbrain, involved in arousal, autonomic regulation, and motor/reflex modulation.",
     },
     {
       id: "q42",
@@ -706,7 +706,7 @@ registerExam({
         "The vestibule alone",
       ],
       answer: "A",
-      explanation: "The ossicular chain (malleus-incus-stapes) provides mechanical impedance matching (via lever action and the area ratio between the larger tympanic membrane and smaller oval window) — without this amplification, most sound energy would simply reflect off the fluid-air interface rather than being transmitted into the cochlea. Lectures 12–13 — Somatosensory Pathways / Taste Sensation (8 questions)",
+      explanation: "The ossicular chain (malleus-incus-stapes) provides mechanical impedance matching (via lever action and the area ratio between the larger tympanic membrane and smaller oval window) — without this amplification, most sound energy would simply reflect off the fluid-air interface rather than being transmitted into the cochlea.",
     },
     {
       id: "q50",
@@ -818,7 +818,7 @@ registerExam({
         "Increasing glutamate release",
       ],
       answer: "C",
-      explanation: "Enkephalins act at opioid receptors to REDUCE presynaptic Ca2+ influx (less neurotransmitter/substance P release from the primary nociceptive afferent) AND increase postsynaptic K+ conductance (hyperpolarizing the second-order pain neuron) — a dual pre- and postsynaptic inhibitory mechanism dampening the ascending pain signal. TIP: Gate-control full circuit: large-diameter mechanoreceptor (A-β) input → activates inhibitory spinal interneurons → enkephalin release → presynaptic Ca2+↓ AND postsynaptic K+↑ → less substance P, less pain transmission. This is literally why rubbing an injury ('gating’ pain with touch input) actually works physiologically. Lecture 14 — Sensory Receptor Transduction & Neurotransmitters (10 questions)",
+      explanation: "Enkephalins act at opioid receptors to REDUCE presynaptic Ca2+ influx (less neurotransmitter/substance P release from the primary nociceptive afferent) AND increase postsynaptic K+ conductance (hyperpolarizing the second-order pain neuron) — a dual pre- and postsynaptic inhibitory mechanism dampening the ascending pain signal. TIP: Gate-control full circuit: large-diameter mechanoreceptor (A-β) input → activates inhibitory spinal interneurons → enkephalin release → presynaptic Ca2+↓ AND postsynaptic K+↑ → less substance P, less pain transmission. This is literally why rubbing an injury ('gating’ pain with touch input) actually works physiologically.",
     },
     {
       id: "q58",
@@ -946,7 +946,7 @@ registerExam({
         "Antipsychotics, which block dopamine receptors, not GABA-A",
       ],
       answer: "B",
-      explanation: "Barbiturates, unlike benzodiazepines, can directly open the GABA-A chloride channel even without GABA bound, at sufficiently high concentrations — this GABA-independent action removes any physiological 'ceiling’ on inhibition, making barbiturate overdose far more likely to cause fatal respiratory arrest than benzodiazepine overdose (where the effect is capped by needing GABA to be present). TIP: This 'why is X more dangerous than Y’ framing is a hallmark of a well-designed critical-thinking question — always be ready to explain not just the mechanism, but its clinical CONSEQUENCE (here: no ceiling effect = more dangerous in overdose). Lectures 15–16 — Visual System / Auditory & Vestibular Systems (10 questions)",
+      explanation: "Barbiturates, unlike benzodiazepines, can directly open the GABA-A chloride channel even without GABA bound, at sufficiently high concentrations — this GABA-independent action removes any physiological 'ceiling’ on inhibition, making barbiturate overdose far more likely to cause fatal respiratory arrest than benzodiazepine overdose (where the effect is capped by needing GABA to be present). TIP: This 'why is X more dangerous than Y’ framing is a hallmark of a well-designed critical-thinking question — always be ready to explain not just the mechanism, but its clinical CONSEQUENCE (here: no ceiling effect = more dangerous in overdose).",
     },
     {
       id: "q68",

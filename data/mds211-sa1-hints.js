@@ -95,7 +95,7 @@ registerExam({
         "None — all three listed sources are correct Conjugate Eye Movement (5 questions)",
       ],
       answer: "D",
-      explanation: "Pathologic nystagmus specifically traces to damage in the semicircular canals, otolith organs, or vestibulocerebellum — the primary auditory cortex is part of the hearing pathway, not balance, and its damage would not produce this pattern. Conjugate Eye Movement (5 questions)",
+      explanation: "Pathologic nystagmus specifically traces to damage in the semicircular canals, otolith organs, or vestibulocerebellum — the primary auditory cortex is part of the hearing pathway, not balance, and its damage would not produce this pattern.",
     },
     {
       id: "q7",
@@ -160,7 +160,7 @@ registerExam({
         "Complete CN III palsy Vestibulo-Ocular Reflex (VOR) (5 questions)",
       ],
       answer: "A",
-      explanation: "This is the textbook definition of internuclear ophthalmoplegia — an MLF lesion disconnects the abducens nucleus (driving the contralateral eye’s abduction) from the ipsilateral oculomotor medial rectus subnucleus, so the affected eye fails to adduct on conjugate gaze toward the side opposite the lesion. Vestibulo-Ocular Reflex (VOR) (5 questions)",
+      explanation: "This is the textbook definition of internuclear ophthalmoplegia — an MLF lesion disconnects the abducens nucleus (driving the contralateral eye’s abduction) from the ipsilateral oculomotor medial rectus subnucleus, so the affected eye fails to adduct on conjugate gaze toward the side opposite the lesion.",
     },
     {
       id: "q12",
@@ -225,7 +225,7 @@ registerExam({
         "Vestibular nucleus directly innervates the muscles with no relay Sound-Dampening Mechanism (5 questions)",
       ],
       answer: "A",
-      explanation: "The oculomotor nucleus drives the medial rectus (adduction) and the abducens nucleus drives the lateral rectus (abduction) — together producing the conjugate horizontal eye movement of the VOR. Sound-Dampening Mechanism (5 questions)",
+      explanation: "The oculomotor nucleus drives the medial rectus (adduction) and the abducens nucleus drives the lateral rectus (abduction) — together producing the conjugate horizontal eye movement of the VOR.",
     },
     {
       id: "q17",
@@ -290,7 +290,7 @@ registerExam({
         "The gag reflex",
       ],
       answer: "A",
-      explanation: "The stapedius muscle is innervated by CN VII; facial nerve damage disables the stapedius reflex specifically, removing that protective dampening and causing hyperacusis. Tensor tympani (CN V) is unaffected by a CN VII lesion. ✗ B is wrong: Tensor tympani is innervated by CN V (trigeminal), not CN VII — a facial nerve lesion doesn’t touch it. Ear Pressure Equalization (3 questions)",
+      explanation: "The stapedius muscle is innervated by CN VII; facial nerve damage disables the stapedius reflex specifically, removing that protective dampening and causing hyperacusis. Tensor tympani (CN V) is unaffected by a CN VII lesion. ✗ B is wrong: Tensor tympani is innervated by CN V (trigeminal), not CN VII — a facial nerve lesion doesn’t touch it.",
     },
     {
       id: "q22",
@@ -332,7 +332,7 @@ registerExam({
         "The oval window releases CSF pressure, unrelated to sound Cochlear Base/Apex Frequency Tuning (4 questions)",
       ],
       answer: "A",
-      explanation: "The stapes footplate pushes fluid inward at the oval window; because cochlear fluid is incompressible, the round window membrane must bulge outward to accommodate that pressure wave, allowing continuous fluid movement through the cochlea. PROF'S EMPHASIS: Oval = IN (stapes pushes). Round = OUT (releases the wave). This is a completely different pressure system from the Eustachian tube (air pressure) — don’t confuse the two 'pressure’ questions. Cochlear Base/Apex Frequency Tuning (4 questions)",
+      explanation: "The stapes footplate pushes fluid inward at the oval window; because cochlear fluid is incompressible, the round window membrane must bulge outward to accommodate that pressure wave, allowing continuous fluid movement through the cochlea. PROF'S EMPHASIS: Oval = IN (stapes pushes). Round = OUT (releases the wave). This is a completely different pressure system from the Eustachian tube (air pressure) — don’t confuse the two 'pressure’ questions.",
     },
     {
       id: "q25",
@@ -388,7 +388,7 @@ registerExam({
         "The round window membrane exclusively Head Rotation — Which Structure Responds (5 questions)",
       ],
       answer: "A",
-      explanation: "High-frequency loss localizes to the cochlear base, which is tuned to high frequencies — matching presbycusis’s classic pattern of cumulative base-first hair cell damage. Head Rotation — Which Structure Responds (5 questions)",
+      explanation: "High-frequency loss localizes to the cochlear base, which is tuned to high frequencies — matching presbycusis’s classic pattern of cumulative base-first hair cell damage.",
     },
     {
       id: "q29",
@@ -458,7 +458,7 @@ registerExam({
         "None of these structures synapse in the brainstem at all Elevator / Driving — Linear Acceleration (4 questions)",
       ],
       answer: "A",
-      explanation: "Per your lecture material, the superior vestibular nucleus receives input from the superior and lateral semicircular canals plus the utricle — the complementary pairing to the inferior vestibular nucleus (posterior canal + saccule). Elevator / Driving — Linear Acceleration (4 questions)",
+      explanation: "Per your lecture material, the superior vestibular nucleus receives input from the superior and lateral semicircular canals plus the utricle — the complementary pairing to the inferior vestibular nucleus (posterior canal + saccule).",
     },
     {
       id: "q34",
@@ -514,7 +514,7 @@ registerExam({
         "Cochlea PART 2 — Eye",
       ],
       answer: "A",
-      explanation: "Walking forward involves horizontal linear acceleration/deceleration with each stride, detected by the utricle, consistent with the same horizontal-linear-acceleration logic as a car pulling away. PROF'S EMPHASIS: Anchor this with the same rule as 'driving a car’ — forward/horizontal linear acceleration always points to the utricle. PART 2 — Eye Eye Tissue Layers: Light Absorption & Phototransduction (7 questions)",
+      explanation: "Walking forward involves horizontal linear acceleration/deceleration with each stride, detected by the utricle, consistent with the same horizontal-linear-acceleration logic as a car pulling away. PROF'S EMPHASIS: Anchor this with the same rule as 'driving a car’ — forward/horizontal linear acceleration always points to the utricle. PART 2 — Eye",
     },
     {
       id: "q38",
@@ -612,7 +612,7 @@ registerExam({
         "Optic nerve fiber layer → ganglion cell layer → inner nuclear layer → outer nuclear layer → rods/cones (reverse order) Visual Pathway Lesions — Specific Terminology (10 questions)",
       ],
       answer: "A",
-      explanation: "Correct order from photoreceptor segments toward the vitreous: rods/cones → outer nuclear layer (photoreceptor bodies) → inner nuclear layer (bipolar/horizontal/amacrine bodies) → ganglion cell layer → optic nerve fiber layer. Visual Pathway Lesions — Specific Terminology (10 questions)",
+      explanation: "Correct order from photoreceptor segments toward the vitreous: rods/cones → outer nuclear layer (photoreceptor bodies) → inner nuclear layer (bipolar/horizontal/amacrine bodies) → ganglion cell layer → optic nerve fiber layer.",
     },
     {
       id: "q45",
@@ -752,7 +752,7 @@ registerExam({
         "No visual field defect Meyer's Loop & Macula Sparing — Prof's Emphasis (5 questions)",
       ],
       answer: "A",
-      explanation: "Parietal lobe optic radiation fibers carry the contralateral INFERIOR visual field — damage here gives the mirror-image quadrant defect to a Meyer’s loop lesion. Meyer's Loop & Macula Sparing — Prof's Emphasis (5 questions)",
+      explanation: "Parietal lobe optic radiation fibers carry the contralateral INFERIOR visual field — damage here gives the mirror-image quadrant defect to a Meyer’s loop lesion.",
     },
     {
       id: "q55",
@@ -822,7 +822,7 @@ registerExam({
         "Right occipital cortex, complete PART 3 — Ear Development Tri-Germ-Layer Structures (Tympanic Membrane) (4 questions)",
       ],
       answer: "A",
-      explanation: "Inferior quadrant defects come from PARIETAL lobe optic radiation fibers (not Meyer’s loop, which gives superior defects); since it’s a homonymous (post-chiasmal) defect on the LEFT, the lesion must be on the RIGHT side. PROF'S EMPHASIS: Work every quadrantanopia question the same way: (1) which quadrant is affected? (2) is it superior (temporal/Meyer’s) or inferior (parietal)? (3) which SIDE (opposite the lesion, since it’s homonymous/post-chiasmal)? Three-step logic, every time, rather than memorizing each combination as a separate fact. PART 3 — Ear Development Tri-Germ-Layer Structures (Tympanic Membrane) (4 questions)",
+      explanation: "Inferior quadrant defects come from PARIETAL lobe optic radiation fibers (not Meyer’s loop, which gives superior defects); since it’s a homonymous (post-chiasmal) defect on the LEFT, the lesion must be on the RIGHT side. PROF'S EMPHASIS: Work every quadrantanopia question the same way: (1) which quadrant is affected? (2) is it superior (temporal/Meyer’s) or inferior (parietal)? (3) which SIDE (opposite the lesion, since it’s homonymous/post-chiasmal)? Three-step logic, every time, rather than memorizing each combination as a separate fact.",
     },
     {
       id: "q60",
@@ -878,7 +878,7 @@ registerExam({
         "The vestibular nerve Ectoderm / Mesoderm / Endoderm — General Derivatives (6 questions)",
       ],
       answer: "A",
-      explanation: "The first pharyngeal pouch, lined by endoderm, expands to form the tympanic cavity and auditory tube, and contributes the inner epithelial lining of the tympanic membrane — the endodermal counterpart to the ectodermal external ear. Ectoderm / Mesoderm / Endoderm — General Derivatives (6 questions)",
+      explanation: "The first pharyngeal pouch, lined by endoderm, expands to form the tympanic cavity and auditory tube, and contributes the inner epithelial lining of the tympanic membrane — the endodermal counterpart to the ectodermal external ear.",
     },
     {
       id: "q64",
@@ -962,7 +962,7 @@ registerExam({
         "This fact applies to every membrane in the body equally PART 4 — Somatosense Protopathic vs. Epicritic Sensation (5 questions)",
       ],
       answer: "A",
-      explanation: "Most mature structures trace predominantly to a single germ layer (or germ layer + neural crest); the tympanic membrane’s requirement for all three primary germ layers is what makes it a favorite 'integrative embryology’ teaching example — a direct physical record of it forming exactly at the ecto/endoderm boundary between the pharyngeal cleft and pouch. PART 4 — Somatosense Protopathic vs. Epicritic Sensation (5 questions)",
+      explanation: "Most mature structures trace predominantly to a single germ layer (or germ layer + neural crest); the tympanic membrane’s requirement for all three primary germ layers is what makes it a favorite 'integrative embryology’ teaching example — a direct physical record of it forming exactly at the ecto/endoderm boundary between the pharyngeal cleft and pouch. PART 4 — Somatosense Protopathic vs.",
     },
     {
       id: "q70",
@@ -1032,7 +1032,7 @@ registerExam({
         "Pain & temperature → unconscious proprioception → conscious proprioception → touch/pressure The Four Types of Pain (6 questions)",
       ],
       answer: "A",
-      explanation: "Per your lecture’s diagram, the medial-to-lateral order at the dorsal root entry zone is: unconscious proprioception, then conscious proprioception, then touch/pressure, then pain & temperature (most lateral) — consistent with pain/temperature being protopathic (lateral-entering) fibers. PROF'S EMPHASIS: Medial-to-lateral: (unconscious) proprioception → (conscious) proprioception → touch/pressure → pain/temperature. Pain and temperature fibers are the MOST LATERAL of the group — consistent with protopathic fibers entering the lateral division discussed above. The Four Types of Pain (6 questions)",
+      explanation: "Per your lecture’s diagram, the medial-to-lateral order at the dorsal root entry zone is: unconscious proprioception, then conscious proprioception, then touch/pressure, then pain & temperature (most lateral) — consistent with pain/temperature being protopathic (lateral-entering) fibers. PROF'S EMPHASIS: Medial-to-lateral: (unconscious) proprioception → (conscious) proprioception → touch/pressure → pain/temperature. Pain and temperature fibers are the MOST LATERAL of the group — consistent with protopathic fibers entering the lateral division discussed above.",
     },
     {
       id: "q75",
@@ -1116,7 +1116,7 @@ registerExam({
         "Pattern theory Muscle Spindle & Golgi Tendon Organ — Fiber Types (6 questions)",
       ],
       answer: "A",
-      explanation: "Convergence theory explains referred pain via shared second-order (or higher) neurons receiving input from both the affected viscera/deep structure AND a separate somatic dermatome — since the brain can’t distinguish which source triggered the shared neuron, pain is perceived as coming from the somatic region instead. Muscle Spindle & Golgi Tendon Organ — Fiber Types (6 questions)",
+      explanation: "Convergence theory explains referred pain via shared second-order (or higher) neurons receiving input from both the affected viscera/deep structure AND a separate somatic dermatome — since the brain can’t distinguish which source triggered the shared neuron, pain is perceived as coming from the somatic region instead.",
     },
     {
       id: "q81",
@@ -1200,7 +1200,7 @@ registerExam({
         "The muscle fails to contract at all Free Nerve Ending + A-delta / C Fibers (4 questions)",
       ],
       answer: "A",
-      explanation: "Alpha-gamma coactivation means that as alpha motor neurons drive extrafusal contraction (shortening the whole muscle), gamma motor neurons simultaneously contract the intrafusal fibers, keeping spindle tension/sensitivity high — resulting in MORE, not fewer, Ia impulses than alpha activation alone would produce. Free Nerve Ending + A-delta / C Fibers (4 questions)",
+      explanation: "Alpha-gamma coactivation means that as alpha motor neurons drive extrafusal contraction (shortening the whole muscle), gamma motor neurons simultaneously contract the intrafusal fibers, keeping spindle tension/sensitivity high — resulting in MORE, not fewer, Ia impulses than alpha activation alone would produce.",
     },
     {
       id: "q87",
@@ -1256,7 +1256,7 @@ registerExam({
         "Only serotonin",
       ],
       answer: "A",
-      explanation: "Your lecture specifically diagrams histamine, substance P, prostaglandin, and K+ as chemical mediators acting on free nerve ending nociceptors, generating a receptor potential that (if threshold is reached) becomes an action potential perceived as pain. PROF'S EMPHASIS: This is the same 'inflammatory soup’ concept tested elsewhere: histamine, substance P, prostaglandin, K+ (plus bradykinin/H+ in fuller lists) sensitize/activate nociceptors — memorize this as a set since 'which of these does NOT activate nociceptors’ is a common negatively-phrased question format. Somatosensory Tracts (7 questions)",
+      explanation: "Your lecture specifically diagrams histamine, substance P, prostaglandin, and K+ as chemical mediators acting on free nerve ending nociceptors, generating a receptor potential that (if threshold is reached) becomes an action potential perceived as pain. PROF'S EMPHASIS: This is the same 'inflammatory soup’ concept tested elsewhere: histamine, substance P, prostaglandin, K+ (plus bradykinin/H+ in fuller lists) sensitize/activate nociceptors — memorize this as a set since 'which of these does NOT activate nociceptors’ is a common negatively-phrased question format.",
     },
     {
       id: "q91",
@@ -1354,7 +1354,7 @@ registerExam({
         "Rubrospinal tract",
       ],
       answer: "A",
-      explanation: "The spinal trigeminal nucleus (receiving pain/temperature/crude touch input from CN V, and smaller GSA contributions from CN VII, IX, X) relays via the ventral trigeminothalamic tract to the thalamus — the facial/head equivalent of the body’s lateral spinothalamic tract. PROF'S EMPHASIS: Body pain/temp = (lateral) spinothalamic tract. Face pain/temp = (ventral) trigeminothalamic tract, via the spinal trigeminal nucleus. Structurally and functionally parallel systems for two different body regions — a favorite 'body vs. face equivalent’ pairing question. Taste (Gustatory) Pathway (5 questions)",
+      explanation: "The spinal trigeminal nucleus (receiving pain/temperature/crude touch input from CN V, and smaller GSA contributions from CN VII, IX, X) relays via the ventral trigeminothalamic tract to the thalamus — the facial/head equivalent of the body’s lateral spinothalamic tract. PROF'S EMPHASIS: Body pain/temp = (lateral) spinothalamic tract. Face pain/temp = (ventral) trigeminothalamic tract, via the spinal trigeminal nucleus. Structurally and functionally parallel systems for two different body regions — a favorite 'body vs. face equivalent’ pairing question.",
     },
     {
       id: "q98",

@@ -455,7 +455,7 @@ registerExam({
         "Glycolytic against oxidative capacity",
       ],
       answer: "E",
-      explanation: "A bodybuilder's hypertrophied type two fibres favour anaerobic glycolysis for short bursts of high force; a marathon runner's type one fibres favour oxidative metabolism for endurance. They differ in myoglobin, mitochondria, capillaries, and enzyme activity as well. SECTION 2 — NECK (Lectures 1–2)",
+      explanation: "A bodybuilder's hypertrophied type two fibres favour anaerobic glycolysis for short bursts of high force; a marathon runner's type one fibres favour oxidative metabolism for endurance. They differ in myoglobin, mitochondria, capillaries, and enzyme activity as well.",
     },
     {
       id: "q32",
@@ -637,7 +637,7 @@ registerExam({
         "Submandibular nodes",
       ],
       answer: "C",
-      explanation: "The submental nodes lie below the chin between the anterior bellies of the digastric muscles. They drain the tip of the tongue, the central lower lip, the floor of the mouth, and the chin. SECTION 3 — SCALP, FACE, PAROTID REGION, EAR, CRANIAL FOSSA (Lectures 3–4)",
+      explanation: "The submental nodes lie below the chin between the anterior bellies of the digastric muscles. They drain the tip of the tongue, the central lower lip, the floor of the mouth, and the chin.",
     },
     {
       id: "q45",
@@ -833,7 +833,7 @@ registerExam({
         "Longer and more vertical",
       ],
       answer: "C",
-      explanation: "In children the tube is shorter, wider, and more horizontal, so organisms from the nasopharynx reach the middle ear easily and drainage is poor. It becomes longer and more oblique with growth of the skull base. SECTION 4 — DEVELOPMENT OF HEAD AND NECK (Lecture 5)",
+      explanation: "In children the tube is shorter, wider, and more horizontal, so organisms from the nasopharynx reach the middle ear easily and drainage is poor. It becomes longer and more oblique with growth of the skull base.",
     },
     {
       id: "q59",
@@ -1015,7 +1015,7 @@ registerExam({
         "Hypopharyngeal eminence",
       ],
       answer: "E",
-      explanation: "The posterior third of the tongue develops from the hypopharyngeal eminence (copula), mainly third arch tissue, which is why its general sensation and taste are supplied by the glossopharyngeal nerve. SECTION 5 — TEMPORAL AND INFRATEMPORAL FOSSA, TEMPOROMANDIBULAR JOINT (Lecture 6)",
+      explanation: "The posterior third of the tongue develops from the hypopharyngeal eminence (copula), mainly third arch tissue, which is why its general sensation and taste are supplied by the glossopharyngeal nerve.",
     },
     {
       id: "q72",
@@ -1183,7 +1183,7 @@ registerExam({
         "Deep auricular artery",
       ],
       answer: "B",
-      explanation: "The inferior alveolar artery, from the first part of the maxillary artery, enters the mandibular foramen with the inferior alveolar nerve and runs in the mandibular canal to supply the lower teeth, emerging as the mental artery. SECTION 6 — EXTRAOCULAR MUSCLES AND INNERVATION (Lecture 7)",
+      explanation: "The inferior alveolar artery, from the first part of the maxillary artery, enters the mandibular foramen with the inferior alveolar nerve and runs in the mandibular canal to supply the lower teeth, emerging as the mental artery.",
     },
     {
       id: "q84",
@@ -1323,7 +1323,7 @@ registerExam({
         "Depresses the eyeball only",
       ],
       answer: "A",
-      explanation: "The inferior rectus, pulling along the orbital axis, depresses the eye and secondarily adducts and extorts it. Depression is its primary action. SECTION 7 — THORACIC WALL AND MUSCLES (Lecture 8)",
+      explanation: "The inferior rectus, pulling along the orbital axis, depresses the eye and secondarily adducts and extorts it. Depression is its primary action.",
     },
     {
       id: "q94",
@@ -1561,7 +1561,7 @@ registerExam({
         "Retraction of the scapula",
       ],
       answer: "C",
-      explanation: "The serratus anterior protracts the scapula and, acting with the trapezius, rotates it upward so the glenoid faces up, allowing full overhead abduction of the arm. Its paralysis (long thoracic nerve) causes winging. SECTION 8 — ANTERIOR ABDOMINAL WALL AND HERNIA (Lecture 9)",
+      explanation: "The serratus anterior protracts the scapula and, acting with the trapezius, rotates it upward so the glenoid faces up, allowing full overhead abduction of the arm. Its paralysis (long thoracic nerve) causes winging.",
     },
     {
       id: "q111",

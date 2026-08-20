@@ -384,8 +384,10 @@ def parse_key(lines, cfg, raw_lines=None):
         return parse_key_grid_seq(lines, raw_lines, cfg)
 
     pats = KEY_PATTERNS[mode]
+    section_re = re.compile(cfg['section_re']) if cfg.get('section_re') else None
     entries = {}
     cur = None
+    skipping = False      # inside a section heading, which may wrap over lines
 
     for line in lines:
         if not line:
@@ -393,6 +395,7 @@ def parse_key(lines, cfg, raw_lines=None):
 
         m = pats['entry'].match(line)
         if m:
+            skipping = False
             if mode == 'num_dash':
                 num = int(m.group(1))
                 cur = {'letter': m.group(2), 'text': m.group(3), 'parts': []}
@@ -404,6 +407,15 @@ def parse_key(lines, cfg, raw_lines=None):
                 continue
             cur = {'letter': None, 'text': '', 'parts': []}
             entries[num] = cur
+            continue
+
+        # The key repeats the paper's section headings between entries. Without
+        # this they land on the end of the preceding explanation — and because a
+        # heading can wrap onto a second line, skip until the next entry starts.
+        if section_re and section_re.match(line):
+            skipping = True
+            continue
+        if skipping:
             continue
 
         if cur is None:
@@ -460,13 +472,21 @@ def parse_key_grid_seq(lines, raw_lines, cfg):
         gstart = len(text)
     prose = []
     cur = None
+    skipping = False
+    section_re = re.compile(cfg['section_re']) if cfg.get('section_re') else None
     for line in text[:gstart].split('\n'):
         line = line.strip()
         if not line:
             continue
         if re.fullmatch(r'[A-E]', line):
+            skipping = False
             cur = {'letter': line, 'text': None, 'parts': []}
             prose.append(cur)
+            continue
+        if section_re and section_re.match(line):
+            skipping = True
+            continue
+        if skipping:
             continue
         if cur is None:
             continue
@@ -491,6 +511,28 @@ def parse_key_grid_seq(lines, raw_lines, cfg):
 # --------------------------------------------------------------------------
 # Assembly
 # --------------------------------------------------------------------------
+
+# A heading that follows the last full stop of an explanation: the papers print
+# these between key entries, in several shapes and sometimes wrapped over two
+# lines, so they are trimmed from the assembled text as well as skipped while
+# parsing.
+TRAILING_HEADING = [
+    re.compile(r'\s*[^.]{0,140}\(\d+\s+questions?\)\s*$'),
+    re.compile(r'\s*SECTION\s+[A-Z0-9]+\s*(?:--|—|–)[^.]{0,140}$'),
+    re.compile(r'\s*Section\s+\d+\s*[·•][^.]{0,140}$'),
+    re.compile(r'\s*SECTION\s+\d+\s*(?:--|—|–)[^.]{0,140}$'),
+]
+
+
+def strip_trailing_heading(text):
+    for _ in range(3):
+        before = text
+        for pat in TRAILING_HEADING:
+            text = pat.sub('', text).strip()
+        if text == before:
+            break
+    return text
+
 
 def norm(s):
     s = unicodedata.normalize('NFKD', s or '').lower()
@@ -574,6 +616,7 @@ def build(cfg, report):
         # on the front so the review screen reads as a whole sentence.
         if explanation[:1].islower():
             explanation = chosen['text'] + ' ' + explanation
+        explanation = strip_trailing_heading(explanation)
         if entry.get('text'):
             a, b = norm(entry['text']), norm(chosen['text'])
             if a and b and not (a.startswith(b[:40]) or b.startswith(a[:40])):

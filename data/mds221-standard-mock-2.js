@@ -259,7 +259,7 @@ registerExam({
         "Second rib",
       ],
       answer: "B",
-      explanation: "The costoclavicular space, also called the cervicoaxillary canal, lies between the clavicle and the first rib, and structures passing through it are at risk of compression in thoracic outlet syndrome. 02 SCALP, FACE, PAROTID & CRANIAL FOSSAE LECTURES 3-4",
+      explanation: "The costoclavicular space, also called the cervicoaxillary canal, lies between the clavicle and the first rib, and structures passing through it are at risk of compression in thoracic outlet syndrome.",
     },
     {
       id: "q18",
@@ -539,7 +539,7 @@ registerExam({
         "Corrugator supercilii",
       ],
       answer: "A",
-      explanation: "Depressor septi arises from the maxilla above the medial incisor and inserts into the mobile part of the nasal septum, pulling the nose inferiorly. 03 DEVELOPMENT OF HEAD AND NECK LECTURE 5",
+      explanation: "Depressor septi arises from the maxilla above the medial incisor and inserts into the mobile part of the nasal septum, pulling the nose inferiorly.",
     },
     {
       id: "q38",
@@ -749,7 +749,7 @@ registerExam({
         "Glossopharyngeal nerve",
       ],
       answer: "A",
-      explanation: "The first pharyngeal arch is supplied by the trigeminal nerve, and all first-arch derivatives, including the muscles of mastication, retain this nerve supply. 04 TEMPORAL & INFRATEMPORAL FOSSA, JAW JOINT LECTURE 6",
+      explanation: "The first pharyngeal arch is supplied by the trigeminal nerve, and all first-arch derivatives, including the muscles of mastication, retain this nerve supply.",
     },
     {
       id: "q53",
@@ -931,7 +931,7 @@ registerExam({
         "Articular disc",
       ],
       answer: "A",
-      explanation: "The articular capsule surrounds the temporomandibular joint like a sleeve, attaching above to the articular tubercle and margins of the mandibular fossa, and below to the neck of the mandible. 05 EXTRAOCULAR MUSCLES & INNERVATION LECTURE 7",
+      explanation: "The articular capsule surrounds the temporomandibular joint like a sleeve, attaching above to the articular tubercle and margins of the mandibular fossa, and below to the neck of the mandible.",
     },
     {
       id: "q66",
@@ -1085,7 +1085,7 @@ registerExam({
         "Lacrimal gland",
       ],
       answer: "E",
-      explanation: "The lacrimal gland produces the watery component of tears, which together with the eyelids protects the cornea and eyeball from injury and irritation. 06 THORACIC WALL AND MUSCLES LECTURE 8",
+      explanation: "The lacrimal gland produces the watery component of tears, which together with the eyelids protects the cornea and eyeball from injury and irritation.",
     },
     {
       id: "q77",
@@ -1267,7 +1267,7 @@ registerExam({
         "Prevertebral fascia",
       ],
       answer: "D",
-      explanation: "The endothoracic fascia is a thin connective tissue layer lining the internal thoracic wall, lying between the innermost intercostal muscles and the parietal pleura. 07 ANTERIOR ABDOMINAL WALL & HERNIA LECTURE 9",
+      explanation: "The endothoracic fascia is a thin connective tissue layer lining the internal thoracic wall, lying between the innermost intercostal muscles and the parietal pleura.",
     },
     {
       id: "q90",
@@ -1449,7 +1449,7 @@ registerExam({
         "Arcuate line",
       ],
       answer: "E",
-      explanation: "The arcuate line marks the point below which all three flat-muscle aponeuroses pass in front of rectus abdominis, so no posterior rectus sheath exists below this line, only transversalis fascia. 08 MUSCLE PHYSIOLOGY LECTURES 10-12",
+      explanation: "The arcuate line marks the point below which all three flat-muscle aponeuroses pass in front of rectus abdominis, so no posterior rectus sheath exists below this line, only transversalis fascia.",
     },
     {
       id: "q103",
