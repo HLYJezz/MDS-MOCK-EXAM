@@ -32,7 +32,11 @@
     setTheme: function (t) { write('theme', t); },
     /* Seconds allowed per question, chosen on the exam's start screen. */
     pace: function () { return read('pace', 45); },
-    setPace: function (seconds) { write('pace', seconds); }
+    setPace: function (seconds) { write('pace', seconds); },
+    /* 'exam' marks everything at the end; 'practice' checks each answer as it
+       is given. Chosen on the start screen. */
+    mode: function () { return read('mode', 'exam') === 'practice' ? 'practice' : 'exam'; },
+    setMode: function (m) { write('mode', m); }
   };
 
   /* Apply saved theme as early as possible. */

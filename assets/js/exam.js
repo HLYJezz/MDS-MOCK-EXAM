@@ -101,7 +101,8 @@
       flags: [],
       current: 0,
       startedAt: Date.now(),
-      endsAt: Date.now() + plannedMinutes() * 60000,
+      mode: Store.mode(),
+      endsAt: Store.mode() === 'practice' ? null : Date.now() + plannedMinutes() * 60000,
       secondsPerQuestion: Store.pace(),
       submitted: false
     };
@@ -152,6 +153,10 @@
     } else {
       var wrap = el('div', 'options');
       var multi = q.type === 'multi';
+      /* In practice mode an answered question is marked there and then, and
+         locked so the revealed answer cannot be edited afterwards. */
+      var revealed = isPractice() && isAnswered(q);
+      var correctList = Array.isArray(q.answer) ? q.answer : [q.answer];
       optionsFor(q).forEach(function (opt) {
         var label = el('label', 'option');
         var input = el('input');
@@ -161,7 +166,19 @@
         var given = state.answers[q.id];
         var on = multi ? (Array.isArray(given) && given.indexOf(opt.id) !== -1) : given === opt.id;
         input.checked = on;
-        if (on) label.classList.add('selected');
+        var mark = '';
+        if (revealed) {
+          input.disabled = true;
+          if (correctList.indexOf(opt.id) !== -1) {
+            label.classList.add('is-correct');
+            mark = on ? '✓ your answer' : '✓ correct answer';
+          } else if (on) {
+            label.classList.add('is-chosen-wrong');
+            mark = '✗ your answer';
+          }
+        } else if (on) {
+          label.classList.add('selected');   // plain highlight until it is marked
+        }
         input.addEventListener('change', function () {
           if (multi) {
             var list = Array.isArray(state.answers[q.id]) ? state.answers[q.id].slice() : [];
@@ -175,13 +192,29 @@
           save();
           renderQuestion();
           renderPalette();
+          if (isPractice()) renderTally();
         });
         label.appendChild(input);
         label.appendChild(el('span', 'letter', opt.letter + '.'));
         label.appendChild(el('span', null, opt.text));
+        if (mark) label.appendChild(el('span', 'mark', mark));
         wrap.appendChild(label);
       });
       card.appendChild(wrap);
+
+      if (revealed) {
+        var verdict = isCorrect(q);
+        var box = el('div', 'reveal ' + (verdict ? 'right' : 'wrong'));
+        box.appendChild(el('span', 'tag ' + (verdict ? 'correct' : 'wrong'),
+          verdict ? 'Correct' : 'Incorrect'));
+        if (q.explanation) {
+          var ex = el('div', 'explanation');
+          ex.appendChild(el('strong', null, 'Explanation: '));
+          ex.appendChild(document.createTextNode(q.explanation));
+          box.appendChild(ex);
+        }
+        card.appendChild(box);
+      }
     }
 
     $('prevBtn').disabled = state.current === 0;
@@ -234,8 +267,21 @@
   /* ---------- timer ---------- */
   function startTimer() {
     stopTimer();
+    if (isPractice()) return renderTally();   // practice mode runs without a clock
     tick();
     ticker = setInterval(tick, 1000);
+  }
+
+  /* Practice mode shows how many are right so far where the clock would be. */
+  function renderTally() {
+    var qs = questionsInOrder();
+    var answered = qs.filter(isAnswered);
+    var right = answered.filter(isCorrect).length;
+    var t = $('timer');
+    t.classList.remove('warning', 'danger');
+    t.classList.add('tally');
+    t.textContent = answered.length ? right + ' / ' + answered.length : 'Practice';
+    t.title = 'Correct so far';
   }
   function stopTimer() { if (ticker) { clearInterval(ticker); ticker = null; } }
   function tick() {
@@ -270,6 +316,7 @@
 
     Store.addResult({
       subjectId: exam.id, subjectName: exam.name, date: state.finishedAt,
+      mode: state.mode || 'exam',
       correct: correct, totalQuestions: qs.length, marks: marks,
       totalMarks: exam.totalMarks, percent: percent, passed: passed,
       timeSpentMs: timeSpent, autoSubmitted: !!auto
@@ -308,6 +355,7 @@
     stats.appendChild(el('span', 'chip', r.blank + ' left blank'));
     stats.appendChild(el('span', 'chip', 'Time used ' + fmtDuration(r.timeSpent)));
     stats.appendChild(el('span', 'chip', 'Pass mark ' + exam.passMark + '%'));
+    if (isPractice()) stats.appendChild(el('span', 'chip badge', 'Practice'));
     card.appendChild(stats);
 
     var actions = el('div', 'result-actions');
@@ -372,6 +420,61 @@
       item.appendChild(ex);
     }
     return item;
+  }
+
+  var MODES = [
+    { id: 'exam', label: 'Exam', blurb: 'Timed, with the score and answers at the end — like the real paper.' },
+    { id: 'practice', label: 'Practice', blurb: 'Check each answer as you go, with its explanation. Untimed.' }
+  ];
+
+  /* Marking mode. Practice reveals each answer as it is given, so it runs
+     without a countdown: a deadline while you are reading explanations would
+     work against the point of it. */
+  function renderModePicker(onChange) {
+    var box = $('modeOptions');
+    box.innerHTML = '';
+    MODES.forEach(function (mode) {
+      var b = el('button', 'mode-btn');
+      b.type = 'button';
+      b.appendChild(el('span', 'mode-name', mode.label));
+      b.appendChild(el('span', 'mode-blurb', mode.blurb));
+      b.setAttribute('aria-pressed', String(Store.mode() === mode.id));
+      if (Store.mode() === mode.id) b.classList.add('selected');
+      b.addEventListener('click', function () {
+        Store.setMode(mode.id);
+        renderModePicker(onChange);
+        onChange();
+      });
+      box.appendChild(b);
+    });
+    $('paceBlock').classList.toggle('hidden', Store.mode() === 'practice');
+  }
+
+  function isPractice() { return (state ? state.mode : Store.mode()) === 'practice'; }
+
+  /* The rules describe whichever mode is selected, so the start screen never
+     promises a countdown that practice mode will not show. */
+  function renderRules() {
+    var practice = Store.mode() === 'practice';
+    var rules = practice
+      ? ['Each answer is marked as soon as you give it, with the explanation.',
+         'An answer cannot be changed once it has been marked.',
+         'There is no time limit — the header keeps a running score instead.',
+         'You can move freely between questions and flag any for review.',
+         'Answers are saved as you go — if the tab closes, reopen it to resume.']
+      : ['Choose your time per question above; the total is worked out for you.',
+         'The timer starts as soon as you press Start exam and does not pause.',
+         'You can move freely between questions and flag any question for review.',
+         'The paper is submitted automatically when the time runs out.',
+         'Answers are saved as you go — if the tab closes, reopen it to resume.'];
+    $('rulesTitle').textContent = practice ? 'How practice works' : 'Exam rules';
+    var ul = $('rulesList');
+    ul.innerHTML = '';
+    rules.forEach(function (r) { ul.appendChild(el('li', null, r)); });
+    /* Keep the "fresh" wording when a saved attempt is offered alongside. */
+    $('startBtn').textContent = $('startBtn').dataset.freshLabel
+      ? (practice ? 'Start a fresh practice' : 'Start a fresh attempt')
+      : (practice ? 'Start practice' : 'Start exam');
   }
 
   /* The pace picker on the start screen. The choice is remembered across papers
@@ -504,7 +607,8 @@
     function renderFacts() {
       var facts = [
         ['Questions', exam.questions.length],
-        ['Time allowed', fmtDuration(plannedMinutes() * 60000)],
+        ['Time allowed', Store.mode() === 'practice' ? 'Untimed'
+                                                     : fmtDuration(plannedMinutes() * 60000)],
         ['Pass mark', exam.passMark + '%'],
         everyQuestionOneMark ? ['Format', 'Single best answer']
                              : ['Total marks', exam.totalMarks]
@@ -519,15 +623,20 @@
       });
     }
     renderFacts();
+    renderModePicker(function () { renderFacts(); renderRules(); renderPacePicker(renderFacts); });
+    renderRules();
     renderPacePicker(renderFacts);
 
     var saved = Store.progress(exam.id);
-    if (saved && !saved.submitted && saved.endsAt > Date.now()) {
+    if (saved && !saved.submitted && (saved.mode === 'practice' || saved.endsAt > Date.now())) {
       var resume = $('resumeBtn');
       resume.classList.remove('hidden');
-      resume.textContent = 'Resume saved attempt (' + fmtClock(saved.endsAt - Date.now()) + ' left)';
+      resume.textContent = saved.mode === 'practice'
+        ? 'Resume saved practice'
+        : 'Resume saved attempt (' + fmtClock(saved.endsAt - Date.now()) + ' left)';
       resume.addEventListener('click', function () { state = saved; startPaper(); });
-      $('startBtn').textContent = 'Start a fresh attempt';
+      $('startBtn').dataset.freshLabel = '1';
+      renderRules();      // relabels the button for the selected mode
     }
 
     $('startBtn').addEventListener('click', function () { newAttempt(); startPaper(); });

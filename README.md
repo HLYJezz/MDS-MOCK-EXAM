@@ -34,7 +34,15 @@ the order the papers are listed in `tools/convert_papers.py`:
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.
 
-The time limit is chosen on each paper's start screen — 30 sec, 45 sec, 1 min, 1 min 15
+Each paper's start screen offers two ways to be marked:
+
+- **Exam** — timed, with the score and the full answer review at the end, like the real
+  paper. This is the default.
+- **Practice** — each answer is marked as soon as it is given, with its explanation, and
+  the answer locks once marked. It runs untimed, with a running score in the header
+  where the countdown would be, and still ends with the same results page.
+
+In exam mode the time limit is chosen on the start screen — 30 sec, 45 sec, 1 min, 1 min 15
 or 1 min 30 per question — and the total is worked out from the question count and
 rounded to the nearest 5 minutes. The choice is remembered for the next paper, and the
 times in the table below are the 45-second default. A resumed attempt keeps the time it
@@ -47,6 +55,7 @@ against.
 ## What the site does
 
 - Papers grouped by course, each card showing question count, time and best score
+- Exam mode (marked at the end) or practice mode (marked as you go, with explanations)
 - Countdown that turns amber at 5 minutes and red at 1 minute, and auto-submits at zero
 - One question at a time, with a navigator showing answered and flagged questions
 - Flag for review, jump around freely, arrow keys to move between questions

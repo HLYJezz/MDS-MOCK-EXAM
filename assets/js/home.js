@@ -49,7 +49,7 @@
     if (best) chips.appendChild(el('span', 'chip best', 'Best ' + best.percent + '%'));
 
     var saved = Store.progress(s.id);
-    if (saved && !saved.submitted && saved.endsAt > Date.now()) {
+    if (saved && !saved.submitted && (saved.mode === 'practice' || saved.endsAt > Date.now())) {
       chips.appendChild(el('span', 'chip resume', 'In progress'));
     }
 
@@ -64,7 +64,8 @@
     var when = new Date(r.date);
     left.appendChild(el('div', 'muted small',
       when.toLocaleDateString() + ' · ' + when.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) +
-      ' · ' + r.correct + '/' + r.totalQuestions + ' correct'));
+      ' · ' + r.correct + '/' + r.totalQuestions + ' correct' +
+      (r.mode === 'practice' ? ' · practice' : '')));
     row.appendChild(left);
     row.appendChild(el('div', 'score ' + (r.passed ? 'pass' : 'fail'), r.percent + '%'));
     return row;
