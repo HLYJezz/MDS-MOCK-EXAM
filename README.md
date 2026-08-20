@@ -31,8 +31,14 @@ the order the papers are listed in `tools/convert_papers.py`:
 | | Master Past Paper | 131 | 100 min |
 | | Standard Mock Paper II | 120 | 90 min |
 
-All papers are single best answer, timed at 45 seconds per question, pass mark 60%,
-with questions and options shuffled on every attempt.
+All papers are single best answer, pass mark 60%, with questions and options shuffled on
+every attempt.
+
+The time limit is chosen on each paper's start screen — 30 sec, 45 sec, 1 min, 1 min 15
+or 1 min 30 per question — and the total is worked out from the question count and
+rounded to the nearest 5 minutes. The choice is remembered for the next paper, and the
+times in the table below are the 45-second default. A resumed attempt keeps the time it
+was given when it started.
 
 Two questions from the MDS211 past paper (originally numbered 105 and 238) are left
 out: they are recorded as illegible in the source archive and have no answer to mark
@@ -110,7 +116,7 @@ registerExam({
   icon: '📘',
   accent: '#2f5bd6',
   description: 'What this paper covers.',
-  durationMinutes: 60,
+  durationMinutes: 60,          // reference only: the timer uses the pace picker
   passMark: 60,
   shuffleQuestions: true,
   shuffleOptions: true,

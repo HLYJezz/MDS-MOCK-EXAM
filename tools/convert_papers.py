@@ -604,8 +604,9 @@ def js_literal(value, indent=0):
 
 
 def write_data_file(cfg, questions):
-    # Papers are timed at SECONDS_PER_QUESTION unless one states its real exam
-    # timing, in which case set 'durationMinutes' on its entry in PAPERS.
+    # A default only: the site's start screen lets the candidate pick the pace,
+    # and the timer follows that. Set 'durationMinutes' on a paper's entry to
+    # change the figure recorded here.
     minutes = cfg.get('durationMinutes') or max(5, round(len(questions) * SECONDS_PER_QUESTION / 60 / 5) * 5)
     sections, seen = [], {}
     for q in questions:

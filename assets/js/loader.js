@@ -6,6 +6,20 @@
 (function () {
   window.MockExam = window.MockExam || {};
 
+  /* The pace choices offered on the exam's start screen. */
+  window.MockExam.PACES = [
+    { seconds: 30, label: '30 sec' },
+    { seconds: 45, label: '45 sec' },
+    { seconds: 60, label: '1 min' },
+    { seconds: 75, label: '1 min 15' },
+    { seconds: 90, label: '1 min 30' }
+  ];
+
+  /* Total time for a paper, rounded to the nearest 5 minutes. */
+  window.MockExam.durationMinutes = function (questionCount, secondsEach) {
+    return Math.max(5, Math.round(questionCount * secondsEach / 60 / 5) * 5);
+  };
+
   window.MockExam.subjects = function () { return window.SUBJECTS || []; };
   window.MockExam.courses = function () { return window.COURSES || []; };
   window.MockExam.subjectMeta = function (id) {

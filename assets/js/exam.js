@@ -77,6 +77,11 @@
   }
 
   /* ---------- attempt lifecycle ---------- */
+  /* Minutes allowed for this paper at the pace the candidate picked. */
+  function plannedMinutes() {
+    return MockExam.durationMinutes(exam.questions.length, Store.pace());
+  }
+
   function newAttempt() {
     var idx = exam.questions.map(function (_, i) { return i; });
     if (exam.shuffleQuestions) idx = shuffled(idx);
@@ -96,7 +101,8 @@
       flags: [],
       current: 0,
       startedAt: Date.now(),
-      endsAt: Date.now() + exam.durationMinutes * 60000,
+      endsAt: Date.now() + plannedMinutes() * 60000,
+      secondsPerQuestion: Store.pace(),
       submitted: false
     };
     save();
@@ -368,6 +374,34 @@
     return item;
   }
 
+  /* The pace picker on the start screen. The choice is remembered across papers
+     and only affects attempts started afterwards — a resumed attempt keeps the
+     time it was given when it began. */
+  function renderPacePicker(onChange) {
+    var box = $('paceOptions');
+    box.innerHTML = '';
+    MockExam.PACES.forEach(function (pace) {
+      var b = el('button', 'pace-btn', pace.label);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', String(Store.pace() === pace.seconds));
+      if (Store.pace() === pace.seconds) b.classList.add('selected');
+      b.addEventListener('click', function () {
+        Store.setPace(pace.seconds);
+        renderPacePicker(onChange);
+        onChange();
+      });
+      box.appendChild(b);
+    });
+    $('paceSummary').textContent =
+      exam.questions.length + ' questions at ' + currentPaceLabel() + ' each · ' +
+      fmtDuration(plannedMinutes() * 60000) + ' in total.';
+  }
+
+  function currentPaceLabel() {
+    var found = MockExam.PACES.filter(function (p) { return p.seconds === Store.pace(); })[0];
+    return found ? found.label : Store.pace() + ' sec';
+  }
+
   /* ---------- screens ---------- */
   function showScreen(id) {
     ['screenIntro', 'screenExam', 'screenResult'].forEach(function (s) {
@@ -467,21 +501,25 @@
     $('introDesc').textContent = exam.description;
 
     var everyQuestionOneMark = exam.totalMarks === exam.questions.length;
-    var facts = [
-      ['Questions', exam.questions.length],
-      ['Time allowed', fmtDuration(exam.durationMinutes * 60000)],
-      ['Pass mark', exam.passMark + '%'],
-      everyQuestionOneMark ? ['Format', 'Single best answer']
-                           : ['Total marks', exam.totalMarks]
-    ];
-    var ul = $('introFacts');
-    ul.innerHTML = '';
-    facts.forEach(function (f) {
-      var li = el('li');
-      li.appendChild(el('span', 'k', f[0]));
-      li.appendChild(el('span', 'v', String(f[1])));
-      ul.appendChild(li);
-    });
+    function renderFacts() {
+      var facts = [
+        ['Questions', exam.questions.length],
+        ['Time allowed', fmtDuration(plannedMinutes() * 60000)],
+        ['Pass mark', exam.passMark + '%'],
+        everyQuestionOneMark ? ['Format', 'Single best answer']
+                             : ['Total marks', exam.totalMarks]
+      ];
+      var ul = $('introFacts');
+      ul.innerHTML = '';
+      facts.forEach(function (f) {
+        var li = el('li');
+        li.appendChild(el('span', 'k', f[0]));
+        li.appendChild(el('span', 'v', String(f[1])));
+        ul.appendChild(li);
+      });
+    }
+    renderFacts();
+    renderPacePicker(renderFacts);
 
     var saved = Store.progress(exam.id);
     if (saved && !saved.submitted && saved.endsAt > Date.now()) {

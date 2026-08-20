@@ -185,6 +185,20 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .fact-list li { background: var(--surface-2); border-radius: 10px; padding: .7rem .9rem; }
 .fact-list .k { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .fact-list .v { font-weight: 650; }
+.pace { margin: 1.4rem 0; }
+.pace h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.pace-options { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 .6rem; }
+.pace-btn {
+  background: var(--surface); border: 1px solid var(--line); color: var(--text);
+  border-radius: 10px; padding: .45rem .85rem; font-size: .9rem;
+}
+.pace-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+.pace-btn.selected {
+  background: var(--accent); border-color: var(--accent);
+  color: var(--on-accent, #fff); font-weight: 650;
+}
+.pace p { margin: 0; }
+
 .rules ul { color: var(--muted); padding-left: 1.1rem; margin: .4rem 0 0; }
 .rules li { margin-bottom: .3rem; }
 .intro-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }

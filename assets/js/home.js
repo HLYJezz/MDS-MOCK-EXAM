@@ -39,7 +39,10 @@
     var chips = el('div', 'chips');
     if (s.badge) chips.appendChild(el('span', 'chip badge', s.badge));
     chips.appendChild(el('span', 'chip', s.questionCount + ' questions'));
-    chips.appendChild(el('span', 'chip', s.durationMinutes + ' min'));
+    /* Time shown at the pace chosen on the start screen, so the card agrees
+       with what the exam will actually give. */
+    chips.appendChild(el('span', 'chip',
+      MockExam.durationMinutes(s.questionCount, Store.pace()) + ' min'));
     chips.appendChild(el('span', 'chip', 'Pass ' + s.passMark + '%'));
 
     var best = Store.bestFor(s.id);

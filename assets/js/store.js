@@ -29,7 +29,10 @@
         .reduce(function (best, r) { return (!best || r.percent > best.percent) ? r : best; }, null);
     },
     theme: function () { return read('theme', null); },
-    setTheme: function (t) { write('theme', t); }
+    setTheme: function (t) { write('theme', t); },
+    /* Seconds allowed per question, chosen on the exam's start screen. */
+    pace: function () { return read('pace', 45); },
+    setPace: function (seconds) { write('pace', seconds); }
   };
 
   /* Apply saved theme as early as possible. */
