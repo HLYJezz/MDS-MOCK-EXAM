@@ -29,20 +29,49 @@
   }
 
   /* ---------- sending ----------
-     Apps Script does not answer CORS preflight, so the request is kept "simple"
-     (text/plain, no custom headers) and sent no-cors. That means the response
-     cannot be read: a resolved promise means the request left the browser, which
-     is the most this arrangement can tell us. The local copy is what makes it
-     safe — nothing is deleted on the strength of a send. */
+     Apps Script does not answer CORS preflight, so the request has to be a
+     "simple" one: text/plain, no custom headers, no-cors. The response can
+     never be read, so "it arrived" is not something this page can learn.
+
+     sendBeacon is used where available: it hands the request to the browser
+     and returns immediately, which matters because Apps Script answers with a
+     cross-origin redirect that leaves a no-cors fetch hanging forever on iOS
+     Safari — the row lands in the sheet but the promise never settles.
+
+     The fetch fallback is raced against a timeout for the same reason. Waiting
+     longer would tell us nothing, and the local copy is what keeps this safe. */
+  var SEND_TIMEOUT = 6000;
+
   function post(report) {
     if (!CONFIG.endpoint) return Promise.reject(new Error('no endpoint configured'));
-    return fetch(CONFIG.endpoint, {
-      method: 'POST',
-      mode: 'no-cors',
-      cache: 'no-store',
-      keepalive: true,             // survives the tab closing right afterwards
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(report)
+    var body = JSON.stringify(report);
+
+    if (navigator.sendBeacon) {
+      try {
+        var blob = new Blob([body], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon(CONFIG.endpoint, blob)) return Promise.resolve('queued');
+      } catch (e) { /* fall through to fetch */ }
+    }
+
+    return new Promise(function (resolve, reject) {
+      var settled = false;
+      var timer = setTimeout(function () {
+        /* Almost certainly delivered — an unreachable endpoint rejects instead
+           of hanging — so treat it as sent rather than sending it twice later. */
+        if (!settled) { settled = true; resolve('timeout'); }
+      }, SEND_TIMEOUT);
+
+      fetch(CONFIG.endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: body
+      }).then(function () {
+        if (!settled) { settled = true; clearTimeout(timer); resolve('sent'); }
+      }, function (err) {
+        if (!settled) { settled = true; clearTimeout(timer); reject(err); }
+      });
     });
   }
 
@@ -157,13 +186,16 @@
         return;
       }
       post(report).then(function () {
-        Store.markReportSent(report.id);
+        try { Store.markReportSent(report.id); } catch (e) {}
         close();
         toast('Thanks — your report has been sent.');
       }, function () {
         /* Kept in the queue; it goes out next time the site is opened. */
         close();
         toast('Thanks — saved. It will be sent when you are back online.');
+      })['catch'](function () {
+        close();      // never leave the dialog stuck on "Sending…"
+        toast('Thanks — your report has been saved.');
       });
     };
   }
