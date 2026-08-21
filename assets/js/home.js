@@ -57,6 +57,12 @@
     return card;
   }
 
+  function tally(papers) {
+    var n = papers.reduce(function (t, p) { return t + p.questionCount; }, 0);
+    return papers.length + (papers.length === 1 ? ' paper · ' : ' papers · ') +
+      n.toLocaleString() + ' questions';
+  }
+
   function historyRow(r) {
     var row = el('div', 'history-row');
     var left = el('div');
@@ -102,14 +108,31 @@
       var title = el('h2', 'course-title', course.title);
       if (course.accent) title.style.setProperty('--card-accent', course.accent);
       head.appendChild(title);
-      var count = papers.reduce(function (n, p) { return n + p.questionCount; }, 0);
-      head.appendChild(el('span', 'muted small',
-        papers.length + ' papers · ' + count.toLocaleString() + ' questions'));
+      head.appendChild(el('span', 'muted small', tally(papers)));
       section.appendChild(head);
 
-      var row = el('div', 'course-grid');
-      papers.forEach(function (p) { row.appendChild(subjectCard(p)); });
-      section.appendChild(row);
+      /* Courses can be split into subsets (MDS211 into SA1 and SA2). Papers
+         with no subset are listed first, without a heading. */
+      var subsets = [];
+      papers.forEach(function (p) {
+        var key = p.group || '';
+        var found = subsets.filter(function (g) { return g.key === key; })[0];
+        if (!found) subsets.push(found = { key: key, papers: [] });
+        found.papers.push(p);
+      });
+
+      subsets.forEach(function (subset) {
+        if (subset.key) {
+          var label = el('h3', 'subset-title',
+            (MockExam.groups()[subset.key] || subset.key));
+          label.appendChild(el('span', 'subset-count muted small', tally(subset.papers)));
+          section.appendChild(label);
+        }
+        var row = el('div', 'course-grid');
+        subset.papers.forEach(function (p) { row.appendChild(subjectCard(p)); });
+        section.appendChild(row);
+      });
+
       grid.appendChild(section);
     });
 

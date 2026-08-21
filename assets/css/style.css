@@ -103,6 +103,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 3px;
   background: var(--card-accent, var(--accent)); margin-right: .55rem;
 }
+.subset-title {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  font-size: .82rem; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); font-weight: 700;
+  margin: 1.4rem 0 .6rem;
+}
+.subset-title:first-of-type { margin-top: .2rem; }
+.subset-count { text-transform: none; letter-spacing: 0; font-weight: 400; }
 .course-grid {
   display: grid; gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));

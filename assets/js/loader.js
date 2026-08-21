@@ -22,6 +22,7 @@
 
   window.MockExam.subjects = function () { return window.SUBJECTS || []; };
   window.MockExam.courses = function () { return window.COURSES || []; };
+  window.MockExam.groups = function () { return window.GROUPS || {}; };
   window.MockExam.subjectMeta = function (id) {
     return (window.SUBJECTS || []).filter(function (s) { return s.id === id; })[0] || null;
   };

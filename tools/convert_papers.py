@@ -32,6 +32,7 @@ PASS_MARK = 60
 #   file          PDF name in source-papers/
 #   id            used in the URL and as the data file name
 #   course        grouping on the home page
+#   group         optional subset within the course, e.g. 'SA1' / 'SA2'
 #   expected      how many questions the paper says it has
 #   key_start     text that marks the beginning of the answer key
 #   key_mode      how the key is written (see parse_key)
@@ -75,6 +76,7 @@ PAPERS = [
     {
         'file': 'MDS211 SA1 MockExam 77Q.pdf',
         'id': 'mds211-sa1-mock-1',
+        'group': 'SA1',
         'badge': 'Start here',
         'name': 'SA1 Mock Exam 1',
         'subtitle': 'Real SA1 structure · 77 questions',
@@ -91,6 +93,7 @@ PAPERS = [
     {
         'file': 'MDS211 SA1 MockExam 77Q v2.pdf',
         'id': 'mds211-sa1-mock-2',
+        'group': 'SA1',
         'badge': 'Start here',
         'name': 'SA1 Mock Exam 2',
         'subtitle': 'Second set · no overlap with Mock 1',
@@ -107,6 +110,7 @@ PAPERS = [
     {
         'file': 'MDS211 Neuro PastPaper Lec1-16 CorrectedKey.pdf',
         'id': 'mds211-past-paper',
+        'group': 'SA1',
         'name': 'Neuro Past Paper',
         'subtitle': 'Lectures 1–16 · corrected key',
         'course': 'MDS211',
@@ -120,8 +124,25 @@ PAPERS = [
                        'de-duplicated, with the answer key re-verified against source material.',
     },
     {
+        'file': 'MDS211 Neuro PastPaper Lec17-29 CorrectedKey.pdf',
+        'id': 'mds211-past-paper-sa2',
+        'name': 'Neuro Past Paper',
+        'subtitle': 'Lectures 17–29 · corrected key',
+        'course': 'MDS211',
+        'group': 'SA2',
+        'icon': '🧠',
+        'expected': 225,
+        'key_start': 'Answer Key & Explanations',
+        'key_mode': 'q_correct',
+        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+\(\d+\s+questions?\)\s*$',
+        'drop_re': r'^MDS211_PastPaper_Lec17-29_CorrectedKey\.pdf$|' + PAGE_FURNITURE,
+        'description': 'Every recorded question from the MDS211 past-paper archive for Exam 2 (Lectures 17–29), '
+                       'de-duplicated, with the answer key re-verified against source material.',
+    },
+    {
         'file': 'MDS211 Professors Gauntlet.pdf',
         'id': 'mds211-gauntlet',
+        'group': 'SA1',
         'name': "The Professor's Gauntlet",
         'subtitle': 'Lectures 1–16 · distractor analysis',
         'course': 'MDS211',
@@ -137,6 +158,7 @@ PAPERS = [
     {
         'file': 'MDS211 SA1 HintExam ProfKanokporn.pdf',
         'id': 'mds211-sa1-hints',
+        'group': 'SA1',
         'name': 'SA1 Hint Exam',
         'subtitle': "Prof. Kanokporn's hint list",
         'course': 'MDS211',
@@ -259,6 +281,11 @@ PAPERS = [
                        'vignettes.',
     },
 ]
+
+GROUPS = {
+    'SA1': 'SA1 · Lectures 1–16',
+    'SA2': 'SA2 · Lectures 17–29',
+}
 
 COURSES = {
     'MDS211': {'title': 'MDS211 — Nervous System', 'accent': '#2f5bd6'},
@@ -747,11 +774,17 @@ def write_manifest(summaries):
         lines.append('  { id: %s, title: %s, accent: %s },'
                      % (js_literal(code), js_literal(meta['title']), js_literal(meta['accent'])))
     lines.append('];')
+    lines.append('window.GROUPS = {')
+    for code, title in GROUPS.items():
+        lines.append('  %s: %s,' % (js_literal(code), js_literal(title)))
+    lines.append('};')
     lines.append('window.SUBJECTS = [')
     for s in summaries:
         lines.append('  {')
         for k in ('id', 'name', 'subtitle', 'course', 'icon', 'accent', 'description'):
             lines.append('    %s: %s,' % (k, js_literal(s[k])))
+        if s.get('group'):
+            lines.append('    group: %s,' % js_literal(s['group']))
         if s.get('badge'):
             lines.append('    badge: %s,' % js_literal(s['badge']))
         lines.append('    questionCount: %d,' % s['questionCount'])
@@ -781,7 +814,7 @@ def main():
             'course': cfg['course'], 'icon': cfg['icon'],
             'accent': COURSES[cfg['course']]['accent'],
             'description': cfg['description'], 'questionCount': len(questions),
-            'badge': cfg.get('badge'),
+            'group': cfg.get('group'), 'badge': cfg.get('badge'),
             'durationMinutes': minutes, 'passMark': PASS_MARK,
             'file': 'data/%s.js' % cfg['id'],
         })

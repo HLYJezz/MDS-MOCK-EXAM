@@ -13,23 +13,25 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-12 papers, 1,797 questions, generated from the PDFs in `source-papers/`. Cards appear in
-the order the papers are listed in `tools/convert_papers.py`:
+13 papers, 2,024 questions, generated from the PDFs in `source-papers/`. Cards appear in
+the order the papers are listed in `tools/convert_papers.py`. A course can be split into
+subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
 
-| Course | Paper | Questions | Time |
-|---|---|---|---|
-| MDS211 — Nervous System | SA1 Mock Exam 1 | 77 | 60 min |
-| | SA1 Mock Exam 2 | 77 | 60 min |
-| | Neuro Past Paper | 249 | 185 min |
-| | The Professor's Gauntlet | 300 | 225 min |
-| | SA1 Hint Exam | 102 | 75 min |
-| MDS220 — Musculo 1 | Full Practice Exam | 202 | 150 min |
-| | Hard Practice Exam | 151 | 115 min |
-| | Comprehensive Exam | 171 | 130 min |
-| | Musculo Hard Exam | 87 | 65 min |
-| MDS221 — Musculo 2 | Comprehensive Exam | 130 | 100 min |
-| | Master Past Paper | 131 | 100 min |
-| | Standard Mock Paper II | 120 | 90 min |
+| Course | Subset | Paper | Questions | Time |
+|---|---|---|---|---|
+| MDS211 — Nervous System | SA1 · Lectures 1–16 | SA1 Mock Exam 1 | 77 | 60 min |
+| | | SA1 Mock Exam 2 | 77 | 60 min |
+| | | Neuro Past Paper | 251 | 190 min |
+| | | The Professor's Gauntlet | 300 | 225 min |
+| | | SA1 Hint Exam | 102 | 75 min |
+| | SA2 · Lectures 17–29 | Neuro Past Paper | 225 | 170 min |
+| MDS220 — Musculo 1 | | Full Practice Exam | 202 | 150 min |
+| | | Hard Practice Exam | 151 | 115 min |
+| | | Comprehensive Exam | 171 | 130 min |
+| | | Musculo Hard Exam | 87 | 65 min |
+| MDS221 — Musculo 2 | | Comprehensive Exam | 130 | 100 min |
+| | | Master Past Paper | 131 | 100 min |
+| | | Standard Mock Paper II | 120 | 90 min |
 
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.
@@ -48,9 +50,8 @@ rounded to the nearest 5 minutes. The choice is remembered for the next paper, a
 times in the table below are the 45-second default. A resumed attempt keeps the time it
 was given when it started.
 
-Two questions from the MDS211 past paper (originally numbered 105 and 238) are left
-out: they are recorded as illegible in the source archive and have no answer to mark
-against.
+Every question in every paper now has an answer: the two MDS211 items that used to be
+recorded as illegible (105 and 238) are answered in the current edition of that paper.
 
 ## What the site does
 
