@@ -115,6 +115,22 @@ answered, what the key says, the problem, their comment and their name.
 Re-deploy with **Manage deployments → edit → New version** after changing the script,
 otherwise the old version keeps running.
 
+### When rows do not appear
+
+Open the `/exec` URL in a browser. What comes back says where the problem is:
+
+| What you see | What it means |
+|---|---|
+| `{"ok":true,"sheet":"…","rows":N}` | Working, and writing to that sheet |
+| `{"ok":false,"error":"…"}` | Deployed, but the script itself is failing — the error says why |
+| A Google sign-in page | *Who has access* is not **Anyone**, so requests never reach the script |
+| "Script function not found: doGet" | The code was saved but not re-deployed as a **New version** |
+
+The most common cause of a silent failure is a **standalone** Apps Script project, where
+`getActiveSpreadsheet()` returns nothing because the script is not attached to a sheet.
+Setting `SHEET_ID` at the top of `tools/feedback-sheet.gs` avoids that entirely — it is
+the long id in the sheet's URL.
+
 **Nothing is lost if a send fails.** Every report is written to the reader's browser
 first; if the network is down the report is queued and goes out next time they open the
 site. Until `CONFIG.endpoint` is filled in, reports are only kept on the device and the

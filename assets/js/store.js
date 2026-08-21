@@ -42,6 +42,11 @@
       write('reports', all.slice(0, 100));
     },
     clearReports: function () { drop('reports'); },
+    bumpReportAttempts: function (id) {
+      var all = read('reports', []);
+      all.forEach(function (r) { if (r.id === id) r.attempts = (r.attempts || 0) + 1; });
+      write('reports', all);
+    },
     markReportSent: function (id) {
       var all = read('reports', []);
       all.forEach(function (r) { if (r.id === id) r.sent = true; });

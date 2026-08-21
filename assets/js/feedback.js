@@ -29,48 +29,64 @@
   }
 
   /* ---------- sending ----------
-     Apps Script does not answer CORS preflight, so the request has to be a
-     "simple" one: text/plain, no custom headers, no-cors. The response can
-     never be read, so "it arrived" is not something this page can learn.
+     A plain CORS request is tried first. Apps Script answers through
+     script.googleusercontent.com, which allows cross-origin reads, so the
+     {"ok":true} it returns can actually be checked — the previous no-cors call
+     could not tell a written row from a silent failure.
 
-     sendBeacon is used where available: it hands the request to the browser
-     and returns immediately, which matters because Apps Script answers with a
-     cross-origin redirect that leaves a no-cors fetch hanging forever on iOS
-     Safari — the row lands in the sheet but the promise never settles.
+     Content-Type stays text/plain so the request remains "simple": anything
+     else triggers a preflight, which Apps Script does not answer.
 
-     The fetch fallback is raced against a timeout for the same reason. Waiting
-     longer would tell us nothing, and the local copy is what keeps this safe. */
-  var SEND_TIMEOUT = 6000;
+     If that read fails (an older browser, a blocked response), the report is
+     still fired off with sendBeacon so it has a chance of landing, but it is
+     kept queued rather than being called sent. */
+  var SEND_TIMEOUT = 8000;
+  var MAX_ATTEMPTS = 3;      // stop retrying rather than pile up duplicate rows
 
+  function beacon(body) {
+    if (!navigator.sendBeacon) return false;
+    try {
+      return navigator.sendBeacon(CONFIG.endpoint,
+        new Blob([body], { type: 'text/plain;charset=UTF-8' }));
+    } catch (e) { return false; }
+  }
+
+  /* Resolves 'sent' when the endpoint confirms it, rejects otherwise. */
   function post(report) {
     if (!CONFIG.endpoint) return Promise.reject(new Error('no endpoint configured'));
     var body = JSON.stringify(report);
 
-    if (navigator.sendBeacon) {
-      try {
-        var blob = new Blob([body], { type: 'text/plain;charset=UTF-8' });
-        if (navigator.sendBeacon(CONFIG.endpoint, blob)) return Promise.resolve('queued');
-      } catch (e) { /* fall through to fetch */ }
-    }
-
     return new Promise(function (resolve, reject) {
       var settled = false;
+      function finish(fn, value) {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        fn(value);
+      }
       var timer = setTimeout(function () {
-        /* Almost certainly delivered — an unreachable endpoint rejects instead
-           of hanging — so treat it as sent rather than sending it twice later. */
-        if (!settled) { settled = true; resolve('timeout'); }
+        beacon(body);                       // last try; still not confirmed
+        finish(reject, new Error('timed out'));
       }, SEND_TIMEOUT);
 
       fetch(CONFIG.endpoint, {
         method: 'POST',
-        mode: 'no-cors',
         cache: 'no-store',
+        redirect: 'follow',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: body
-      }).then(function () {
-        if (!settled) { settled = true; clearTimeout(timer); resolve('sent'); }
-      }, function (err) {
-        if (!settled) { settled = true; clearTimeout(timer); reject(err); }
+      }).then(function (res) {
+        return res.text();
+      }).then(function (text) {
+        var data = {};
+        try { data = JSON.parse(text); } catch (e) {}
+        if (data.ok) finish(resolve, 'sent');
+        else finish(reject, new Error(data.error || 'endpoint did not confirm'));
+      })['catch'](function (err) {
+        /* Could not read the answer — send it blind so it still has a chance,
+           and leave it queued so a later visit can confirm it properly. */
+        beacon(body);
+        finish(reject, err);
       });
     });
   }
@@ -78,8 +94,9 @@
   /* Retry anything still queued from an earlier visit. Quiet: no toasts. */
   function flush() {
     if (!CONFIG.endpoint) return;
-    var pending = Store.reports().filter(function (r) { return !r.sent; });
-    pending.forEach(function (r) {
+    Store.reports().filter(function (r) { return !r.sent; }).forEach(function (r) {
+      if ((r.attempts || 0) >= MAX_ATTEMPTS) return;
+      Store.bumpReportAttempts(r.id);
       post(r).then(function () { Store.markReportSent(r.id); }, function () {});
     });
   }
@@ -172,7 +189,8 @@
         issue: (p.issues.querySelector('.selected') || {}).dataset.issue || ISSUES[0],
         comment: p.comment.value.trim(),
         name: p.name.value.trim(),
-        sent: false
+        sent: false,
+        attempts: 0
       };
       Store.addReport(report);
       Store.setReporterName(report.name);
@@ -190,9 +208,9 @@
         close();
         toast('Thanks — your report has been sent.');
       }, function () {
-        /* Kept in the queue; it goes out next time the site is opened. */
+        /* Kept in the queue and retried on a later visit. */
         close();
-        toast('Thanks — saved. It will be sent when you are back online.');
+        toast('Thanks — saved on this device; it will be sent again shortly.');
       })['catch'](function () {
         close();      // never leave the dialog stuck on "Sending…"
         toast('Thanks — your report has been saved.');

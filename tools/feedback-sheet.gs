@@ -14,6 +14,13 @@
  * otherwise the old code keeps running.
  */
 
+/* The spreadsheet to write into. Filling this in is what makes the script work
+   whether it lives inside the sheet (Extensions → Apps Script) or as a
+   standalone project — getActiveSpreadsheet() returns nothing in the standalone
+   case, which is the usual reason rows never appear. The id is the long part of
+   the sheet's URL: docs.google.com/spreadsheets/d/<THIS BIT>/edit */
+var SHEET_ID = '1-ibBrJvr76ZTwRqIYBGbagixJ3g6Qqx7QI5M9WxJC94';
+
 var SHEET_NAME = 'Reports';
 
 var HEADERS = [
@@ -54,11 +61,24 @@ function doPost(e) {
 
 /** Opening the /exec URL in a browser should say the endpoint is alive. */
 function doGet() {
-  return json_({ ok: true, rows: Math.max(0, getSheet_().getLastRow() - 1) });
+  try {
+    var sheet = getSheet_();
+    return json_({
+      ok: true,
+      sheet: sheet.getParent().getName(),
+      tab: sheet.getName(),
+      rows: Math.max(0, sheet.getLastRow() - 1)
+    });
+  } catch (err) {
+    return json_({ ok: false, error: String(err) });
+  }
 }
 
 function getSheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SHEET_ID
+    ? SpreadsheetApp.openById(SHEET_ID)
+    : SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) throw new Error('No spreadsheet: set SHEET_ID at the top of this script.');
   var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
