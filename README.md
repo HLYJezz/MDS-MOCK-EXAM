@@ -13,7 +13,7 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-13 papers, 2,024 questions, generated from the PDFs in `source-papers/`. Cards appear in
+14 papers, 2,101 questions, generated from the PDFs in `source-papers/`. Cards appear in
 the order the papers are listed in `tools/convert_papers.py`. A course can be split into
 subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
 
@@ -24,7 +24,8 @@ subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
 | | | Neuro Past Paper | 251 | 190 min |
 | | | The Professor's Gauntlet | 300 | 225 min |
 | | | SA1 Hint Exam | 102 | 75 min |
-| | SA2 · Lectures 17–29 | Neuro Past Paper | 225 | 170 min |
+| | SA2 · Lectures 17–29 | SA2 Mock Exam | 77 | 60 min |
+| | | Neuro Past Paper | 225 | 170 min |
 | MDS220 — Musculo 1 | | Full Practice Exam | 202 | 150 min |
 | | | Hard Practice Exam | 151 | 115 min |
 | | | Comprehensive Exam | 171 | 130 min |

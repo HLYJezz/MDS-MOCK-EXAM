@@ -34,6 +34,8 @@ PASS_MARK = 60
 #   course        grouping on the home page
 #   group         optional subset within the course, e.g. 'SA1' / 'SA2'
 #   expected      how many questions the paper says it has
+#   body_start    optional; text marking where the questions begin, for papers
+#                 whose front matter contains numbered lists of its own
 #   key_start     text that marks the beginning of the answer key
 #   key_mode      how the key is written (see parse_key)
 #   section_re    optional; matches a section/lecture heading in the questions
@@ -122,6 +124,24 @@ PAPERS = [
         'drop_re': r'^MDS211_PastPaper_Lec1-16_CorrectedKey\.pdf$|' + PAGE_FURNITURE,
         'description': 'Every recorded question from the MDS211 past-paper archive for Exam 1 (Lectures 1–16), '
                        'de-duplicated, with the answer key re-verified against source material.',
+    },
+    {
+        'file': 'MDS211 SA2 MockExam Lec17-29 77Q.pdf',
+        'id': 'mds211-sa2-mock',
+        'group': 'SA2',
+        'badge': 'Start here',
+        'name': 'SA2 Mock Exam',
+        'subtitle': 'Real SA2 structure · 77 questions',
+        'course': 'MDS211',
+        'icon': '📝',
+        'expected': 77,
+        'body_start': 'Section 1 — Questions',
+        'key_start': 'Section 2 — Answer Key & Explanations',
+        'key_mode': 'q_correct',
+        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+$',
+        'drop_re': r'^MDS211 Nervous System · SA2 Mock Exam · Lectures 17–29$|' + PAGE_FURNITURE,
+        'description': 'Mirrors the real SA2 exam structure: 77 questions across Lectures 17–29 in proportion to '
+                       'lecture hours, with a common-trap note on every answer.',
     },
     {
         'file': 'MDS211 Neuro PastPaper Lec17-29 CorrectedKey.pdf',
@@ -342,6 +362,8 @@ def tidy_section(line):
     (19 questions)' into the short label shown on the question card."""
     s = re.sub(r'\s+', ' ', line).strip()
     s = re.sub(r'\s*\(\d+\s+questions?\)\s*$', '', s)          # trailing counts
+    s = re.sub(r'\s*[—–-]\s*[\d.]+\s*hr\b.*$', '', s)            # "— 1.0 hr — 5 questions"
+    s = re.sub(r'\s*[—–-]\s*\d+\s+questions?\s*$', '', s)
     s = re.sub(r'^(SECTION\s+[A-Z0-9]+|Section\s+\d+|\d{2})\s*(--|—|–|-|·|•)?\s*', '', s)
     s = s.replace(' -- ', ' — ')
     # Headings are often set in capitals; title-case them so the chip is readable.
@@ -631,7 +653,13 @@ def build(cfg, report):
     split_at = joined.find(cfg['key_start'])
     if split_at == -1:
         raise SystemExit('answer key marker not found in ' + cfg['file'])
-    body_lines = joined[:split_at].split('\n')
+    body_from = 0
+    if cfg.get('body_start'):
+        found = joined.find(cfg['body_start'])
+        if found == -1:
+            raise SystemExit('body_start not found in ' + cfg['file'])
+        body_from = found
+    body_lines = joined[body_from:split_at].split('\n')
     key_lines = joined[split_at:].split('\n')
 
     # Same text with bare numbers kept, for reading answer-grid tables.
