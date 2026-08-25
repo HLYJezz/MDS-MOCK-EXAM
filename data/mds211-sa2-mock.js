@@ -1,8 +1,8 @@
-/* SA2 Mock Exam — generated from source-papers/MDS211 SA2 MockExam Lec17-29 77Q.pdf
+/* SA2 Mock Exam 1 — generated from source-papers/MDS211_SA2_MockExam_Lec17-29_77Q.pdf
    Do not edit by hand: run tools/convert_papers.py to rebuild. */
 registerExam({
   id: "mds211-sa2-mock",
-  name: "SA2 Mock Exam",
+  name: "SA2 Mock Exam 1",
   course: "MDS211",
   subtitle: "Real SA2 structure · 77 questions",
   icon: "📝",
@@ -969,16 +969,16 @@ registerExam({
     {
       id: "q68",
       section: "s13",
-      stem: "A patient has difficulty breathing and weakness in facial expression. Which part of the internal capsule might be affected?",
+      stem: "The mechanism of action for diazepam (a benzodiazepine) used in status epilepticus and anxiety disorders is:",
       options: [
-        "Genu",
-        "Posterior limb",
-        "Anterior limb",
-        "Sublenticular part",
-        "Retrolenticular part",
+        "Blocks GABA reuptake",
+        "Increases the duration of Cl– channel opening",
+        "Increases the frequency of Cl– channel opening at the GABA-A receptor",
+        "Blocks NMDA receptor Ca2+ influx",
+        "Enhances glycine binding",
       ],
-      answer: "A",
-      explanation: "Corticobulbar fibers controlling facial expression (and other bulbar/respiratory-related musculature) are classically concentrated in the genu of the internal capsule, between the anterior limb (frontopontine fibers) and posterior limb (corticospinal fibers). Common trap: Posterior limb (B) is the “default” internal capsule answer for most motor questions, but corticobulbar (face/bulbar) fibers specifically run through the genu, just anterior to the posterior limb's corticospinal fibers. Reclassified — corrected past-paper key (Q204), originally in the Mixed/Other Topics bucket; reassigned to Lecture 29 as an integrative internal-capsule localization vignette.",
+      answer: "C",
+      explanation: "Benzodiazepines like diazepam act allosterically on the GABA-A receptor to increase the FREQUENCY of chloride channel opening (only in the presence of GABA) — this is the key mechanistic distinction from barbiturates, which instead increase the DURATION of channel opening. Common trap: Option B describes the barbiturate mechanism, not the benzodiazepine one — mixing up “frequency” (benzodiazepines) versus “duration” (barbiturates) is one of the most commonly tested pharmacology distinctions in this drug class. Reclassified — corrected past-paper key (Q215), originally in the Mixed/Other Topics bucket; reassigned to Lecture 29 as clinically-relevant pharmacology. (This item replaces an earlier internal-capsule question that the source archive itself had flagged as genuinely ambiguous; that flag was not being carried forward faithfully, so it has been swapped for this unambiguous item instead.)",
     },
     {
       id: "q69",

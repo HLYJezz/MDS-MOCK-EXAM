@@ -126,11 +126,11 @@ PAPERS = [
                        'de-duplicated, with the answer key re-verified against source material.',
     },
     {
-        'file': 'MDS211 SA2 MockExam Lec17-29 77Q.pdf',
+        'file': 'MDS211_SA2_MockExam_Lec17-29_77Q.pdf',
         'id': 'mds211-sa2-mock',
         'group': 'SA2',
         'badge': 'Start here',
-        'name': 'SA2 Mock Exam',
+        'name': 'SA2 Mock Exam 1',
         'subtitle': 'Real SA2 structure · 77 questions',
         'course': 'MDS211',
         'icon': '📝',
@@ -142,6 +142,24 @@ PAPERS = [
         'drop_re': r'^MDS211 Nervous System · SA2 Mock Exam · Lectures 17–29$|' + PAGE_FURNITURE,
         'description': 'Mirrors the real SA2 exam structure: 77 questions across Lectures 17–29 in proportion to '
                        'lecture hours, with a common-trap note on every answer.',
+    },
+    {
+        'file': 'MDS211_SA2_MockExam2_Lec17-29_77Q.pdf',
+        'id': 'mds211-sa2-mock-2',
+        'group': 'SA2',
+        'badge': 'Start here',
+        'name': 'SA2 Mock Exam 2',
+        'subtitle': 'Second set · no overlap with Mock 1',
+        'course': 'MDS211',
+        'icon': '📝',
+        'expected': 77,
+        'body_start': 'Section 1 — Questions',
+        'key_start': 'Section 2 — Answer Key & Explanations',
+        'key_mode': 'q_correct',
+        'section_re': r'^Lecture\s+\d+\s*[—–-]\s*.+$',
+        'drop_re': r'^MDS211 Nervous System · SA2 Mock Exam 2 · Lectures 17–29$|' + PAGE_FURNITURE,
+        'description': 'A second, fully independent SA2 set with no overlap with Mock Exam 1, using the same real '
+                       'exam weighting.',
     },
     {
         'file': 'MDS211 Neuro PastPaper Lec17-29 CorrectedKey.pdf',
