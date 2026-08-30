@@ -121,6 +121,13 @@
         found.papers.push(p);
       });
 
+      /* Recommended papers lead their subset, whatever order they were added
+         in — a badged paper dropped in later still sits with its siblings. */
+      subsets.forEach(function (subset) {
+        var lead = subset.papers.filter(function (p) { return p.badge; });
+        subset.papers = lead.concat(subset.papers.filter(function (p) { return !p.badge; }));
+      });
+
       subsets.forEach(function (subset) {
         if (subset.key) {
           var label = el('h3', 'subset-title',

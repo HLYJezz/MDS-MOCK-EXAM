@@ -13,9 +13,10 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-16 papers, 2,409 questions, generated from the files in `source-papers/`. Cards appear in
-the order the papers are listed in `tools/convert_papers.py`. A course can be split into
-subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
+16 papers, 2,255 questions, generated from the files in `source-papers/`. Cards appear in
+the order the papers are listed in `tools/convert_papers.py`, except that papers carrying a
+`badge` lead their subset, so a recommended paper added later still sits with its siblings.
+A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
 
 | Course | Subset | Paper | Questions | Time |
 |---|---|---|---|---|
@@ -26,8 +27,8 @@ subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
 | | | SA1 Hint Exam | 102 | 75 min |
 | | SA2 · Lectures 17–29 | SA2 Mock Exam 1 | 77 | 60 min |
 | | | SA2 Mock Exam 2 | 77 | 60 min |
+| | | SA2 Mock Exam 3 | 77 | 60 min |
 | | | Neuro Past Paper | 225 | 170 min |
-| | | MDS211 SA2 Question Bank | 231 | 175 min |
 | MDS220 — Musculo 1 | | Full Practice Exam | 202 | 150 min |
 | | | Hard Practice Exam | 151 | 115 min |
 | | | Comprehensive Exam | 171 | 130 min |
@@ -198,7 +199,11 @@ rules written first — JSON skips all of that.
 `id`, `name`, `course` and `questions` are required; everything else is optional.
 `options` are labelled A, B, C… in the order given and `answer` names one of those
 letters. `course` is `MDS211`, `MDS220` or `MDS221`; `group` is `SA1` or `SA2` where the
-course uses subsets.
+course uses subsets. A `badge` — "Start here" — moves the paper to the front of its subset.
+
+`name` may safely keep the course code the generating chat put on it: a name beginning
+with the paper's own course, such as `"MDS211 SA2 Mock Exam 3"` filed under `MDS211`, has
+it trimmed, because on the site the card already sits under that course's heading.
 
 The converter checks every question and reports what it finds — an answer letter that is
 not one of the options, two identical options, an empty stem, a missing explanation, or a

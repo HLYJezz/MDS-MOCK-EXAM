@@ -886,6 +886,16 @@ def write_manifest(summaries):
 JSON_REQUIRED = ('id', 'name', 'course', 'questions')
 
 
+def trim_course_prefix(name, course):
+    """'MDS211 SA2 Mock Exam 3' filed under MDS211 -> 'SA2 Mock Exam 3'.
+
+    Papers arrive named for a folder full of courses, but on the site each one
+    already sits under its course heading, so the code in the name just says
+    MDS211 twice. Dropped only when something is left over."""
+    trimmed = re.sub(r'^\s*%s\b[\s:—–-]*' % re.escape(course), '', name, flags=re.I)
+    return trimmed.strip() or name
+
+
 def load_json_paper(path, report):
     with open(path, encoding='utf-8') as fh:
         try:
@@ -900,7 +910,7 @@ def load_json_paper(path, report):
     cfg = {
         'file': os.path.basename(path),
         'id': doc['id'],
-        'name': doc['name'],
+        'name': trim_course_prefix(doc['name'], doc['course']),
         'subtitle': doc.get('subtitle', ''),
         'course': doc['course'],
         'group': doc.get('group'),
