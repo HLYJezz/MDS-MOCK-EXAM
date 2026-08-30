@@ -218,4 +218,18 @@ window.SUBJECTS = [
     passMark: 60,
     file: "data/mds221-standard-mock-2.js",
   },
+  {
+    id: "mds211-sa2-lec17-29-question-bank",
+    name: "MDS211 SA2 Question Bank",
+    subtitle: "Lectures 17–29 · Exam 2 / FA-SA2 Scope · 231 Questions",
+    course: "MDS211",
+    icon: "📝",
+    accent: "#2f5bd6",
+    description: "A combined question bank covering Lectures 17–29 (Motor System through Clinical Correlations), drawn from three independent 77-question mock exams built from the verified MDS211 past-paper archive and the official lecture slide decks. Every question has a single best answer among five options, with a full explanation covering both why the correct answer is right and the specific wrong-answer trap built into the distractors.",
+    group: "SA2",
+    questionCount: 231,
+    durationMinutes: 175,
+    passMark: 60,
+    file: "data/mds211-sa2-lec17-29-question-bank.js",
+  },
 ];
