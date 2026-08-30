@@ -875,15 +875,119 @@ def write_manifest(summaries):
         fh.write('\n'.join(lines) + '\n')
 
 
+# --------------------------------------------------------------------------
+# JSON papers
+#
+# A paper supplied as JSON needs no entry in PAPERS and no parsing rules: the
+# file already says what the questions are. Drop <name>.json in source-papers/
+# and run the script. See "Adding a paper as JSON" in README.md for the shape.
+# --------------------------------------------------------------------------
+
+JSON_REQUIRED = ('id', 'name', 'course', 'questions')
+
+
+def load_json_paper(path, report):
+    with open(path, encoding='utf-8') as fh:
+        try:
+            doc = json.load(fh)
+        except ValueError as err:
+            raise SystemExit('%s is not valid JSON: %s' % (os.path.basename(path), err))
+
+    missing = [k for k in JSON_REQUIRED if not doc.get(k)]
+    if missing:
+        raise SystemExit('%s is missing %s' % (os.path.basename(path), ', '.join(missing)))
+
+    cfg = {
+        'file': os.path.basename(path),
+        'id': doc['id'],
+        'name': doc['name'],
+        'subtitle': doc.get('subtitle', ''),
+        'course': doc['course'],
+        'group': doc.get('group'),
+        'badge': doc.get('badge'),
+        'icon': doc.get('icon', '📝'),
+        'description': doc.get('description', ''),
+        'durationMinutes': doc.get('durationMinutes'),
+    }
+
+    problems = []
+    questions = []
+    for i, q in enumerate(doc['questions'], 1):
+        where = 'Q%d' % i
+        stem = (q.get('stem') or '').strip()
+        options = [str(o).strip() for o in (q.get('options') or [])]
+        answer = str(q.get('answer') or '').strip().upper()
+
+        if not stem:
+            problems.append(where + ': no stem')
+            continue
+        if len(options) < 2:
+            problems.append(where + ': %d options' % len(options))
+            continue
+        if any(not o for o in options):
+            problems.append(where + ': an option is empty')
+            continue
+        if len(set(o.lower() for o in options)) != len(options):
+            problems.append(where + ': two options are identical')
+        if answer not in 'ABCDE'[:len(options)]:
+            problems.append(where + ': answer %r is not one of %s'
+                            % (answer, 'ABCDE'[:len(options)]))
+            continue
+        if not (q.get('explanation') or '').strip():
+            problems.append(where + ': no explanation (allowed, but the review will be bare)')
+
+        questions.append({
+            'id': q.get('id') or 'q%d' % i,
+            'section': (q.get('section') or '').strip() or None,
+            'stem': stem,
+            'options': options,
+            'answer': answer,
+            'explanation': (q.get('explanation') or '').strip(),
+            'flag': q.get('flag') or question_flag(stem, q.get('explanation') or ''),
+        })
+
+    stated = doc.get('questionCount')
+    if stated and stated != len(questions):
+        problems.append('file says %s questions, %d usable' % (stated, len(questions)))
+
+    flags = {}
+    for q in questions:
+        if q.get('flag'):
+            flags[q['flag']] = flags.get(q['flag'], 0) + 1
+
+    report.append({
+        'id': cfg['id'], 'file': cfg['file'], 'flags': flags,
+        'parsed': len(doc['questions']), 'expected': stated or len(doc['questions']),
+        'written': len(questions), 'text_mismatch': 0,
+        'problems': problems, 'dropped': [],
+    })
+    return cfg, questions
+
+
 def main():
     check_only = '--check' in sys.argv
     only = [a for a in sys.argv[1:] if not a.startswith('--')]
     report, summaries = [], []
 
-    for cfg in PAPERS:
-        if only and cfg['id'] not in only:
-            continue
-        questions = build(cfg, report)
+    jobs = [(cfg, None) for cfg in PAPERS]
+    for name in sorted(os.listdir(SRC)):
+        if name.lower().endswith('.json'):
+            jobs.append((None, os.path.join(SRC, name)))
+
+    seen_ids = set()
+    for cfg, json_path in jobs:
+        if json_path:
+            cfg, questions = load_json_paper(json_path, report)
+            if only and cfg['id'] not in only:
+                report.pop()
+                continue
+        else:
+            if only and cfg['id'] not in only:
+                continue
+            questions = build(cfg, report)
+        if cfg['id'] in seen_ids:
+            raise SystemExit('two papers share the id ' + cfg['id'])
+        seen_ids.add(cfg['id'])
         if check_only:
             continue
         dest, minutes, nsections = write_data_file(cfg, questions)

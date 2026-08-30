@@ -163,9 +163,65 @@ reader commits:
 Neither message hints at which option is right, so a flagged question can still be sat
 normally. The counts are printed per paper when converting.
 
+## Adding a paper as JSON (the easy route)
+
+A paper supplied as JSON needs **no parsing rules and no entry in `PAPERS`**. Drop the
+file in `source-papers/` with a `.json` extension, run the converter, and it appears.
+PDFs work too, but every PDF so far has been laid out differently and needed its own
+rules written first — JSON skips all of that.
+
+```json
+{
+  "id": "mds211-sa3-mock",
+  "name": "SA3 Mock Exam",
+  "subtitle": "Real SA3 structure · 80 questions",
+  "course": "MDS211",
+  "group": "SA2",
+  "icon": "📝",
+  "badge": "Start here",
+  "description": "One sentence for the card on the home page.",
+  "questionCount": 80,
+  "questions": [
+    {
+      "section": "Lecture 17 — Motor System",
+      "stem": "Regarding the myotatic reflex, which of the following is correct?",
+      "options": ["Afferent = Ib fiber", "Efferent = Ia fiber", "Antagonist = quadriceps",
+                  "Heteronymous = hamstring", "Receptor = Golgi tendon organ"],
+      "answer": "D",
+      "explanation": "Shown in the review after answering."
+    }
+  ]
+}
+```
+
+`id`, `name`, `course` and `questions` are required; everything else is optional.
+`options` are labelled A, B, C… in the order given and `answer` names one of those
+letters. `course` is `MDS211`, `MDS220` or `MDS221`; `group` is `SA1` or `SA2` where the
+course uses subsets.
+
+The converter checks every question and reports what it finds — an answer letter that is
+not one of the options, two identical options, an empty stem, a missing explanation, or a
+`questionCount` that disagrees with the questions supplied. Run it with `--check` to see
+the report without writing anything.
+
+### Asking another chat to produce it
+
+Paste this, with the material:
+
+> Produce a single JSON file for my mock exam site, in exactly this shape:
+> `{"id": "...", "name": "...", "subtitle": "...", "course": "MDS211", "group": "SA1",
+> "icon": "📝", "description": "...", "questionCount": N, "questions": [{"section": "...",
+> "stem": "...", "options": ["...","...","...","...","..."], "answer": "C",
+> "explanation": "..."}]}`
+> Rules: `answer` must be the letter of one of the options as ordered in the array.
+> Every question needs an explanation. No question may reference a figure, picture or
+> diagram, since the site is text only. Do not wrap the JSON in prose or markdown fences —
+> output the file only. `id` must be lowercase with hyphens and unique.
+
 ## Rebuilding the papers from the PDFs
 
-The files in `data/` are generated. To change how a paper is converted, or to add a
+PDF papers each need an entry in `PAPERS` describing their layout. The files in `data/`
+are generated. To change how a paper is converted, or to add a
 new one, edit `tools/convert_papers.py` and re-run it:
 
 ```bash
