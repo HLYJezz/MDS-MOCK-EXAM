@@ -139,10 +139,29 @@ first; if the network is down the report is queued and goes out next time they o
 site. Until `CONFIG.endpoint` is filled in, reports are only kept on the device and the
 message says "saved" rather than claiming they were sent.
 
+**Duplicate rows.** Each report carries an id that stays the same however many times
+it is sent, and the script refuses an id it already holds. That matters because a report
+whose delivery could not be confirmed is retried on the reader's next visit — before both
+were in place, one report could arrive five times.
+
 **The answer is never included while it is still hidden.** A report sent during an exam
 question, or a practice question that has not been confirmed yet, deliberately leaves the
 answer out, so a report cannot be used to peek. Reports from the review screen — where
 the answer is already on display — include it.
+
+## Questions the papers doubt themselves
+
+Some archive questions are marked doubtful by the paper that carries them — an
+explanation opening "FLAGGED", or one saying the question depended on a figure the
+archive never captured. That warning used to be visible only after answering, so the
+converter now lifts it onto the question as a `flag` and the site shows it before the
+reader commits:
+
+- **uncertain** — the source doubts the wording or the recorded answer (38 questions)
+- **no-figure** — the question needs a picture the paper does not carry (5 questions)
+
+Neither message hints at which option is right, so a flagged question can still be sat
+normally. The counts are printed per paper when converting.
 
 ## Rebuilding the papers from the PDFs
 

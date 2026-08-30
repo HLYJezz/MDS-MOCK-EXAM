@@ -26,8 +26,14 @@ var SHEET_NAME = 'Reports';
 var HEADERS = [
   'Received', 'Sent at', 'Paper', 'Paper id', 'Question no.', 'Question id',
   'Problem', 'Comment', 'Name', 'Question', 'Options', 'Their answer',
-  'Answer on file', 'Mode'
+  'Answer on file', 'Mode', 'Report id'
 ];
+
+/* Every report carries an id that stays the same however many times it is sent.
+   A report that could not be confirmed gets retried on the reader's next visit,
+   so the same id can arrive more than once; storing it and checking against it
+   is what stops those retries becoming duplicate rows. */
+var ID_COLUMN = HEADERS.indexOf('Report id') + 1;
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -35,6 +41,11 @@ function doPost(e) {
   try {
     var sheet = getSheet_();
     var d = JSON.parse(e.postData.contents);
+
+    if (d.id && seenIds_(sheet).indexOf(String(d.id)) !== -1) {
+      return json_({ ok: true, duplicate: true });   // already recorded
+    }
+
     sheet.appendRow([
       new Date(),
       d.date ? new Date(d.date) : '',
@@ -49,7 +60,8 @@ function doPost(e) {
       (d.options || []).join(' | '),
       d.givenAnswer || '',
       d.recordedAnswer || '',
-      d.mode || ''
+      d.mode || '',
+      d.id || ''
     ]);
     return json_({ ok: true });
   } catch (err) {
@@ -74,6 +86,15 @@ function doGet() {
   }
 }
 
+/** The report ids already in the sheet. */
+function seenIds_(sheet) {
+  var last = sheet.getLastRow();
+  if (last < 2) return [];
+  return sheet.getRange(2, ID_COLUMN, last - 1, 1).getValues()
+    .map(function (row) { return String(row[0]); })
+    .filter(function (v) { return v; });
+}
+
 function getSheet_() {
   var ss = SHEET_ID
     ? SpreadsheetApp.openById(SHEET_ID)
@@ -83,6 +104,10 @@ function getSheet_() {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
     sheet.setFrozenRows(1);
+  } else if (sheet.getLastColumn() < HEADERS.length) {
+    /* A sheet created before the id column existed: add the heading so the
+       column is there for new rows. Existing rows keep an empty id. */
+    sheet.getRange(1, HEADERS.length).setValue(HEADERS[HEADERS.length - 1]);
   }
   return sheet;
 }

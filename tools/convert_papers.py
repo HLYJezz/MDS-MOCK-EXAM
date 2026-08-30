@@ -634,6 +634,30 @@ def strip_trailing_heading(text):
     return text
 
 
+# The archive papers mark their own doubtful items: an explanation opening
+# "FLAGGED", or one saying the question depends on a figure the archive never
+# captured. Those warnings are only visible after answering, so they are lifted
+# onto the question itself and shown before the reader commits.
+FIGURE_STEM = re.compile(
+    r'\b(?:providing|provided|given|following|above|below)\s+(?:picture|figure|diagram|image)'
+    r'|\bin the (?:picture|figure|diagram|image) (?:above|below|provided)'
+    r'|\bshown in the (?:picture|figure|diagram|image)', re.I)
+FIGURE_NOTE = re.compile(
+    r"references an image|isn't included in the extracted text|is not included in the extracted"
+    r"|image/table not captured|image not captured", re.I)
+UNCERTAIN_NOTE = re.compile(r'^\s*(?:FLAGGED|■)\b|^\s*FLAGGED\s*[,—–-]', re.I)
+
+
+def question_flag(stem, explanation):
+    """'no-figure' when the question needs a picture the paper does not carry,
+    'uncertain' when the source itself doubts the answer, otherwise None."""
+    if FIGURE_STEM.search(stem) or FIGURE_NOTE.search(explanation or ''):
+        return 'no-figure'
+    if UNCERTAIN_NOTE.search(explanation or ''):
+        return 'uncertain'
+    return None
+
+
 def norm(s):
     s = unicodedata.normalize('NFKD', s or '').lower()
     return re.sub(r'[^a-z0-9]+', '', s)
@@ -737,9 +761,15 @@ def build(cfg, report):
             'options': [o['text'] for o in q['options']],
             'answer': entry['letter'],
             'explanation': explanation,
+            'flag': question_flag(q['stem'], explanation),
         })
 
+    flags = {}
+    for q in out_questions:
+        if q.get('flag'):
+            flags[q['flag']] = flags.get(q['flag'], 0) + 1
     report.append({
+        'flags': flags,
         'id': cfg['id'], 'file': cfg['file'],
         'parsed': len(questions), 'expected': cfg['expected'],
         'written': len(out_questions), 'text_mismatch': text_mismatch,
@@ -796,6 +826,8 @@ def write_data_file(cfg, questions):
             lines.append('        %s,' % js_literal(o))
         lines.append('      ],')
         lines.append('      answer: %s,' % js_literal(q['answer']))
+        if q.get('flag'):
+            lines.append('      flag: %s,' % js_literal(q['flag']))
         if q['explanation']:
             lines.append('      explanation: %s,' % js_literal(q['explanation']))
         lines.append('    },')
@@ -874,6 +906,8 @@ def main():
         total += r['written']
         print('%-28s %8d %8d %8d  %d' % (r['id'], r['parsed'], r['expected'],
                                          r['written'], len(r['problems'])))
+        if r.get('flags'):
+            print('        · flagged: ' + ', '.join('%d %s' % (v, k) for k, v in sorted(r['flags'].items())))
         if r['dropped']:
             print('        · dropped (no answer in source): %s'
                   % ', '.join('Q%d' % n for n in r['dropped']))

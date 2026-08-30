@@ -175,6 +175,18 @@
     meta.appendChild(tags);
     card.appendChild(meta);
 
+    /* The papers mark some of their own questions as doubtful; say so up front
+       rather than leaving it buried in the explanation. Neither message hints
+       at which option is right. */
+    if (q.flag) {
+      var warn = el('div', 'q-warning');
+      warn.appendChild(el('span', 'q-warning-icon', '⚠'));
+      warn.appendChild(el('span', null, q.flag === 'no-figure'
+        ? 'The original paper showed a figure here that the archive did not capture, so this question may not be answerable as written.'
+        : 'The source marks this question as uncertain — its wording or recorded answer may be arguable.'));
+      card.appendChild(warn);
+    }
+
     if (q.passage) card.appendChild(el('div', 'passage', q.passage));
     card.appendChild(el('div', 'q-stem', q.stem));
     if (q.image) {
@@ -459,6 +471,14 @@
       kind === 'correct' ? 'Correct' : kind === 'wrong' ? 'Incorrect' : 'Not answered'));
     item.appendChild(meta);
 
+    if (q.flag) {
+      var rwarn = el('div', 'q-warning');
+      rwarn.appendChild(el('span', 'q-warning-icon', '⚠'));
+      rwarn.appendChild(el('span', null, q.flag === 'no-figure'
+        ? 'This question depended on a figure the archive did not capture.'
+        : 'The source marks this question as uncertain — its recorded answer may be arguable.'));
+      item.appendChild(rwarn);
+    }
     if (q.passage) item.appendChild(el('div', 'passage', q.passage));
     item.appendChild(el('div', 'q-stem', q.stem));
 

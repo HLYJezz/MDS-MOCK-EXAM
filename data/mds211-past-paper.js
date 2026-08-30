@@ -281,6 +281,7 @@ registerExam({
         "Bundle",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED — inconsistent with Q22, which asks nearly identical wording ('innermost structure around a single nerve fiber') and the archive answered 'Myelin sheath' there. Either both should be Myelin sheath, or the course specifically wants 'Neurilemma' (the Schwann cell's outer sheath, technically the true innermost investment for BOTH myelinated and unmyelinated fibers, since myelin only exists for myelinated ones). Verify with your instructor's exact framing — I'm not confident enough to override either direction. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -421,6 +422,7 @@ registerExam({
         "Vesicle recycling",
       ],
       answer: "B",
+      flag: "uncertain",
       explanation: "FLAGGED — genuinely debated framing. The classic teaching (Attwell & Laughlin's brain energy budget analysis) is that the single largest share of brain ATP goes to restoring ionic gradients dissipated by ACTION POTENTIALS and synaptic signaling, which would favor 'Action potential' (A) over 'resting potential' (B, the archive's answer). But maintaining the resting potential itself also runs continuously via the Na+/K+-ATPase even without firing, so depending on exactly how your lecture framed this, B could also be defensible. Verify against your specific slide. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -435,6 +437,7 @@ registerExam({
         "Only during action potential firing, never at rest",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED — related ambiguity to Q28. If this is testing 'the Na+/K+ pump runs continuously, even at rest, not just during spikes,' then D (resting stage) is a reasonable intended answer. If it's testing 'the pump's main job is restoring gradients after firing,' the expected answer would look more like repolarization/hyperpolarization. Verify against your specific slide's framing. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -743,6 +746,7 @@ registerExam({
         "Lens vesicle remnant",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — 'choroid fissure' and 'retinal fissure' are, in most standard embryology texts, synonyms for the same groove on the ventral optic stalk/cup (through which the hyaloid vessels pass). Presenting them as two different answer options is unusual; whichever term your specific course slide uses as 'the' term is the one to go with — I can't meaningfully distinguish them as separate correct/incorrect answers. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -967,6 +971,7 @@ registerExam({
         "Proprioception",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED — both C (crude touch) and E (proprioception) are defensible 'spared' answers for anterior spinal artery occlusion. Proprioception/vibration sparing is the unambiguous, universally-taught fact (dorsal columns have separate blood supply). Crude/light touch sparing is also sometimes taught, based on touch having redundant pathways (partially carried by the intact dorsal columns even when the anterior spinothalamic component is knocked out). If your course emphasizes the dorsal-column-sparing fact primarily, the 'intended' answer may actually be proprioception rather than crude touch — worth double-checking your slide. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1023,6 +1028,7 @@ registerExam({
         "There are 12 pairs of cranial nerves, and only CN. III - XII emerge from the brainstem.",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — as written, statement E ('12 pairs of cranial nerves, only CN III-XII emerge from the brainstem') actually reads as TRUE to me — CN I and II don't emerge from the brainstem in the conventional sense, so III-XII (10 nerves) is accurate. If E is true, it can't be the 'INCORRECT' answer the question is looking for. The more likely candidate for the truly false statement is C ('only 1 functional component in the accessory nerve') IF your course teaches CN XI as having a cranial root (overlapping with vagus) plus a distinct spinal root — some frameworks would call that 2 components, not 1. Worth checking which framing your slides use. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1177,6 +1183,7 @@ registerExam({
         "Trigeminal motor nucleus is in the caudal pons",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED, moderate confidence the archive is wrong. 'MLF is in the tectum above the fourth ventricle' (C, the archive's answer) is anatomically off — the MLF sits in the pontine TEGMENTUM near the floor of the 4th ventricle, and 'tectum' isn't standard terminology for the pons (tectum specifically refers to the midbrain roof). Statement A ('pontine nuclei lie between/among the transverse pontine fibers') is a more textbook-accurate description of ventral pons anatomy. Worth double-checking against your specific cross-section diagram. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1387,6 +1394,7 @@ registerExam({
         "Spinal cord",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — the vignette combines a CN III-type pupil finding with 'lower facial weakness' (more of a CN VII/pontine or corticobulbar finding), which doesn't cleanly localize to one single classic brainstem level among the options given (Midbrain/Pons/Medulla/Cortex). 'Midbrain' explains the pupil finding but not clearly the facial weakness. Worth checking the original source material for the intended reasoning here. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1457,6 +1465,7 @@ registerExam({
         "Cerebellum",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED, moderate confidence the archive is wrong. Altered consciousness + irregular breathing + abnormal limb posturing together is the classic triad for BRAINSTEM (reticular formation) dysfunction — most directly implicating the pons/midbrain, where ARAS, respiratory pattern centers, and descending motor pathways for posturing all coexist. The archive answer 'Cerebrum' (A) isn't wrong in every interpretation (a large cerebral lesion CAN secondarily cause this triad via herniation/brainstem compression), but if the question is asking for the most DIRECT localization, Midbrain (B) is the classically-taught answer. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1597,6 +1606,7 @@ registerExam({
         "Lateral corticospinal tract",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — Clarke's nucleus proper only extends roughly C8-L2/3, so it technically isn't present at S2-4 to synapse onto directly; unconscious proprioception from the sacral cord instead relays via an alternate route (functionally similar 'spinal border cell' input feeding the ventral spinocerebellar tract). If your source simplifies this and just wants 'dorsal spinocerebellar tract' as the general answer, A stands; if it's specifically testing the S2-4 exception, the intended answer may differ. Worth checking your slide's exact wording. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1625,6 +1635,7 @@ registerExam({
         "Tongue deviates to the left side, Right hemiplegia, Loss of light touch and proprioception senses at right side",
       ],
       answer: "E",
+      flag: "no-figure",
       explanation: "FLAGGED — this question references an image ('providing picture') that isn't included in the extracted text, so I can't independently verify against the actual diagram. The stated answer (tongue left, right hemiplegia, right-sided touch/proprioception loss) IS internally consistent with a classic medial medullary (Dejerine) syndrome — ipsilateral CN XII palsy (tongue deviates toward the lesion) plus contralateral corticospinal and medial lemniscus involvement — so it's plausible, just unverifiable without the picture. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1667,6 +1678,7 @@ registerExam({
         "Tongue deviates to the right side, Left hemiplegia, Loss of light touch and proprioception senses from right side.",
       ],
       answer: "A",
+      flag: "no-figure",
       explanation: "FLAGGED — same image-dependent situation as Q114; internally consistent with medial medullary syndrome logic but unverifiable without the referenced picture. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2255,6 +2267,7 @@ registerExam({
         "Optic chiasma",
       ],
       answer: "A",
+      flag: "no-figure",
       explanation: "FLAGGED — this question references a results table that isn't included in the extracted text, so I can't independently verify the specific finding pattern against the given options. Left as originally marked. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2367,6 +2380,7 @@ registerExam({
         "optic radiation",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED — the pupil finding (dilated, non-reactive, larger pupil) clearly points to CN III (D), but the vignette also mentions 'lower facial weakness,' which CN III doesn't explain (that's a CN VII finding, a different level/nerve entirely). None of the given options (optic tract/nerve/chiasm/CN III/optic radiation) cleanly account for BOTH findings together — CN III remains the best fit for the primary (pupil) finding, but the facial weakness detail doesn't fit any listed option well. Possible imprecision in how the vignette was written. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2927,6 +2941,7 @@ registerExam({
         "Abnormally conjugate eye movement to left with nystagmus to the right sides.",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — this question references a lesion diagram ('the lesion below') not included in the extracted text, so I cannot independently verify the finding against the actual image. Left as originally marked. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2941,6 +2956,7 @@ registerExam({
         "Fine touch",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED, moderate confidence the archive is wrong. At the EXACT segmental level of a Brown-Séquard hemisection, there's a classically-taught narrow ipsilateral band of pain/temperature loss specifically — because those entering dorsal root pain fibers ascend 1-2 segments ipsilaterally in Lissauer's tract before crossing, so right at the level of the cut they haven't crossed yet. This makes 'Pain' (A) the more specifically-taught answer for this exact 'at the level only' phenomenon, rather than 'Fine touch' (E, the archive's answer). Worth checking your slide's specific framing, since this is a genuinely subtle point. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3137,6 +3153,7 @@ registerExam({
         "No deficit occurs",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — the extracted question stem doesn't specify which side the pontine lesion is on, which is essential information for this question type (since a lesion above the pyramidal decussation, like one in the pons, causes CONTRALATERAL motor loss). Without knowing the lesion's side from the original stem/image, I can't independently confirm whether 'right side' is the correct paired answer. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3291,6 +3308,7 @@ registerExam({
         "Spina bifida with myelomeningocele",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED, moderate confidence. 'Meninges and brain tissue' protruding (without mention of a herniated ventricle/CSF space) most precisely matches meningoencephalocele (C) — meninges + encephalon (brain). The archive answer 'meningohydroencephalocele' (A) additionally implies herniation of a ventricle, a detail not mentioned in the question stem. Worth checking your slide's exact terminology. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3305,6 +3323,7 @@ registerExam({
         "Brachioradialis jerk",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — both biceps (C) and brachioradialis (E) reflexes are classically taught as C5-C6 level reflexes; depending on how your specific course splits the segmental levels (some sources emphasize biceps=C5, brachioradialis=C6), either could be defensible as 'the' answer for 'C5-6.' Left as originally marked. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3417,6 +3436,7 @@ registerExam({
         "Merocephaly",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED, moderate confidence the archive is wrong. Folic acid deficiency is most classically and directly linked to neural tube defects — and 'Merocephaly' (E) is a synonym for anencephaly, established elsewhere in this same archive (see Q48). The archive answer 'Holoprosencephaly' (A) has different, less folate-specific teratogenic associations (e.g., Sonic Hedgehog pathway mutations, maternal diabetes). Encephalocele (C) is also a plausible folate-linked NTD variant, so there's some legitimate competing plausibility between C and E — but A is likely the least well-supported of the three. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3445,6 +3465,7 @@ registerExam({
         "Basal ganglia",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED, moderate confidence the archive is wrong. While opioids do act at multiple sites (spinal dorsal horn, thalamus, etc.), the single most classic, most heavily emphasized 'textbook' target for opioid analgesia — especially regarding descending pain-modulation pathways — is the periaqueductal gray (PAG, option D). The archive answer 'Thalamus' (A) isn't unreasonable, but PAG is the more iconic answer typically tested for this exact question phrasing. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3459,6 +3480,7 @@ registerExam({
         "Left trochlear nerve",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — working through the eye-movement logic: the right eye can abduct normally (during a leftward head turn) but fails to adduct (during a rightward head turn) — this is the classic pattern of internuclear ophthalmoplegia (INO) from a lesion of the right MLF, not literally the right oculomotor nerve/nucleus itself. None of the given options say 'MLF,' so if your course is testing INO specifically, the intended answer may be conceptually 'right MLF' even though 'Right oculomotor' (A) is the closest available option given the muscle affected. Worth checking whether your course expects MLF-level precision here. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3487,6 +3509,7 @@ registerExam({
         "presynaptic inhibition",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — the question stem itself ('what is a gated-channel control?') is quite vague/ambiguous out of context, and I don't have enough information to confidently verify or refute 'presynaptic inhibition' as the intended answer. Worth checking against the specific slide this question is drawn from. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -3529,6 +3552,7 @@ registerExam({
         "Bilateral lower limb weakness",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED, low-moderate confidence in either direction. Classic Benedikt syndrome (red nucleus + medial lemniscus involvement) most specifically causes CONTRALATERAL involuntary movements/tremor (and sometimes contralateral sensory loss) alongside the ipsilateral CN III palsy — a finding not precisely listed among these options. 'Ipsilateral cerebellar ataxia' (D, the archive's answer) doesn't cleanly match the standard teaching either, since red-nucleus/superior-cerebellar-peduncle-related movement abnormalities in Benedikt are classically described as CONTRALATERAL, not ipsilateral. None of the given options is a clean fit — recommend double-checking this one directly against your lecture slide. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {

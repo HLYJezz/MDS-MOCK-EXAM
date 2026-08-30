@@ -419,6 +419,7 @@ registerExam({
         "Spinal trigeminal nucleus and tract",
       ],
       answer: "A",
+      flag: "no-figure",
       explanation: "This question references a specific case/image not captured in the extracted text — cannot independently verify which tract is implicated without seeing the referenced case. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -461,6 +462,7 @@ registerExam({
         "Lateral dentate nucleus",
       ],
       answer: "B",
+      flag: "uncertain",
       explanation: "FLAGGED — the fastigial nucleus (the archive's answer) is definitely PART OF the vestibulocerebellar circuit (confirmed by Q43 in this same set), so marking it as excluded is inconsistent. Pontine nuclei and the middle cerebellar peduncle are the classic gateway for the CEREBROcerebellum (corticopontocerebellar pathway) instead, a different functional division — a more likely candidate for 'not part of' the vestibulocerebellar circuit, though I can't rule out lateral dentate nucleus (also cerebrocerebellum-associated) as the intended answer without more source context. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -503,6 +505,7 @@ registerExam({
         "Cerebral cortex",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED — ambiguous question intent. If asking about direct anatomical connection, the brainstem (the archive's answer) is clearly connected to the cerebellum via the three peduncles, making it a poor 'not part of' answer. If asking about a functionally separate motor-control system, basal ganglia (historically taught as a parallel, non-overlapping circuit from the cerebellum) may be the better answer — I can't be certain which interpretation the question intends. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -699,6 +702,7 @@ registerExam({
         "Occipital cortex",
       ],
       answer: "B",
+      flag: "uncertain",
       explanation: "FLAGGED — astereognosis is more precisely a lesion of the PARIETAL ASSOCIATION cortex (particularly superior parietal lobule) rather than primary somatosensory cortex itself, since primary S1 damage causes basic sensory loss rather than the specific 'can feel but can't identify' agnosia pattern. Given the options provided don't include a specific association-cortex choice, primary somatosensory cortex is the closest available answer, but this is an imprecise fit. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -811,6 +815,7 @@ registerExam({
         "Horner’s syndrome",
       ],
       answer: "E",
+      flag: "no-figure",
       explanation: "This question references a specific highlighted brain region in an image not captured in the extracted text — cannot independently verify without seeing which region was demarcated. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -881,6 +886,7 @@ registerExam({
         "Limbic lobe",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — dysprosody, impaired singing, poor judgment, impulsiveness, and indifference together most classically describe a FRONTAL LOBE syndrome (personality/executive changes), not limbic lobe specifically, though cingulate/limbic structures do contribute to some apathy-related findings. Moderate confidence the archive's 'Limbic lobe' answer is wrong and should be 'Frontal lobe' instead. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1049,6 +1055,7 @@ registerExam({
         "Parietal lobe",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — hemineglect syndromes are overwhelmingly classically taught as a PARIETAL lobe phenomenon (matching Q65's correctly-identified pattern), not frontal, though frontal attentional networks do contribute to neglect in more advanced literature. Moderate-high confidence the archive's 'Frontal' answer should be 'Parietal' for basic-course-level expectations. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1357,6 +1364,7 @@ registerExam({
         "Ventromedial nucleus",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED — constant hunger, weight loss, and poor concentration suggest a hunger/appetite-regulation problem. The arcuate nucleus is the modern primary integration center for hunger signals (NPY/AgRP and POMC/CART neurons), making it a strong candidate over paraventricular nucleus (the archive's answer, more classically tied to releasing-hormone and oxytocin/vasopressin synthesis, not primary appetite regulation) — though the classic 'ventromedial=satiety/lateral=hunger' centers aren't offered as options here, adding some uncertainty. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1371,6 +1379,7 @@ registerExam({
         "Stimulated suprachiasmatic nucleus",
       ],
       answer: "B",
+      flag: "uncertain",
       explanation: "FLAGGED — the archive answer 'Inhibited paraventricular nucleus' appears backwards: PVN sympathetic output needs to be enhanced (disinhibited), not inhibited, to drive melatonin synthesis. The pathway is: darkness → SCN activity falls → less SCN inhibition of PVN → PVN sympathetic output rises → superior cervical ganglion stimulated → melatonin increases. 'Inhibited SCN' is the more classic textbook phrasing for the initiating event, though 'stimulated superior cervical ganglion' is also defensible as the more proximate cause. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1385,6 +1394,7 @@ registerExam({
         "Dorsolateral",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — 'Dorsolateral' (the archive's answer) is not a standard named hypothalamic nucleus in typical anterior/supraoptic classification, and 'Centromedian' is actually a THALAMIC nucleus (a likely category error in the options). Paraventricular nucleus is a well-established supraoptic-region nucleus and the more defensible answer among these choices. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1595,6 +1605,7 @@ registerExam({
         "The fourth-order neuron is located in the dorsal root ganglion.",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED — both A and C are defensible true statements about the touch pathway depending on exact neuron-counting convention. Using the standard 4-neuron-order framework (1st=DRG, 2nd=cuneate/gracile nucleus, 3rd=VPL thalamus, 4th=cortex), option A ('third-order neuron synapses in the thalamus') is the more precisely worded true statement, though C ('final neuron projects to primary somatosensory area') isn't clearly false either. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1679,6 +1690,7 @@ registerExam({
         "Medial forebrain bundle & dorsal longitudinal fasciculus → brainstem & spinal cord",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED — the retinohypothalamic tract is classically a UNIDIRECTIONAL pathway (retina → SCN only), making it the most likely 'NOT bidirectional' answer. The archive answer (dorsal longitudinal fasciculus → PAG) is generally considered a genuinely bidirectional hypothalamic-brainstem connection in most texts. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1833,6 +1845,7 @@ registerExam({
         "No saliva secretion",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED — 'apparent' enophthalmos (from ptosis narrowing the palpebral fissure) is commonly included as an associated Horner's finding in many texts, making 'Enophthalmos' (the archive's answer) a debatable choice for 'NOT a feature.' Salivation is primarily under PARASYMPATHETIC control, so 'no saliva secretion' is not something sympathetic (Horner's) disruption would classically cause — a stronger candidate for the true exception. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -1959,6 +1972,7 @@ registerExam({
         "Increased tears, bradycardia, contracted urinary sphincter ■ MED33 SA2",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED — muscarinic (cholinergic) toxicity causes increased secretions (both salivation AND tears via 'SLUDGE'), bradycardia, and a relaxed urinary sphincter. Options A and C both correctly pair bradycardia with a relaxed sphincter but differ only in which secretion (salivation vs. tears) is named — both increase in reality, so either could be defensible depending on which single symptom the question intends to highlight. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2267,6 +2281,7 @@ registerExam({
         "Cerebral aqueduct",
       ],
       answer: "C",
+      flag: "uncertain",
       explanation: "FLAGGED — arachnoid granulations are where CSF is REABSORBED from the subarachnoid space into venous blood (an outflow/reabsorption point), not where CSF first communicates INTO the subarachnoid space from the ventricles. The foramina of Luschka and Magendie (located at the 4th ventricle) are the actual connection point, making '4th ventricle' (the more likely intended answer) a better fit for 'communicates with the subarachnoid space.' ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2337,6 +2352,7 @@ registerExam({
         "AVMs = clot forming in vessel",
       ],
       answer: "A",
+      flag: "uncertain",
       explanation: "FLAGGED — the archive's marked answer ('Stroke = occlusion/rupture') is actually a TRUE statement (the correct standard definition, confirmed by Q167), so it cannot be the false one being asked for. Multiple other options are also false as written (B: TIA does NOT last 2-3 weeks — it resolves within 24 hours; C and D also misattribute ischemic vs. hemorrhagic mechanisms), making it hard to identify a single intended 'the' false statement without more context — TIA duration (B) is the most likely single intended answer given it's the most specific, commonly-tested individual fact. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2435,6 +2451,7 @@ registerExam({
         "Posterior inferior cerebellar artery",
       ],
       answer: "E",
+      flag: "uncertain",
       explanation: "FLAGGED — a pontine cistern mass most directly implicates the basilar artery, which runs through this exact CSF space along the ventral pons. PICA (the archive's answer) is more associated with the medulla/lateral cerebellum, a somewhat different territory, though it does pass nearby. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2561,6 +2578,7 @@ registerExam({
         "Blue",
       ],
       answer: "B",
+      flag: "uncertain",
       explanation: "FLAGGED — the 'first color lost' in color blindness varies by source and depends heavily on the specific type (congenital red-green vs. acquired, protanopia vs. deuteranopia vs. tritanopia); I don't have strong confidence in a single definitive answer without more context from your specific lecture material. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {
@@ -2883,6 +2901,7 @@ registerExam({
         "Retrolenticular part",
       ],
       answer: "D",
+      flag: "uncertain",
       explanation: "FLAGGED — facial expression weakness points toward corticobulbar fibers, classically concentrated in the genu of the internal capsule. 'Sublenticular part' (the archive's answer) is more associated with auditory radiation fibers, not corticobulbar/facial pathways — moderate confidence this should be the genu instead, though the breathing-difficulty component of this question adds some uncertainty about the exact intended pathway. ■ Flagged as genuinely ambiguous, image/table-dependent, or having more than one defensible answer — verify against your source material.",
     },
     {

@@ -22,6 +22,7 @@
       stem: q.stem || q.question || '',
       image: q.image || null,
       explanation: q.explanation || q.rationale || '',
+      flag: q.flag || null,
       marks: typeof q.marks === 'number' ? q.marks : 1,
       options: []
     };
