@@ -13,7 +13,7 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-16 papers, 2,255 questions, generated from the files in `source-papers/`. Cards appear in
+19 papers, 2,655 questions, generated from the files in `source-papers/`. Cards appear in
 the order the papers are listed in `tools/convert_papers.py`, except that papers carrying a
 `badge` lead their subset, so a recommended paper added later still sits with its siblings.
 A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
@@ -36,6 +36,9 @@ A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its
 | MDS221 — Musculo 2 | | Comprehensive Exam | 130 | 100 min |
 | | | Master Past Paper | 131 | 100 min |
 | | | Standard Mock Paper II | 120 | 90 min |
+| BCH212 — Biochemistry (Year 1) | | Simulation Exam 1 | 116 | 85 min |
+| | | Simulation Exam 2 | 142 | 105 min |
+| | | Simulation Exam 3 | 142 | 105 min |
 
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.
@@ -244,6 +247,11 @@ option it names. Anything that does not line up is reported per question.
 
 To add a paper: drop the PDF in `source-papers/`, add an entry to `PAPERS`, run the
 script, and check the report is clean.
+
+Most papers collect their answers in a key at the back, named by `key_start`. A paper
+that instead prints the answer under each question — as the BCH212 simulation papers do —
+sets `inline_key: True` and an `answer_re` matching that line, and the questions and the
+key are then read from the same text.
 
 ## Writing a paper by hand
 

@@ -318,6 +318,63 @@ PAPERS = [
         'description': 'A fresh set at the same level as the real past paper — single-step recall, no clinical '
                        'vignettes.',
     },
+    # The three BCH212 simulation papers print their answers under each question
+    # rather than in a key at the back — hence inline_key — except the third,
+    # which repeats them in a proper key section.
+    {
+        'file': 'BCH212_Simulation_Exam.pdf',
+        'id': 'bch212-simulation-1',
+        'name': 'Simulation Exam 1',
+        'subtitle': 'Lectures 10–21 · past-paper starred',
+        'course': 'BCH212',
+        'icon': '🧪',
+        'expected': 116,
+        'inline_key': True,
+        'key_mode': 'q_answer',
+        'q_re': r'^Q(\d{1,3})\s*[.)]\s*(.*)$',
+        'answer_re': r'^[✔✓]?\s*Answer\s*:',
+        'stem_strip_re': r'^\s*(?:★\s*)?(?:\[(?:PP|PAST PAPER)\]|★)\s*',
+        'section_re': r'^(?:LECTURE|Lec)\s+\d+\s*:\s*.+$',
+        'drop_re': PAGE_FURNITURE,
+        'description': 'Simulation paper for the SA2 half of first-year biochemistry, Lectures 10–21, with a full '
+                       'explanation under every answer and past-paper questions marked in the explanation.',
+    },
+    {
+        'file': 'BCH212_Simulation_Exam 2.pdf',
+        'id': 'bch212-simulation-2',
+        'name': 'Simulation Exam 2',
+        'subtitle': 'Lectures 10–21 · second set',
+        'course': 'BCH212',
+        'icon': '🧬',
+        'expected': 142,
+        'inline_key': True,
+        'key_mode': 'q_answer',
+        'q_re': r'^Q(\d{1,3})\s*[.)]\s*(.*)$',
+        'answer_re': r'^[✔✓]?\s*Answer\s*:',
+        'stem_strip_re': r'^\s*(?:★\s*)?(?:\[(?:PP|PAST PAPER)\]|★)\s*',
+        'section_re': r'^(?:LECTURE|Lec)\s+\d+\s*:\s*.+$',
+        'drop_re': PAGE_FURNITURE,
+        'description': 'A longer second run at Lectures 10–21, weighted towards the lectures the real paper leans '
+                       'on hardest — liver function, nutrition and clinical correlation.',
+    },
+    {
+        'file': 'BCH212_Simulation_Exam 3.pdf',
+        'id': 'bch212-simulation-3',
+        'name': 'Simulation Exam 3',
+        'subtitle': 'Lectures 10–21 · most past-paper questions',
+        'course': 'BCH212',
+        'icon': '🔬',
+        'expected': 142,
+        'key_start': 'ANSWER KEY & EXPLANATIONS',
+        'key_mode': 'q_answer',
+        'q_re': r'^Q(\d{1,3})\s*[.)]\s*(.*)$',
+        'answer_re': r'^[✔✓]?\s*Answer\s*:',
+        'stem_strip_re': r'^\s*(?:★\s*)?(?:\[(?:PP|PAST PAPER)\]|★)\s*',
+        'section_re': r'^(?:LECTURE|Lec)\s+\d+\s*:\s*.+$',
+        'drop_re': PAGE_FURNITURE,
+        'description': 'The set with the heaviest past-paper content — 108 of its questions are drawn from real '
+                       'BCH212 papers — with the answer key and explanations collected at the back.',
+    },
 ]
 
 GROUPS = {
@@ -329,6 +386,7 @@ COURSES = {
     'MDS211': {'title': 'MDS211 — Nervous System', 'accent': '#2f5bd6'},
     'MDS220': {'title': 'MDS220 — Musculo 1', 'accent': '#12855c'},
     'MDS221': {'title': 'MDS221 — Musculo 2', 'accent': '#8a4bd3'},
+    'BCH212': {'title': 'BCH212 — Biochemistry (Year 1)', 'accent': '#c2600f'},
 }
 
 # --------------------------------------------------------------------------
@@ -375,7 +433,7 @@ OPT_RE = re.compile(r'^\(?([A-E])[.)]\s*(.*)$')
 NOISE_RE = re.compile(r'^(†|■|PROF[’\']S\s+(TRICK|EMPHASIS)|Examiner patterns to expect)', re.I)
 
 
-def tidy_section(line):
+def tidy_section(line, acronyms=frozenset()):
     """Turn a heading like 'SECTION B -- Gross Anatomy' or 'Lecture 4 — Cells
     (19 questions)' into the short label shown on the question card."""
     s = re.sub(r'\s+', ' ', line).strip()
@@ -384,16 +442,59 @@ def tidy_section(line):
     s = re.sub(r'\s*[—–-]\s*\d+\s+questions?\s*$', '', s)
     s = re.sub(r'^(SECTION\s+[A-Z0-9]+|Section\s+\d+|\d{2})\s*(--|—|–|-|·|•)?\s*', '', s)
     s = s.replace(' -- ', ' — ')
+    s = re.sub(r'(\w)\(', r'\1 (', s)                          # "Correlation(BIOCHEMICAL"
     # Headings are often set in capitals; title-case them so the chip is readable.
-    head, sep, tail = s.partition('(')
-    if head.strip().isupper() and len(head.strip()) >= 4:   # keep short acronyms (CNS, TMJ)
-        s = head.title() + sep + tail
+    parts = []
+    for chunk in re.split(r'(\([^)]*\))', s):                  # keep any bracketed tail
+        bare = chunk.strip('() ')
+        if bare.isupper() and len(bare) >= 4:                  # keep short acronyms (CNS, TMJ)
+            chunk = keep_acronyms(chunk.title(), chunk, acronyms)
+        parts.append(chunk)
+    s = ''.join(parts)
     return s.strip() or re.sub(r'\s+', ' ', line).strip()
 
 
-def parse_questions(lines, cfg):
+ACRONYM_RE = re.compile(r'\b[A-Z]{2,5}\b')
+
+
+def collect_acronyms(lines):
+    """The real acronyms in a paper, read off its own prose.
+
+    A heading in capitals gives no clue which of its words are acronyms — LIVER
+    and DNA look alike. The explanations do: they are ordinary sentences, so a
+    word still in capitals there ('confirmed by the Meselson-Stahl experiment',
+    'DNA polymerase') is an acronym, while 'liver' is written in lower case."""
+    found, spelt_out = set(), set()
+    for line in lines:
+        if any(c.islower() for c in line):          # a sentence, not a heading
+            found.update(ACRONYM_RE.findall(line))
+            spelt_out.update(w.upper() for w in re.findall(r'\b[A-Za-z]{2,5}\b', line)
+                             if not w.isupper())
+    # A word the paper also writes in ordinary letters somewhere — 'LIVER' set
+    # in capitals for emphasis, but 'liver' in the next sentence — is a word
+    # being shouted, not an acronym. DNA is never written 'dna'.
+    return found - spelt_out
+
+
+def keep_acronyms(titled, original, acronyms):
+    """title() turns 'DNA & RNA SYNTHESIS' into 'Dna & Rna Synthesis'. Put back
+    the words the paper uses as acronyms, so it reads 'DNA & RNA Synthesis'."""
+    out = re.split(r'(\s+)', titled)          # keep the spacing exactly as it was
+    for i, word in enumerate(re.split(r'(\s+)', original)):
+        if i < len(out) and re.sub(r'[^A-Za-z]', '', word) in acronyms:
+            out[i] = word
+    return ''.join(out)
+
+
+def parse_questions(lines, cfg, acronyms=frozenset()):
     """Walk the question half of the paper and pull out stems and options."""
     section_re = re.compile(cfg['section_re']) if cfg.get('section_re') else None
+    q_re = re.compile(cfg['q_re']) if cfg.get('q_re') else Q_RE
+    # Papers that print the answer under each question rather than in a key at
+    # the back: the answer and its explanation end the question here, and are
+    # read separately by parse_key.
+    answer_re = re.compile(cfg['answer_re']) if cfg.get('answer_re') else None
+    strip_re = re.compile(cfg['stem_strip_re']) if cfg.get('stem_strip_re') else None
     questions = []
     section = None
     section_parts = []
@@ -406,7 +507,7 @@ def parse_questions(lines, cfg):
 
         if is_section(line, section_re):
             section_parts = [line]
-            section = tidy_section(line)
+            section = tidy_section(line, acronyms)
             target = 'section'      # keep eating until a question or option starts
             continue
 
@@ -414,7 +515,7 @@ def parse_questions(lines, cfg):
             target = None      # also swallows the note's wrapped lines
             continue
 
-        m = Q_RE.match(line)
+        m = q_re.match(line)
         # Only start a new question if the number follows on from the last one:
         # this stops stray numbers inside option text from splitting a question.
         if m and int(m.group(1)) == len(questions) + 1:
@@ -427,6 +528,10 @@ def parse_questions(lines, cfg):
         if cur is None:
             continue
 
+        if answer_re and answer_re.match(line):
+            target = None      # the answer and everything under it belong to the key
+            continue
+
         m = OPT_RE.match(line)
         if m:
             opt = {'id': m.group(1), 'parts': [m.group(2)]}
@@ -436,7 +541,7 @@ def parse_questions(lines, cfg):
 
         if target == 'section':
             section_parts.append(line)
-            section = tidy_section(' '.join(section_parts))
+            section = tidy_section(' '.join(section_parts), acronyms)
         elif target == 'stem':
             cur['stem_parts'].append(line)
         elif isinstance(target, dict):
@@ -444,6 +549,10 @@ def parse_questions(lines, cfg):
 
     for q in questions:
         q['stem'] = join_wrapped(q['stem_parts'])
+        if strip_re:
+            # "[PP]" / "★ [PAST PAPER]" tags say where a question came from; the
+            # key repeats that in the explanation, so they go from the stem.
+            q['stem'] = strip_re.sub('', q['stem'], count=1).strip()
         q['options'] = [{'id': o['id'], 'text': join_wrapped(o['parts'])} for o in q['options']]
         del q['stem_parts']
     return questions
@@ -468,6 +577,13 @@ KEY_PATTERNS = {
     # "12. B — text"
     'num_dash': {
         'entry': re.compile(r'^(\d{1,3})\s*[.)]\s*\(?([A-E])\)?\s*[—–-]\s*(.*)$'),
+    },
+    # "Q12. stem" then "Answer: C" / "✔ Answer: C", explanation underneath.
+    # Used by papers that print the answer under each question instead of
+    # collecting them in a key at the back.
+    'q_answer': {
+        'entry': re.compile(r'^Q(\d{1,3})\s*[.)]\s*(.*)$'),
+        'answer': re.compile(r'^[✔✓]?\s*Answer\s*:\s*\(?([A-E])[.)]?\s*(.*)$'),
     },
     # "12.  stem" then "D  —  text"
     'num_letter_dash': {
@@ -692,9 +808,14 @@ def build(cfg, report):
     lines = clean_lines(raw, cfg.get('drop_re'))
 
     joined = '\n'.join(lines)
-    split_at = joined.find(cfg['key_start'])
-    if split_at == -1:
-        raise SystemExit('answer key marker not found in ' + cfg['file'])
+    if cfg.get('inline_key'):
+        # No key section to split off: the answers sit under their questions, so
+        # both halves read the same text and each takes the lines it recognises.
+        split_at = len(joined)
+    else:
+        split_at = joined.find(cfg['key_start'])
+        if split_at == -1:
+            raise SystemExit('answer key marker not found in ' + cfg['file'])
     body_from = 0
     if cfg.get('body_start'):
         found = joined.find(cfg['body_start'])
@@ -702,14 +823,15 @@ def build(cfg, report):
             raise SystemExit('body_start not found in ' + cfg['file'])
         body_from = found
     body_lines = joined[body_from:split_at].split('\n')
-    key_lines = joined[split_at:].split('\n')
+    key_lines = (body_lines if cfg.get('inline_key')
+                 else joined[split_at:].split('\n'))
 
     # Same text with bare numbers kept, for reading answer-grid tables.
     raw_joined = '\n'.join(clean_lines(raw, r'^\s*Page\s+\d+\s*$'))
-    raw_split = raw_joined.find(cfg['key_start'])
+    raw_split = raw_joined.find(cfg.get('key_start') or '\0')
     raw_key_lines = raw_joined[raw_split if raw_split != -1 else 0:].split('\n')
 
-    questions = parse_questions(body_lines, cfg)
+    questions = parse_questions(body_lines, cfg, collect_acronyms(lines))
     key = parse_key(key_lines, cfg, raw_key_lines)
 
     problems = []
