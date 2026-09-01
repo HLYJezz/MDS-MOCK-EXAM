@@ -403,6 +403,7 @@ MERGES = [
         'name': 'Full Simulation Paper',
         'subtitle': 'Lectures 10–21 · all three simulations, repeats merged',
         'course': 'BCH212',
+        'group': 'SA2',        # Lectures 10–21, the same scope as the SA2 mock
         'icon': '🧪',
         'sources': ['bch212-simulation-3', 'bch212-simulation-2', 'bch212-simulation-1'],
         'sections_from': 'bch212-simulation-3',
@@ -413,9 +414,17 @@ MERGES = [
     },
 ]
 
+# Subset headings, per course: SA1 and SA2 cover different lectures in each, so
+# one shared list would caption a BCH212 paper with MDS211's lecture range.
 GROUPS = {
-    'SA1': 'SA1 · Lectures 1–16',
-    'SA2': 'SA2 · Lectures 17–29',
+    'MDS211': {
+        'SA1': 'SA1 · Lectures 1–16',
+        'SA2': 'SA2 · Lectures 17–29',
+    },
+    'BCH212': {
+        'SA1': 'SA1 · Lectures 1–9',
+        'SA2': 'SA2 · Lectures 10–21',
+    },
 }
 
 COURSES = {
@@ -1040,8 +1049,11 @@ def write_manifest(summaries):
                      % (js_literal(code), js_literal(meta['title']), js_literal(meta['accent'])))
     lines.append('];')
     lines.append('window.GROUPS = {')
-    for code, title in GROUPS.items():
-        lines.append('  %s: %s,' % (js_literal(code), js_literal(title)))
+    for course, subsets in GROUPS.items():
+        lines.append('  %s: {' % js_literal(course))
+        for code, title in subsets.items():
+            lines.append('    %s: %s,' % (js_literal(code), js_literal(title)))
+        lines.append('  },')
     lines.append('};')
     lines.append('window.SUBJECTS = [')
     for s in summaries:

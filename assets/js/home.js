@@ -130,8 +130,10 @@
 
       subsets.forEach(function (subset) {
         if (subset.key) {
+          /* Subset headings belong to a course: SA1 is Lectures 1–16 in
+             MDS211 but Lectures 1–9 in BCH212. */
           var label = el('h3', 'subset-title',
-            (MockExam.groups()[subset.key] || subset.key));
+            ((MockExam.groups()[course.id] || {})[subset.key] || subset.key));
           label.appendChild(el('span', 'subset-count muted small', tally(subset.papers)));
           section.appendChild(label);
         }

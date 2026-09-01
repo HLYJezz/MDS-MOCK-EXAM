@@ -8,8 +8,14 @@ window.COURSES = [
   { id: "BCH212", title: "BCH212 — Biochemistry (Year 1)", accent: "#c2600f" },
 ];
 window.GROUPS = {
-  "SA1": "SA1 · Lectures 1–16",
-  "SA2": "SA2 · Lectures 17–29",
+  "MDS211": {
+    "SA1": "SA1 · Lectures 1–16",
+    "SA2": "SA2 · Lectures 17–29",
+  },
+  "BCH212": {
+    "SA1": "SA1 · Lectures 1–9",
+    "SA2": "SA2 · Lectures 10–21",
+  },
 };
 window.SUBJECTS = [
   {
@@ -220,6 +226,36 @@ window.SUBJECTS = [
     file: "data/mds221-standard-mock-2.js",
   },
   {
+    id: "bch212-sa1-mock-exam",
+    name: "SA1 Mock Exam",
+    subtitle: "Lectures 1-9: Biomolecules, Enzymes, Bioenergetics & Metabolism",
+    course: "BCH212",
+    icon: "📝",
+    accent: "#c2600f",
+    description: "A full-length mock exam covering Lectures 1-9 (protein & carbohydrate structure, nucleic acid & lipid structure, enzymes, bioenergetics, nucleotide metabolism, carbohydrate metabolism, amino acid metabolism, lipid metabolism, and control & interrelationship of metabolism), weighted by teaching hours to mirror the real Summative Assessment I distribution (4 questions per lecture hour).",
+    group: "SA1",
+    badge: "Start here",
+    questionCount: 84,
+    durationMinutes: 65,
+    passMark: 60,
+    file: "data/bch212-sa1-mock-exam.js",
+  },
+  {
+    id: "bch212-sa2-mock-exam",
+    name: "SA2 Mock Exam",
+    subtitle: "Lectures 10-21: Molecular Biology, Hematology, Nutrition & Clinical Biochemistry",
+    course: "BCH212",
+    icon: "📝",
+    accent: "#c2600f",
+    description: "A full-length mock exam covering Lectures 10-21 (DNA/RNA synthesis, protein synthesis & transport, liver function, thalassemia, apoptosis, human genome & gene regulation, blood & heme metabolism, plasma protein & blood clotting, nutrition, genetic engineering, free radicals & antioxidants, and clinical correlation), following the real Summative Assessment II per-lecture question distribution.",
+    group: "SA2",
+    badge: "Start here",
+    questionCount: 94,
+    durationMinutes: 70,
+    passMark: 60,
+    file: "data/bch212-sa2-mock-exam.js",
+  },
+  {
     id: "mds211-sa2-lecture-grouped-question-bank",
     name: "SA2 Lecture-Grouped Question Bank",
     subtitle: "Lectures 17–29 · Grouped by Theme (Motor, Cortex/Diencephalon, ANS/EEG/Reflex, Vascular/Clinical) · 155 Questions",
@@ -256,6 +292,7 @@ window.SUBJECTS = [
     icon: "🧪",
     accent: "#c2600f",
     description: "The three BCH212 simulation papers combined into one, with the questions they shared kept only once — where a question appeared more than once, the version with the fullest explanation was kept. Covers Lectures 10–21, from DNA and RNA synthesis through to clinical correlation.",
+    group: "SA2",
     questionCount: 192,
     durationMinutes: 145,
     passMark: 60,

@@ -13,10 +13,12 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-18 papers, 2,602 questions, generated from the files in `source-papers/`. Cards appear in
+20 papers, 2,780 questions, generated from the files in `source-papers/`. Cards appear in
 the order the papers are listed in `tools/convert_papers.py`, except that papers carrying a
 `badge` lead their subset, so a recommended paper added later still sits with its siblings.
-A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
+A course can be split into subsets — MDS211 and BCH212 both into SA1 and SA2 — by giving its
+papers a `group`. The heading each subset gets is set per course in `GROUPS`, since SA1 means
+Lectures 1–16 in MDS211 but Lectures 1–9 in BCH212:
 
 | Course | Subset | Paper | Questions | Time |
 |---|---|---|---|---|
@@ -37,7 +39,9 @@ A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its
 | MDS221 — Musculo 2 | | Comprehensive Exam | 130 | 100 min |
 | | | Master Past Paper | 131 | 100 min |
 | | | Standard Mock Paper II | 120 | 90 min |
-| BCH212 — Biochemistry (Year 1) | | Full Simulation Paper | 192 | 145 min |
+| BCH212 — Biochemistry (Year 1) | SA1 · Lectures 1–9 | SA1 Mock Exam | 84 | 65 min |
+| | SA2 · Lectures 10–21 | SA2 Mock Exam | 94 | 70 min |
+| | | Full Simulation Paper | 192 | 145 min |
 
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.
