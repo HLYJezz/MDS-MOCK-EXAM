@@ -13,7 +13,7 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-19 papers, 2,655 questions, generated from the files in `source-papers/`. Cards appear in
+17 papers, 2,447 questions, generated from the files in `source-papers/`. Cards appear in
 the order the papers are listed in `tools/convert_papers.py`, except that papers carrying a
 `badge` lead their subset, so a recommended paper added later still sits with its siblings.
 A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its papers a `group`:
@@ -36,9 +36,7 @@ A course can be split into subsets — MDS211 into SA1 and SA2 — by giving its
 | MDS221 — Musculo 2 | | Comprehensive Exam | 130 | 100 min |
 | | | Master Past Paper | 131 | 100 min |
 | | | Standard Mock Paper II | 120 | 90 min |
-| BCH212 — Biochemistry (Year 1) | | Simulation Exam 1 | 116 | 85 min |
-| | | Simulation Exam 2 | 142 | 105 min |
-| | | Simulation Exam 3 | 142 | 105 min |
+| BCH212 — Biochemistry (Year 1) | | Full Simulation Paper | 192 | 145 min |
 
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.
@@ -252,6 +250,22 @@ Most papers collect their answers in a key at the back, named by `key_start`. A 
 that instead prints the answer under each question — as the BCH212 simulation papers do —
 sets `inline_key: True` and an `answer_re` matching that line, and the questions and the
 key are then read from the same text.
+
+### Merging papers that are drafts of each other
+
+Sometimes several PDFs are versions of one exam rather than separate papers: the three
+BCH212 simulations shared 208 of their 400 questions, reworded. An entry in `MERGES`
+builds one paper from all of them and marks the sources `internal`, so they are still
+parsed and checked but get no card of their own.
+
+Two questions count as the same when their wording is close **and** their option lists
+largely agree. Wording alone is not enough — "the RATE-LIMITING enzyme of heme synthesis"
+and "of bile acid synthesis" read nearly identically but are different questions, and
+their options say so. Where a question appears more than once, the version with the
+fullest explanation is kept, except that a clean explanation beats a longer one whose
+symbols did not survive the PDF. `sections_from` names the paper whose lecture list the
+merged paper uses; every question is re-filed against it **by topic**, which also fixes a
+source that files the same topic under a different lecture number.
 
 ## Writing a paper by hand
 

@@ -324,6 +324,7 @@ PAPERS = [
     {
         'file': 'BCH212_Simulation_Exam.pdf',
         'id': 'bch212-simulation-1',
+        'internal': True,   # merged into bch212-simulation
         'name': 'Simulation Exam 1',
         'subtitle': 'Lectures 10–21 · past-paper starred',
         'course': 'BCH212',
@@ -342,6 +343,7 @@ PAPERS = [
     {
         'file': 'BCH212_Simulation_Exam 2.pdf',
         'id': 'bch212-simulation-2',
+        'internal': True,   # merged into bch212-simulation
         'name': 'Simulation Exam 2',
         'subtitle': 'Lectures 10–21 · second set',
         'course': 'BCH212',
@@ -360,6 +362,9 @@ PAPERS = [
     {
         'file': 'BCH212_Simulation_Exam 3.pdf',
         'id': 'bch212-simulation-3',
+        'internal': True,   # merged into bch212-simulation
+        # Its own stem names the condition: "In beta-zero thalassemia/HbE …"
+        'glyph_fixes': {'beta■-thalassemia': 'beta-zero thalassemia'},
         'name': 'Simulation Exam 3',
         'subtitle': 'Lectures 10–21 · most past-paper questions',
         'course': 'BCH212',
@@ -374,6 +379,37 @@ PAPERS = [
         'drop_re': PAGE_FURNITURE,
         'description': 'The set with the heaviest past-paper content — 108 of its questions are drawn from real '
                        'BCH212 papers — with the answer key and explanations collected at the back.',
+    },
+]
+
+# --------------------------------------------------------------------------
+# Merged papers
+#
+# Some papers are drafts of one another rather than separate exams — the three
+# BCH212 simulation papers share most of their questions, reworded. Listing them
+# here builds one paper from all of them with the repeats removed, and the
+# sources are marked 'internal' so they get no card of their own.
+#
+#   sources        paper ids, best first: where two papers hold the same
+#                  question, ties are settled in this order
+#   sections_from  the paper whose section list the merged one uses; every
+#                  question is re-filed against it by topic, which also fixes
+#                  a source that numbers its lectures differently
+# --------------------------------------------------------------------------
+
+MERGES = [
+    {
+        'id': 'bch212-simulation',
+        'name': 'Full Simulation Paper',
+        'subtitle': 'Lectures 10–21 · all three simulations, repeats merged',
+        'course': 'BCH212',
+        'icon': '🧪',
+        'sources': ['bch212-simulation-3', 'bch212-simulation-2', 'bch212-simulation-1'],
+        'sections_from': 'bch212-simulation-3',
+        'description': 'The three BCH212 simulation papers combined into one, with the questions they shared '
+                       'kept only once — where a question appeared more than once, the version with the fullest '
+                       'explanation was kept. Covers Lectures 10–21, from DNA and RNA synthesis through to '
+                       'clinical correlation.',
     },
 ]
 
@@ -396,6 +432,28 @@ COURSES = {
 def pdf_text(path):
     reader = PdfReader(path)
     return '\n'.join((page.extract_text() or '') for page in reader.pages)
+
+
+# Some superscripts do not survive extraction, leaving '■' behind: 'Ca2■',
+# 'haem + O■'. These shapes mean only one thing wherever they appear. Anything
+# needing the surrounding sentence to read it goes in a paper's own
+# 'glyph_fixes' instead, so the judgement is written down rather than guessed
+# at here. (A bare '■' is left alone: the MDS papers use it to flag a question.)
+GLYPH_REPAIRS = [
+    (re.compile(r'\b([A-Z][a-z]?)(\d)■'), r'\1\2+'),                       # Ca2■  -> Ca2+
+    (re.compile(r'\bO■(?![A-Za-z])'), 'O2'),                               # O■    -> O2
+    (re.compile(r'\bNAD■'), 'NAD+'),                                       # NAD■  -> NAD+
+    (re.compile(r'\b(alpha|beta|gamma|delta)■(alpha|beta|gamma|delta)■'),
+     r'\g<1>2\g<2>2'),                                                     # alpha■gamma■ -> alpha2gamma2
+]
+
+
+def repair_glyphs(text, fixes=None):
+    for pattern, replacement in GLYPH_REPAIRS:
+        text = pattern.sub(replacement, text)
+    for broken, fixed in (fixes or {}).items():
+        text = text.replace(broken, fixed)
+    return text
 
 
 def clean_lines(text, drop_re):
@@ -804,8 +862,12 @@ def unwrap_answer(explanation, key_text, option_text):
 
 def build(cfg, report):
     path = os.path.join(SRC, cfg['file'])
+    # Repaired after clean_lines, not before: the superscript in 'Ca²■' is only
+    # folded down to 'Ca2■' by the normalising there, and that is the shape the
+    # repairs recognise.
     raw = pdf_text(path)
-    lines = clean_lines(raw, cfg.get('drop_re'))
+    fixes = cfg.get('glyph_fixes')
+    lines = [repair_glyphs(l, fixes) for l in clean_lines(raw, cfg.get('drop_re'))]
 
     joined = '\n'.join(lines)
     if cfg.get('inline_key'):
@@ -827,7 +889,8 @@ def build(cfg, report):
                  else joined[split_at:].split('\n'))
 
     # Same text with bare numbers kept, for reading answer-grid tables.
-    raw_joined = '\n'.join(clean_lines(raw, r'^\s*Page\s+\d+\s*$'))
+    raw_joined = '\n'.join(repair_glyphs(l, fixes)
+                           for l in clean_lines(raw, r'^\s*Page\s+\d+\s*$'))
     raw_split = raw_joined.find(cfg.get('key_start') or '\0')
     raw_key_lines = raw_joined[raw_split if raw_split != -1 else 0:].split('\n')
 
@@ -917,7 +980,9 @@ def write_data_file(cfg, questions):
             sections.append({'id': seen[s], 'title': s})
 
     lines = [
-        '/* %s — generated from source-papers/%s' % (cfg['name'], cfg['file']),
+        '/* %s — %s' % (cfg['name'],
+                        'generated from source-papers/' + cfg['file'] if cfg.get('file')
+                        else 'merged from ' + ', '.join(cfg['sources'])),
         '   Do not edit by hand: run tools/convert_papers.py to rebuild. */',
         'registerExam({',
         '  id: %s,' % js_literal(cfg['id']),
@@ -1096,6 +1161,132 @@ def load_json_paper(path, report):
     return cfg, questions
 
 
+# --------------------------------------------------------------------------
+# Merging papers that are drafts of each other
+# --------------------------------------------------------------------------
+
+# Two questions count as the same when their wording is close AND their option
+# lists are largely shared. Wording alone is not enough: "the RATE-LIMITING
+# enzyme of heme synthesis" and "of bile acid synthesis" read almost the same
+# but are different questions, and their options say so. The options alone are
+# not enough either, since papers reuse distractors.
+SAME_STEM = 0.60
+SAME_OPTIONS = 0.50
+
+
+def ratio(a, b):
+    import difflib
+    return difflib.SequenceMatcher(None, a, b).ratio()
+
+
+def option_overlap(a, b):
+    """How much of one question's option list is answered by the other's."""
+    x = [norm(o) for o in a['options']]
+    y = [norm(o) for o in b['options']]
+    if not x or not y:
+        return 0.0
+    return sum(max(ratio(o, p) for p in y) for o in x) / len(x)
+
+
+def same_question(a, b):
+    stem = ratio(norm(a['stem']), norm(b['stem']))
+    if stem >= 0.98:
+        # Word-for-word the same question. The papers sometimes phrase the same
+        # option two ways ("alpha-thal1/alpha-thal2" and "3 of 4 alpha genes
+        # deleted"), so the options are not asked to agree as well.
+        return True
+    return stem >= SAME_STEM and option_overlap(a, b) >= SAME_OPTIONS
+
+
+def explanation_score(q):
+    """Which of two versions of a question to keep.
+
+    Longer explanations say more — they name the trap and the neighbouring
+    conditions rather than only the answer. But one paper's subscripts did not
+    survive the PDF ('haem + O■', 'Ca2■'), and a clean shorter explanation beats
+    a longer broken one."""
+    text = q['explanation'] + q['stem'] + ''.join(q['options'])
+    return len(q['explanation']) - 400 * text.count('■')
+
+
+def merge_papers(cfg, built, report):
+    """One paper out of several, keeping each shared question only once."""
+    missing = [s for s in cfg['sources'] if s not in built]
+    if missing:
+        raise SystemExit('%s merges %s, which did not build'
+                         % (cfg['id'], ', '.join(missing)))
+
+    # The section list of the paper that files its lectures correctly. Questions
+    # are matched to it by topic, so a source that numbers the same topic under a
+    # different lecture still lands in the right place.
+    canon = []
+    for q in built[cfg['sections_from']]:
+        if q['section'] and q['section'] not in canon:
+            canon.append(q['section'])
+
+    def refile(title):
+        if not title or title in canon:
+            return title
+        topic = norm(re.sub(r'^Lectures?\s+\d+\s*[:—–-]\s*', '', title))
+        best, score = title, 0.0
+        for c in canon:
+            r = ratio(topic, norm(re.sub(r'^Lectures?\s+\d+\s*[:—–-]\s*', '', c)))
+            if r > score:
+                best, score = c, r
+        return best if score >= 0.6 else title
+
+    kept, dropped = [], 0
+    for source in cfg['sources']:
+        for q in built[source]:
+            twin = next((k for k in kept if same_question(q, k)), None)
+            if twin is None:
+                kept.append(dict(q, section=refile(q['section']), origin=source))
+                continue
+            dropped += 1
+            # Keep whichever version explains itself best; the source order in
+            # the config settles it when they are the same length.
+            if explanation_score(q) > explanation_score(twin):
+                kept[kept.index(twin)] = dict(q, section=twin['section'], origin=source)
+
+    order = {title: i for i, title in enumerate(canon)}
+    kept.sort(key=lambda q: order.get(q['section'], len(order)))
+    for i, q in enumerate(kept, 1):
+        q['id'] = 'q%d' % i
+
+    from_each = {s: sum(1 for q in kept if q['origin'] == s) for s in cfg['sources']}
+    for q in kept:
+        del q['origin']
+
+    flags = {}
+    for q in kept:
+        if q.get('flag'):
+            flags[q['flag']] = flags.get(q['flag'], 0) + 1
+    total = sum(len(built[s]) for s in cfg['sources'])
+    report.append({
+        'id': cfg['id'], 'file': 'merge of ' + ', '.join(cfg['sources']),
+        'flags': flags, 'parsed': total, 'expected': total - dropped,
+        'written': len(kept), 'text_mismatch': 0, 'dropped': [],
+        'problems': [], 'merge_note': '%d shared questions removed; kept %s'
+                                      % (dropped, ', '.join('%d from %s' % (n, s.split('-')[-1])
+                                                            for s, n in from_each.items())),
+    })
+    return kept
+
+
+def add_paper(cfg, questions, summaries):
+    """Write a paper's data file and its entry for the home page."""
+    _, minutes, _ = write_data_file(cfg, questions)
+    summaries.append({
+        'id': cfg['id'], 'name': cfg['name'], 'subtitle': cfg['subtitle'],
+        'course': cfg['course'], 'icon': cfg['icon'],
+        'accent': COURSES[cfg['course']]['accent'],
+        'description': cfg['description'], 'questionCount': len(questions),
+        'group': cfg.get('group'), 'badge': cfg.get('badge'),
+        'durationMinutes': minutes, 'passMark': PASS_MARK,
+        'file': 'data/%s.js' % cfg['id'],
+    })
+
+
 def main():
     check_only = '--check' in sys.argv
     only = [a for a in sys.argv[1:] if not a.startswith('--')]
@@ -1106,42 +1297,59 @@ def main():
         if name.lower().endswith('.json'):
             jobs.append((None, os.path.join(SRC, name)))
 
+    # A merge needs its sources whether or not they were asked for by name.
+    wanted = set(only)
+    for m in MERGES:
+        if not only or m['id'] in only:
+            wanted.update(m['sources'])
+
+    def skip(paper_id):
+        return bool(only) and paper_id not in wanted and paper_id not in only
+
     seen_ids = set()
+    built = {}
     for cfg, json_path in jobs:
         if json_path:
             cfg, questions = load_json_paper(json_path, report)
-            if only and cfg['id'] not in only:
+            if skip(cfg['id']):
                 report.pop()
                 continue
         else:
-            if only and cfg['id'] not in only:
+            if skip(cfg['id']):
                 continue
             questions = build(cfg, report)
         if cfg['id'] in seen_ids:
             raise SystemExit('two papers share the id ' + cfg['id'])
         seen_ids.add(cfg['id'])
+        built[cfg['id']] = questions
+        if check_only or cfg.get('internal'):
+            continue      # a source of a merged paper gets no file and no card
+        add_paper(cfg, questions, summaries)
+
+    for cfg in MERGES:
+        if only and cfg['id'] not in only:
+            continue
+        questions = merge_papers(cfg, built, report)
         if check_only:
             continue
-        dest, minutes, nsections = write_data_file(cfg, questions)
-        summaries.append({
-            'id': cfg['id'], 'name': cfg['name'], 'subtitle': cfg['subtitle'],
-            'course': cfg['course'], 'icon': cfg['icon'],
-            'accent': COURSES[cfg['course']]['accent'],
-            'description': cfg['description'], 'questionCount': len(questions),
-            'group': cfg.get('group'), 'badge': cfg.get('badge'),
-            'durationMinutes': minutes, 'passMark': PASS_MARK,
-            'file': 'data/%s.js' % cfg['id'],
-        })
+        add_paper(cfg, questions, summaries)
 
     if summaries and not only:
         write_manifest(summaries)
 
     total = 0
+    sources = {s: m['id'] for m in MERGES for s in m['sources']}
     print('%-28s %8s %8s %8s  %s' % ('paper', 'parsed', 'expect', 'written', 'problems'))
     for r in report:
-        total += r['written']
-        print('%-28s %8d %8d %8d  %d' % (r['id'], r['parsed'], r['expected'],
-                                         r['written'], len(r['problems'])))
+        # A merge source is reported so its parsing can be checked, but its
+        # questions are counted once, in the paper they were merged into.
+        if r['id'] not in sources:
+            total += r['written']
+        print('%-28s %8d %8d %8d  %d%s'
+              % (r['id'], r['parsed'], r['expected'], r['written'], len(r['problems']),
+                 '   → merged into ' + sources[r['id']] if r['id'] in sources else ''))
+        if r.get('merge_note'):
+            print('        · ' + r['merge_note'])
         if r.get('flags'):
             print('        · flagged: ' + ', '.join('%d %s' % (v, k) for k, v in sorted(r['flags'].items())))
         if r['dropped']:

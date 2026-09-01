@@ -237,7 +237,7 @@ registerExam({
     {
       id: "q16",
       section: "s1",
-      stem: "The primary Ca2■ store in skeletal muscle is the:",
+      stem: "The primary Ca2+ store in skeletal muscle is the:",
       options: [
         "The T-tubule network",
         "The cell mitochondria",
@@ -246,7 +246,7 @@ registerExam({
         "The sarcolemma surface",
       ],
       answer: "C",
-      explanation: "The sarcoplasmic reticulum sequesters and releases Ca2■ to regulate contraction.",
+      explanation: "The sarcoplasmic reticulum sequesters and releases Ca2+ to regulate contraction.",
     },
     {
       id: "q17",
@@ -274,7 +274,7 @@ registerExam({
         "A calcium rise triggers it",
       ],
       answer: "E",
-      explanation: "Although regulatory proteins differ (troponin vs calmodulin), a rise in intracellular Ca2■ is the universal contraction trigger.",
+      explanation: "Although regulatory proteins differ (troponin vs calmodulin), a rise in intracellular Ca2+ is the universal contraction trigger.",
     },
     {
       id: "q19",
@@ -391,7 +391,7 @@ registerExam({
     {
       id: "q27",
       section: "s1",
-      stem: "In smooth muscle, Ca2■ is associated with flask-shaped invaginations of the:",
+      stem: "In smooth muscle, Ca2+ is associated with flask-shaped invaginations of the:",
       options: [
         "T-tubule",
         "Mitochondria",
@@ -498,7 +498,7 @@ registerExam({
         "Troponin C",
       ],
       answer: "E",
-      explanation: "Smooth muscle lacks troponin; Ca2■ binds calmodulin, which activates myosin light-chain kinase (MLCK).",
+      explanation: "Smooth muscle lacks troponin; Ca2+ binds calmodulin, which activates myosin light-chain kinase (MLCK).",
     },
     {
       id: "q35",
