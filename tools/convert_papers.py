@@ -1144,6 +1144,11 @@ def load_json_paper(path, report):
         })
 
     stated = doc.get('questionCount')
+    try:
+        stated = int(stated) if stated else None    # some files quote it: "155"
+    except (TypeError, ValueError):
+        problems.append('questionCount is %r, which is not a number' % (stated,))
+        stated = None
     if stated and stated != len(questions):
         problems.append('file says %s questions, %d usable' % (stated, len(questions)))
 
