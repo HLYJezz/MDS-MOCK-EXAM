@@ -1,0 +1,1104 @@
+{
+  "id": "bch212-sa1-mock-exam",
+  "name": "BCH212 SA1 Mock Exam",
+  "subtitle": "Lectures 1-9: Biomolecules, Enzymes, Bioenergetics & Metabolism",
+  "course": "BCH212",
+  "group": "SA1",
+  "icon": "📝",
+  "description": "A full-length mock exam covering Lectures 1-9 (protein & carbohydrate structure, nucleic acid & lipid structure, enzymes, bioenergetics, nucleotide metabolism, carbohydrate metabolism, amino acid metabolism, lipid metabolism, and control & interrelationship of metabolism), weighted by teaching hours to mirror the real Summative Assessment I distribution (4 questions per lecture hour).",
+  "questionCount": 84,
+  "questions": [
+    {
+      "section": "Lec1: Protein & Carbohydrate Structure",
+      "stem": "Amino acids are joined together in a polypeptide chain by which type of bond?",
+      "options": [
+        "Ester bond",
+        "Glycosidic bond",
+        "Phosphodiester bond",
+        "Disulfide bond",
+        "Peptide bond (amide bond between the carboxyl group of one amino acid and the amino group of the next)"
+      ],
+      "answer": "E",
+      "explanation": "A peptide bond is an amide linkage formed between the alpha-carboxyl group of one amino acid and the alpha-amino group of the next, releasing a water molecule (condensation reaction). Glycosidic bonds link sugars; phosphodiester bonds link nucleotides."
+    },
+    {
+      "section": "Lec1: Protein & Carbohydrate Structure",
+      "stem": "The folding of a polypeptide backbone into alpha-helices and beta-pleated sheets describes which level of protein structure?",
+      "options": [
+        "Quaternary structure",
+        "Tertiary structure",
+        "Secondary structure",
+        "Supersecondary structure only",
+        "Primary structure"
+      ],
+      "answer": "C",
+      "explanation": "Secondary structure refers to local, regular folding patterns of the polypeptide backbone (alpha-helix, beta-sheet) stabilised by hydrogen bonds between backbone amide and carbonyl groups. Primary structure is the amino acid sequence; tertiary is the 3D fold of a single chain; quaternary involves multiple subunits."
+    },
+    {
+      "section": "Lec1: Protein & Carbohydrate Structure",
+      "stem": "Which amino acid lacks a chiral (asymmetric) alpha-carbon and therefore has no D/L isomers?",
+      "options": [
+        "Valine",
+        "Alanine",
+        "Serine",
+        "Glycine",
+        "Cysteine"
+      ],
+      "answer": "D",
+      "explanation": "Glycine's side chain (R group) is simply a hydrogen atom, so its alpha-carbon is bonded to two identical groups (H and H), making it non-chiral. All other standard amino acids have four different substituents on the alpha-carbon and exist as D/L stereoisomers."
+    },
+    {
+      "section": "Lec1: Protein & Carbohydrate Structure",
+      "stem": "A 'reducing sugar' is defined by its ability to reduce Cu2+ in Benedict's test because it has:",
+      "options": [
+        "A glycosidic bond linking it to another sugar",
+        "A phosphate group attached to carbon 6",
+        "An amino group replacing a hydroxyl group",
+        "A branched alpha-1,6 linkage",
+        "A free anomeric carbon (hemiacetal/hemiketal group) that can open to expose a reactive aldehyde or ketone"
+      ],
+      "answer": "E",
+      "explanation": "The free anomeric carbon of a monosaccharide (or a disaccharide with an unreacted anomeric carbon, e.g. maltose) can exist in an open-chain form exposing an aldehyde/ketone group, which reduces Cu2+ to Cu+ in Benedict's/Fehling's test. Sucrose is non-reducing because both anomeric carbons are joined in the glycosidic bond."
+    },
+    {
+      "section": "Lec1: Protein & Carbohydrate Structure",
+      "stem": "Humans cannot digest cellulose because they lack an enzyme capable of hydrolysing which type of bond?",
+      "options": [
+        "Phosphodiester bonds",
+        "Peptide bonds",
+        "Alpha-1,6 glycosidic bonds",
+        "Beta-1,4 glycosidic bonds",
+        "Alpha-1,4 glycosidic bonds"
+      ],
+      "answer": "D",
+      "explanation": "Cellulose is a polymer of glucose linked by beta-1,4 glycosidic bonds. Human digestive enzymes (amylases) can only hydrolyse alpha-1,4 (and alpha-1,6) glycosidic bonds found in starch and glycogen, so cellulose passes through as dietary fibre."
+    },
+    {
+      "section": "Lec1: Protein & Carbohydrate Structure",
+      "stem": "Protein denaturation caused by heat or extreme pH results in loss of which structural levels, while the primary structure remains intact?",
+      "options": [
+        "Only the peptide bonds themselves",
+        "Only primary structure",
+        "Secondary, tertiary, and quaternary structure",
+        "Only the amino acid sequence",
+        "Only disulfide bonds, leaving 3D shape unchanged"
+      ],
+      "answer": "C",
+      "explanation": "Denaturation disrupts the non-covalent interactions (hydrogen bonds, hydrophobic interactions, ionic bonds) and sometimes disulfide bonds that maintain secondary, tertiary, and quaternary structure, causing loss of function. The primary sequence (peptide bonds) is not broken."
+    },
+    {
+      "section": "Lec2: Nucleic Acid & Lipid Structure",
+      "stem": "Which nitrogenous base is found in RNA but is replaced by thymine in DNA?",
+      "options": [
+        "Adenine",
+        "Cytosine",
+        "Uracil",
+        "Guanine",
+        "Hypoxanthine"
+      ],
+      "answer": "C",
+      "explanation": "RNA uses uracil (which pairs with adenine) instead of thymine. Thymine is essentially 5-methyluracil, and its use in DNA is thought to improve the fidelity of repair of deaminated cytosine (which becomes uracil, easily distinguished from the normal DNA base thymine)."
+    },
+    {
+      "section": "Lec2: Nucleic Acid & Lipid Structure",
+      "stem": "The sugar found in DNA nucleotides differs from that in RNA nucleotides because it:",
+      "options": [
+        "Lacks the 5' carbon entirely",
+        "Lacks a hydroxyl group at the 2' carbon (2'-deoxyribose)",
+        "Lacks a hydroxyl group at the 3' carbon",
+        "Has an extra phosphate group",
+        "Is a six-carbon sugar instead of five"
+      ],
+      "answer": "B",
+      "explanation": "DNA contains 2'-deoxyribose, which has only a hydrogen at the 2' position instead of a hydroxyl group (as in ribose, used in RNA). This makes DNA more chemically stable, suited to long-term genetic storage."
+    },
+    {
+      "section": "Lec2: Nucleic Acid & Lipid Structure",
+      "stem": "Adjacent nucleotides within a single strand of DNA or RNA are joined by which type of bond?",
+      "options": [
+        "Ester bond only, without phosphate involvement",
+        "Peptide bond",
+        "Phosphodiester bond",
+        "Hydrogen bond",
+        "Glycosidic bond"
+      ],
+      "answer": "C",
+      "explanation": "A phosphodiester bond links the 3'-hydroxyl of one nucleotide's sugar to the 5'-phosphate of the next nucleotide's sugar, forming the sugar-phosphate backbone. Hydrogen bonds hold the two complementary strands together (base pairing), not the backbone."
+    },
+    {
+      "section": "Lec2: Nucleic Acid & Lipid Structure",
+      "stem": "Which of the following is classified as a purine base?",
+      "options": [
+        "None of these are purines",
+        "Thymine",
+        "Cytosine",
+        "Adenine",
+        "Uracil"
+      ],
+      "answer": "D",
+      "explanation": "Purines (adenine and guanine) have a fused double-ring structure. Cytosine, thymine, and uracil are pyrimidines, which have a single six-membered ring."
+    },
+    {
+      "section": "Lec2: Nucleic Acid & Lipid Structure",
+      "stem": "Linoleic acid is classified as an 'essential fatty acid' because:",
+      "options": [
+        "It is required exclusively for bile acid synthesis",
+        "It cannot be beta-oxidised for energy",
+        "Humans lack the desaturase enzymes needed to synthesise it and must obtain it from the diet",
+        "It is only found in animal fat",
+        "It is synthesised only in the liver from cholesterol"
+      ],
+      "answer": "C",
+      "explanation": "Humans lack delta-12 and delta-15 desaturase enzymes needed to introduce double bonds beyond carbon 9 of a fatty acid chain, so omega-6 (linoleic acid) and omega-3 (alpha-linolenic acid) fatty acids must come from the diet — they are precursors for eicosanoid synthesis."
+    },
+    {
+      "section": "Lec2: Nucleic Acid & Lipid Structure",
+      "stem": "The amphipathic nature of phospholipids (polar head, non-polar tails) allows them to spontaneously form which structure in an aqueous environment?",
+      "options": [
+        "Covalently cross-linked polymers",
+        "Simple monolayer sheets with no curvature",
+        "Rigid crystalline solids",
+        "Lipid bilayers or micelles",
+        "Insoluble precipitates only"
+      ],
+      "answer": "D",
+      "explanation": "In water, the hydrophilic phosphate head groups face outward toward water while the hydrophobic fatty acid tails cluster together away from water, spontaneously forming bilayers (as in cell membranes) or micelles — the thermodynamically favourable arrangement that minimises exposure of hydrophobic tails to water."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "The Michaelis constant (Km) represents:",
+      "options": [
+        "The substrate concentration at which reaction velocity is half of Vmax",
+        "The maximum possible reaction velocity",
+        "The equilibrium constant of the reaction",
+        "The concentration of enzyme needed for saturation",
+        "The temperature at which the enzyme is most active"
+      ],
+      "answer": "A",
+      "explanation": "Km is an inverse measure of an enzyme's affinity for its substrate — a low Km means high affinity (half-maximal velocity reached at low [S]), while a high Km means low affinity. It is derived from the Michaelis-Menten equation v = Vmax[S]/(Km+[S])."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "A competitive inhibitor affects enzyme kinetics by:",
+      "options": [
+        "Increasing Vmax while Km decreases",
+        "Increasing the apparent Km while Vmax remains unchanged",
+        "Decreasing both Km and Vmax",
+        "Decreasing Vmax while Km remains unchanged",
+        "Having no measurable effect on either parameter"
+      ],
+      "answer": "B",
+      "explanation": "Competitive inhibitors bind reversibly to the active site, competing with substrate. Because the inhibition can be overcome by adding excess substrate, Vmax is unchanged, but more substrate is needed to reach half-Vmax, so the apparent Km increases."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "A noncompetitive inhibitor typically affects enzyme kinetics by:",
+      "options": [
+        "Increasing both Km and Vmax",
+        "Permanently destroying the enzyme's primary structure",
+        "Decreasing Km while Vmax increases",
+        "Increasing Km while Vmax remains unchanged",
+        "Decreasing Vmax while Km remains unchanged"
+      ],
+      "answer": "E",
+      "explanation": "Noncompetitive inhibitors bind to a site other than the active site (on either the free enzyme or the enzyme-substrate complex), reducing the amount of functional enzyme without affecting substrate binding affinity. This lowers Vmax while Km stays the same, and the inhibition cannot be overcome by adding more substrate."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Which coenzyme, derived from niacin (Vitamin B3), functions to accept and donate hydride ions in many oxidoreductase reactions?",
+      "options": [
+        "Thiamine pyrophosphate (TPP)",
+        "Coenzyme A",
+        "Pyridoxal phosphate (PLP)",
+        "NAD+ (nicotinamide adenine dinucleotide)",
+        "FAD (flavin adenine dinucleotide)"
+      ],
+      "answer": "D",
+      "explanation": "NAD+/NADH is derived from niacin and shuttles electrons (as a hydride ion, H-) in numerous dehydrogenase reactions throughout metabolism, such as in glycolysis and the TCA cycle. FAD is derived from riboflavin; TPP from thiamine; PLP from pyridoxine."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Isoenzymes (isozymes) are best described as:",
+      "options": [
+        "Enzymes bound covalently to a substrate analogue",
+        "Enzymes that only work at extreme temperatures",
+        "Different molecular forms of an enzyme that catalyse the same reaction but may differ in tissue distribution or kinetic properties",
+        "Enzymes that lose activity after a single catalytic cycle",
+        "Inactive precursor forms of an enzyme"
+      ],
+      "answer": "C",
+      "explanation": "Isoenzymes (e.g., the five isoforms of lactate dehydrogenase, LDH1-LDH5) are genetically distinct proteins catalysing the same reaction, often with tissue-specific expression patterns, which makes them useful clinical markers of tissue damage (e.g., LDH1 elevated in cardiac injury)."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "When an enzyme is fully saturated with substrate, the reaction proceeds at a constant maximal rate independent of further increases in [S]. This describes:",
+      "options": [
+        "Zero-order kinetics",
+        "Allosteric kinetics",
+        "Competitive kinetics",
+        "First-order kinetics",
+        "Second-order kinetics"
+      ],
+      "answer": "A",
+      "explanation": "At saturating substrate concentrations, essentially all enzyme active sites are occupied, so the reaction rate depends only on enzyme concentration (constant) — this is zero-order with respect to substrate. At low [S], the reaction is first-order (rate proportional to [S])."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Allosteric enzymes typically produce which type of velocity-versus-substrate-concentration curve, in contrast to simple Michaelis-Menten enzymes?",
+      "options": [
+        "A curve with negative slope throughout",
+        "An exponentially decreasing curve",
+        "A linear curve",
+        "A hyperbolic curve",
+        "A sigmoidal (S-shaped) curve"
+      ],
+      "answer": "E",
+      "explanation": "Allosteric enzymes typically have multiple subunits that show cooperative substrate binding — binding of substrate to one subunit increases affinity at other subunits — producing a sigmoidal curve rather than the hyperbolic curve of simple Michaelis-Menten kinetics."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Feedback (end-product) inhibition typically works by which mechanism?",
+      "options": [
+        "The final product of a metabolic pathway allosterically inhibits an early, often the first committed, enzyme of that pathway",
+        "A cofactor irreversibly destroys the first enzyme",
+        "An intermediate metabolite activates a downstream enzyme",
+        "The product competitively displaces the enzyme's cofactor only",
+        "The substrate of the pathway inhibits the last enzyme in the sequence"
+      ],
+      "answer": "A",
+      "explanation": "Feedback inhibition is a classic regulatory strategy: the end product of a pathway binds an allosteric site on an early regulatory enzyme (often the first committed step), reducing pathway flux when the product is abundant — a clinically relevant example is CTP inhibiting aspartate transcarbamoylase (ATCase) in pyrimidine synthesis."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Aspirin's irreversible inhibition of cyclooxygenase (COX) illustrates which mechanism of enzyme inhibition?",
+      "options": [
+        "Irreversible covalent modification of the enzyme's active site",
+        "Allosteric activation",
+        "Reversible noncompetitive inhibition",
+        "Reversible competitive inhibition",
+        "Substrate-level regulation"
+      ],
+      "answer": "A",
+      "explanation": "Aspirin covalently acetylates a serine residue in the COX active site, permanently inactivating the enzyme. Because the modification is covalent, the enzyme cannot be reactivated by removing excess drug — this contrasts with reversible inhibitors, whose effects can be reversed by dilution or dialysis."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Enzymes that catalyse the transfer of a functional group (such as an amino group) from one molecule to another belong to which enzyme class?",
+      "options": [
+        "Hydrolases",
+        "Lyases",
+        "Ligases",
+        "Oxidoreductases",
+        "Transferases"
+      ],
+      "answer": "E",
+      "explanation": "Transferases (EC class 2) catalyse group transfer reactions — aminotransferases (transaminases) are a key clinical example, transferring an amino group from an amino acid to an alpha-keto acid (e.g., ALT, AST). Oxidoreductases catalyse redox reactions; hydrolases use water to cleave bonds."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "At a fixed, saturating substrate concentration, Vmax of an enzymatic reaction is primarily determined by:",
+      "options": [
+        "The concentration of substrate present",
+        "The molecular weight of the substrate",
+        "The total concentration of enzyme present",
+        "The pH of the solution only",
+        "The presence of a competitive inhibitor"
+      ],
+      "answer": "C",
+      "explanation": "Once substrate is saturating, every enzyme molecule is working at its maximum turnover rate, so the observed Vmax scales directly with the total amount of enzyme available. Doubling enzyme concentration doubles Vmax (while Km is unaffected)."
+    },
+    {
+      "section": "Lec3: Enzyme",
+      "stem": "Pepsinogen is converted into active pepsin in the stomach by which mechanism?",
+      "options": [
+        "Glycosylation in the Golgi apparatus",
+        "Phosphorylation by a protein kinase",
+        "Proteolytic cleavage triggered by the acidic (low pH) gastric environment, exposing the active site",
+        "Binding of a coenzyme derived from a vitamin",
+        "Formation of a disulfide bond with a chaperone protein"
+      ],
+      "answer": "C",
+      "explanation": "Pepsinogen is a zymogen (inactive enzyme precursor). The acidic gastric environment triggers a conformational change and cleavage of an inhibitory propeptide, generating active pepsin, which can then autocatalytically activate more pepsinogen."
+    },
+    {
+      "section": "Lec4: Bioenergetics",
+      "stem": "A reaction with a negative standard free energy change (delta-G degree prime) is described as:",
+      "options": [
+        "At chemical equilibrium",
+        "Endergonic and non-spontaneous",
+        "Exergonic and thermodynamically spontaneous",
+        "Reversible only under high temperature",
+        "Requiring continuous energy input to proceed"
+      ],
+      "answer": "C",
+      "explanation": "A negative delta-G indicates the reaction releases free energy and can proceed spontaneously in the forward direction under standard conditions. A positive delta-G (endergonic) requires energy input, often by coupling to an exergonic reaction like ATP hydrolysis."
+    },
+    {
+      "section": "Lec4: Bioenergetics",
+      "stem": "ATP is often called a 'high-energy' molecule mainly because hydrolysis of its terminal phosphoanhydride bond releases substantial free energy due to:",
+      "options": [
+        "Relief of electrostatic repulsion between adjacent negative charges and resonance stabilisation of the released phosphate",
+        "Conversion of a single bond to a triple bond",
+        "Its very large molecular size",
+        "Complete oxidation of the adenine ring",
+        "Formation of a new covalent carbon-carbon bond"
+      ],
+      "answer": "A",
+      "explanation": "ATP's three phosphate groups carry closely spaced negative charges that repel each other; hydrolysing the terminal phosphoanhydride bond relieves this strain, and the resulting inorganic phosphate is stabilised by resonance — both factors make the reaction strongly exergonic."
+    },
+    {
+      "section": "Lec4: Bioenergetics",
+      "stem": "Electrons carried by NADH enter the electron transport chain at which complex?",
+      "options": [
+        "Complex I (NADH dehydrogenase / NADH:ubiquinone oxidoreductase)",
+        "Complex II (succinate dehydrogenase)",
+        "Complex III (cytochrome bc1)",
+        "Complex IV (cytochrome c oxidase)",
+        "ATP synthase directly"
+      ],
+      "answer": "A",
+      "explanation": "NADH donates its electrons to Complex I, which pumps protons across the inner mitochondrial membrane while passing electrons to coenzyme Q (ubiquinone). FADH2, generated in reactions such as succinate dehydrogenase, instead donates electrons at Complex II."
+    },
+    {
+      "section": "Lec4: Bioenergetics",
+      "stem": "FADH2 generated by succinate dehydrogenase donates its electrons to the electron transport chain at which point?",
+      "options": [
+        "The intermembrane space directly, bypassing all complexes",
+        "ATP synthase (Complex V)",
+        "Complex II, which passes electrons to coenzyme Q without pumping protons",
+        "Complex I, pumping protons across the membrane",
+        "Complex IV, the terminal electron acceptor complex"
+      ],
+      "answer": "C",
+      "explanation": "Succinate dehydrogenase is itself Complex II, which oxidises FADH2 and passes electrons to coenzyme Q. Unlike Complex I, Complex II does not pump protons across the membrane, which is why FADH2-derived electrons yield less ATP than NADH-derived electrons."
+    },
+    {
+      "section": "Lec4: Bioenergetics",
+      "stem": "Uncoupling agents such as 2,4-dinitrophenol (DNP) or the mitochondrial protein thermogenin disrupt oxidative phosphorylation by:",
+      "options": [
+        "Directly inhibiting the electron transport chain complexes",
+        "Blocking ATP synthase's rotor mechanism",
+        "Preventing NADH from being oxidised",
+        "Increasing the efficiency of ATP production",
+        "Allowing protons to leak back across the inner mitochondrial membrane without passing through ATP synthase, dissipating the gradient as heat"
+      ],
+      "answer": "E",
+      "explanation": "Uncouplers create an alternative pathway for protons to re-enter the mitochondrial matrix, bypassing ATP synthase. This dissipates the proton-motive force as heat rather than using it to generate ATP — thermogenin (UCP1) exploits this physiologically in brown adipose tissue for non-shivering thermogenesis."
+    },
+    {
+      "section": "Lec4: Bioenergetics",
+      "stem": "Compared to the oxidation of one molecule of NADH, oxidation of one molecule of FADH2 through the electron transport chain yields:",
+      "options": [
+        "ATP only in the presence of oxygen-independent pathways",
+        "Less ATP, because its electrons enter at Complex II and bypass the proton pumping of Complex I",
+        "The exact same amount of ATP",
+        "No ATP, because FADH2 cannot enter the electron transport chain",
+        "More ATP, because FADH2 has a higher reduction potential"
+      ],
+      "answer": "B",
+      "explanation": "Because FADH2 donates electrons at Complex II rather than Complex I, one fewer proton-pumping complex is used, resulting in a smaller proton-motive force generated per molecule and therefore less ATP synthesised compared to NADH oxidation."
+    },
+    {
+      "section": "Lec5: Nucleotide Metabolism",
+      "stem": "The final excreted end product of purine catabolism in humans is:",
+      "options": [
+        "Uric acid",
+        "Urea",
+        "Ammonia",
+        "Allantoin",
+        "Creatinine"
+      ],
+      "answer": "A",
+      "explanation": "Humans lack the enzyme uricase and therefore cannot further oxidise uric acid to the more soluble allantoin (as many other mammals can), so purines (adenine, guanine) are degraded to uric acid, which is excreted in urine. Excess accumulation causes gout."
+    },
+    {
+      "section": "Lec5: Nucleotide Metabolism",
+      "stem": "Allopurinol, used to treat gout, works by inhibiting which enzyme?",
+      "options": [
+        "HGPRT (hypoxanthine-guanine phosphoribosyltransferase)",
+        "Xanthine oxidase",
+        "Adenosine deaminase",
+        "PRPP synthetase",
+        "Uricase"
+      ],
+      "answer": "B",
+      "explanation": "Allopurinol (and its metabolite oxypurinol) inhibits xanthine oxidase, the enzyme that converts hypoxanthine to xanthine and xanthine to uric acid, thereby lowering uric acid production and reducing gout flares and urate deposition."
+    },
+    {
+      "section": "Lec5: Nucleotide Metabolism",
+      "stem": "Lesch-Nyhan syndrome, characterised by hyperuricemia, self-mutilating behaviour, and neurological impairment, is caused by a deficiency of:",
+      "options": [
+        "Glucose-6-phosphatase",
+        "Xanthine oxidase",
+        "Ornithine transcarbamylase",
+        "Adenosine deaminase",
+        "HGPRT (hypoxanthine-guanine phosphoribosyltransferase)"
+      ],
+      "answer": "E",
+      "explanation": "HGPRT normally salvages purine bases (hypoxanthine and guanine) by reattaching them to PRPP, recycling them into nucleotides. Its absence forces excessive de novo purine synthesis (loss of feedback control) and shunts more purine bases toward degradation into uric acid, causing severe hyperuricemia."
+    },
+    {
+      "section": "Lec5: Nucleotide Metabolism",
+      "stem": "Deficiency of adenosine deaminase (ADA) leads to accumulation of toxic deoxyadenosine metabolites in lymphocytes and causes which clinical syndrome?",
+      "options": [
+        "Orotic aciduria",
+        "Von Gierke disease",
+        "Gout",
+        "Lesch-Nyhan syndrome",
+        "Severe combined immunodeficiency (SCID)"
+      ],
+      "answer": "E",
+      "explanation": "ADA normally converts adenosine and deoxyadenosine to inosine and deoxyinosine. Without ADA, deoxyadenosine accumulates and is phosphorylated to dATP, which is particularly toxic to rapidly dividing lymphocytes (inhibiting ribonucleotide reductase), leading to severe combined immunodeficiency."
+    },
+    {
+      "section": "Lec5: Nucleotide Metabolism",
+      "stem": "The rate-limiting, committed step of de novo purine nucleotide synthesis is catalysed by:",
+      "options": [
+        "Orotate phosphoribosyltransferase",
+        "Carbamoyl phosphate synthetase II",
+        "Xanthine oxidase",
+        "Glutamine-PRPP amidotransferase",
+        "Adenylosuccinate synthetase"
+      ],
+      "answer": "D",
+      "explanation": "Glutamine-PRPP amidotransferase (amidophosphoribosyltransferase) catalyses the first committed step of purine synthesis, converting PRPP and glutamine to 5-phosphoribosylamine, and is allosterically inhibited by purine nucleotide end products (feedback inhibition)."
+    },
+    {
+      "section": "Lec5: Nucleotide Metabolism",
+      "stem": "The rate-limiting enzyme of de novo pyrimidine nucleotide synthesis in the cytosol is:",
+      "options": [
+        "HGPRT",
+        "Carbamoyl phosphate synthetase II (CPS II)",
+        "Ornithine transcarbamylase",
+        "Carbamoyl phosphate synthetase I (CPS I)",
+        "Dihydrofolate reductase"
+      ],
+      "answer": "B",
+      "explanation": "CPS II is the cytosolic enzyme that begins pyrimidine synthesis by combining glutamine, CO2, and ATP to form carbamoyl phosphate. This is distinct from mitochondrial CPS I, which begins the urea cycle using ammonia rather than glutamine."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The key rate-limiting, regulated enzyme of glycolysis is:",
+      "options": [
+        "Glyceraldehyde-3-phosphate dehydrogenase",
+        "Aldolase",
+        "Phosphofructokinase-1 (PFK-1)",
+        "Hexokinase",
+        "Pyruvate kinase"
+      ],
+      "answer": "C",
+      "explanation": "PFK-1, which converts fructose-6-phosphate to fructose-1,6-bisphosphate, is the primary rate-limiting and most highly regulated step of glycolysis, allosterically inhibited by ATP and citrate and activated by AMP and fructose-2,6-bisphosphate."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The enzyme that catalyses the committed, rate-limiting step of gluconeogenesis by converting fructose-1,6-bisphosphate to fructose-6-phosphate is:",
+      "options": [
+        "Glucose-6-phosphatase",
+        "Phosphoglycerate kinase",
+        "Pyruvate carboxylase",
+        "Fructose-1,6-bisphosphatase",
+        "Phosphofructokinase-1"
+      ],
+      "answer": "D",
+      "explanation": "Fructose-1,6-bisphosphatase reverses the PFK-1 step of glycolysis and is a key regulatory, rate-limiting enzyme of gluconeogenesis, inhibited by AMP and fructose-2,6-bisphosphate and activated by citrate — reciprocal to PFK-1 regulation."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The rate-limiting enzyme of the pentose phosphate pathway is:",
+      "options": [
+        "Ribulose-5-phosphate epimerase",
+        "Transketolase",
+        "Glucokinase",
+        "Glucose-6-phosphate dehydrogenase (G6PD)",
+        "Phosphoglucose isomerase"
+      ],
+      "answer": "D",
+      "explanation": "G6PD catalyses the first, committed, and rate-limiting oxidative step of the pentose phosphate pathway, generating NADPH (needed for reductive biosynthesis and antioxidant defence) and is itself regulated mainly by the availability of NADP+."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "Deficiency of G6PD makes red blood cells particularly vulnerable to haemolysis under oxidative stress mainly because of insufficient production of:",
+      "options": [
+        "Lactate, needed for anaerobic metabolism",
+        "Bilirubin, needed for antioxidant defence",
+        "NADPH, needed to regenerate reduced glutathione for antioxidant protection",
+        "ATP, needed for the sodium-potassium pump",
+        "2,3-BPG, needed for oxygen release"
+      ],
+      "answer": "C",
+      "explanation": "NADPH generated by G6PD in the pentose phosphate pathway is essential to keep glutathione in its reduced (active antioxidant) form via glutathione reductase. Without adequate NADPH, RBCs cannot neutralise oxidative stress (e.g., from certain drugs or infections), leading to haemoglobin denaturation (Heinz bodies) and haemolysis."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The pyruvate dehydrogenase complex, which converts pyruvate to acetyl-CoA, requires which vitamin-derived cofactor?",
+      "options": [
+        "Biotin (Vitamin B7) alone",
+        "Niacin (Vitamin B3) alone",
+        "Folate (Vitamin B9) alone",
+        "Thiamine (Vitamin B1), as thiamine pyrophosphate (TPP)",
+        "Vitamin C"
+      ],
+      "answer": "D",
+      "explanation": "The pyruvate dehydrogenase complex uses five cofactors (TPP, lipoic acid, CoA, FAD, NAD+), but TPP is a particularly critical, rate-determining cofactor — thiamine deficiency (as in chronic alcoholism or severe malnutrition) impairs this reaction, contributing to lactic acidosis and beriberi/Wernicke-Korsakoff syndrome."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The Cori cycle describes the metabolic relationship in which:",
+      "options": [
+        "Fatty acids are converted to glucose in the liver",
+        "Amino acids are converted to lactate in muscle only",
+        "Glucose is oxidised completely to CO2 in muscle without producing lactate",
+        "Glucose is converted directly to glycogen without passing through pyruvate",
+        "Lactate produced by anaerobic glycolysis in muscle is transported to the liver and converted back to glucose by gluconeogenesis"
+      ],
+      "answer": "E",
+      "explanation": "During anaerobic conditions (e.g., intense exercise), muscle produces lactate via anaerobic glycolysis. This lactate travels through the blood to the liver, where it is converted back to glucose via gluconeogenesis, and the glucose can return to muscle — the Cori cycle shifts the energetic cost of gluconeogenesis to the liver."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "Von Gierke disease (glycogen storage disease type I) results from a deficiency of which enzyme?",
+      "options": [
+        "Glucose-6-phosphatase",
+        "Glycogen synthase",
+        "Debranching enzyme",
+        "Muscle glycogen phosphorylase",
+        "Alpha-1,4-glucosidase (acid maltase)"
+      ],
+      "answer": "A",
+      "explanation": "Glucose-6-phosphatase is required to release free glucose from glucose-6-phosphate in the liver, both from glycogenolysis and gluconeogenesis. Its absence causes severe fasting hypoglycaemia, lactic acidosis, hyperuricemia, and hepatomegaly from glycogen accumulation."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "McArdle disease (glycogen storage disease type V), presenting with exercise intolerance and muscle cramps, results from a deficiency of:",
+      "options": [
+        "Muscle glycogen phosphorylase (myophosphorylase)",
+        "Glycogen synthase",
+        "Glucose-6-phosphatase",
+        "Phosphoglucomutase",
+        "Liver glycogen phosphorylase"
+      ],
+      "answer": "A",
+      "explanation": "Myophosphorylase is the muscle-specific isoform of glycogen phosphorylase. Its deficiency prevents muscle glycogenolysis during exercise, causing early fatigue, cramps, and myoglobinuria after exertion, although liver glucose metabolism (and blood glucose) remains normal since hepatic glycogen phosphorylase is unaffected."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The enzyme that adds glucose units to a growing glycogen chain (glycogenesis) is:",
+      "options": [
+        "Glycogen synthase",
+        "Phosphoglucomutase alone",
+        "Glycogen phosphorylase",
+        "Branching enzyme alone",
+        "Hexokinase"
+      ],
+      "answer": "A",
+      "explanation": "Glycogen synthase catalyses the formation of alpha-1,4-glycosidic bonds, adding UDP-glucose units to the non-reducing ends of a growing glycogen chain. It is the rate-limiting enzyme of glycogenesis, activated by insulin (via dephosphorylation) and inhibited by glucagon/epinephrine (via phosphorylation)."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The enzyme that breaks down glycogen by removing glucose units as glucose-1-phosphate is:",
+      "options": [
+        "Alpha-amylase",
+        "Branching enzyme",
+        "Glucokinase",
+        "Glycogen synthase",
+        "Glycogen phosphorylase"
+      ],
+      "answer": "E",
+      "explanation": "Glycogen phosphorylase cleaves alpha-1,4 glycosidic bonds from the non-reducing ends of glycogen using inorganic phosphate, releasing glucose-1-phosphate. It is the rate-limiting enzyme of glycogenolysis, activated by glucagon and epinephrine (via cAMP-PKA phosphorylation) and by AMP in muscle."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The primary rate-limiting, regulated enzyme of the citric acid (TCA) cycle is:",
+      "options": [
+        "Citrate synthase",
+        "Fumarase",
+        "Malate dehydrogenase",
+        "Isocitrate dehydrogenase",
+        "Succinate dehydrogenase"
+      ],
+      "answer": "D",
+      "explanation": "Isocitrate dehydrogenase, which converts isocitrate to alpha-ketoglutarate, is allosterically activated by ADP and inhibited by ATP and NADH, making it the primary flux-controlling step of the TCA cycle, though citrate synthase and alpha-ketoglutarate dehydrogenase are also regulated."
+    },
+    {
+      "section": "Lec6: Carbohydrate Metabolism",
+      "stem": "The net ATP yield from substrate-level phosphorylation alone during glycolysis (glucose to 2 pyruvate) is:",
+      "options": [
+        "8 ATP net",
+        "6 ATP net",
+        "2 ATP net (4 produced minus 2 consumed)",
+        "4 ATP net",
+        "0 ATP net, all ATP comes from oxidative phosphorylation"
+      ],
+      "answer": "C",
+      "explanation": "Glycolysis consumes 2 ATP in the investment phase (hexokinase and PFK-1 steps) and produces 4 ATP in the payoff phase (phosphoglycerate kinase and pyruvate kinase steps, x2 for two triose molecules), for a net gain of 2 ATP via substrate-level phosphorylation, independent of the electron transport chain."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "The transfer of an amino group from an amino acid to alpha-ketoglutarate, forming glutamate, is catalysed by:",
+      "options": [
+        "Glutaminase",
+        "Urease",
+        "Carbamoyl phosphate synthetase",
+        "Glutamate dehydrogenase",
+        "A transaminase (aminotransferase), such as ALT or AST"
+      ],
+      "answer": "E",
+      "explanation": "Transaminases (e.g., alanine aminotransferase, aspartate aminotransferase) catalyse reversible transfer of an amino group between an amino acid and an alpha-keto acid, typically funnelling amino groups toward alpha-ketoglutarate to form glutamate, using pyridoxal phosphate (Vitamin B6) as a cofactor."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "The rate-limiting enzyme of the urea cycle is:",
+      "options": [
+        "Ornithine transcarbamylase",
+        "Arginase",
+        "Argininosuccinate lyase",
+        "Carbamoyl phosphate synthetase I (CPS I)",
+        "Argininosuccinate synthetase"
+      ],
+      "answer": "D",
+      "explanation": "CPS I, located in the mitochondrial matrix, catalyses the first and rate-limiting step of the urea cycle, combining ammonia, CO2, and ATP to form carbamoyl phosphate. It is allosterically activated by N-acetylglutamate."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "The urea cycle, which detoxifies ammonia into urea for excretion, occurs primarily in which organ?",
+      "options": [
+        "Kidney",
+        "Pancreas",
+        "Liver",
+        "Brain",
+        "Muscle"
+      ],
+      "answer": "C",
+      "explanation": "The liver contains all the enzymes of the urea cycle (partly mitochondrial, partly cytosolic) and is the principal site of ammonia detoxification. Urea is then transported via blood to the kidneys for excretion in urine."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Elevated ammonia is neurotoxic partly because it drives glutamate dehydrogenase to consume glutamate and produce alpha-ketoglutarate, thereby:",
+      "options": [
+        "Increasing GABA synthesis excessively",
+        "Directly damaging DNA in neurons",
+        "Depleting TCA cycle intermediates and impairing brain ATP production",
+        "Causing excessive dopamine release",
+        "Blocking oxygen delivery to the brain"
+      ],
+      "answer": "C",
+      "explanation": "High ammonia drives the reaction glutamate + NH3 -> glutamine (or via reverse glutamate dehydrogenase reaction consuming alpha-ketoglutarate), depleting alpha-ketoglutarate — a critical TCA cycle intermediate — impairing the TCA cycle and cellular energy (ATP) production in astrocytes and neurons, contributing to hepatic encephalopathy."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Maple syrup urine disease results from a deficiency of which enzyme, impairing branched-chain amino acid catabolism?",
+      "options": [
+        "Homogentisate oxidase",
+        "Cystathionine beta-synthase",
+        "Branched-chain alpha-ketoacid dehydrogenase",
+        "Phenylalanine hydroxylase",
+        "Tyrosinase"
+      ],
+      "answer": "C",
+      "explanation": "Branched-chain alpha-ketoacid dehydrogenase (structurally and functionally similar to pyruvate dehydrogenase, also requiring thiamine) is needed to further catabolise leucine, isoleucine, and valine after transamination. Its deficiency causes accumulation of branched-chain amino acids and their keto acids, producing a characteristic sweet, maple-syrup urine odour."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Homocystinuria, associated with lens dislocation, thromboembolism, and marfanoid habitus, is classically caused by deficiency of:",
+      "options": [
+        "Cystathionine beta-synthase",
+        "Ornithine transcarbamylase",
+        "Phenylalanine hydroxylase",
+        "Branched-chain alpha-ketoacid dehydrogenase",
+        "Tyrosinase"
+      ],
+      "answer": "A",
+      "explanation": "Cystathionine beta-synthase normally condenses homocysteine with serine to form cystathionine (on the pathway to cysteine). Its deficiency causes homocysteine accumulation, which is toxic to the vascular endothelium, connective tissue, and lens."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Phenylketonuria (PKU) results from a deficiency of which enzyme?",
+      "options": [
+        "Tyrosine hydroxylase",
+        "Cystathionine synthase",
+        "Tyrosinase",
+        "Phenylalanine hydroxylase",
+        "Homogentisate oxidase"
+      ],
+      "answer": "D",
+      "explanation": "Phenylalanine hydroxylase normally converts phenylalanine to tyrosine using the cofactor tetrahydrobiopterin. Its absence causes phenylalanine accumulation (neurotoxic) and tyrosine deficiency; newborn screening and a lifelong low-phenylalanine diet prevent intellectual disability."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Oculocutaneous albinism (type 1) results from a deficiency of which enzyme required for melanin synthesis?",
+      "options": [
+        "Tryptophan hydroxylase",
+        "Phenylalanine hydroxylase",
+        "Homogentisate oxidase",
+        "Dopamine beta-hydroxylase",
+        "Tyrosinase"
+      ],
+      "answer": "E",
+      "explanation": "Tyrosinase catalyses the rate-limiting step converting tyrosine to DOPA and then to dopaquinone, the first committed steps of melanin synthesis in melanocytes. Its absence prevents melanin production, causing the characteristic lack of pigmentation in skin, hair, and eyes."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "In one-carbon metabolism, the primary carrier molecule that accepts, carries, and donates one-carbon units (e.g., for purine and thymidylate synthesis) is:",
+      "options": [
+        "Coenzyme A",
+        "Biotin",
+        "NADPH",
+        "S-adenosylmethionine (SAM) exclusively",
+        "Tetrahydrofolate (THF)"
+      ],
+      "answer": "E",
+      "explanation": "Tetrahydrofolate, the active form of folate (Vitamin B9), carries one-carbon units at various oxidation states (methylene, methenyl, formyl, methyl) and donates them for purine ring synthesis, thymidylate synthesis, and methionine regeneration from homocysteine."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Pyridoxal phosphate (PLP), the active form of Vitamin B6, serves as an essential cofactor for which class of amino acid metabolism reactions?",
+      "options": [
+        "Glycosylation reactions",
+        "Beta-oxidation reactions",
+        "Transamination reactions",
+        "DNA methylation reactions",
+        "Fatty acid elongation reactions"
+      ],
+      "answer": "C",
+      "explanation": "PLP forms a Schiff base intermediate with the amino group of amino acids, enabling transaminases to shuttle the amino group to alpha-ketoglutarate. PLP is also required for decarboxylation reactions (e.g., neurotransmitter synthesis) and glycogen phosphorylase activity."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "The initial step in catabolism of most amino acids involves removal of the alpha-amino group, typically by:",
+      "options": [
+        "Glycosylation of the amino group",
+        "Transamination, transferring the amino group to alpha-ketoglutarate",
+        "Phosphorylation of the carboxyl group",
+        "Ubiquitination followed by proteasomal degradation of the free amino acid",
+        "Direct beta-oxidation of the carbon skeleton"
+      ],
+      "answer": "B",
+      "explanation": "Most amino acid catabolic pathways begin with removal of the alpha-amino group via transamination, funnelling the nitrogen to glutamate (and ultimately toward urea synthesis), while the remaining carbon skeleton enters central metabolic pathways (glycolysis, TCA cycle)."
+    },
+    {
+      "section": "Lec7: Amino Acid Metabolism",
+      "stem": "Glutamate dehydrogenase catalyses which reaction, unique in being able to use either NAD+ or NADP+?",
+      "options": [
+        "Transamination of glutamate to alanine",
+        "Hydroxylation of glutamate",
+        "Decarboxylation of glutamate to GABA",
+        "Amidation of glutamate to glutamine",
+        "Oxidative deamination of glutamate, releasing free ammonia and forming alpha-ketoglutarate"
+      ],
+      "answer": "E",
+      "explanation": "Glutamate dehydrogenase, located in the mitochondrial matrix, catalyses oxidative deamination: glutamate + NAD(P)+ + H2O -> alpha-ketoglutarate + NH4+ + NAD(P)H. This is a key step linking amino acid nitrogen disposal to the urea cycle and the TCA cycle."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "The rate-limiting, regulated enzyme of fatty acid synthesis is:",
+      "options": [
+        "Fatty acid synthase",
+        "Carnitine palmitoyltransferase I",
+        "HMG-CoA reductase",
+        "Citrate lyase",
+        "Acetyl-CoA carboxylase"
+      ],
+      "answer": "E",
+      "explanation": "Acetyl-CoA carboxylase converts acetyl-CoA to malonyl-CoA, the committed first step of fatty acid synthesis. It is activated by insulin and citrate, and inhibited by glucagon/epinephrine (via phosphorylation) and by the pathway's end product, palmitoyl-CoA."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "The rate-limiting enzyme controlling entry of long-chain fatty acids into the mitochondria for beta-oxidation is:",
+      "options": [
+        "Carnitine palmitoyltransferase I (CPT-1)",
+        "HMG-CoA synthase",
+        "Thiolase",
+        "Acyl-CoA dehydrogenase",
+        "Acetyl-CoA carboxylase"
+      ],
+      "answer": "A",
+      "explanation": "CPT-1, located on the outer mitochondrial membrane, catalyses transfer of the fatty acyl group from CoA to carnitine, allowing the fatty acid to cross into the mitochondrial matrix (via the carnitine shuttle) for beta-oxidation. It is inhibited by malonyl-CoA."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "The carnitine shuttle system is required to transport which molecules into the mitochondrial matrix?",
+      "options": [
+        "Pyruvate",
+        "Amino acids",
+        "Long-chain fatty acyl groups",
+        "Short-chain fatty acids (they can enter directly)",
+        "Glucose"
+      ],
+      "answer": "C",
+      "explanation": "Long-chain fatty acyl-CoA molecules cannot cross the inner mitochondrial membrane directly. Carnitine palmitoyltransferase I converts them to acylcarnitine, which is shuttled across by carnitine translocase, and CPT-2 regenerates acyl-CoA in the matrix for beta-oxidation. Short- and medium-chain fatty acids can cross without carnitine."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "The rate-limiting enzyme of ketogenesis (ketone body synthesis) in the liver is:",
+      "options": [
+        "Thiolase alone",
+        "HMG-CoA lyase",
+        "Cytosolic HMG-CoA reductase",
+        "Mitochondrial HMG-CoA synthase",
+        "Acetyl-CoA carboxylase"
+      ],
+      "answer": "D",
+      "explanation": "Mitochondrial HMG-CoA synthase, which condenses acetoacetyl-CoA with acetyl-CoA to form HMG-CoA, is the rate-limiting step of ketogenesis. This is distinct from the cytosolic HMG-CoA reductase used for cholesterol synthesis."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "Ketone bodies are produced in significant amounts by the liver primarily during:",
+      "options": [
+        "Prolonged fasting or starvation, when fatty acid oxidation generates excess acetyl-CoA",
+        "Active lipogenesis (fatty acid synthesis)",
+        "The well-fed state, right after a carbohydrate-rich meal",
+        "Periods of high insulin activity",
+        "Active glycogen synthesis"
+      ],
+      "answer": "A",
+      "explanation": "During fasting/starvation, low insulin and high glucagon promote lipolysis and hepatic beta-oxidation, generating more acetyl-CoA than the TCA cycle can process (especially as oxaloacetate is diverted to gluconeogenesis). Excess acetyl-CoA is converted to ketone bodies, an alternative fuel for the brain and muscle."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "The rate-limiting, regulated enzyme of cholesterol biosynthesis is:",
+      "options": [
+        "Squalene epoxidase",
+        "HMG-CoA reductase",
+        "Acetyl-CoA carboxylase",
+        "Lanosterol synthase",
+        "HMG-CoA synthase"
+      ],
+      "answer": "B",
+      "explanation": "HMG-CoA reductase, located in the smooth ER, converts HMG-CoA to mevalonate — the committed step of the cholesterol synthesis pathway. It is the target of statin drugs and is regulated by cellular cholesterol levels via SREBP transcription factors."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "Chylomicrons are lipoprotein particles primarily responsible for transporting:",
+      "options": [
+        "Free fatty acids bound directly to albumin",
+        "Cholesterol synthesised by the liver to peripheral tissues",
+        "Excess cholesterol from peripheral tissues back to the liver",
+        "Amino acids absorbed from the intestine",
+        "Dietary (exogenous) triglycerides from the small intestine into the bloodstream"
+      ],
+      "answer": "E",
+      "explanation": "Chylomicrons are assembled in intestinal enterocytes to package dietary triglycerides (and some cholesterol) absorbed after a meal, entering the lymphatic system before reaching the bloodstream — the exogenous lipid transport pathway."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "Low-density lipoprotein (LDL) primarily functions to:",
+      "options": [
+        "Transport short-chain fatty acids in blood",
+        "Return excess cholesterol from peripheral tissues to the liver (reverse cholesterol transport)",
+        "Transport dietary triglycerides from the intestine",
+        "Carry bilirubin to the liver for conjugation",
+        "Deliver cholesterol from the liver to peripheral tissues"
+      ],
+      "answer": "E",
+      "explanation": "LDL, formed from VLDL remnants after triglyceride removal by lipoprotein lipase, is cholesterol-rich and delivers cholesterol to peripheral tissues via LDL receptor-mediated endocytosis. Elevated LDL is a major risk factor for atherosclerosis."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "High-density lipoprotein (HDL) is considered cardioprotective mainly because it:",
+      "options": [
+        "Increases LDL receptor degradation",
+        "Transports dietary triglycerides after meals",
+        "Mediates reverse cholesterol transport, carrying excess cholesterol from peripheral tissues back to the liver",
+        "Delivers new cholesterol to peripheral arterial walls",
+        "Directly inhibits bile acid synthesis"
+      ],
+      "answer": "C",
+      "explanation": "HDL particles accept cholesterol effluxed from peripheral cells (including arterial macrophages/foam cells) via ABCA1 transporters, esterify it (via LCAT), and transport it back to the liver for excretion or bile acid synthesis — this reverse cholesterol transport is thought to be atheroprotective."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "Lipoprotein lipase, located on the capillary endothelium of adipose tissue and muscle, functions to:",
+      "options": [
+        "Transport bile acids into enterocytes",
+        "Esterify free cholesterol within lipoprotein particles",
+        "Convert LDL to HDL",
+        "Hydrolyse triglycerides carried in chylomicrons and VLDL, releasing free fatty acids for tissue uptake",
+        "Synthesise new triglycerides within the capillary lumen"
+      ],
+      "answer": "D",
+      "explanation": "Lipoprotein lipase, activated by apoC-II on chylomicrons/VLDL, hydrolyses the core triglycerides of these particles at the capillary endothelium, releasing free fatty acids and glycerol for uptake by adipocytes (storage) or myocytes (fuel)."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "Malonyl-CoA, produced during active fatty acid synthesis, regulates fat metabolism by:",
+      "options": [
+        "Stimulating ketogenesis",
+        "Directly inhibiting glycogen synthase",
+        "Inhibiting carnitine palmitoyltransferase I, preventing simultaneous fatty acid synthesis and oxidation",
+        "Activating hormone-sensitive lipase",
+        "Activating HMG-CoA reductase"
+      ],
+      "answer": "C",
+      "explanation": "Malonyl-CoA, the product of acetyl-CoA carboxylase, allosterically inhibits CPT-1. This prevents newly synthesised fatty acids from being immediately transported into mitochondria and oxidised — a futile cycle — ensuring fatty acid synthesis and oxidation are not both active simultaneously."
+    },
+    {
+      "section": "Lec8: Lipid Metabolism",
+      "stem": "Fatty acid synthesis takes place primarily in which cellular compartment, in contrast to beta-oxidation?",
+      "options": [
+        "The mitochondrial matrix",
+        "The lysosome",
+        "The nucleus",
+        "The cytoplasm (cytosol)",
+        "The rough endoplasmic reticulum lumen"
+      ],
+      "answer": "D",
+      "explanation": "Fatty acid synthase, acetyl-CoA carboxylase, and the NADPH supply (from the pentose phosphate pathway and malic enzyme) are cytosolic, so fatty acid synthesis occurs in the cytoplasm, whereas beta-oxidation of fatty acids occurs in the mitochondrial matrix."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "Insulin's overall effect on whole-body metabolism is best described as:",
+      "options": [
+        "Solely a regulator of thyroid hormone release",
+        "Anabolic — promoting glycogen, fat, and protein synthesis while inhibiting their breakdown",
+        "Catabolic — promoting glycogenolysis, lipolysis, and proteolysis",
+        "Purely regulating calcium homeostasis",
+        "Exclusively affecting renal sodium reabsorption"
+      ],
+      "answer": "B",
+      "explanation": "Insulin, released in response to high blood glucose (fed state), promotes glucose uptake and storage as glycogen, stimulates fatty acid and triglyceride synthesis, and promotes protein synthesis while inhibiting the corresponding catabolic pathways — the principal anabolic hormone."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "Glucagon exerts its major metabolic effects primarily on which target organ?",
+      "options": [
+        "The liver",
+        "The kidney",
+        "The pancreas itself",
+        "Adipose tissue exclusively",
+        "Skeletal muscle"
+      ],
+      "answer": "A",
+      "explanation": "Glucagon receptors are most abundant on hepatocytes; glucagon stimulates hepatic glycogenolysis and gluconeogenesis to raise blood glucose during fasting. Skeletal muscle largely lacks glucagon receptors and does not respond directly to it."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "During fasting, hormone-sensitive lipase in adipose tissue is activated mainly by which signalling pathway?",
+      "options": [
+        "Glucagon/epinephrine binding their receptors, raising cAMP and activating protein kinase A",
+        "Thyroid hormone acting on nuclear receptors",
+        "Aldosterone-mediated sodium retention",
+        "Direct activation by free fatty acids",
+        "Insulin binding its receptor tyrosine kinase"
+      ],
+      "answer": "A",
+      "explanation": "Glucagon and epinephrine activate adenylate cyclase in adipocytes via G-protein coupled receptors, raising intracellular cAMP, which activates protein kinase A. PKA phosphorylates and activates hormone-sensitive lipase (and perilipin), releasing free fatty acids and glycerol from stored triglycerides."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "AMP-activated protein kinase (AMPK), a cellular 'fuel gauge' activated during energy stress (high AMP:ATP ratio), generally:",
+      "options": [
+        "Promotes glycogen synthesis exclusively",
+        "Has no effect on metabolic enzyme activity",
+        "Promotes fatty acid and cholesterol synthesis",
+        "Inhibits glucose uptake into cells",
+        "Promotes ATP-generating catabolic pathways while inhibiting ATP-consuming anabolic pathways"
+      ],
+      "answer": "E",
+      "explanation": "AMPK is activated when cellular energy is low (high AMP relative to ATP). It phosphorylates and inhibits key anabolic enzymes (e.g., acetyl-CoA carboxylase, HMG-CoA reductase), while promoting catabolic, ATP-generating processes such as fatty acid oxidation and glucose uptake, restoring energy balance."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "In the fed state, excess dietary glucose that is not immediately used for energy is primarily stored as:",
+      "options": [
+        "Uric acid",
+        "Urea",
+        "Ketone bodies",
+        "Free glucose circulating in the blood indefinitely",
+        "Glycogen (in liver and muscle) and triglycerides (in adipose tissue)"
+      ],
+      "answer": "E",
+      "explanation": "After a meal, insulin promotes storage of excess glucose as glycogen in liver and muscle (limited capacity) and, once glycogen stores are replete, as triglycerides via lipogenesis in the liver and adipose tissue (essentially unlimited storage capacity)."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "Cortisol, a stress/catabolic hormone, promotes which overall metabolic changes?",
+      "options": [
+        "Exclusive stimulation of insulin secretion",
+        "Enhanced glucose uptake into muscle and fat",
+        "Gluconeogenesis, proteolysis (muscle protein breakdown), and lipolysis",
+        "Suppression of blood glucose levels",
+        "Glycogen synthesis and protein synthesis exclusively"
+      ],
+      "answer": "C",
+      "explanation": "Cortisol is catabolic and counter-regulatory to insulin: it stimulates hepatic gluconeogenesis (partly by providing amino acid substrates from muscle proteolysis) and promotes lipolysis, raising blood glucose and mobilising fuel stores during stress or prolonged fasting."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "During prolonged starvation, after hepatic glycogen stores are depleted, the brain progressively adapts to use which alternative fuel source to spare glucose and muscle protein?",
+      "options": [
+        "Amino acids directly",
+        "Free fatty acids directly",
+        "Ketone bodies",
+        "Cholesterol",
+        "Lactate exclusively"
+      ],
+      "answer": "C",
+      "explanation": "The brain cannot use fatty acids directly (they cannot cross the blood-brain barrier efficiently), but ketone bodies (acetoacetate and beta-hydroxybutyrate), produced by the liver during prolonged fasting, can cross the blood-brain barrier and supply a significant portion of the brain's energy needs, sparing glucose and reducing the need for muscle protein breakdown."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "A high insulin-to-glucagon ratio in the blood (as in the fed state) generally favours:",
+      "options": [
+        "Catabolism — glycogenolysis, lipolysis, and proteolysis",
+        "Anabolism — storage pathways such as glycogenesis, lipogenesis, and protein synthesis",
+        "Increased gluconeogenesis",
+        "Ketogenesis",
+        "Increased urea cycle activity to dispose of excess amino acids from protein breakdown"
+      ],
+      "answer": "B",
+      "explanation": "A high insulin:glucagon ratio signals fuel abundance and shifts metabolism toward storage (anabolic) pathways, while a low ratio (fasting) shifts metabolism toward mobilisation of stored fuels (catabolic) pathways including glycogenolysis, lipolysis, and gluconeogenesis."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "The bifunctional enzyme PFK-2/fructose-2,6-bisphosphatase, which controls fructose-2,6-bisphosphate levels, is a key regulatory point reciprocally controlling:",
+      "options": [
+        "Beta-oxidation versus fatty acid synthesis",
+        "Glycolysis versus gluconeogenesis in the liver",
+        "The urea cycle versus amino acid synthesis",
+        "Glycogenesis versus glycogenolysis directly",
+        "Ketogenesis versus cholesterol synthesis"
+      ],
+      "answer": "B",
+      "explanation": "Fructose-2,6-bisphosphate is a potent allosteric activator of PFK-1 (glycolysis) and inhibitor of fructose-1,6-bisphosphatase (gluconeogenesis). Its level is controlled by the bifunctional enzyme PFK-2/FBPase-2, whose kinase/phosphatase activity is reciprocally regulated by insulin (dephosphorylated, favours glycolysis) versus glucagon (phosphorylated, favours gluconeogenesis)."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "Epinephrine stimulates hepatic glycogen breakdown mainly through which signalling mechanism?",
+      "options": [
+        "Stimulating aldosterone release from the adrenal cortex",
+        "Activating the mTOR pathway",
+        "Binding beta-adrenergic receptors, activating adenylate cyclase, raising cAMP, and activating protein kinase A",
+        "Inhibiting the insulin receptor directly",
+        "Directly binding and activating glycogen phosphorylase without any intermediate signalling"
+      ],
+      "answer": "C",
+      "explanation": "Epinephrine (like glucagon) activates the cAMP-PKA signalling cascade in hepatocytes, leading to phosphorylation and activation of glycogen phosphorylase kinase, which activates glycogen phosphorylase, and simultaneously phosphorylates and inactivates glycogen synthase — coordinately promoting glycogenolysis over glycogenesis."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "Insulin promotes glycogen storage by simultaneously activating glycogen synthase and inhibiting glycogen phosphorylase, largely through which downstream mechanism?",
+      "options": [
+        "Activation of protein phosphatase-1, which dephosphorylates and thereby regulates both enzymes",
+        "Direct transcriptional silencing of both genes within seconds",
+        "Ubiquitination and rapid proteasomal degradation of both enzymes",
+        "Direct phosphorylation of both enzymes by protein kinase A",
+        "Allosteric inhibition mediated by cAMP"
+      ],
+      "answer": "A",
+      "explanation": "Insulin signalling activates protein phosphatase-1 (PP1), which removes phosphate groups from glycogen synthase (activating it) and glycogen phosphorylase (inactivating it) — the opposite covalent modification pattern to that produced by glucagon/epinephrine-driven PKA activity."
+    },
+    {
+      "section": "Lec9: Control & Interrelationship of Metabolism",
+      "stem": "The 'glucose-fatty acid cycle' (Randle cycle) describes how elevated fatty acid oxidation in muscle can:",
+      "options": [
+        "Inhibit glucose utilisation by suppressing pyruvate dehydrogenase, phosphofructokinase, and hexokinase activity",
+        "Have no effect on carbohydrate metabolism",
+        "Stimulate glucose uptake via GLUT4 translocation",
+        "Directly increase muscle glycogen synthase activity",
+        "Increase glycolytic flux by activating PFK-1"
+      ],
+      "answer": "A",
+      "explanation": "Increased fatty acid oxidation raises intramitochondrial acetyl-CoA and citrate, which inhibit pyruvate dehydrogenase and PFK-1 respectively, while accumulating glucose-6-phosphate inhibits hexokinase — collectively reducing glucose oxidation in muscle when fatty acids are abundant (as in fasting or diabetes), sparing glucose for other tissues."
+    }
+  ]
+}
