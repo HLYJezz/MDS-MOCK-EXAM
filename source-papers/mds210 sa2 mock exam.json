@@ -1,0 +1,792 @@
+{
+  "id": "mds210-sa2-mock",
+  "name": "MDS210 SA2 Mock Exam",
+  "subtitle": "Cell-Cell and Cell-Matrix Adhesions, Cell Motility, Cell Cycle, General Physiology, Membrane Physiology",
+  "course": "MDS210",
+  "group": "SA2",
+  "icon": "📝",
+  "description": "60-question mock exam covering LEC 6-10 (Cell-Cell and Cell-Matrix Adhesions, Cell Motility, Cell Cycle, General Physiology, Membrane Physiology), question count weighted by lecture hours per the course syllabus (10 questions per lecture hour).",
+  "questionCount": 60,
+  "questions": [
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Desmosomes anchor adjacent cells to each other by linking which cytoskeletal element between neighboring cells?",
+      "options": [
+        "Intermediate filaments (keratin)",
+        "Actin microfilaments",
+        "Microtubules",
+        "Septins",
+        "Myosin thick filaments"
+      ],
+      "answer": "A",
+      "explanation": "Desmosomes connect the keratin intermediate filament networks of adjacent cells via desmoglein and desmocollin (cadherin family members), providing strong mechanical adhesion resistant to shearing forces."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Which junction type forms a continuous paracellular seal that maintains epithelial polarity by blocking free diffusion of membrane proteins between the apical and basolateral domains?",
+      "options": [
+        "Gap junction",
+        "Tight junction",
+        "Desmosome",
+        "Hemidesmosome",
+        "Focal adhesion"
+      ],
+      "answer": "B",
+      "explanation": "Tight junctions, built from claudin, occludin, and JAM proteins linked to ZO adaptor proteins, seal the paracellular space and also maintain membrane protein polarity by blocking lateral diffusion between apical and basolateral domains."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "An autoimmune disease produces circulating autoantibodies against desmoglein, causing loss of keratinocyte adhesion (acantholysis) and intraepidermal blistering. This describes:",
+      "options": [
+        "Bullous pemphigoid",
+        "Epidermolysis bullosa simplex",
+        "Pemphigus vulgaris",
+        "Marfan syndrome",
+        "Ehlers-Danlos syndrome"
+      ],
+      "answer": "C",
+      "explanation": "Pemphigus vulgaris is caused by autoantibodies targeting desmoglein, a desmosomal cadherin, producing acantholysis and blistering within the epidermis; bullous pemphigoid instead targets hemidesmosome components (BP180/BP230) at the dermal-epidermal junction."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Hemidesmosomes differ from desmosomes in that hemidesmosomes:",
+      "options": [
+        "Connect two adjacent cells to each other via cadherins",
+        "Form aqueous channels between adjacent cells",
+        "Are found exclusively in cardiac muscle",
+        "Anchor a cell to the underlying basement membrane using integrins",
+        "Link actin filaments between neighboring cells"
+      ],
+      "answer": "D",
+      "explanation": "Hemidesmosomes use integrin, rather than cadherin, to anchor the basal surface of epithelial cells to the underlying basement membrane, connecting to intermediate filaments intracellularly; desmosomes instead link adjacent cells to each other."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Six connexin subunits assemble into a hexameric channel called a connexon; two connexons from adjacent cells then dock to form a complete intercellular channel. This structure describes a:",
+      "options": [
+        "Tight junction strand",
+        "Focal adhesion",
+        "Adherens junction",
+        "Hemidesmosome",
+        "Gap junction"
+      ],
+      "answer": "E",
+      "explanation": "Gap junctions are built from connexin proteins; six connexins form a connexon, and docking of two connexons from adjacent cells creates a continuous aqueous channel allowing direct passage of ions and small molecules between cells."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Integrins mediating cell-ECM adhesion frequently recognize a specific tripeptide sequence found in fibronectin and other ECM glycoproteins. This sequence is:",
+      "options": [
+        "RGD (Arg-Gly-Asp)",
+        "KDEL",
+        "NLS",
+        "GPI",
+        "SNARE motif"
+      ],
+      "answer": "A",
+      "explanation": "Many ECM adhesive glycoproteins, including fibronectin, contain an RGD (arginine-glycine-aspartate) motif that is specifically recognized by integrin receptors, mediating cell-ECM attachment."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "A focal adhesion physically links the extracellular matrix to the actin cytoskeleton through integrin and a series of intracellular adaptor proteins. Which of the following is NOT one of these core adaptor proteins?",
+      "options": [
+        "Talin",
+        "Desmoplakin",
+        "Vinculin",
+        "Paxillin",
+        "Alpha-actinin"
+      ],
+      "answer": "B",
+      "explanation": "Talin, vinculin, paxillin, and alpha-actinin are core components linking integrin to the actin cytoskeleton at focal adhesions. Desmoplakin instead links intermediate filaments to desmosomal cadherins and is not part of the focal adhesion complex."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Selectins mediate the initial, weak, transient adhesion that allows circulating leukocytes to roll along activated vascular endothelium during inflammation. This rolling interaction depends on selectins binding to:",
+      "options": [
+        "Fibronectin",
+        "RGD-containing peptides",
+        "Carbohydrate ligands",
+        "Connexin hemichannels",
+        "Claudin strands"
+      ],
+      "answer": "C",
+      "explanation": "Selectins are calcium-dependent lectin-like adhesion molecules that recognize carbohydrate ligands on the opposing cell surface, mediating the initial rolling adhesion of leukocytes on inflamed endothelium before firmer integrin-mediated arrest."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "Vitamin C deficiency impairs hydroxylation of proline and lysine residues required for stable collagen triple-helix cross-linking. The resulting syndrome, with gum swelling, petechiae, and poor wound healing, is:",
+      "options": [
+        "Marfan syndrome",
+        "Osteogenesis imperfecta",
+        "Ehlers-Danlos syndrome",
+        "Scurvy",
+        "Epidermolysis bullosa"
+      ],
+      "answer": "D",
+      "explanation": "Vitamin C is a required cofactor for prolyl and lysyl hydroxylase enzymes that stabilize the collagen triple helix through cross-linking; its deficiency causes scurvy, with fragile capillaries, gum disease, petechiae, and impaired wound healing."
+    },
+    {
+      "section": "Cell-Cell and Cell-Matrix Adhesions",
+      "stem": "A mutation in the FBN1 gene, which encodes a glycoprotein that organizes elastic fibers, produces a connective tissue disorder with tall stature, long limbs and fingers, and risk of aortic dissection. This describes:",
+      "options": [
+        "Ehlers-Danlos syndrome",
+        "Osteogenesis imperfecta",
+        "Scurvy",
+        "Bullous pemphigoid",
+        "Marfan syndrome"
+      ],
+      "answer": "E",
+      "explanation": "Marfan syndrome results from mutations in FBN1 (fibrillin-1), a glycoprotein essential for elastic fiber organization; affected patients show skeletal features, aortic dilation/dissection risk, and lens dislocation."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "Polymerization of actin monomers at the leading edge of a migrating cell, pushing the plasma membrane forward as a broad sheet, primarily drives formation of:",
+      "options": [
+        "Lamellipodia",
+        "Cilia",
+        "Stereocilia",
+        "The mitotic spindle",
+        "The nuclear lamina"
+      ],
+      "answer": "A",
+      "explanation": "Actin polymerization at the plus (barbed) end drives protrusion of sheet-like lamellipodia at the leading edge of a migrating cell; filopodia are similarly actin-driven but form thin, finger-like sensory projections."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "The Arp2/3 complex contributes to cell motility primarily by:",
+      "options": [
+        "Severing existing actin filaments into short fragments",
+        "Nucleating a new, branched actin filament off the side of an existing filament",
+        "Capping the plus end of actin filaments to prevent further growth",
+        "Cross-linking actin filaments into thick bundles for microvilli",
+        "Transporting vesicles along actin filaments using ATP hydrolysis"
+      ],
+      "answer": "B",
+      "explanation": "The Arp2/3 complex nucleates a new actin filament branching off the side of an existing 'mother' filament, generating the branched actin network characteristic of the lamellipodial meshwork during cell migration."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "Which motor protein moves cargo toward the minus end of microtubules and is essential for the beating motion of axonemal cilia and flagella?",
+      "options": [
+        "Myosin II",
+        "Kinesin",
+        "Dynein",
+        "Dynamin",
+        "Formin"
+      ],
+      "answer": "C",
+      "explanation": "Dynein is a minus-end-directed microtubule motor; axonemal dynein drives the sliding of microtubule doublets that produces ciliary and flagellar beating, while cytoplasmic dynein carries out retrograde vesicle/organelle transport."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "A muscle biopsy from a young boy with progressive proximal muscle weakness shows absence of a large protein that normally links the cortical actin cytoskeleton to the sarcolemmal membrane. This is most consistent with:",
+      "options": [
+        "Amyotrophic lateral sclerosis",
+        "Epidermolysis bullosa",
+        "Bullous pemphigoid",
+        "Duchenne muscular dystrophy",
+        "Marfan syndrome"
+      ],
+      "answer": "D",
+      "explanation": "Duchenne muscular dystrophy results from mutations in the dystrophin gene; dystrophin normally links cortical actin filaments to the sarcolemma via the dystrophin-glycoprotein complex, and its absence leads to progressive muscle membrane fragility and weakness."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "Progressive muscle weakness, atrophy, and eventual respiratory failure are found to be associated with abnormal accumulation and hyperphosphorylation of a type IV intermediate filament protein within motor neurons. This describes:",
+      "options": [
+        "Alzheimer's disease",
+        "Duchenne muscular dystrophy",
+        "Pemphigus vulgaris",
+        "Marfan syndrome",
+        "Amyotrophic lateral sclerosis (ALS)"
+      ],
+      "answer": "E",
+      "explanation": "ALS (motor neuron disease) is associated with abnormal aggregation and hyperphosphorylation of neurofilaments (type IV intermediate filaments) within motor neurons, contributing to axonal transport impairment and neurodegeneration."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "Which class of intermediate filament protein is found on the inner surface of the nuclear envelope, where it maintains nuclear shape and anchors chromatin?",
+      "options": [
+        "Lamin",
+        "Keratin",
+        "Vimentin",
+        "Desmin",
+        "Neurofilament protein"
+      ],
+      "answer": "A",
+      "explanation": "Nuclear lamins (type V intermediate filaments) form the nuclear lamina on the inner face of the nuclear envelope, maintaining nuclear shape, anchoring peripheral chromatin, and organizing nuclear pores."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "Hyperphosphorylation of the microtubule-associated protein tau causes it to dissociate from axonal microtubules and aggregate into neurofibrillary tangles, contributing to neuronal degeneration in which disease?",
+      "options": [
+        "Amyotrophic lateral sclerosis",
+        "Alzheimer's disease",
+        "Duchenne muscular dystrophy",
+        "Marfan syndrome",
+        "Guillain-Barre syndrome"
+      ],
+      "answer": "B",
+      "explanation": "In Alzheimer's disease, hyperphosphorylated tau dissociates from axonal microtubules and self-aggregates into neurofibrillary tangles, destabilizing microtubules and impairing axonal transport."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "Which feature distinguishes intermediate filaments from both actin filaments and microtubules?",
+      "options": [
+        "They are the thickest of the three cytoskeletal filament types",
+        "They require ATP hydrolysis for assembly",
+        "They lack structural polarity and are not tracks for any known motor protein",
+        "They are found only within the nucleus",
+        "They form the mitotic spindle"
+      ],
+      "answer": "C",
+      "explanation": "Unlike actin filaments and microtubules, intermediate filaments have no defined plus/minus polarity, do not require nucleotide hydrolysis for assembly, and are not known to serve as tracks for any dedicated motor protein; their primary role is mechanical support."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "A drug that binds the barbed (plus) end of actin filaments and blocks further polymerization is used experimentally to inhibit cell motility and cytokinesis. This drug class is best exemplified by:",
+      "options": [
+        "Colchicine",
+        "Paclitaxel",
+        "Vincristine",
+        "Cytochalasin",
+        "Botulinum toxin"
+      ],
+      "answer": "D",
+      "explanation": "Cytochalasins bind the barbed (plus) end of actin filaments and block further polymerization, inhibiting actin-dependent processes such as cell motility and cytokinesis; this contrasts with colchicine/vincristine, which target microtubules instead."
+    },
+    {
+      "section": "Cell Motility",
+      "stem": "During cell migration, thin, finger-like actin-bundled projections extending from the leading edge, distinct from the broad lamellipodium, serve mainly as:",
+      "options": [
+        "Contractile elements for cytokinesis",
+        "Structures for chromosome segregation",
+        "Sites of DNA replication",
+        "Channels for direct cell-cell communication",
+        "Environmental sensors (filopodia)"
+      ],
+      "answer": "E",
+      "explanation": "Filopodia are thin, actin-bundled projections that extend from the leading edge of a migrating cell and function primarily as sensory structures probing the surrounding environment, complementing the lamellipodium's role in driving forward movement."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "A cell that has permanently exited the active cell cycle and will never re-enter, such as a mature neuron or cardiomyocyte, is described as being in which state?",
+      "options": [
+        "Permanent G0",
+        "Reversible G0 (quiescence)",
+        "Prolonged G1",
+        "Extended G2",
+        "Meiotic arrest"
+      ],
+      "answer": "A",
+      "explanation": "Terminally differentiated cells such as neurons, cardiomyocytes, and skeletal muscle fibers enter a permanent (irreversible) G0 state, distinguishing them from stable/quiescent cells (e.g., hepatocytes, fibroblasts) that can reversibly re-enter the cycle when stimulated."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Passage through the G1 restriction point and commitment to S phase requires hyperphosphorylation of the retinoblastoma protein (Rb), releasing active E2F transcription factors. Which cyclin-CDK complex is primarily responsible for this hyperphosphorylation step?",
+      "options": [
+        "Cyclin D-CDK4/6",
+        "Cyclin E-CDK2",
+        "Cyclin A-CDK1",
+        "Cyclin B-CDK1",
+        "Cyclin A-CDK4"
+      ],
+      "answer": "B",
+      "explanation": "Cyclin D-CDK4/6 initiates partial Rb phosphorylation, releasing enough E2F to drive Cyclin E expression; the resulting Cyclin E-CDK2 complex then hyperphosphorylates Rb, fully activating E2F and committing the cell to pass the restriction point into S phase."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Which cyclin-CDK complex is most active during mitosis and is responsible for chromosome condensation and nuclear envelope breakdown at the G2/M transition?",
+      "options": [
+        "Cyclin D-CDK4/6",
+        "Cyclin E-CDK2",
+        "Cyclin B-CDK1",
+        "Cyclin A-CDK2",
+        "Cyclin A-CDK4"
+      ],
+      "answer": "C",
+      "explanation": "Cyclin B-CDK1 (historically called maturation/M-phase promoting factor) drives entry into mitosis, triggering chromosome condensation, nuclear envelope breakdown, and spindle formation."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Detection of DNA double-strand breaks activates the ATM-Chk2 pathway, which halts the cell cycle by ultimately inhibiting which cyclin-CDK complex to block the G1/S transition?",
+      "options": [
+        "Cyclin B-CDK1",
+        "Cyclin A-CDK1",
+        "Cyclin D-CDK6 exclusively",
+        "Cyclin E-CDK2",
+        "Cyclin A-CDK4"
+      ],
+      "answer": "D",
+      "explanation": "The ATM-Chk2 pathway leads to Cdc25A degradation and p53-mediated p21 induction, both of which inhibit Cyclin E-CDK2, blocking the G1/S transition and producing G1 arrest."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "The spindle assembly checkpoint (SAC) delays anaphase onset until every kinetochore is properly attached to spindle microtubules. Mechanistically, the SAC acts by:",
+      "options": [
+        "Directly degrading cohesin at unattached kinetochores",
+        "Promoting premature activation of separase",
+        "Blocking DNA replication origins",
+        "Stabilizing cyclin B indefinitely to prevent mitotic exit",
+        "Inhibiting APC/C-Cdc20 until all kinetochores are attached"
+      ],
+      "answer": "E",
+      "explanation": "Unattached kinetochores generate a 'wait' signal (via Mad2 and BubR1) that inhibits APC/C-Cdc20, preventing ubiquitination of securin and cyclin B and thereby blocking anaphase onset until all chromosomes achieve proper bipolar spindle attachment."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Once the spindle assembly checkpoint is satisfied, APC/C-Cdc20 ubiquitinates securin, targeting it for degradation. This directly frees which enzyme to cleave cohesin and allow sister chromatid separation?",
+      "options": [
+        "Separase",
+        "Cyclin B",
+        "CDK1",
+        "Cdc25",
+        "Chk1"
+      ],
+      "answer": "A",
+      "explanation": "Securin normally holds separase in an inactive state; its degradation by APC/C-Cdc20 releases active separase, which cleaves the cohesin complex holding sister chromatids together, permitting their separation at anaphase."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Final abscission, the physical separation of two daughter cells at the very end of cytokinesis, is mediated primarily by:",
+      "options": [
+        "The actomyosin contractile ring alone",
+        "The ESCRT-III membrane-scission machinery",
+        "APC/C-Cdc20",
+        "The spindle assembly checkpoint",
+        "Cohesin cleavage by separase"
+      ],
+      "answer": "B",
+      "explanation": "While the actomyosin contractile ring forms the cleavage furrow, final membrane scission that completely separates the two daughter cells at the midbody is carried out by the ESCRT-III complex."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Which statement about meiosis I versus meiosis II is correct?",
+      "options": [
+        "Sister chromatids separate during meiosis I",
+        "DNA replication occurs before both meiosis I and meiosis II",
+        "Crossing over between homologous chromosomes occurs in meiosis I but not meiosis II",
+        "Meiosis II produces diploid daughter cells",
+        "Homologous chromosomes pair during meiosis II"
+      ],
+      "answer": "C",
+      "explanation": "Crossing over between non-sister chromatids of homologous chromosomes occurs during prophase I of meiosis I, contributing to genetic diversity; meiosis II instead resembles mitosis, separating sister chromatids without an intervening round of DNA replication."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "A tumor cell line carries a mutant p53 that co-assembles with wild-type p53 subunits into mixed tetramers with reduced transactivation activity. This mechanism of oncogenic mutant p53 action is termed:",
+      "options": [
+        "Loss of function only",
+        "Haploinsufficiency",
+        "Gain of function exclusively",
+        "Dominant negative effect",
+        "Contact inhibition"
+      ],
+      "answer": "D",
+      "explanation": "Because p53 functions as a tetramer, a mutant p53 subunit can co-assemble with wild-type subunits to form mixed tetramers that are less transcriptionally active than wild-type alone, a dominant-negative effect distinct from simple loss of function or gain-of-function mechanisms."
+    },
+    {
+      "section": "Cell Cycle",
+      "stem": "Nondisjunction during meiosis producing a fetus with karyotype 47,+21 is associated with which clinical syndrome?",
+      "options": [
+        "Turner syndrome",
+        "Klinefelter syndrome",
+        "Edwards syndrome",
+        "Patau syndrome",
+        "Down syndrome"
+      ],
+      "answer": "E",
+      "explanation": "Trisomy 21 (karyotype 47,+21), resulting from meiotic nondisjunction, causes Down syndrome, characterized by intellectual disability, a flat facial profile, epicanthal folds, single palmar crease, and congenital heart defects such as AV canal defects."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "In a healthy 70-kg adult, approximately what fraction of body weight is total body water, and how is it distributed between the intracellular and extracellular compartments?",
+      "options": [
+        "60% of body weight; about two-thirds intracellular and one-third extracellular",
+        "40% of body weight; roughly equally split between ICF and ECF",
+        "60% of body weight; about two-thirds extracellular and one-third intracellular",
+        "80% of body weight; almost entirely intracellular",
+        "50% of body weight; almost entirely extracellular"
+      ],
+      "answer": "A",
+      "explanation": "Total body water is approximately 60% of body weight, distributed roughly as 40% of body weight (about two-thirds of TBW) intracellular and 20% of body weight (about one-third of TBW) extracellular."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "Within the extracellular fluid compartment, interstitial fluid and plasma are separated by the capillary wall. Approximately what fraction of extracellular fluid volume is plasma?",
+      "options": [
+        "1/2",
+        "1/4",
+        "3/4",
+        "Nearly all of it",
+        "Essentially none of it"
+      ],
+      "answer": "B",
+      "explanation": "Of the total extracellular fluid volume, approximately one-quarter is plasma (the intravascular component) and three-quarters is interstitial fluid, with the capillary wall separating the two."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "Which ion is the dominant cation of the extracellular fluid, while a different ion dominates as the major intracellular cation?",
+      "options": [
+        "Potassium is dominant in the ECF; sodium is dominant in the ICF",
+        "Calcium is dominant in both compartments",
+        "Sodium is dominant in the ECF; potassium is dominant in the ICF",
+        "Chloride is the dominant cation in the ECF",
+        "Sodium and potassium concentrations are approximately equal in both compartments"
+      ],
+      "answer": "C",
+      "explanation": "Sodium is the major extracellular cation with a low intracellular concentration, while potassium is the major intracellular cation with a much lower extracellular concentration; these gradients are maintained by the Na+/K+-ATPase."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "A rise in plasma osmolality above the hypothalamic set point activates osmoreceptors, producing which combined neural and hormonal response to restore osmolality toward normal?",
+      "options": [
+        "Suppression of thirst and suppression of ADH release",
+        "Stimulation of thirst only, with no change in ADH",
+        "Suppression of thirst but increased ADH release",
+        "Stimulation of thirst and increased ADH (antidiuretic hormone) release",
+        "Increased urine output through ADH-independent mechanisms only"
+      ],
+      "answer": "D",
+      "explanation": "Hypothalamic osmoreceptors detect increased plasma osmolality and drive both the sensation of thirst and increased ADH secretion from the posterior pituitary, together acting to dilute the plasma and restore osmolality toward the set point."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "A 60-kg healthy man drinks 1 liter of isotonic (0.9%) normal saline. Assuming no urinary losses during equilibration, which best describes the resulting change in fluid compartments?",
+      "options": [
+        "The fluid distributes primarily into the ICF, expanding intracellular volume",
+        "The fluid is immediately excreted with no compartment change",
+        "The fluid distributes evenly, expanding ICF and ECF by equal absolute volumes",
+        "The fluid causes cell shrinkage due to osmotic water loss from cells",
+        "The fluid remains almost entirely within the ECF, with little change in ICF volume"
+      ],
+      "answer": "E",
+      "explanation": "Because isotonic saline has the same osmolality as plasma, it does not create an osmotic gradient across the cell membrane; the infused fluid therefore stays within the extracellular compartment, with essentially no net water shift into or out of cells."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "Infusion of a hypotonic solution such as half-normal (0.45%) saline is expected to produce which combined effect on the ECF and ICF compartments?",
+      "options": [
+        "Increase in both ECF and ICF volume",
+        "Increase in ECF volume only, with no change in ICF",
+        "Decrease in both ECF and ICF volume",
+        "Increase in ECF volume with a decrease in ICF volume",
+        "No net change in either compartment"
+      ],
+      "answer": "A",
+      "explanation": "Half-normal saline is hypotonic; it initially expands the ECF, and because it lowers ECF osmolality relative to the ICF, water then moves osmotically into cells, so both the ECF and ICF volumes increase."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "Given capillary hydrostatic pressure of 40 mmHg, capillary oncotic pressure of 25 mmHg, interstitial hydrostatic pressure of 3 mmHg, and interstitial oncotic pressure of 3 mmHg, what is the net Starling force and its direction?",
+      "options": [
+        "Net pressure of 15 mmHg favoring absorption into the capillary",
+        "Net pressure of 15 mmHg favoring filtration out of the capillary",
+        "Net pressure of 5 mmHg favoring filtration out of the capillary",
+        "Net pressure of 0 mmHg, no net fluid movement",
+        "Net pressure of 25 mmHg favoring absorption into the capillary"
+      ],
+      "answer": "B",
+      "explanation": "Net filtration pressure = (capillary hydrostatic + interstitial oncotic) - (interstitial hydrostatic + capillary oncotic) = (40+3) - (3+25) = 15 mmHg, favoring net filtration of fluid out of the capillary into the interstitium."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "Which of the following correctly breaks a positive-feedback loop, unlike the escalating nature of the loop itself?",
+      "options": [
+        "Cervical stretch during labor continuing to release more oxytocin",
+        "Platelet aggregation continuing to recruit more platelets",
+        "Delivery of the baby, removing the stimulus for further cervical stretch",
+        "Continued LH surge driving further LH release during ovulation",
+        "Continued milk removal driving further prolactin release during lactation"
+      ],
+      "answer": "C",
+      "explanation": "Positive feedback loops are self-amplifying and require an external event to break the cycle. In labor, delivery of the baby removes the cervical stretch stimulus driving oxytocin release, terminating the loop; the other options describe the self-reinforcing loops themselves."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "Which of the following is the single largest daily route of water loss from the body under normal conditions?",
+      "options": [
+        "Feces",
+        "Expired air",
+        "Cutaneous (skin) transpiration",
+        "Urine",
+        "Sweat"
+      ],
+      "answer": "D",
+      "explanation": "Under typical steady-state conditions, urine output constitutes the largest single route of daily water loss, substantially exceeding losses from feces, expired air, cutaneous transpiration, or sweat."
+    },
+    {
+      "section": "General Physiology",
+      "stem": "The hypothalamic osmoreceptor system that regulates thirst and ADH release is best described as monitoring which controlled variable, with a set point of approximately 290 mOsm/kg H2O?",
+      "options": [
+        "Blood volume directly",
+        "Blood pressure directly",
+        "Plasma glucose concentration",
+        "Plasma sodium concentration measured independently of osmolality",
+        "Body fluid (plasma) osmolality"
+      ],
+      "answer": "E",
+      "explanation": "Hypothalamic osmoreceptors primarily sense body fluid (plasma) osmolality, with a normal set point around 290 mOsm/kg H2O; deviations from this set point drive compensatory thirst and ADH responses to restore osmolality toward normal."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "According to Fick's law of diffusion, the rate of simple diffusion across a membrane is directly proportional to all of the following EXCEPT:",
+      "options": [
+        "The thickness of the membrane",
+        "The concentration gradient across the membrane",
+        "The surface area of the membrane",
+        "The lipid solubility of the diffusing substance",
+        "The permeability coefficient of the membrane for that substance"
+      ],
+      "answer": "A",
+      "explanation": "Diffusion rate is directly proportional to concentration gradient, surface area, lipid solubility, and permeability coefficient, but is inversely proportional to membrane thickness; doubling thickness halves the rate rather than increasing it."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "If the thickness of a cell membrane were experimentally halved while all other factors remained constant, what would happen to its permeability to a lipid-soluble solute, according to Fick's law?",
+      "options": [
+        "Permeability would be halved",
+        "Permeability would double",
+        "Permeability would be unchanged",
+        "Permeability would quadruple",
+        "Permeability would drop to zero"
+      ],
+      "answer": "B",
+      "explanation": "Permeability is inversely proportional to membrane thickness in Fick's law; halving the thickness doubles the permeability, all else being equal."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Osmosis is best defined as:",
+      "options": [
+        "The active, ATP-dependent movement of water against its concentration gradient",
+        "The bulk flow of solutes and water together driven by hydrostatic pressure alone",
+        "The passive movement of water across a selectively permeable membrane, from a region of lower solute concentration to one of higher solute concentration",
+        "The carrier-mediated transport of water molecules through specific water pumps",
+        "The movement of solutes down their electrochemical gradient"
+      ],
+      "answer": "C",
+      "explanation": "Osmosis is the passive diffusion of water across a selectively permeable membrane, moving from a region of lower solute (higher water) concentration toward a region of higher solute (lower water) concentration, requiring no direct ATP input."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "A ligand-gated ion channel that opens in response to acetylcholine binding at the neuromuscular junction is best classified as which type of gated channel?",
+      "options": [
+        "Voltage-gated channel",
+        "Phosphorylation-gated channel",
+        "Stretch- or pressure-gated channel",
+        "Ligand-gated (ionotropic) channel",
+        "Aquaporin channel"
+      ],
+      "answer": "D",
+      "explanation": "The nicotinic acetylcholine receptor-channel opens directly upon binding its ligand, making it a ligand-gated (ionotropic) channel, distinct from voltage-gated channels or mechanically gated channels."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "The Na+/K+-ATPase pump is classified as primary active transport because it:",
+      "options": [
+        "Uses the sodium gradient generated by another pump as its energy source",
+        "Moves both ions down their concentration gradients simultaneously",
+        "Requires no energy input at all",
+        "Transports only a single ion species per cycle",
+        "Directly hydrolyzes ATP to move ions against their electrochemical gradients"
+      ],
+      "answer": "E",
+      "explanation": "Primary active transport, by definition, uses direct hydrolysis of ATP as its energy source; the Na+/K+-ATPase hydrolyzes ATP to pump 3 Na+ out and 2 K+ into the cell, both against their respective electrochemical gradients."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Ouabain is a specific inhibitor of the Na+/K+-ATPase. Blocking this pump would most directly impair which secondary active transport process?",
+      "options": [
+        "Na+-glucose cotransport (SGLT) in the renal proximal tubule",
+        "Simple diffusion of oxygen into red blood cells",
+        "Facilitated diffusion of glucose via GLUT1",
+        "Osmotic water movement through aquaporins",
+        "Voltage-gated Na+ channel opening during an action potential"
+      ],
+      "answer": "A",
+      "explanation": "Secondary active transporters like SGLT rely on the steep inward Na+ electrochemical gradient established by the Na+/K+-ATPase. Inhibiting the pump with ouabain dissipates this gradient over time, impairing Na+-coupled glucose cotransport, whereas simple and facilitated diffusion do not depend on it."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "A 50-year-old woman with poorly controlled type 2 diabetes mellitus develops glucosuria despite a normal glomerular filtration rate. This occurs because the elevated filtered glucose load exceeds the transport maximum of which renal transporter?",
+      "options": [
+        "GLUT4",
+        "SGLT1/SGLT2",
+        "Na+/K+-ATPase",
+        "Aquaporin-2",
+        "Na+/H+ exchanger (NHE)"
+      ],
+      "answer": "B",
+      "explanation": "SGLT1/SGLT2 in the renal proximal tubule reabsorb filtered glucose via Na+-coupled secondary active transport. When filtered glucose exceeds their transport maximum, as in poorly controlled diabetes, the excess is not reabsorbed and appears in the urine as glucosuria."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Which transport process do glucose entry into red blood cells (via GLUT1) and oxygen entry into red blood cells share in common?",
+      "options": [
+        "Both require a membrane carrier protein",
+        "Both are examples of primary active transport",
+        "Both move the solute down its concentration gradient without direct ATP use",
+        "Both are inhibited by ouabain",
+        "Both require cotransport with Na+"
+      ],
+      "answer": "C",
+      "explanation": "Oxygen crosses by simple diffusion and glucose by carrier-mediated facilitated diffusion, but both move their solute passively down its concentration gradient without directly consuming ATP; they differ in that only glucose transport requires a specific carrier protein."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "The gastric H+/K+-ATPase in parietal cells is the target of proton pump inhibitor drugs. Which statement correctly describes this transporter?",
+      "options": [
+        "It moves H+ into the parietal cell against its concentration gradient",
+        "It is a form of facilitated diffusion that requires no energy input",
+        "It cotransports H+ with Na+ down the Na+ gradient",
+        "It uses ATP hydrolysis to pump H+ out of the parietal cell into the gastric lumen against a steep concentration gradient",
+        "It is inhibited primarily by ouabain"
+      ],
+      "answer": "D",
+      "explanation": "The gastric H+/K+-ATPase is a primary active transporter that hydrolyzes ATP to pump H+ out of the parietal cell into the gastric lumen against a very steep concentration gradient, generating highly acidic gastric contents; proton pump inhibitors block this enzyme directly."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "At the resting membrane potential of a typical neuron (approximately -70 mV), which statement correctly describes the net electrochemical driving forces on Na+ and K+?",
+      "options": [
+        "Both Na+ and K+ experience zero net driving force at rest",
+        "There is a large outward driving force on Na+ and a small inward driving force on K+",
+        "Both Na+ and K+ experience large inward driving forces",
+        "Both Na+ and K+ experience large outward driving forces",
+        "There is a large inward driving force on Na+ and a small outward driving force on K+"
+      ],
+      "answer": "E",
+      "explanation": "At rest, Vm is far from E-Na (about +60 mV), creating a large inward driving force on Na+; Vm is close to but slightly less negative than E-K (about -90 mV), creating only a small outward driving force on K+, consistent with high resting K+ permeability."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "During the rapid depolarization (upstroke) phase of a neuronal action potential, which change in ion permeability is primarily responsible?",
+      "options": [
+        "A sudden, large increase in Na+ permeability via voltage-gated Na+ channel opening",
+        "A sudden, large increase in K+ permeability",
+        "A sudden decrease in Cl- permeability",
+        "Closure of voltage-gated Ca2+ channels",
+        "Activation of the Na+/K+-ATPase"
+      ],
+      "answer": "A",
+      "explanation": "The upstroke of the action potential is caused by rapid opening of voltage-gated Na+ channels, producing a large transient increase in Na+ permeability that drives the membrane potential rapidly toward E-Na."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Repolarization of the action potential back toward the resting membrane potential is primarily driven by:",
+      "options": [
+        "Continued Na+ influx through voltage-gated channels",
+        "Inactivation of voltage-gated Na+ channels combined with delayed opening of voltage-gated K+ channels",
+        "Activation of ligand-gated Cl- channels",
+        "A sudden decrease in extracellular Na+ concentration",
+        "Direct action of the Na+/K+-ATPase pump"
+      ],
+      "answer": "B",
+      "explanation": "Repolarization results from voltage-gated Na+ channel inactivation, terminating Na+ influx, together with delayed opening of voltage-gated K+ channels, which increases K+ efflux and drives the membrane potential back toward rest."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Using the Nernst equation, calculate the equilibrium potential for Cl- given an extracellular concentration of 125 mM and an intracellular concentration of 9 mM (use the standard 61 mV constant).",
+      "options": [
+        "approximately +70 mV",
+        "approximately +61 mV",
+        "approximately -70 mV",
+        "approximately -61 mV",
+        "approximately 0 mV"
+      ],
+      "answer": "C",
+      "explanation": "For a monovalent anion, E(Cl-) = -61 log([Cl-]out/[Cl-]in) = -61 log(125/9), which is approximately -70 mV, consistent with Cl- being concentrated outside the cell."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Using the Goldman-Hodgkin-Katz (GHK) equation, calculate the membrane potential given: intracellular Na+ = 5 mM, extracellular Na+ = 145 mM, intracellular K+ = 150 mM, extracellular K+ = 5 mM, and a relative K+ permeability 10 times that of Na+.",
+      "options": [
+        "approximately +54 mV",
+        "approximately -90 mV",
+        "approximately +90 mV",
+        "approximately -54 mV",
+        "approximately -20 mV"
+      ],
+      "answer": "D",
+      "explanation": "Using Vm = 61 log[(PK[K]out + PNa[Na]out)/(PK[K]in + PNa[Na]in)] with PK=10, PNa=1: Vm = 61 log[(10x5 + 1x145)/(10x150 + 1x5)] = 61 log(195/1505), which is approximately -54 mV, close to E-K because K+ permeability dominates."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "A patient with type 2 diabetes mellitus accidentally receives an insulin overdose, resulting in severe hypoglycemia. As insulin drives potassium into cells, the resulting fall in extracellular K+ concentration would be expected to have which effect on resting neuromuscular membrane potential?",
+      "options": [
+        "Depolarization (membrane potential becomes less negative)",
+        "No change, since K+ does not affect resting potential",
+        "The membrane potential would reverse polarity entirely",
+        "Only the action potential threshold would change, not the resting potential",
+        "Hyperpolarization (membrane potential becomes more negative)"
+      ],
+      "answer": "E",
+      "explanation": "Insulin stimulates cellular K+ uptake, lowering extracellular K+ (hypokalemia). Since resting membrane potential is heavily influenced by the K+ gradient, a larger outward K+ gradient hyperpolarizes the membrane, reducing neuromuscular excitability and producing weakness."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "A patient with poorly controlled type 2 diabetes and insulin deficiency would be expected to show which resting electrolyte pattern, reflecting reduced insulin-driven cellular potassium uptake?",
+      "options": [
+        "Hyperkalemia",
+        "Hypokalemia",
+        "Hyponatremia",
+        "Hypernatremia",
+        "Hypocalcemia"
+      ],
+      "answer": "A",
+      "explanation": "Insulin normally promotes movement of K+ into cells via stimulation of the Na+/K+-ATPase; in an insulin-deficient or insulin-resistant state, this intracellular shift is impaired, favoring relative hyperkalemia."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Which combination of pressures would produce a net movement of fluid INTO the capillary (net absorption) rather than out of it?",
+      "options": [
+        "Capillary hydrostatic pressure much higher than capillary oncotic pressure, with interstitial pressures negligible",
+        "Capillary oncotic pressure greater than the sum of capillary hydrostatic and interstitial oncotic pressures",
+        "Equal capillary and interstitial hydrostatic pressures with capillary oncotic pressure lower than interstitial oncotic pressure",
+        "Interstitial hydrostatic pressure of zero with high capillary hydrostatic pressure",
+        "Capillary oncotic pressure equal to zero"
+      ],
+      "answer": "B",
+      "explanation": "Net absorption into the capillary occurs when the forces favoring absorption (capillary oncotic pressure plus interstitial hydrostatic pressure) exceed the forces favoring filtration (capillary hydrostatic pressure plus interstitial oncotic pressure)."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Which of the following transport processes is an example of secondary active transport, rather than primary active transport or simple/facilitated diffusion?",
+      "options": [
+        "Na+/K+-ATPase pumping Na+ out of the cell",
+        "Gastric H+/K+-ATPase pumping H+ into the gastric lumen",
+        "Na+-glucose cotransport (SGLT) in the intestinal epithelium",
+        "Simple diffusion of CO2 across the plasma membrane",
+        "Facilitated diffusion of glucose via GLUT1"
+      ],
+      "answer": "C",
+      "explanation": "SGLT couples the energetically favorable downhill movement of Na+, established by the Na+/K+-ATPase, to the uphill movement of glucose, making it secondary active transport; the Na+/K+-ATPase and H+/K+-ATPase are themselves primary active transporters."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "The antiporter NCX (Na+/Ca2+ exchanger) in cardiac muscle cells moves Ca2+ out of the cell in exchange for Na+ entry. This exchanger is best classified as:",
+      "options": [
+        "Primary active transport",
+        "Simple diffusion",
+        "Facilitated diffusion",
+        "Secondary active transport (countertransport)",
+        "Osmosis"
+      ],
+      "answer": "D",
+      "explanation": "NCX uses the inward Na+ electrochemical gradient generated by the Na+/K+-ATPase to drive Ca2+ extrusion against its own gradient, in an antiport arrangement; because it depends indirectly on ATP-driven Na+ pumping rather than hydrolyzing ATP itself, it is secondary active transport."
+    },
+    {
+      "section": "Membrane Physiology",
+      "stem": "Immediately following the peak of the action potential, the membrane potential briefly becomes more negative than the normal resting potential before returning to baseline. This after-hyperpolarization occurs mainly because:",
+      "options": [
+        "Voltage-gated Na+ channels remain open longer than usual",
+        "Extracellular Ca2+ suddenly rushes into the cell",
+        "The Na+/K+-ATPase pump suddenly reverses direction",
+        "Chloride channels open maximally at this point",
+        "Voltage-gated K+ channels remain open slightly longer than needed to reach resting potential, causing brief excess K+ efflux"
+      ],
+      "answer": "E",
+      "explanation": "Voltage-gated K+ channels close relatively slowly; their continued opening slightly beyond the point where Vm returns to rest causes transient excess K+ efflux, driving the membrane potential briefly closer to E-K than the normal resting potential."
+    }
+  ]
+}
