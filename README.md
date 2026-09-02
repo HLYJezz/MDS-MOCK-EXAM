@@ -353,6 +353,19 @@ keeps the emoji, so a new one is never iconless.
 The college mark (`assets/img/`) is in the header, the footer and the browser tab.
 The footer says in as many words that this is a student's unofficial study site.
 
+## The cat
+
+Sit on one question without answering for 75 seconds and a small cat climbs into
+the corner with a line of encouragement; 90 seconds after that it comes back once
+more to point out that flagging a question and coming back is allowed. Tapping it
+sends it away for that question.
+
+It never says anything about the question itself. Anything it knew would be a hint,
+and a mock exam that helps you is not worth sitting — `assets/js/companion.js` has
+no access to the answers and its lines are a fixed list. It also stops counting when
+the tab is in the background, goes away the moment you answer or move on, and takes
+no clicks except its own, so it can never swallow a tap meant for an answer.
+
 ## Project layout
 
 ```
@@ -366,6 +379,7 @@ assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     subjects by year, resource links, attempt history
 assets/js/subject.js  the paper cards for one subject
 assets/js/icons.js    the drawn icons the cards use
+assets/js/companion.js the cat that turns up on a long question
 assets/fonts/         Inter, self-hosted (SIL OFL)
 assets/img/           the college logo and the tab icon
 assets/js/exam.js     timer, paper, navigator, marking, review

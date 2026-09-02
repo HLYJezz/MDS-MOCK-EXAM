@@ -238,6 +238,9 @@
   function renderQuestion() {
     var qs = questionsInOrder();
     var q = qs[state.current];
+    /* The companion's clock belongs to the question on screen, so it starts
+       again here and whenever an answer is given. */
+    if (window.Companion) Companion.reset(exam.id + ':' + q.id);
     var card = $('questionCard');
     card.innerHTML = '';
 
@@ -335,6 +338,7 @@
           label.classList.add('selected');   // plain highlight until it is marked
         }
         input.addEventListener('change', function () {
+          if (window.Companion) Companion.reset(exam.id + ':' + q.id);
           if (multi) {
             var list = Array.isArray(state.answers[q.id]) ? state.answers[q.id].slice() : [];
             var at = list.indexOf(opt.id);
@@ -871,6 +875,7 @@
 
   /* ---------- screens ---------- */
   function showScreen(id) {
+    if (window.Companion && id !== 'screenExam') Companion.stop();
     ['screenIntro', 'screenExam', 'screenResult'].forEach(function (s) {
       $(s).classList.toggle('hidden', s !== id);
     });
