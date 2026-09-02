@@ -416,6 +416,72 @@
     showScreen('screenResult');
   }
 
+  /* ---------- results: how each lecture went ----------
+     A total tells you whether you passed; it does not tell you what to revise.
+     Grouping the same answers by the lecture they came from does, so the
+     breakdown is listed weakest first — the top of the list is tonight's work. */
+  function byLecture(qs) {
+    var order = (exam.sections || []).map(function (s) { return s.id; });
+    var rows = [];
+    qs.forEach(function (q) {
+      if (!q.section) return;
+      var row = rows.filter(function (x) { return x.id === q.section; })[0];
+      if (!row) rows.push(row = { id: q.section, title: sectionTitle(q.section), total: 0, correct: 0 });
+      row.total++;
+      if (isCorrect(q)) row.correct++;
+    });
+    rows.forEach(function (row) { row.percent = Math.round(row.correct / row.total * 100); });
+    /* Weakest first; a tie is settled by the bigger lecture, then by the order
+       the paper itself lists them, so the ranking never wobbles between runs. */
+    rows.sort(function (a, b) {
+      return (a.percent - b.percent) || (b.total - a.total) ||
+             (order.indexOf(a.id) - order.indexOf(b.id));
+    });
+    return rows;
+  }
+
+  function lectureBreakdown(r) {
+    var rows = byLecture(r.qs);
+    if (rows.length < 2) return null;      // nothing to compare against
+
+    var wrap = el('section', 'breakdown');
+    var head = el('div', 'breakdown-head');
+    head.appendChild(el('h2', null, 'How each lecture went'));
+
+    var weak = rows.filter(function (x) { return x.percent < exam.passMark; });
+    head.appendChild(el('p', 'muted small', weak.length
+      ? 'Weakest first. ' + weak.length + ' of ' + rows.length +
+        (weak.length === 1 ? ' lecture is' : ' lectures are') +
+        ' below the ' + exam.passMark + '% pass mark — start there.'
+      : 'Weakest first. Every lecture is at or above the ' + exam.passMark + '% pass mark.'));
+    wrap.appendChild(head);
+
+    var list = el('div', 'breakdown-list');
+    rows.forEach(function (row) {
+      var band = row.percent < exam.passMark ? 'bad'
+               : row.percent < 80 ? 'warn' : 'good';
+      var item = el('div', 'breakdown-row ' + band);
+
+      var top = el('div', 'breakdown-label');
+      var name = el('span', 'breakdown-name', row.title);
+      name.title = row.title;                 // the full title, which the row truncates
+      top.appendChild(name);
+      top.appendChild(el('span', 'breakdown-score',
+        row.correct + '/' + row.total + ' · ' + row.percent + '%'));
+      item.appendChild(top);
+
+      var bar = el('div', 'breakdown-bar');
+      var fill = el('div', 'breakdown-fill');
+      fill.style.width = Math.max(row.percent, 2) + '%';   // a sliver, so 0% still reads as a bar
+      bar.appendChild(fill);
+      item.appendChild(bar);
+
+      list.appendChild(item);
+    });
+    wrap.appendChild(list);
+    return wrap;
+  }
+
   function renderResult(r) {
     var card = $('resultCard');
     card.innerHTML = '';
@@ -456,6 +522,8 @@
 
     var list = $('reviewList');
     list.innerHTML = '';
+    var breakdown = lectureBreakdown(r);
+    if (breakdown) list.appendChild(breakdown);
     list.appendChild(el('h2', null, 'Answer review'));
     r.qs.forEach(function (q, i) { list.appendChild(reviewItem(q, i)); });
   }

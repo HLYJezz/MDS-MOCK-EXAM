@@ -236,6 +236,40 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .credit { color: var(--muted); white-space: nowrap; }
 .credit strong { color: var(--text); font-weight: 650; }
 
+/* ---------- results: how each lecture went ---------- */
+.breakdown {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 1.25rem; margin-bottom: 1.5rem;
+  /* The review list is a grid, and a grid item will not shrink below its own
+     content unless told to. Without this the longest lecture name — which does
+     not wrap — widens the whole page on a phone. */
+  min-width: 0;
+}
+.breakdown-head h2 { margin: 0 0 .25rem; font-size: 1.05rem; }
+.breakdown-head p { margin: 0 0 1rem; }
+.breakdown-list { display: grid; gap: .8rem; }
+.breakdown-list { min-width: 0; }
+.breakdown-row { min-width: 0; }
+.breakdown-label {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: .8rem; margin-bottom: .3rem; min-width: 0;
+}
+.breakdown-name {
+  font-size: .92rem; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.breakdown-score { font-size: .85rem; font-weight: 650; white-space: nowrap; }
+.breakdown-bar {
+  height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden;
+}
+.breakdown-fill { height: 100%; border-radius: 999px; }
+.breakdown-row.bad  .breakdown-fill  { background: var(--bad); }
+.breakdown-row.warn .breakdown-fill  { background: var(--warn); }
+.breakdown-row.good .breakdown-fill  { background: var(--good); }
+.breakdown-row.bad  .breakdown-score { color: var(--bad); }
+.breakdown-row.warn .breakdown-score { color: var(--warn); }
+.breakdown-row.good .breakdown-score { color: var(--good); }
+
 /* ---------- exam chrome ---------- */
 .exam-body { padding-top: 0; }
 .exam-header { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }

@@ -86,7 +86,8 @@ recorded as illegible (105 and 238) are answered in the current edition of that 
 - One question at a time, with a navigator showing answered and flagged questions
 - Flag for review, jump around freely, arrow keys to move between questions
 - Answers auto-save — closing the tab does not lose the attempt, reopening offers to resume
-- Score against the pass mark, then a per-question review with the source explanations
+- Score against the pass mark, a per-lecture breakdown of where the marks went, then a
+  per-question review with the source explanations
 - Report a question that looks wrong, from the paper or from the review
 - Attempt history and best score per paper, stored in the browser only
 - Light and dark theme, works on phones
