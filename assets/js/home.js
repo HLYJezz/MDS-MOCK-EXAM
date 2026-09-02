@@ -47,7 +47,7 @@
     var head = el('div', 'card-head');
     /* The icon sits in a disc of the course's own colour, which is most of what
        makes one subject look different from the next at a glance. */
-    head.appendChild(el('span', 'icon course-icon', course.icon || '📚'));
+    head.appendChild(MockExam.setIcon(el('span', 'icon course-icon'), course.icon || '📚'));
     var titles = el('div', 'card-titles');
     titles.appendChild(el('div', 'name', course.title));
     var parts = [tally(papers)];

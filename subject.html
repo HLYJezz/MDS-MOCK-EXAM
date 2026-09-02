@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Papers · MDS Mock Exam</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
 /* Set the theme before first paint so dark-mode users never see a white flash. */
@@ -19,8 +19,13 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark">MDS</span>
-      <span class="brand-text">Mock Exam</span>
+      <img class="brand-logo" src="assets/img/medrsu-logo@64.png"
+           srcset="assets/img/medrsu-logo@64.png 1x, assets/img/medrsu-logo.png 2x"
+           alt="" width="45" height="64">
+      <span class="brand-text">
+        <span class="brand-name">Mock Exam</span>
+        <span class="brand-sub">MEDRSU</span>
+      </span>
     </a>
     <button id="themeToggle" class="ghost-btn" type="button" title="Toggle theme">◐</button>
   </div>
@@ -49,7 +54,13 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p class="muted small">Practice papers only. Scores are stored on this device and are not sent anywhere.<span id="privacyNote"></span></p>
+    <div class="footer-brand">
+      <img src="assets/img/medrsu-logo@64.png"
+           srcset="assets/img/medrsu-logo@64.png 1x, assets/img/medrsu-logo.png 2x"
+           alt="DMS-MD-RSU" width="45" height="64">
+      <p class="muted small">Practice papers only. Scores are stored on this device and are not sent anywhere.<span id="privacyNote"></span><br>
+        An unofficial study site made by a student — not published by the college.</p>
+    </div>
     <p class="credit small">Made by <strong>Day</strong> · MEDRSU37</p>
   </div>
 </footer>
@@ -57,6 +68,7 @@
 <script src="assets/js/store.js"></script>
 <script src="assets/js/registry.js"></script>
 <script src="assets/js/loader.js"></script>
+<script src="assets/js/icons.js"></script>
 <script src="data/manifest.js"></script>
 <script src="assets/js/feedback.js"></script>
 <script src="assets/js/subject.js"></script>

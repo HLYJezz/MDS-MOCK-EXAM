@@ -337,6 +337,22 @@ registerExam({
 Short answers are matched case-insensitively, ignoring spacing and punctuation, so list
 every wording you will accept.
 
+## Look and feel
+
+The typeface is **Inter**, served from `assets/fonts/` rather than from a font CDN.
+A `<link>` to Google Fonts would have meant every visitor's browser telling Google's
+servers who was reading, which the promise below rules out. Three weights, Latin only,
+about 72 KB — SIL Open Font License, copied into `assets/fonts/Inter-LICENSE.txt`.
+
+Subject and paper icons are drawn in `assets/js/icons.js` as inline SVG rather than
+left as emoji: an emoji is drawn by the operating system, so the same paper looked
+different on every device and its colours ignored the palette. Each icon is stroked in
+`currentColor`, so it takes its subject's colour. A paper whose emoji has no drawing
+keeps the emoji, so a new one is never iconless.
+
+The college mark (`assets/img/`) is in the header, the footer and the browser tab.
+The footer says in as many words that this is a student's unofficial study site.
+
 ## Project layout
 
 ```
@@ -349,6 +365,9 @@ assets/js/registry.js registerExam() and question normalising
 assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     subjects by year, resource links, attempt history
 assets/js/subject.js  the paper cards for one subject
+assets/js/icons.js    the drawn icons the cards use
+assets/fonts/         Inter, self-hosted (SIL OFL)
+assets/img/           the college logo and the tab icon
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
 assets/js/feedback.js     question reports → Google Sheet (off until configured)

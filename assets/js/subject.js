@@ -46,7 +46,7 @@
     if (s.accent) card.style.setProperty('--card-accent', s.accent);
 
     var head = el('div', 'card-head');
-    head.appendChild(el('span', 'icon', s.icon));
+    head.appendChild(MockExam.setIcon(el('span', 'icon paper-icon'), s.icon));
     var titles = el('div', 'card-titles');
     titles.appendChild(el('div', 'name', s.name));
     /* Size and length are what you compare papers by, so they sit under the
@@ -110,7 +110,7 @@
       document.getElementById('courseBanner').style.setProperty('--card-accent', course.accent);
       document.body.style.setProperty('--card-accent', course.accent);
     }
-    document.getElementById('courseIcon').textContent = course.icon || '📚';
+    MockExam.setIcon(document.getElementById('courseIcon'), course.icon || '📚');
     summaryEl.textContent = tally(papers) +
       (course.year ? ' · ' + course.year : '') +
       '. Pick one to sit it under exam conditions.';

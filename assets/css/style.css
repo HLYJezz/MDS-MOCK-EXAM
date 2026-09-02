@@ -1,3 +1,23 @@
+/* ---------- typeface ----------
+   Inter, served from this repo rather than from a font CDN. The site promises
+   it contacts nobody, and a webfont link would quietly break that: every
+   visitor's browser would tell Google's servers who was reading. Three weights,
+   Latin only, about 72 KB in total. SIL Open Font License — see
+   assets/fonts/Inter-LICENSE.txt. font-display: swap so text is readable
+   immediately and simply re-renders when the font lands. */
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+
 /* ---------- design tokens ---------- */
 :root {
   --bg: #f4f6fb;
@@ -42,8 +62,12 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 16px/1.6 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  /* Inter's own spacing, and figures that line up in a column of scores. */
+  letter-spacing: -.006em;
+  font-variant-numeric: tabular-nums;
 }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 .hidden { display: none !important; }
@@ -83,14 +107,21 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 62px; }
 .brand {
-  display: flex; align-items: center; gap: .6rem; font-weight: 700;
+  display: flex; align-items: center; gap: .65rem; font-weight: 700;
   color: inherit; text-decoration: none;      /* it is a link on the subject page */
 }
-.brand-mark {
-  background: var(--accent); color: var(--on-accent, #fff); border-radius: 8px;
-  padding: .22rem .5rem; font-size: .8rem; letter-spacing: .08em;
+/* The mark is finely detailed — rays, a caduceus, lettering — so it needs
+   room to read as anything but a smudge. */
+.brand-logo { height: 42px; width: auto; display: block; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-name { letter-spacing: -.01em; }
+.brand-sub {
+  font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+  color: var(--muted); text-transform: uppercase;
 }
-.brand-text { letter-spacing: -.01em; }
+.footer-brand { display: flex; align-items: flex-start; gap: .9rem; min-width: 0; }
+.footer-brand img { height: 58px; width: auto; flex: none; }
+.footer-brand p { margin: 0; }
 .hero { padding: 2.6rem 0 1.4rem; max-width: 640px; }
 .lede { color: var(--muted); margin: 0; }
 
@@ -116,7 +147,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   border-left: 3px solid var(--card-accent, var(--accent));
 }
 .course-card:hover { transform: translateY(-2px); border-color: var(--card-accent, var(--accent)); }
-.course-card .name { font-size: 1.1rem; font-weight: 650; }
+.course-card .name { font-size: 1.05rem; font-weight: 650; }
 .course-card .sub { margin-top: .15rem; }
 /* An emoji renders differently on every device; a disc of the subject's colour
    around it gives it a consistent size and footing, and carries the colour. */
@@ -207,6 +238,21 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }
 .card-head { display: flex; gap: .7rem; align-items: flex-start; }
+/* Drawn icons take the colour of whatever they sit in, so a paper's icon is
+   its subject's colour without anything being said twice. */
+.icon-svg { width: 100%; height: 100%; display: block; }
+.icon.has-icon { color: var(--card-accent, var(--accent)); }
+.paper-icon.has-icon {
+  flex: none; width: 34px; height: 34px; padding: 5px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 12%, var(--surface));
+}
+.course-icon.has-icon { padding: 11px; }
+.course-hero-icon.has-icon { padding: 13px; }
+.exam-title { display: flex; align-items: center; gap: .45rem; }
+.title-icon { flex: none; width: 20px; height: 20px; }
+.title-icon.has-icon { color: var(--accent); }
 .chip.badge {
   background: var(--card-accent, var(--accent)); color: #fff;
   font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .7rem;

@@ -223,6 +223,17 @@
     return b;
   }
 
+  /* The paper's icon beside its name in the header, drawn the same way as on
+     the cards rather than left as an emoji. */
+  function setTitleIcon(icon, name) {
+    var host = $('examTitle');
+    host.textContent = '';
+    if (window.MockExam && MockExam.setIcon) {
+      host.appendChild(MockExam.setIcon(el('span', 'icon title-icon'), icon));
+    }
+    host.appendChild(el('span', null, name));
+  }
+
   /* ---------- rendering: the paper ---------- */
   function renderQuestion() {
     var qs = questionsInOrder();
@@ -972,7 +983,7 @@
 
     document.title = exam.name + ' · MDS Mock Exam';
     setBackTo(exam.course);
-    $('examTitle').textContent = exam.icon + ' ' + exam.name;
+    setTitleIcon(exam.icon, exam.name);
     $('examSub').textContent = (exam.course ? exam.course + ' · ' : '') +
       exam.questions.length + ' questions';
     $('introTitle').textContent = exam.name;
@@ -1034,7 +1045,7 @@
   var meta = wanted && MockExam.subjectMeta(wanted);
   if (meta) {
     setBackTo(meta.course);
-    $('examTitle').textContent = meta.icon + ' ' + meta.name;
+    setTitleIcon(meta.icon, meta.name);
     $('introTitle').textContent = meta.name;
     $('introDesc').textContent = 'Loading the paper…';
     $('startBtn').disabled = true;
