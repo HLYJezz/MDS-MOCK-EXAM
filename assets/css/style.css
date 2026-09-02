@@ -236,6 +236,25 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .credit { color: var(--muted); white-space: nowrap; }
 .credit strong { color: var(--text); font-weight: 650; }
 
+/* ---------- start screen: which lectures to sit ---------- */
+.lecture-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+}
+.lecture-head h2 { margin: 0; }
+.lecture-options {
+  display: grid; gap: .5rem; margin: .8rem 0 .6rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.lecture-opt {
+  display: flex; align-items: flex-start; gap: .6rem; min-width: 0;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px;
+  padding: .6rem .75rem; cursor: pointer;
+}
+.lecture-opt.selected { border-color: var(--accent); }
+.lecture-opt input { margin: .15rem 0 0; flex: none; accent-color: var(--accent); }
+.lecture-opt-text { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
+.lecture-opt-name { font-size: .9rem; }
+
 /* ---------- results: how each lecture went ---------- */
 .breakdown {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -258,7 +277,14 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   font-size: .92rem; min-width: 0;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.breakdown-score { font-size: .85rem; font-weight: 650; white-space: nowrap; }
+.breakdown-score { font-size: .85rem; font-weight: 650; white-space: nowrap; margin-left: auto; }
+.breakdown-drill {
+  flex: none; border: 1px solid var(--line); background: var(--surface-2);
+  color: var(--muted); border-radius: 999px; padding: .1rem .6rem;
+  font-size: .78rem; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.breakdown-drill:hover { border-color: var(--accent); color: var(--accent); }
+.subset-note { margin: -.4rem 0 .8rem; font-size: .9rem; }
 .breakdown-bar {
   height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden;
 }

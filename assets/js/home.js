@@ -85,7 +85,10 @@
     left.appendChild(el('div', 'muted small',
       when.toLocaleDateString() + ' · ' + when.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) +
       ' · ' + r.correct + '/' + r.totalQuestions + ' correct' +
-      (r.mode === 'practice' ? ' · practice' : '')));
+      (r.mode === 'practice' ? ' · practice' : '') +
+      /* Say when a score was on part of a paper, so it is not read as a
+         score on the whole thing. */
+      (r.subset ? ' · ' + r.subset : '')));
     row.appendChild(left);
     row.appendChild(el('div', 'score ' + (r.passed ? 'pass' : 'fail'), r.percent + '%'));
     return row;

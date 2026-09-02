@@ -61,6 +61,13 @@ since SA1 means Lectures 1–16 in MDS211, 1–9 in BCH212 and 1–5 in MDS210:
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.
 
+A paper does not have to be sat whole. The start screen lists its lectures with a
+checkbox each, so an attempt can be just the lectures you pick; the results offer
+**Retry the N you got wrong**, and every lecture in the breakdown has a **Practise**
+button that sits only that lecture. A partial attempt is kept in the history, labelled
+with what it covered, but never counts as a best score — 100% on twelve questions is
+not 100% on the paper.
+
 Each paper's start screen offers two ways to be marked:
 
 - **Exam** — timed, with the score and the full answer review at the end, like the real
@@ -86,8 +93,9 @@ recorded as illegible (105 and 238) are answered in the current edition of that 
 - One question at a time, with a navigator showing answered and flagged questions
 - Flag for review, jump around freely, arrow keys to move between questions
 - Answers auto-save — closing the tab does not lose the attempt, reopening offers to resume
+- Sit the whole paper, or tick the lectures you want; retry just what you got wrong
 - Score against the pass mark, a per-lecture breakdown of where the marks went, then a
-  per-question review with the source explanations
+  per-question review with the source explanations, each tagged with its lecture
 - Report a question that looks wrong, from the paper or from the review
 - Attempt history and best score per paper, stored in the browser only
 - Light and dark theme, works on phones

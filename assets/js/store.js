@@ -23,9 +23,12 @@
       write('results', all.slice(0, 40));
     },
     clearResults: function () { drop('results'); },
+    /* The best score on the whole paper. Attempts at part of it — one lecture,
+       or a retry of what was got wrong — are kept in the history but left out
+       here, since 100% on twelve questions is not 100% on the paper. */
     bestFor: function (id) {
       return read('results', [])
-        .filter(function (r) { return r.subjectId === id; })
+        .filter(function (r) { return r.subjectId === id && !r.subset; })
         .reduce(function (best, r) { return (!best || r.percent > best.percent) ? r : best; }, null);
     },
     theme: function () { return read('theme', null); },

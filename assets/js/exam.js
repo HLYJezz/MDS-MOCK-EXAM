@@ -76,14 +76,79 @@
     return String(given) === String(q.answer);
   }
 
-  /* ---------- attempt lifecycle ---------- */
-  /* Minutes allowed for this paper at the pace the candidate picked. */
-  function plannedMinutes() {
-    return MockExam.durationMinutes(exam.questions.length, Store.pace());
+  /* ---------- choosing what to sit ----------
+     An attempt does not have to be the whole paper. The lecture picker on the
+     start screen, the "Practise" button on a lecture in the results, and
+     "Retry what you got wrong" all do the same thing: start an attempt from a
+     subset of the paper's questions. Everything after that — the timer, the
+     marking, the breakdown — works off the attempt, not off the paper. */
+  var chosen = null;        // section ids to include, or null for all of them
+
+  /* The paper's sections that actually carry questions.
+
+     Numbered by lecture where every section is — papers list their sections in
+     the order the questions happen to appear, which can run 17, 18, 20, 19, and
+     someone looking for "Lecture 19" should not have to hunt for it. Sections
+     that are not all numbered keep the paper's own order. */
+  function lectures() {
+    var out = [];
+    exam.questions.forEach(function (q) {
+      if (!q.section) return;
+      var found = out.filter(function (s) { return s.id === q.section; })[0];
+      if (!found) out.push(found = { id: q.section, title: sectionTitle(q.section), count: 0 });
+      found.count++;
+    });
+    var numbers = out.map(function (s) {
+      var m = /^Lectures?\s+(\d+)/i.exec(s.title);
+      return m ? parseInt(m[1], 10) : null;
+    });
+    if (numbers.every(function (n) { return n !== null; })) {
+      out = out.map(function (s, i) { return { s: s, n: numbers[i], i: i }; })
+        .sort(function (a, b) { return (a.n - b.n) || (a.i - b.i); })
+        .map(function (x) { return x.s; });
+    }
+    return out;
   }
 
-  function newAttempt() {
-    var idx = exam.questions.map(function (_, i) { return i; });
+  /* Indexes into exam.questions for the chosen lectures (all of them if null). */
+  function indexesFor(sectionIds) {
+    var all = exam.questions.map(function (_, i) { return i; });
+    if (!sectionIds) return all;
+    return all.filter(function (i) {
+      return sectionIds.indexOf(exam.questions[i].section) !== -1;
+    });
+  }
+
+  /* How many questions the next attempt would have, before one exists. */
+  function plannedCount() {
+    return state ? state.order.length : indexesFor(chosen).length;
+  }
+
+  /* Marks available in this attempt — a subset is worth less than the paper. */
+  function attemptMarks() {
+    return questionsInOrder().reduce(function (t, q) { return t + q.marks; }, 0);
+  }
+
+  /* A short description of a partial attempt, for the results and the history. */
+  function subsetLabel(sectionIds) {
+    if (!sectionIds) return null;
+    if (sectionIds.length === 1) return sectionTitle(sectionIds[0]);
+    return sectionIds.length + ' of ' + lectures().length + ' lectures';
+  }
+
+  /* ---------- attempt lifecycle ---------- */
+  /* Minutes allowed at the pace the candidate picked, for however many
+     questions the attempt actually holds. */
+  function plannedMinutes(count) {
+    return MockExam.durationMinutes(count == null ? plannedCount() : count, Store.pace());
+  }
+
+  /* opts: { indexes, label } — used by "retry what you got wrong", which picks
+     its questions directly rather than by lecture. */
+  function newAttempt(opts) {
+    opts = opts || {};
+    var idx = opts.indexes || indexesFor(chosen);
+    var label = opts.label !== undefined ? opts.label : subsetLabel(chosen);
     if (exam.shuffleQuestions) idx = shuffled(idx);
     var optionOrder = {};
     if (exam.shuffleOptions) {
@@ -103,8 +168,11 @@
       current: 0,
       startedAt: Date.now(),
       mode: Store.mode(),
-      endsAt: Store.mode() === 'practice' ? null : Date.now() + plannedMinutes() * 60000,
+      endsAt: Store.mode() === 'practice' ? null : Date.now() + plannedMinutes(idx.length) * 60000,
       secondsPerQuestion: Store.pace(),
+      /* Set when this is part of the paper rather than all of it, so the score
+         is never mistaken for a score on the whole thing. */
+      subset: label || null,
       submitted: false
     };
     save();
@@ -396,7 +464,8 @@
       if (!isAnswered(q)) blank++;
       if (isCorrect(q)) { correct++; marks += q.marks; }
     });
-    var percent = exam.totalMarks ? Math.round(marks / exam.totalMarks * 100) : 0;
+    var available = attemptMarks();
+    var percent = available ? Math.round(marks / available * 100) : 0;
     var passed = percent >= exam.passMark;
     var timeSpent = (state.finishedAt - state.startedAt);
 
@@ -404,7 +473,10 @@
       subjectId: exam.id, subjectName: exam.name, date: state.finishedAt,
       mode: state.mode || 'exam',
       correct: correct, totalQuestions: qs.length, marks: marks,
-      totalMarks: exam.totalMarks, percent: percent, passed: passed,
+      totalMarks: available, percent: percent, passed: passed,
+      /* Scoring 100% on one lecture is not a 100% on the paper, so a partial
+         attempt is kept in the history but never counted as a best score. */
+      subset: state.subset || null,
       timeSpentMs: timeSpent, autoSubmitted: !!auto
     });
     Store.clearProgress(exam.id);
@@ -468,6 +540,17 @@
       top.appendChild(name);
       top.appendChild(el('span', 'breakdown-score',
         row.correct + '/' + row.total + ' · ' + row.percent + '%'));
+      /* The whole point of knowing a lecture is weak is being able to go and
+         work on it, so the row starts that attempt itself. */
+      var drill = el('button', 'breakdown-drill', 'Practise');
+      drill.type = 'button';
+      drill.title = 'Sit only ' + row.title;
+      drill.addEventListener('click', function () {
+        chosen = [row.id];
+        newAttempt();
+        startPaper();
+      });
+      top.appendChild(drill);
       item.appendChild(top);
 
       var bar = el('div', 'breakdown-bar');
@@ -487,6 +570,11 @@
     card.innerHTML = '';
     if (r.auto) card.appendChild(el('p', 'chip resume', 'Time expired — the paper was submitted automatically.'));
     card.appendChild(el('h1', null, exam.name + ' · Results'));
+    if (state.subset) {
+      card.appendChild(el('p', 'muted subset-note',
+        'This was ' + state.subset + ' — ' + r.qs.length + ' of the paper\'s ' +
+        exam.questions.length + ' questions, so it is not counted as a score on the whole paper.'));
+    }
 
     var ring = el('div', 'score-ring');
     ring.style.setProperty('--ring-deg', (r.percent * 3.6) + 'deg');
@@ -494,7 +582,7 @@
     var inner = el('div', 'inner');
     var innerText = el('div');
     innerText.appendChild(el('div', 'pct', r.percent + '%'));
-    innerText.appendChild(el('div', 'of', r.marks + '/' + exam.totalMarks));
+    innerText.appendChild(el('div', 'of', r.marks + '/' + attemptMarks()));
     inner.appendChild(innerText);
     ring.appendChild(inner);
     card.appendChild(ring);
@@ -503,7 +591,7 @@
 
     var stats = el('div', 'result-stats');
     stats.appendChild(el('span', 'chip', r.correct + ' / ' + r.qs.length + ' correct'));
-    stats.appendChild(el('span', 'chip', r.marks + ' / ' + exam.totalMarks + ' marks'));
+    stats.appendChild(el('span', 'chip', r.marks + ' / ' + attemptMarks() + ' marks'));
     stats.appendChild(el('span', 'chip', r.blank + ' left blank'));
     stats.appendChild(el('span', 'chip', 'Time used ' + fmtDuration(r.timeSpent)));
     stats.appendChild(el('span', 'chip', 'Pass mark ' + exam.passMark + '%'));
@@ -511,9 +599,35 @@
     card.appendChild(stats);
 
     var actions = el('div', 'result-actions');
-    var retake = el('button', 'primary-btn', 'Retake this paper');
+
+    /* Redoing only what you got wrong is the point of reading a review, so it
+       is the first thing offered — and it is only offered when there is
+       something to redo. */
+    var missed = r.qs.filter(function (q) { return !isCorrect(q); });
+    if (missed.length) {
+      var again = el('button', 'primary-btn',
+        'Retry the ' + missed.length + ' you got wrong');
+      again.type = 'button';
+      again.addEventListener('click', function () {
+        var ids = missed.map(function (q) { return q.id; });
+        newAttempt({
+          indexes: exam.questions.map(function (_, i) { return i; })
+            .filter(function (i) { return ids.indexOf(exam.questions[i].id) !== -1; }),
+          label: 'the ' + missed.length + ' you got wrong'
+        });
+        startPaper();
+      });
+      actions.appendChild(again);
+    }
+
+    var retake = el('button', missed.length ? 'secondary-btn' : 'primary-btn',
+      state.subset ? 'Sit the whole paper' : 'Retake this paper');
     retake.type = 'button';
-    retake.addEventListener('click', function () { newAttempt(); startPaper(); });
+    retake.addEventListener('click', function () {
+      chosen = null;
+      newAttempt();
+      startPaper();
+    });
     actions.appendChild(retake);
     var home = el('a', 'secondary-btn', backTo.label);
     home.href = backTo.href;
@@ -685,9 +799,58 @@
       });
       box.appendChild(b);
     });
+    var n = plannedCount();
     $('paceSummary').textContent =
-      exam.questions.length + ' questions at ' + currentPaceLabel() + ' each · ' +
+      n + (n === 1 ? ' question at ' : ' questions at ') + currentPaceLabel() + ' each · ' +
       fmtDuration(plannedMinutes() * 60000) + ' in total.';
+  }
+
+  /* The lecture picker on the start screen: tick the lectures you want and the
+     attempt holds only those. Hidden for a paper with nothing to choose
+     between. Not remembered between papers — it is a decision about this
+     sitting, unlike the pace and the marking mode. */
+  function renderLecturePicker(onChange) {
+    var all = lectures();
+    var block = $('lectureBlock');
+    if (all.length < 2) { block.classList.add('hidden'); return; }
+    block.classList.remove('hidden');
+
+    var box = $('lectureOptions');
+    box.innerHTML = '';
+    all.forEach(function (lec) {
+      var on = !chosen || chosen.indexOf(lec.id) !== -1;
+      var label = el('label', 'lecture-opt' + (on ? ' selected' : ''));
+      var input = el('input');
+      input.type = 'checkbox';
+      input.checked = on;
+      input.addEventListener('change', function () {
+        var picked = all.filter(function (l) {
+          var box2 = box.querySelector('input[data-id="' + l.id + '"]');
+          return box2 && box2.checked;
+        }).map(function (l) { return l.id; });
+        /* All of them ticked is the same as no filter at all. */
+        chosen = picked.length === all.length ? null : picked;
+        renderLecturePicker(onChange);
+        onChange();
+      });
+      input.dataset.id = lec.id;
+      label.appendChild(input);
+      var text = el('span', 'lecture-opt-text');
+      text.appendChild(el('span', 'lecture-opt-name', lec.title));
+      text.appendChild(el('span', 'lecture-opt-count muted small',
+        lec.count + (lec.count === 1 ? ' question' : ' questions')));
+      label.appendChild(text);
+      box.appendChild(label);
+    });
+
+    var picked = chosen ? chosen.length : all.length;
+    var n = plannedCount();
+    $('lectureSummary').textContent = n
+      ? picked + ' of ' + all.length + ' lectures · ' + n +
+        (n === 1 ? ' question' : ' questions')
+      : 'No lectures selected — tick at least one to start.';
+    $('lectureAll').textContent = chosen ? 'Select all' : 'Clear all';
+    $('startBtn').disabled = n === 0;
   }
 
   function currentPaceLabel() {
@@ -708,6 +871,8 @@
   }
 
   function startPaper() {
+    $('examSub').textContent = (exam.course ? exam.course + ' · ' : '') +
+      state.order.length + ' questions' + (state.subset ? ' · ' + state.subset : '');
     showScreen('screenExam');
     /* On phones the navigator starts hidden behind the "Questions" button. */
     $('palette').classList.toggle('collapsed', window.innerWidth <= 860);
@@ -816,7 +981,9 @@
     var everyQuestionOneMark = exam.totalMarks === exam.questions.length;
     function renderFacts() {
       var facts = [
-        ['Questions', exam.questions.length],
+        ['Questions', plannedCount() === exam.questions.length
+          ? exam.questions.length
+          : plannedCount() + ' of ' + exam.questions.length],
         ['Time allowed', Store.mode() === 'practice' ? 'Untimed'
                                                      : fmtDuration(plannedMinutes() * 60000)],
         ['Pass mark', exam.passMark + '%'],
@@ -832,10 +999,18 @@
         ul.appendChild(li);
       });
     }
+    function refresh() { renderFacts(); renderPacePicker(renderFacts); }
     renderFacts();
-    renderModePicker(function () { renderFacts(); renderRules(); renderPacePicker(renderFacts); });
+    renderModePicker(function () { renderRules(); refresh(); });
     renderRules();
+    renderLecturePicker(refresh);
     renderPacePicker(renderFacts);
+
+    $('lectureAll').addEventListener('click', function () {
+      chosen = chosen ? null : [];      // "Select all" when filtered, else clear
+      renderLecturePicker(refresh);
+      refresh();
+    });
 
     var saved = Store.progress(exam.id);
     if (saved && !saved.submitted && (saved.mode === 'practice' || saved.endsAt > Date.now())) {
