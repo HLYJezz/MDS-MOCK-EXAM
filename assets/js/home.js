@@ -45,17 +45,19 @@
     if (course.accent) card.style.setProperty('--card-accent', course.accent);
 
     var head = el('div', 'card-head');
-    head.appendChild(el('span', 'icon', course.icon || '📚'));
-    var titles = el('div');
+    /* The icon sits in a disc of the course's own colour, which is most of what
+       makes one subject look different from the next at a glance. */
+    head.appendChild(el('span', 'icon course-icon', course.icon || '📚'));
+    var titles = el('div', 'card-titles');
     titles.appendChild(el('div', 'name', course.title));
-    titles.appendChild(el('div', 'sub muted small', tally(papers)));
+    var parts = [tally(papers)];
+    var subsets = subsetNames(course, papers);
+    if (subsets.length) parts.push(subsets.join(' · '));
+    titles.appendChild(el('div', 'sub muted small', parts.join(' · ')));
     head.appendChild(titles);
     card.appendChild(head);
 
     var chips = el('div', 'chips');
-    subsetNames(course, papers).forEach(function (name) {
-      chips.appendChild(el('span', 'chip', name));
-    });
 
     /* A half-finished paper is the thing you most want to be told about, so
        it is called out on the subject card as well as on the paper itself. */

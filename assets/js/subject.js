@@ -24,6 +24,22 @@
       n.toLocaleString() + ' questions';
   }
 
+  /* Papers often end their subtitle with their own question count — "Real SA1
+     structure · 77 questions" — which now sits directly under a line already
+     saying "77 questions · 60 min". Saying it twice reads as carelessness, so
+     the repeat is dropped from the subtitle, where it is the less useful of
+     the two. Only an exactly matching count goes; anything else is left alone. */
+  function trimmedSubtitle(s) {
+    var sub = (s.subtitle || '').trim();
+    if (!sub) return '';
+    var parts = sub.split('·').map(function (p) { return p.trim(); });
+    var kept = parts.filter(function (p) {
+      var m = /^(\d+)\s+questions?$/i.exec(p);
+      return !(m && parseInt(m[1], 10) === s.questionCount);
+    });
+    return (kept.length ? kept : parts).join(' · ');
+  }
+
   function paperCard(s) {
     var card = el('a', 'subject-card');
     card.href = 'exam.html?subject=' + encodeURIComponent(s.id);
@@ -31,32 +47,39 @@
 
     var head = el('div', 'card-head');
     head.appendChild(el('span', 'icon', s.icon));
-    var titles = el('div');
+    var titles = el('div', 'card-titles');
     titles.appendChild(el('div', 'name', s.name));
-    if (s.subtitle) titles.appendChild(el('div', 'sub muted small', s.subtitle));
+    /* Size and length are what you compare papers by, so they sit under the
+       title as plain text rather than competing with everything else as pills.
+       The time is at the pace chosen on the start screen, so the card agrees
+       with what the exam will actually give. */
+    titles.appendChild(el('div', 'card-facts muted small',
+      s.questionCount + ' questions · ' +
+      MockExam.durationMinutes(s.questionCount, Store.pace()) + ' min'));
+    var sub = trimmedSubtitle(s);
+    if (sub) titles.appendChild(el('div', 'sub muted small', sub));
     head.appendChild(titles);
     card.appendChild(head);
 
     card.appendChild(el('div', 'desc', s.description));
 
+    /* Only what is worth noticing gets a chip: the recommendation, and whatever
+       is true of you in particular. The pass mark is 60% on all 24 papers, so
+       printing it on every card said nothing; it is on the start screen. */
     var chips = el('div', 'chips');
     if (s.badge) chips.appendChild(el('span', 'chip badge', s.badge));
-    chips.appendChild(el('span', 'chip', s.questionCount + ' questions'));
-    /* Time shown at the pace chosen on the start screen, so the card agrees
-       with what the exam will actually give. */
-    chips.appendChild(el('span', 'chip',
-      MockExam.durationMinutes(s.questionCount, Store.pace()) + ' min'));
-    chips.appendChild(el('span', 'chip', 'Pass ' + s.passMark + '%'));
-
-    var best = Store.bestFor(s.id);
-    if (best) chips.appendChild(el('span', 'chip best', 'Best ' + best.percent + '%'));
 
     var saved = Store.progress(s.id);
     if (saved && !saved.submitted && (saved.mode === 'practice' || saved.endsAt > Date.now())) {
       chips.appendChild(el('span', 'chip resume', 'In progress'));
     }
+    var best = Store.bestFor(s.id);
+    if (best) {
+      chips.appendChild(el('span', 'chip best' + (best.passed ? '' : ' below'),
+        'Best ' + best.percent + '%'));
+    }
 
-    card.appendChild(chips);
+    if (chips.childNodes.length) card.appendChild(chips);
     return card;
   }
 
@@ -81,8 +104,13 @@
 
     document.title = course.title + ' · MDS Mock Exam';
     titleEl.textContent = course.title;
-    if (course.accent) titleEl.style.setProperty('--card-accent', course.accent);
-    titleEl.classList.add('course-title-lg');
+    /* The whole page is tinted with the course's colour, so opening MDS211
+       looks different from opening BCH212 before you have read a word. */
+    if (course.accent) {
+      document.getElementById('courseBanner').style.setProperty('--card-accent', course.accent);
+      document.body.style.setProperty('--card-accent', course.accent);
+    }
+    document.getElementById('courseIcon').textContent = course.icon || '📚';
     summaryEl.textContent = tally(papers) +
       (course.year ? ' · ' + course.year : '') +
       '. Pick one to sit it under exam conditions.';

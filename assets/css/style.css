@@ -118,6 +118,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .course-card:hover { transform: translateY(-2px); border-color: var(--card-accent, var(--accent)); }
 .course-card .name { font-size: 1.1rem; font-weight: 650; }
 .course-card .sub { margin-top: .15rem; }
+/* An emoji renders differently on every device; a disc of the subject's colour
+   around it gives it a consistent size and footing, and carries the colour. */
+.course-icon {
+  flex: none; width: 46px; height: 46px; border-radius: 13px;
+  display: grid; place-items: center; font-size: 1.45rem; line-height: 1;
+  background: var(--surface-2);
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 15%, var(--surface));
+}
+.card-titles { min-width: 0; }
 .course-go {
   margin-top: auto; font-size: .85rem; font-weight: 600;
   color: var(--card-accent, var(--accent));
@@ -127,9 +136,29 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .crumb { padding-top: 1.4rem; font-size: .9rem; }
 .crumb a { color: var(--muted); text-decoration: none; }
 .crumb a:hover { color: var(--text); }
-.course-title-lg::before {
-  content: ''; display: inline-block; width: 12px; height: 12px; border-radius: 4px;
-  background: var(--card-accent, var(--accent)); margin-right: .6rem;
+
+/* The subject's own colour, washed across the top of its page. Browsers
+   without color-mix keep the plain background, which is what it looked like
+   before, so nothing is lost. */
+.course-banner {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 9%, var(--bg));
+  margin-bottom: 1.8rem;
+}
+.course-hero { display: flex; align-items: center; gap: 1.1rem; padding-bottom: 1.8rem; }
+.course-hero h1 { margin-bottom: .25rem; }
+.course-hero-icon {
+  flex: none; width: 58px; height: 58px; border-radius: 16px;
+  display: grid; place-items: center; font-size: 1.9rem; line-height: 1;
+  background: var(--surface);
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 16%, var(--surface));
+  border: 1px solid var(--line);
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 30%, var(--line));
+}
+@media (max-width: 480px) {
+  .course-hero-icon { width: 46px; height: 46px; font-size: 1.5rem; border-radius: 13px; }
+  .course-hero { gap: .8rem; }
 }
 
 /* ---------- links out to Drive and Notion ---------- */
@@ -199,11 +228,16 @@ button:disabled { opacity: .45; cursor: not-allowed; }
    description used to stretch its whole row, leaving its neighbours mostly
    blank. Both the subtitle and the description are clamped so the cards stay
    comparable; the full text is on the paper's own start screen. */
+/* Not flex: 1 — line-clamp is ignored on an element a flex parent has
+   stretched, and the text then gets cropped mid-line instead of ending in an
+   ellipsis. The chips take the slack instead, which also lines them up along
+   the bottom of a row of cards. */
 .subject-card .desc {
-  color: var(--muted); font-size: .9rem; flex: 1;
+  color: var(--muted); font-size: .9rem;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;
   line-clamp: 4; overflow: hidden;
 }
+.subject-card .chips { margin-top: auto; }
 .subject-card .sub {
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
   line-clamp: 2; overflow: hidden;
@@ -215,7 +249,12 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   max-width: 100%; overflow: hidden; text-overflow: ellipsis;
 }
 .chip.best { background: var(--good-soft); color: var(--good); font-weight: 600; }
+.chip.best.below { background: var(--bad-soft); color: var(--bad); }
 .chip.resume { background: var(--warn-soft); color: var(--warn); font-weight: 600; }
+/* Question count and length: what you compare papers by, so they read as
+   quiet metadata under the title rather than as another pill to scan past. */
+.card-facts { margin-top: .15rem; font-variant-numeric: tabular-nums; }
+.subject-card .sub { color: var(--muted); }
 
 .stats-panel { padding-bottom: 3rem; }
 .stats-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
