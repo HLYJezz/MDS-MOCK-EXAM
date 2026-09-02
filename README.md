@@ -11,6 +11,17 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 - **Sharing it:** Settings → Pages → Deploy from branch → root. The site is then live
   at `https://<username>.github.io/<repo>/`.
 
+## Getting around
+
+Three screens:
+
+1. `index.html` — the subjects, listed by year, plus links out to the Drive folder and
+   the Notion hub. Which year a subject belongs to is set in `COURSES` in
+   `tools/convert_papers.py`, and the years are listed in the order `YEARS` gives.
+2. `subject.html?course=MDS211` — that subject's papers, split into its subsets.
+3. `exam.html?subject=<paper>` — the paper itself. Its back links return to the
+   subject, not the front page, so the next paper is one tap away.
+
 ## The papers
 
 24 papers, 3,020 questions, generated from the files in `source-papers/`. Cards appear in
@@ -32,17 +43,17 @@ since SA1 means Lectures 1–16 in MDS211, 1–9 in BCH212 and 1–5 in MDS210:
 | | | SA2 Mock Exam 3 | 77 | 60 min |
 | | | Neuro Past Paper | 225 | 170 min |
 | | | SA2 Lecture-Grouped Question Bank | 155 | 115 min |
-| MDS220 — Musculo 1 | | Full Practice Exam | 202 | 150 min |
+| MDS220 — Musculoskeletal 1 | | Full Practice Exam | 202 | 150 min |
 | | | Hard Practice Exam | 151 | 115 min |
 | | | Comprehensive Exam | 171 | 130 min |
 | | | Musculo Hard Exam | 87 | 65 min |
-| MDS221 — Musculo 2 | | Comprehensive Exam | 130 | 100 min |
+| MDS221 — Musculoskeletal 2 | | Comprehensive Exam | 130 | 100 min |
 | | | Master Past Paper | 131 | 100 min |
 | | | Standard Mock Paper II | 120 | 90 min |
-| BCH212 — Biochemistry (Year 1) | SA1 · Lectures 1–9 | SA1 Mock Exam | 84 | 65 min |
+| BCH212 — Biochemistry | SA1 · Lectures 1–9 | SA1 Mock Exam | 84 | 65 min |
 | | SA2 · Lectures 10–21 | SA2 Mock Exam | 94 | 70 min |
 | | | Full Simulation Paper | 192 | 145 min |
-| MDS210 — Cell Biology (Year 1) | SA1 · Lectures 1–5 | SA1 Mock Exam | 60 | 45 min |
+| MDS210 — Cell Biology | SA1 · Lectures 1–5 | SA1 Mock Exam | 60 | 45 min |
 | | | SA1 Mock Exam 2 | 60 | 45 min |
 | | SA2 · Lectures 6–10 | SA2 Mock Exam | 60 | 45 min |
 | | | SA2 Mock Exam 2 | 60 | 45 min |
@@ -320,13 +331,15 @@ every wording you will accept.
 ## Project layout
 
 ```
-index.html            paper chooser, grouped by course
+index.html            subject chooser, grouped by year
+subject.html          one subject's papers, split into its subsets
 exam.html             instructions → paper → results
 assets/css/style.css  all styling
 assets/js/store.js    localStorage (progress, results, theme)
 assets/js/registry.js registerExam() and question normalising
 assets/js/loader.js   loads one paper's questions on demand
-assets/js/home.js     course groups, paper cards, attempt history
+assets/js/home.js     subjects by year, resource links, attempt history
+assets/js/subject.js  the paper cards for one subject
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
 assets/js/feedback.js     question reports → Google Sheet (off until configured)
@@ -337,5 +350,5 @@ source-papers/        the original exam PDFs
 tools/convert_papers.py   PDF → data/*.js converter
 ```
 
-The home page loads `data/manifest.js` only — metadata, a few kilobytes. The questions
+The first two screens load `data/manifest.js` only — metadata, a few kilobytes. The questions
 for a paper (up to ~320 KB) load when that paper is opened.

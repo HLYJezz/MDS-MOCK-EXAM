@@ -23,6 +23,14 @@
   window.MockExam.subjects = function () { return window.SUBJECTS || []; };
   window.MockExam.courses = function () { return window.COURSES || []; };
   window.MockExam.groups = function () { return window.GROUPS || {}; };
+  window.MockExam.years = function () { return window.YEARS || []; };
+  window.MockExam.course = function (id) {
+    return (window.COURSES || []).filter(function (c) { return c.id === id; })[0] || null;
+  };
+  /* The papers of one course, in the order the manifest lists them. */
+  window.MockExam.papersIn = function (courseId) {
+    return window.MockExam.subjects().filter(function (s) { return s.course === courseId; });
+  };
   window.MockExam.subjectMeta = function (id) {
     return (window.SUBJECTS || []).filter(function (s) { return s.id === id; })[0] || null;
   };

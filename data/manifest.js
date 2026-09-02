@@ -2,12 +2,13 @@
    Holds metadata only; the questions live in the per-paper files, which
    exam.html loads one at a time. */
 window.COURSES = [
-  { id: "MDS211", title: "MDS211 — Nervous System", accent: "#2f5bd6" },
-  { id: "MDS220", title: "MDS220 — Musculo 1", accent: "#12855c" },
-  { id: "MDS221", title: "MDS221 — Musculo 2", accent: "#8a4bd3" },
-  { id: "BCH212", title: "BCH212 — Biochemistry (Year 1)", accent: "#c2600f" },
-  { id: "MDS210", title: "MDS210 — Cell Biology (Year 1)", accent: "#b3325a" },
+  { id: "MDS210", title: "MDS210 — Cell Biology", accent: "#b3325a", year: "Year 1", icon: "🔬" },
+  { id: "BCH212", title: "BCH212 — Biochemistry", accent: "#c2600f", year: "Year 1", icon: "⚗️" },
+  { id: "MDS211", title: "MDS211 — Nervous System", accent: "#2f5bd6", year: "Year 2", icon: "🧠" },
+  { id: "MDS220", title: "MDS220 — Musculoskeletal 1", accent: "#12855c", year: "Year 2", icon: "🦴" },
+  { id: "MDS221", title: "MDS221 — Musculoskeletal 2", accent: "#8a4bd3", year: "Year 2", icon: "💪" },
 ];
+window.YEARS = ["Year 1", "Year 2"];
 window.GROUPS = {
   "MDS211": {
     "SA1": "SA1 · Lectures 1–16",

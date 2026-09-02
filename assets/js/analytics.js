@@ -32,8 +32,13 @@
      "/exam/mds211-gauntlet" rather than one lump of exam.html hits. */
   function friendlyPath() {
     var here = location.pathname.replace(/\/index\.html$/, '/');
+    var q = new URLSearchParams(location.search);
+    if (/subject\.html$/.test(location.pathname)) {
+      var course = q.get('course');
+      return course ? '/subject/' + course : '/subject';
+    }
     if (!/exam\.html$/.test(location.pathname)) return here;
-    var subject = new URLSearchParams(location.search).get('subject');
+    var subject = q.get('subject');
     return subject ? '/exam/' + subject : '/exam';
   }
 

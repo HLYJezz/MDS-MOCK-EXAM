@@ -1,4 +1,5 @@
-/* Subject chooser: papers grouped by course, plus recent attempt history. */
+/* First screen: the subjects, listed by year. Choosing one opens subject.html,
+   which lists that subject's papers. Recent attempts are shown underneath. */
 (function () {
   var grid = document.getElementById('subjectGrid');
   var statsPanel = document.getElementById('statsPanel');
@@ -21,46 +22,59 @@
     return n;
   }
 
-  function subjectCard(s) {
-    var card = el('a', 'subject-card');
-    card.href = 'exam.html?subject=' + encodeURIComponent(s.id);
-    if (s.accent) card.style.setProperty('--card-accent', s.accent);
-
-    var head = el('div', 'card-head');
-    head.appendChild(el('span', 'icon', s.icon));
-    var titles = el('div');
-    titles.appendChild(el('div', 'name', s.name));
-    if (s.subtitle) titles.appendChild(el('div', 'sub muted small', s.subtitle));
-    head.appendChild(titles);
-    card.appendChild(head);
-
-    card.appendChild(el('div', 'desc', s.description));
-
-    var chips = el('div', 'chips');
-    if (s.badge) chips.appendChild(el('span', 'chip badge', s.badge));
-    chips.appendChild(el('span', 'chip', s.questionCount + ' questions'));
-    /* Time shown at the pace chosen on the start screen, so the card agrees
-       with what the exam will actually give. */
-    chips.appendChild(el('span', 'chip',
-      MockExam.durationMinutes(s.questionCount, Store.pace()) + ' min'));
-    chips.appendChild(el('span', 'chip', 'Pass ' + s.passMark + '%'));
-
-    var best = Store.bestFor(s.id);
-    if (best) chips.appendChild(el('span', 'chip best', 'Best ' + best.percent + '%'));
-
-    var saved = Store.progress(s.id);
-    if (saved && !saved.submitted && (saved.mode === 'practice' || saved.endsAt > Date.now())) {
-      chips.appendChild(el('span', 'chip resume', 'In progress'));
-    }
-
-    card.appendChild(chips);
-    return card;
-  }
-
   function tally(papers) {
     var n = papers.reduce(function (t, p) { return t + p.questionCount; }, 0);
     return papers.length + (papers.length === 1 ? ' paper · ' : ' papers · ') +
       n.toLocaleString() + ' questions';
+  }
+
+  /* The subsets a course is split into, in the order its papers appear. */
+  function subsetNames(course, papers) {
+    var labels = MockExam.groups()[course.id] || {};
+    var seen = [];
+    papers.forEach(function (p) {
+      var key = p.group || '';
+      if (key && seen.indexOf(key) === -1) seen.push(key);
+    });
+    return seen.map(function (key) { return (labels[key] || key).split(' · ')[0]; });
+  }
+
+  function courseCard(course, papers) {
+    var card = el('a', 'course-card');
+    card.href = 'subject.html?course=' + encodeURIComponent(course.id);
+    if (course.accent) card.style.setProperty('--card-accent', course.accent);
+
+    var head = el('div', 'card-head');
+    head.appendChild(el('span', 'icon', course.icon || '📚'));
+    var titles = el('div');
+    titles.appendChild(el('div', 'name', course.title));
+    titles.appendChild(el('div', 'sub muted small', tally(papers)));
+    head.appendChild(titles);
+    card.appendChild(head);
+
+    var chips = el('div', 'chips');
+    subsetNames(course, papers).forEach(function (name) {
+      chips.appendChild(el('span', 'chip', name));
+    });
+
+    /* A half-finished paper is the thing you most want to be told about, so
+       it is called out on the subject card as well as on the paper itself. */
+    var resumable = papers.filter(function (p) {
+      var saved = Store.progress(p.id);
+      return saved && !saved.submitted &&
+        (saved.mode === 'practice' || saved.endsAt > Date.now());
+    }).length;
+    if (resumable) {
+      chips.appendChild(el('span', 'chip resume',
+        resumable === 1 ? 'In progress' : resumable + ' in progress'));
+    }
+
+    var done = papers.filter(function (p) { return Store.bestFor(p.id); }).length;
+    if (done) chips.appendChild(el('span', 'chip best', done + ' of ' + papers.length + ' attempted'));
+
+    if (chips.childNodes.length) card.appendChild(chips);
+    card.appendChild(el('span', 'course-go', 'See papers →'));
+    return card;
   }
 
   function historyRow(r) {
@@ -79,7 +93,6 @@
 
   function render() {
     var subjects = MockExam.subjects();
-    var courses = MockExam.courses();
     grid.innerHTML = '';
 
     if (!subjects.length) {
@@ -91,57 +104,40 @@
       return;
     }
 
-    /* Any paper whose course is not listed still gets shown, under its own heading. */
-    var groups = courses.slice();
+    /* A course with papers but no entry in the manifest still gets listed, and
+       a year that was never named still gets a heading of its own. */
+    var courses = MockExam.courses().slice();
     subjects.forEach(function (s) {
-      if (!groups.some(function (c) { return c.id === s.course; })) {
-        groups.push({ id: s.course, title: s.course || 'Other papers', accent: s.accent });
+      if (!courses.some(function (c) { return c.id === s.course; })) {
+        courses.push({ id: s.course, title: s.course || 'Other papers', accent: s.accent, year: '' });
       }
     });
 
-    groups.forEach(function (course) {
-      var papers = subjects.filter(function (s) { return s.course === course.id; });
-      if (!papers.length) return;
+    var years = MockExam.years().slice();
+    courses.forEach(function (c) {
+      if (years.indexOf(c.year || '') === -1) years.push(c.year || '');
+    });
 
-      var section = el('section', 'course');
-      var head = el('div', 'course-head');
-      var title = el('h2', 'course-title', course.title);
-      if (course.accent) title.style.setProperty('--card-accent', course.accent);
-      head.appendChild(title);
-      head.appendChild(el('span', 'muted small', tally(papers)));
-      section.appendChild(head);
-
-      /* Courses can be split into subsets (MDS211 into SA1 and SA2). Papers
-         with no subset are listed first, without a heading. */
-      var subsets = [];
-      papers.forEach(function (p) {
-        var key = p.group || '';
-        var found = subsets.filter(function (g) { return g.key === key; })[0];
-        if (!found) subsets.push(found = { key: key, papers: [] });
-        found.papers.push(p);
+    years.forEach(function (year) {
+      var inYear = courses.filter(function (c) {
+        return (c.year || '') === year && MockExam.papersIn(c.id).length;
       });
+      if (!inYear.length) return;
 
-      /* Recommended papers lead their subset, whatever order they were added
-         in — a badged paper dropped in later still sits with its siblings. */
-      subsets.forEach(function (subset) {
-        var lead = subset.papers.filter(function (p) { return p.badge; });
-        subset.papers = lead.concat(subset.papers.filter(function (p) { return !p.badge; }));
-      });
+      var section = el('section', 'year');
+      if (year) {
+        var head = el('div', 'year-head');
+        head.appendChild(el('h2', 'year-title', year));
+        var all = [];
+        inYear.forEach(function (c) { all = all.concat(MockExam.papersIn(c.id)); });
+        head.appendChild(el('span', 'muted small',
+          inYear.length + (inYear.length === 1 ? ' subject · ' : ' subjects · ') + tally(all)));
+        section.appendChild(head);
+      }
 
-      subsets.forEach(function (subset) {
-        if (subset.key) {
-          /* Subset headings belong to a course: SA1 is Lectures 1–16 in
-             MDS211 but Lectures 1–9 in BCH212. */
-          var label = el('h3', 'subset-title',
-            ((MockExam.groups()[course.id] || {})[subset.key] || subset.key));
-          label.appendChild(el('span', 'subset-count muted small', tally(subset.papers)));
-          section.appendChild(label);
-        }
-        var row = el('div', 'course-grid');
-        subset.papers.forEach(function (p) { row.appendChild(subjectCard(p)); });
-        section.appendChild(row);
-      });
-
+      var row = el('div', 'course-grid');
+      inYear.forEach(function (c) { row.appendChild(courseCard(c, MockExam.papersIn(c.id))); });
+      section.appendChild(row);
       grid.appendChild(section);
     });
 

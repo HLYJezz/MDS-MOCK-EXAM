@@ -449,8 +449,8 @@
     retake.type = 'button';
     retake.addEventListener('click', function () { newAttempt(); startPaper(); });
     actions.appendChild(retake);
-    var home = el('a', 'secondary-btn', 'Back to subjects');
-    home.href = 'index.html';
+    var home = el('a', 'secondary-btn', backTo.label);
+    home.href = backTo.href;
     actions.appendChild(home);
     card.appendChild(actions);
 
@@ -695,6 +695,24 @@
     return new URLSearchParams(window.location.search).get(name);
   }
 
+  /* Going back lands on the subject's paper list, not the front page, so the
+     obvious next move is another paper in the same subject. */
+  var backTo = { href: 'index.html', label: 'Back to subjects' };
+
+  function setBackTo(course) {
+    if (course) {
+      backTo = { href: 'subject.html?course=' + encodeURIComponent(course),
+                 label: 'Back to ' + course + ' papers' };
+    }
+    ['backLink', 'introBack'].forEach(function (id) {
+      var a = $(id);
+      if (!a) return;
+      a.href = backTo.href;
+      a.title = backTo.label;
+      if (id === 'introBack') a.textContent = backTo.label;
+    });
+  }
+
   function boot(loaded) {
     var id = param('subject');
     exam = loaded || null;
@@ -711,6 +729,7 @@
     }
 
     document.title = exam.name + ' · MDS Mock Exam';
+    setBackTo(exam.course);
     $('examTitle').textContent = exam.icon + ' ' + exam.name;
     $('examSub').textContent = (exam.course ? exam.course + ' · ' : '') +
       exam.questions.length + ' questions';
@@ -762,6 +781,7 @@
   var wanted = param('subject');
   var meta = wanted && MockExam.subjectMeta(wanted);
   if (meta) {
+    setBackTo(meta.course);
     $('examTitle').textContent = meta.icon + ' ' + meta.name;
     $('introTitle').textContent = meta.name;
     $('introDesc').textContent = 'Loading the paper…';
