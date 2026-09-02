@@ -13,12 +13,12 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## The papers
 
-20 papers, 2,780 questions, generated from the files in `source-papers/`. Cards appear in
+24 papers, 3,020 questions, generated from the files in `source-papers/`. Cards appear in
 the order the papers are listed in `tools/convert_papers.py`, except that papers carrying a
 `badge` lead their subset, so a recommended paper added later still sits with its siblings.
-A course can be split into subsets — MDS211 and BCH212 both into SA1 and SA2 — by giving its
-papers a `group`. The heading each subset gets is set per course in `GROUPS`, since SA1 means
-Lectures 1–16 in MDS211 but Lectures 1–9 in BCH212:
+A course can be split into subsets — MDS210, MDS211 and BCH212 each into SA1 and SA2 — by
+giving its papers a `group`. The heading each subset gets is set per course in `GROUPS`,
+since SA1 means Lectures 1–16 in MDS211, 1–9 in BCH212 and 1–5 in MDS210:
 
 | Course | Subset | Paper | Questions | Time |
 |---|---|---|---|---|
@@ -42,6 +42,10 @@ Lectures 1–16 in MDS211 but Lectures 1–9 in BCH212:
 | BCH212 — Biochemistry (Year 1) | SA1 · Lectures 1–9 | SA1 Mock Exam | 84 | 65 min |
 | | SA2 · Lectures 10–21 | SA2 Mock Exam | 94 | 70 min |
 | | | Full Simulation Paper | 192 | 145 min |
+| MDS210 — Cell Biology (Year 1) | SA1 · Lectures 1–5 | SA1 Mock Exam | 60 | 45 min |
+| | | SA1 Mock Exam 2 | 60 | 45 min |
+| | SA2 · Lectures 6–10 | SA2 Mock Exam | 60 | 45 min |
+| | | SA2 Mock Exam 2 | 60 | 45 min |
 
 All papers are single best answer, pass mark 60%, with questions and options shuffled on
 every attempt.

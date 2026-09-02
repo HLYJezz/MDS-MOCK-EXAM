@@ -425,6 +425,10 @@ GROUPS = {
         'SA1': 'SA1 · Lectures 1–9',
         'SA2': 'SA2 · Lectures 10–21',
     },
+    'MDS210': {
+        'SA1': 'SA1 · Lectures 1–5',
+        'SA2': 'SA2 · Lectures 6–10',
+    },
 }
 
 COURSES = {
@@ -432,6 +436,7 @@ COURSES = {
     'MDS220': {'title': 'MDS220 — Musculo 1', 'accent': '#12855c'},
     'MDS221': {'title': 'MDS221 — Musculo 2', 'accent': '#8a4bd3'},
     'BCH212': {'title': 'BCH212 — Biochemistry (Year 1)', 'accent': '#c2600f'},
+    'MDS210': {'title': 'MDS210 — Cell Biology (Year 1)', 'accent': '#b3325a'},
 }
 
 # --------------------------------------------------------------------------
@@ -1095,6 +1100,19 @@ def trim_course_prefix(name, course):
     return trimmed.strip() or name
 
 
+def paper_name_in(path):
+    """The name a JSON paper will show on its card, used to order the cards.
+
+    Ordering by filename gets it wrong: 'mock exam 2.json' sorts before
+    'mock exam.json', because a space comes before a dot, so Mock 2 would be
+    listed ahead of Mock 1."""
+    try:
+        with open(path, encoding='utf-8') as fh:
+            return str(json.load(fh).get('name') or os.path.basename(path))
+    except (ValueError, OSError):
+        return os.path.basename(path)      # left to load_json_paper to report
+
+
 def load_json_paper(path, report):
     with open(path, encoding='utf-8') as fh:
         try:
@@ -1310,9 +1328,10 @@ def main():
     report, summaries = [], []
 
     jobs = [(cfg, None) for cfg in PAPERS]
-    for name in sorted(os.listdir(SRC)):
-        if name.lower().endswith('.json'):
-            jobs.append((None, os.path.join(SRC, name)))
+    json_files = [os.path.join(SRC, n) for n in os.listdir(SRC)
+                  if n.lower().endswith('.json')]
+    json_files.sort(key=paper_name_in)
+    jobs.extend((None, path) for path in json_files)
 
     # A merge needs its sources whether or not they were asked for by name.
     wanted = set(only)
