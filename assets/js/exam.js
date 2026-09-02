@@ -535,8 +535,17 @@
 
     var meta = el('div', 'q-meta');
     meta.appendChild(el('div', 'q-number', 'Question ' + (i + 1)));
-    meta.appendChild(el('span', 'tag ' + kind,
+    /* Which lecture this came from, same chip as on the paper itself: reading
+       back through the review, the tag says where to go and revise. */
+    var tags = el('div', 'q-tags');
+    if (q.section) {
+      var sec = el('span', 'chip section', sectionTitle(q.section));
+      sec.title = sectionTitle(q.section);   // full text on hover; the chip truncates
+      tags.appendChild(sec);
+    }
+    tags.appendChild(el('span', 'tag ' + kind,
       kind === 'correct' ? 'Correct' : kind === 'wrong' ? 'Incorrect' : 'Not answered'));
+    meta.appendChild(tags);
     item.appendChild(meta);
 
     if (q.flag) {

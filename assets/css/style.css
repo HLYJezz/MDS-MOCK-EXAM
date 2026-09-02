@@ -379,6 +379,11 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .q-number { font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 650; flex: none; padding-top: .15rem; }
 .q-tags { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
 .q-tags .chip.section { max-width: 22ch; }
+/* The paper's header is cramped, so a lecture name is clipped short there. The
+   review card is the full width of the page, so it can show the whole name —
+   and knowing the lecture is the point of the tag. It still truncates on a
+   narrow screen, where .chip's own max-width takes over. */
+.review-item .q-tags .chip.section { max-width: none; }
 .passage {
   background: var(--surface-2); border-left: 3px solid var(--accent);
   border-radius: 8px; padding: .8rem 1rem; margin-bottom: 1rem; white-space: pre-wrap;
@@ -449,7 +454,10 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .result-stats { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin: 1rem 0; }
 .result-actions { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
 .review-list { display: grid; gap: .8rem; margin-top: 1.6rem; }
-.review-item { border-left: 4px solid var(--line); }
+/* Same as the breakdown panel: a grid item will not shrink below its own
+   content unless told to, and the lecture tag inside is a long unbroken name. */
+.review-item { border-left: 4px solid var(--line); min-width: 0; }
+.review-item .q-meta { min-width: 0; }
 .review-item.correct { border-left-color: var(--good); }
 .review-item.wrong { border-left-color: var(--bad); }
 .review-item.blank { border-left-color: var(--muted); }
