@@ -34,44 +34,30 @@
 
   /* Nothing here hints at an answer — they are just company, and the tip is
      about how the paper works, which the rules already say. Every line is
-     about the buddy or about sitting there, never about the question.
-
-     LINES_FOR gives a picture its own words, because a praying capybara and a
-     horrified lion do not sound alike and a shared pool makes both of them
-     worse. A picture with nothing listed falls back to LINES, so dropping one
-     in the folder still works with no code changed. */
+     about the buddy or about sitting there, never about the question, and none
+     of them is tied to a particular picture: any line can turn up beside any
+     face, which is most of the fun. A picture dropped in the folder therefore
+     needs nothing written for it. */
   var LINES = [
     'Hello. You have been on this one a while.',
     'This question is not going to blink first.',
     'Long enough to memorise the font, I reckon.',
     'No rush. I brought snacks.',
     'Still thinking? Same.',
-    'I checked. Staring harder does not work.'
+    'I checked. Staring harder does not work.',
+    'What in the actual —',
+    'No thoughts. Only this face.',
+    'I have been making this face for a while now.',
+    'Right. We pray now.',
+    'Praying is technically a strategy.',
+    'Lord, help us.',
+    'That is two of us praying.',
+    'Please. Just this one.',
+    'Lord, help us both.',
+    'Someone help me.',
+    'Send help. Or snacks.',
+    'I have been here exactly as long as you have.'
   ];
-  var LINES_FOR = {
-    'no-text/companion-1': [                       // the appalled lion
-      'What in the actual —',
-      'No thoughts. Only this face.',
-      'I have been making this face for a while now.'
-    ],
-    'no-text/companion-2': [                       // the praying capybara
-      'Right. We pray now.',
-      'Praying is technically a strategy.'
-    ],
-    'no-text/companion-3': [                       // two heads bowed
-      'Lord, help us.',
-      'That is two of us praying.'
-    ],
-    'no-text/companion-4': [                       // the praying monkey
-      'Please. Just this one.',
-      'Lord, help us both.'
-    ],
-    'no-text/companion-5': [                       // the dog staring into the distance
-      'Someone help me.',
-      'Send help. Or snacks.',
-      'I have been here exactly as long as you have.'
-    ]
-  };
   var TIP = 'Flag it, move on, come back. Completely legal.';
 
   var box = null, timer = null, shownFor = null, stage = 0, dismissed = {};
@@ -135,16 +121,6 @@
   }
 
   function any(list) { return list[Math.floor(Math.random() * list.length)]; }
-
-  /* What this particular picture says. The key is its path below the companion
-     folder without the extension, so 'no-text/companion-2' covers that picture
-     whether it is a .jpg or a .png. */
-  function lineFor(photo) {
-    if (!photo) return any(LINES);                 // the cat
-    var m = /companion\/(.+)\.[a-z0-9]+$/i.exec(photo.src);
-    var own = m && LINES_FOR[m[1]];
-    return any(own || LINES);
-  }
 
   function cat() {
     var s = document.createElementNS(SVG, 'svg');
@@ -248,12 +224,12 @@
                                 window.innerHeight * 0.86 / r.height));
   }
 
-  /* The picture is chosen first and the words second, because the words now
-     belong to the picture. useTip is the second visit, whose line is fixed. */
+  /* Picture and words are drawn independently, so any line can turn up beside
+     any face. useTip is the second visit, whose line is fixed. */
   function show(useTip) {
     var b = build();
     var photo = pick(useTip);
-    var text = useTip ? TIP : lineFor(photo);
+    var text = useTip ? TIP : any(LINES);
     b._pending = text;
     /* The cat always speaks; a picture only if it has no words of its own. */
     say(b, (!photo || photo.wordless) ? text : null);
