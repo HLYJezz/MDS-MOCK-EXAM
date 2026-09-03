@@ -1,5 +1,9 @@
-/* A small cat that turns up when you have been on one question for a while.
+/* A study buddy that turns up when you have been on one question for a while.
    ---------------------------------------------------------------------------
+   If there are photos in assets/img/companion/ it uses one of those; with none
+   there it draws a cat instead, so the feature works out of the box and never
+   breaks when a photo is missing.
+
    It is only ever company. It never says anything about the question, because
    anything it knew would be a hint, and a mock exam that helps you is not
    worth sitting. The most it does is remind you that flagging a question and
@@ -15,23 +19,63 @@
   var FIRST = 75000;      // ms of no answering before it appears
   var AGAIN = 90000;      // and again, once, with the flagging tip
 
-  /* Nothing here hints at an answer — the first four are just company, and the
-     tip is about how the paper works, which the rules already say. */
+  var DIR = 'assets/img/companion/';
+  var EXTS = ['png', 'jpg', 'jpeg', 'webp'];
+  var MAX_PHOTOS = 12;    // a sane ceiling on the search, not a limit worth hitting
+
+  /* Nothing here hints at an answer — they are just company, and the tip is
+     about how the paper works, which the rules already say. */
   var LINES = [
-    'Still thinking? No rush.',
-    'Take your time — I will wait.',
-    'A tricky one. Deep breath.',
-    'You are doing fine.'
+    'Hello. You have been on this one a while.',
+    'This question is not going to blink first.',
+    'Long enough to memorise the font, I reckon.',
+    'No rush. I brought snacks.',
+    'Still thinking? Same.',
+    'I checked. Staring harder does not work.'
   ];
-  var TIP = 'Stuck? Flag it and come back later.';
+  var TIP = 'Flag it, move on, come back. Completely legal.';
 
   var box = null, timer = null, shownFor = null, stage = 0, dismissed = {};
   var current = null;     // a key for the question on screen
 
+  /* ---------- the photos ----------
+     Named companion-1, companion-2 … so that dropping a file in the folder is
+     the whole job: no list to keep in step, nothing to rebuild. The search
+     stops at the first missing number, which is why the folder's README asks
+     for no gaps. It runs once, and not until the buddy is actually about to
+     turn up, so a reader who never idles makes no requests at all. */
+  var photos = [], probed = false, probing = false, waiting = [];
+
+  function findPhotos(done) {
+    if (probed) return done();
+    waiting.push(done);
+    if (probing) return;
+    probing = true;
+
+    var n = 1, e = 0;
+    function finish() {
+      probed = true; probing = false;
+      var queue = waiting; waiting = [];
+      queue.forEach(function (fn) { fn(); });
+    }
+    function step() {
+      if (n > MAX_PHOTOS) return finish();
+      var img = new Image();
+      img.onload = function () { photos.push(img.src); n++; e = 0; step(); };
+      img.onerror = function () {
+        e++;
+        if (e < EXTS.length) return step();   // same number, another file type
+        finish();                             // a gap in the numbering: that is all of them
+      };
+      img.src = DIR + 'companion-' + n + '.' + EXTS[e];
+    }
+    step();
+  }
+
   function cat() {
     var s = document.createElementNS(SVG, 'svg');
     s.setAttribute('viewBox', '0 0 64 50');
-    s.setAttribute('class', 'cat-svg');
+    s.setAttribute('class', 'companion-face cat-svg');
     s.setAttribute('aria-hidden', 'true');
     function add(tag, attrs, cls) {
       var n = document.createElementNS(SVG, tag);
@@ -70,6 +114,30 @@
     return s;
   }
 
+  /* A fresh face each visit, so with several photos a different one turns up. */
+  function setFace(b) {
+    var old = b.querySelector('.companion-face');
+    if (old) b.removeChild(old);
+    var node;
+    if (photos.length) {
+      node = document.createElement('img');
+      node.className = 'companion-face companion-photo';
+      node.alt = '';
+      node.setAttribute('aria-hidden', 'true');
+      /* If a photo disappears between the search and now, draw the cat rather
+         than leave a broken picture in the corner. */
+      node.onerror = function () {
+        photos = [];
+        if (node.parentNode === b) b.replaceChild(cat(), node);
+      };
+      node.src = photos[Math.floor(Math.random() * photos.length)];
+    } else {
+      node = cat();
+    }
+    b.appendChild(node);
+    return node;
+  }
+
   function build() {
     if (box) return box;
     box = document.createElement('div');
@@ -77,7 +145,6 @@
     var bubble = document.createElement('p');
     bubble.className = 'companion-bubble';
     box.appendChild(bubble);
-    box.appendChild(cat());
     box._bubble = bubble;
     box.title = 'Tap to send me away';
     box.addEventListener('click', function () {
@@ -102,12 +169,12 @@
   function show(text) {
     var b = build();
     b._bubble.textContent = text;
+    var face = setFace(b);
     b.classList.remove('hidden');
     /* Restart the entrance every time, so a second visit is not silent. */
     b.classList.remove('is-in');
     void b.offsetWidth;
-    var cat = b.querySelector('.cat-svg');
-    cat.style.setProperty('--cat-scale', entranceScale(cat).toFixed(2));
+    face.style.setProperty('--cat-scale', entranceScale(face).toFixed(2));
     b.classList.add('is-in');
   }
 
@@ -123,12 +190,20 @@
   function arm(delay, text) {
     clear();
     timer = setTimeout(function () {
-      if (document.hidden || !current || dismissed[current]) return;
-      show(text);
-      shownFor = current;
-      if (stage === 0) { stage = 1; arm(AGAIN, TIP); }
+      var key = current;
+      if (document.hidden || !key || dismissed[key]) return;
+      /* Looking for the photos can take a moment; check nothing has moved on
+         in the meantime before putting the buddy on screen. */
+      findPhotos(function () {
+        if (document.hidden || current !== key || dismissed[key]) return;
+        show(text);
+        shownFor = key;
+        if (stage === 0) { stage = 1; arm(AGAIN, TIP); }
+      });
     }, delay);
   }
+
+  function line() { return LINES[Math.floor(Math.random() * LINES.length)]; }
 
   /* Called whenever the reader does something: a new question, an answer, a
      flag. The clock starts again from nothing. */
@@ -139,7 +214,7 @@
     if (shownFor === current) hide();
     clear();
     if (current === null || dismissed[current]) return;
-    arm(FIRST, LINES[Math.floor(Math.random() * LINES.length)]);
+    arm(FIRST, line());
   }
 
   /* Leaving the paper — results, or the tab going away — stops it entirely. */
@@ -151,9 +226,7 @@
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) clear();
-    else if (current !== null && !dismissed[current] && !shownFor) {
-      arm(FIRST, LINES[Math.floor(Math.random() * LINES.length)]);
-    }
+    else if (current !== null && !dismissed[current] && !shownFor) arm(FIRST, line());
   });
 
   window.Companion = { reset: reset, stop: stop, hide: hide };

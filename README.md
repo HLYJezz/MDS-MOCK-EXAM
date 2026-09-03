@@ -355,12 +355,21 @@ keeps the emoji, so a new one is never iconless.
 The college mark (`assets/img/`) is in the header, the footer and the browser tab.
 The footer says in as many words that this is a student's unofficial study site.
 
-## The cat
+## The study buddy
 
-Sit on one question without answering for 75 seconds and a cat arrives the size of
-the page, shrinking over three seconds into the corner with a line of encouragement; 90 seconds after that it comes back once
-more to point out that flagging a question and coming back is allowed. Tapping it
-sends it away for that question.
+Sit on one question without answering for 75 seconds and the buddy arrives the size
+of the page, shrinking over three seconds into the corner with a line; 90 seconds
+after that it comes back once more to point out that flagging a question and coming
+back is allowed. Tapping it sends it away for that question.
+
+**Put photos in `assets/img/companion/`** and it uses one of those instead of the
+drawn cat, cropped to a circle, a random one each time. Name them `companion-1.png`,
+`companion-2.png` and so on (`.jpg`, `.jpeg` and `.webp` also work); the search stops
+at the first missing number, so leave no gaps. Nothing else needs changing — there is
+no list to keep in step and nothing to rebuild. With no photos there it draws the cat,
+so the feature can never break. The folder's own README says the same in more detail.
+Nothing is fetched until the buddy is actually due, so a reader who never stalls makes
+no requests for photos at all.
 
 It never says anything about the question itself. Anything it knew would be a hint,
 and a mock exam that helps you is not worth sitting — `assets/js/companion.js` has
@@ -381,9 +390,10 @@ assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     subjects by year, resource links, attempt history
 assets/js/subject.js  the paper cards for one subject
 assets/js/icons.js    the drawn icons the cards use
-assets/js/companion.js the cat that turns up on a long question
+assets/js/companion.js the study buddy that turns up on a long question
 assets/fonts/         Inter, self-hosted (SIL OFL)
 assets/img/           the college logo and the tab icon
+assets/img/companion/ drop photos here for the study buddy
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
 assets/js/feedback.js     question reports → Google Sheet (off until configured)

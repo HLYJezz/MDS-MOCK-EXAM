@@ -341,9 +341,10 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .lecture-opt-name { font-size: .9rem; }
 
 /* ---------- the companion ----------
-   A cat that climbs into the corner after a long quiet spell on one question.
-   It sits above the page but takes no clicks except its own, so it can never
-   swallow a tap meant for an answer or the Next button. */
+   A study buddy — a photo from assets/img/companion/, or a drawn cat when
+   there are none — that climbs into the corner after a long quiet spell on one
+   question. It sits above the page but takes no clicks except its own, so it
+   can never swallow a tap meant for an answer or the Next button. */
 .companion {
   position: fixed; right: 16px; bottom: 18px; z-index: 30;
   display: flex; align-items: flex-end; gap: .5rem;
@@ -351,7 +352,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   transition: opacity .25s, transform .25s;
 }
 .companion.hidden { display: none !important; }
-.cat-svg { width: 62px; height: auto; display: block; }
+.companion-face { width: 62px; height: auto; display: block; }
+/* A photo is cropped to a circle, so whatever the shape of the file it lands
+   in the corner the same size as the cat and reads as a face, not a snapshot.
+   The ring keeps it off a dark photo's edge on either theme. */
+.companion-photo {
+  width: 62px; height: 62px; border-radius: 50%;
+  object-fit: cover; background: var(--surface);
+  border: 2px solid var(--surface); box-shadow: var(--shadow);
+}
 .companion-bubble {
   margin: 0 0 .6rem; max-width: 46vw;
   background: var(--surface); color: var(--text);
@@ -381,7 +390,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   0%, 72% { opacity: 0; transform: translateY(6px); }
   100%    { opacity: 1; transform: translateY(0); }
 }
-.companion.is-in .cat-svg {
+.companion.is-in .companion-face {
   transform-origin: 100% 100%;
   animation: cat-arrive 3s cubic-bezier(.45, .05, .3, 1) both;
 }
@@ -390,12 +399,13 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .cat-eye:last-of-type { animation-delay: .12s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .companion.is-in .cat-svg,
+  .companion.is-in .companion-face,
   .companion.is-in .companion-bubble { animation: none; }
   .cat-eye { animation: none; }
 }
 @media (max-width: 560px) {
-  .cat-svg { width: 50px; }
+  .companion-face { width: 50px; }
+  .companion-photo { height: 50px; }
   .companion { right: 10px; bottom: 12px; }
   .companion-bubble { max-width: 58vw; font-size: .78rem; }
 }
