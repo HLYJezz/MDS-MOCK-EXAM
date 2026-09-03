@@ -360,7 +360,7 @@ The footer says in as many words that this is a student's unofficial study site.
 
 ## The study buddy
 
-Sit on one question without answering for 75 seconds and the buddy arrives the size
+Sit on one question without answering for 60 seconds and the buddy arrives the size
 of the page, shrinking over three seconds into the corner with a line; 90 seconds
 after that it comes back once more to point out that flagging a question and coming
 back is allowed. Tapping it sends it away for that question.

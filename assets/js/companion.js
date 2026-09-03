@@ -16,7 +16,7 @@
 (function () {
   var SVG = 'http://www.w3.org/2000/svg';
 
-  var FIRST = 75000;      // ms of no answering before it appears
+  var FIRST = 60000;      // ms of no answering before it appears
   var AGAIN = 90000;      // and again, once, with the flagging tip
 
   var DIR = 'assets/img/companion/';
