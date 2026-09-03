@@ -1,8 +1,8 @@
 /* A study buddy that turns up when you have been on one question for a while.
    ---------------------------------------------------------------------------
-   If there are photos in assets/img/companion/ it uses one of those; with none
-   there it draws a cat instead, so the feature works out of the box and never
-   breaks when a photo is missing.
+   If there are pictures in assets/img/companion/ it uses one of those; with
+   none there it draws a cat instead, so the feature works out of the box and
+   never breaks when a picture is missing.
 
    It is only ever company. It never says anything about the question, because
    anything it knew would be a hint, and a mock exam that helps you is not
@@ -23,8 +23,23 @@
   var EXTS = ['png', 'jpg', 'jpeg', 'webp'];
   var MAX_PHOTOS = 12;    // a sane ceiling on the search, not a limit worth hitting
 
+  /* Two folders, because a meme with writing across it has already said its
+     piece: putting a speech bubble next to it is two jokes fighting. So a
+     picture from with-text/ turns up on its own and says nothing, and only a
+     picture from no-text/ — or the drawn cat — gets a line to speak. */
+  var SETS = [
+    { dir: DIR + 'with-text/', wordless: false },
+    { dir: DIR + 'no-text/', wordless: true }
+  ];
+
   /* Nothing here hints at an answer — they are just company, and the tip is
-     about how the paper works, which the rules already say. */
+     about how the paper works, which the rules already say. Every line is
+     about the buddy or about sitting there, never about the question.
+
+     LINES_FOR gives a picture its own words, because a praying capybara and a
+     horrified lion do not sound alike and a shared pool makes both of them
+     worse. A picture with nothing listed falls back to LINES, so dropping one
+     in the folder still works with no code changed. */
   var LINES = [
     'Hello. You have been on this one a while.',
     'This question is not going to blink first.',
@@ -33,17 +48,41 @@
     'Still thinking? Same.',
     'I checked. Staring harder does not work.'
   ];
+  var LINES_FOR = {
+    'no-text/companion-1': [                       // the appalled lion
+      'What in the actual —',
+      'No thoughts. Only this face.',
+      'I have been making this face for a while now.'
+    ],
+    'no-text/companion-2': [                       // the praying capybara
+      'Right. We pray now.',
+      'Praying is technically a strategy.'
+    ],
+    'no-text/companion-3': [                       // two heads bowed
+      'Lord, help us.',
+      'That is two of us praying.'
+    ],
+    'no-text/companion-4': [                       // the praying monkey
+      'Please. Just this one.',
+      'Lord, help us both.'
+    ],
+    'no-text/companion-5': [                       // the dog staring into the distance
+      'Someone help me.',
+      'Send help. Or snacks.',
+      'I have been here exactly as long as you have.'
+    ]
+  };
   var TIP = 'Flag it, move on, come back. Completely legal.';
 
   var box = null, timer = null, shownFor = null, stage = 0, dismissed = {};
   var current = null;     // a key for the question on screen
 
-  /* ---------- the photos ----------
-     Named companion-1, companion-2 … so that dropping a file in the folder is
-     the whole job: no list to keep in step, nothing to rebuild. The search
-     stops at the first missing number, which is why the folder's README asks
-     for no gaps. It runs once, and not until the buddy is actually about to
-     turn up, so a reader who never idles makes no requests at all. */
+  /* ---------- the pictures ----------
+     Named companion-1, companion-2 … in each folder, so that dropping a file
+     in is the whole job: no list to keep in step, nothing to rebuild. The
+     search stops at the first missing number, which is why the READMEs ask for
+     no gaps. It runs once, and not until the buddy is actually about to turn
+     up, so a reader who never idles makes no requests at all. */
   var photos = [], probed = false, probing = false, waiting = [];
 
   function findPhotos(done) {
@@ -52,24 +91,59 @@
     if (probing) return;
     probing = true;
 
-    var n = 1, e = 0;
     function finish() {
       probed = true; probing = false;
       var queue = waiting; waiting = [];
       queue.forEach(function (fn) { fn(); });
     }
-    function step() {
-      if (n > MAX_PHOTOS) return finish();
-      var img = new Image();
-      img.onload = function () { photos.push(img.src); n++; e = 0; step(); };
-      img.onerror = function () {
-        e++;
-        if (e < EXTS.length) return step();   // same number, another file type
-        finish();                             // a gap in the numbering: that is all of them
-      };
-      img.src = DIR + 'companion-' + n + '.' + EXTS[e];
+    /* One folder at a time, and within it one number at a time. */
+    function scan(set, then) {
+      var n = 1, e = 0;
+      function step() {
+        if (n > MAX_PHOTOS) return then();
+        var img = new Image();
+        img.onload = function () {
+          photos.push({ src: img.src, wordless: set.wordless });
+          n++; e = 0; step();
+        };
+        img.onerror = function () {
+          e++;
+          if (e < EXTS.length) return step();  // same number, another file type
+          then();                              // a gap in the numbering: that is all of them
+        };
+        img.src = set.dir + 'companion-' + n + '.' + EXTS[e];
+      }
+      step();
     }
-    step();
+    var i = 0;
+    (function nextSet() {
+      if (i >= SETS.length) return finish();
+      scan(SETS[i++], nextSet);
+    })();
+  }
+
+  /* Which picture turns up. When the buddy has something to say the choice is
+     limited to the ones without words of their own; with none of those in the
+     folder it returns null, and the drawn cat speaks instead. */
+  function pick(mustSpeak) {
+    var pool = photos;
+    if (mustSpeak) {
+      pool = [];
+      photos.forEach(function (p) { if (p.wordless) pool.push(p); });
+    }
+    return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+  }
+
+  function any(list) { return list[Math.floor(Math.random() * list.length)]; }
+
+  /* What this particular picture says. The key is its path below the companion
+     folder without the extension, so 'no-text/companion-2' covers that picture
+     whether it is a .jpg or a .png. */
+  function lineFor(photo) {
+    if (!photo) return any(LINES);                 // the cat
+    var m = /companion\/(.+)\.[a-z0-9]+$/i.exec(photo.src);
+    var own = m && LINES_FOR[m[1]];
+    return any(own || LINES);
   }
 
   function cat() {
@@ -114,28 +188,36 @@
     return s;
   }
 
-  /* A fresh face each visit, so with several photos a different one turns up. */
-  function setFace(b) {
+  /* A fresh face each visit, so with several pictures a different one turns up. */
+  function setFace(b, photo) {
     var old = b.querySelector('.companion-face');
     if (old) b.removeChild(old);
-    var node;
-    if (photos.length) {
-      node = document.createElement('img');
-      node.className = 'companion-face companion-photo';
-      node.alt = '';
-      node.setAttribute('aria-hidden', 'true');
-      /* If a photo disappears between the search and now, draw the cat rather
-         than leave a broken picture in the corner. */
-      node.onerror = function () {
-        photos = [];
-        if (node.parentNode === b) b.replaceChild(cat(), node);
-      };
-      node.src = photos[Math.floor(Math.random() * photos.length)];
-    } else {
-      node = cat();
-    }
+    if (!photo) { var drawn = cat(); b.appendChild(drawn); return drawn; }
+    var node = document.createElement('img');
+    node.className = 'companion-face companion-photo';
+    node.alt = '';
+    node.setAttribute('aria-hidden', 'true');
+    /* If a picture disappears between the search and now, draw the cat rather
+       than leave a broken image in the corner — and let it speak, since the
+       line it was holding back belonged to the picture that is no longer there. */
+    node.onerror = function () {
+      var keep = [];
+      photos.forEach(function (p) { if (p.src !== node.src) keep.push(p); });
+      photos = keep;
+      if (node.parentNode !== b) return;
+      b.replaceChild(cat(), node);
+      say(b, b._pending);
+    };
+    node.src = photo.src;
     b.appendChild(node);
     return node;
+  }
+
+  /* The bubble is left out entirely for a picture that already has writing on
+     it, rather than emptied, so nothing shows where it would have been. */
+  function say(b, text) {
+    b._bubble.textContent = text || '';
+    b._bubble.classList.toggle('gone', !text);
   }
 
   function build() {
@@ -166,10 +248,16 @@
                                 window.innerHeight * 0.86 / r.height));
   }
 
-  function show(text) {
+  /* The picture is chosen first and the words second, because the words now
+     belong to the picture. useTip is the second visit, whose line is fixed. */
+  function show(useTip) {
     var b = build();
-    b._bubble.textContent = text;
-    var face = setFace(b);
+    var photo = pick(useTip);
+    var text = useTip ? TIP : lineFor(photo);
+    b._pending = text;
+    /* The cat always speaks; a picture only if it has no words of its own. */
+    say(b, (!photo || photo.wordless) ? text : null);
+    var face = setFace(b, photo);
     b.classList.remove('hidden');
     /* Restart the entrance every time, so a second visit is not silent. */
     b.classList.remove('is-in');
@@ -187,23 +275,23 @@
     if (timer) { clearTimeout(timer); timer = null; }
   }
 
-  function arm(delay, text) {
+  /* useTip marks the second visit: the flagging tip is the one thing the buddy
+     says that is worth knowing, so it is never dropped for a picture. */
+  function arm(delay, useTip) {
     clear();
     timer = setTimeout(function () {
       var key = current;
       if (document.hidden || !key || dismissed[key]) return;
-      /* Looking for the photos can take a moment; check nothing has moved on
+      /* Looking for the pictures can take a moment; check nothing has moved on
          in the meantime before putting the buddy on screen. */
       findPhotos(function () {
         if (document.hidden || current !== key || dismissed[key]) return;
-        show(text);
+        show(useTip);
         shownFor = key;
-        if (stage === 0) { stage = 1; arm(AGAIN, TIP); }
+        if (stage === 0) { stage = 1; arm(AGAIN, true); }
       });
     }, delay);
   }
-
-  function line() { return LINES[Math.floor(Math.random() * LINES.length)]; }
 
   /* Called whenever the reader does something: a new question, an answer, a
      flag. The clock starts again from nothing. */
@@ -214,7 +302,7 @@
     if (shownFor === current) hide();
     clear();
     if (current === null || dismissed[current]) return;
-    arm(FIRST, line());
+    arm(FIRST, false);
   }
 
   /* Leaving the paper — results, or the tab going away — stops it entirely. */
@@ -226,7 +314,7 @@
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) clear();
-    else if (current !== null && !dismissed[current] && !shownFor) arm(FIRST, line());
+    else if (current !== null && !dismissed[current] && !shownFor) arm(FIRST, false);
   });
 
   window.Companion = { reset: reset, stop: stop, hide: hide };

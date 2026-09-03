@@ -363,15 +363,20 @@ after that it comes back once more to point out that flagging a question and com
 back is allowed. Tapping it sends it away for that question.
 
 **Put pictures in `assets/img/companion/`** and it uses one of those instead of the
-drawn cat, a random one each time. Name them `companion-1.jpg`, `companion-2.jpg` and
-so on (`.png`, `.jpeg` and `.webp` also work); the search stops at the first missing
-number, so leave no gaps. Nothing else needs changing — there is no list to keep in
-step and nothing to rebuild. With none there it draws the cat, so the feature can
-never break. The picture is shown whole and never cropped, because half of these are
-memes with writing across them and a square crop would cut the joke in half; it keeps
-its own shape and is only bounded, tall ones by the height and wide ones by the width.
-Nothing is fetched until the buddy is actually due, so a reader who never stalls makes
-no requests for pictures at all. The folder's own README has the rest.
+drawn cat, a random one each time. There are two folders: one from `with-text/` turns
+up on its own, because a meme with writing across it has already said its piece and a
+bubble beside it is two jokes fighting; one from `no-text/` comes with a line to
+speak. The flagging tip is the one message worth keeping, so it always goes to a
+picture without words, or to the cat when there are none.
+
+Name them `companion-1.jpg`, `companion-2.jpg` and so on within each folder (`.png`,
+`.jpeg` and `.webp` also work); the search stops at the first missing number, so leave
+no gaps. Nothing else needs changing — there is no list to keep in step and nothing to
+rebuild. With both folders empty it draws the cat, so the feature can never break. The
+picture is shown whole and never cropped: it keeps its own shape and is only bounded,
+tall ones by the height and wide ones by the width. Nothing is fetched until the buddy
+is actually due, so a reader who never stalls makes no requests for pictures at all.
+The folder's own README has the rest.
 
 It never says anything about the question itself. Anything it knew would be a hint,
 and a mock exam that helps you is not worth sitting — `assets/js/companion.js` has
@@ -395,7 +400,7 @@ assets/js/icons.js    the drawn icons the cards use
 assets/js/companion.js the study buddy that turns up on a long question
 assets/fonts/         Inter, self-hosted (SIL OFL)
 assets/img/           the college logo and the tab icon
-assets/img/companion/ drop pictures here for the study buddy
+assets/img/companion/ drop pictures here: with-text/ speaks for itself, no-text/ gets a line
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
 assets/js/feedback.js     question reports → Google Sheet (off until configured)

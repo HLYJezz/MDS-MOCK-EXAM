@@ -370,6 +370,8 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   box-shadow: var(--shadow); padding: .5rem .7rem;
   font-size: .82rem; line-height: 1.35;
 }
+/* A picture that already has writing on it comes with no bubble at all. */
+.companion-bubble.gone { display: none; }
 
 /* It arrives the size of the page and shrinks into the corner over a couple of
    seconds. Scaling from its own bottom-right corner means it grows up and
