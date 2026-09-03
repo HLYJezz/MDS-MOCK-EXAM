@@ -13,7 +13,7 @@ No build step, no server code, no accounts — plain HTML/CSS/JS.
 
 ## Getting around
 
-Three screens:
+Three screens, plus a credits page:
 
 1. `index.html` — the subjects, listed by year, plus links out to the Drive folder and
    the Notion hub. Which year a subject belongs to is set in `COURSES` in
@@ -21,6 +21,9 @@ Three screens:
 2. `subject.html?course=MDS211` — that subject's papers, split into its subsets.
 3. `exam.html?subject=<paper>` — the paper itself. Its back links return to the
    subject, not the front page, so the next paper is one tap away.
+
+The footer credit carries a small button through to `credit.html`, which names who
+made the site and what it is built out of.
 
 ## The papers
 
@@ -390,8 +393,10 @@ no clicks except its own, so it can never swallow a tap meant for an answer.
 index.html            subject chooser, grouped by year
 subject.html          one subject's papers, split into its subsets
 exam.html             instructions → paper → results
+credit.html           who made it, and what it is built out of
 assets/css/style.css  all styling
 assets/js/store.js    localStorage (progress, results, theme)
+assets/js/theme.js    the light/dark toggle in the header
 assets/js/registry.js registerExam() and question normalising
 assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     subjects by year, resource links, attempt history

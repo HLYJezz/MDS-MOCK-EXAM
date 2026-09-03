@@ -5,12 +5,6 @@
   var statsPanel = document.getElementById('statsPanel');
   var historyList = document.getElementById('historyList');
 
-  document.getElementById('themeToggle').addEventListener('click', function () {
-    var now = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', now);
-    Store.setTheme(now);
-  });
-
   document.getElementById('clearHistory').addEventListener('click', function () {
     if (confirm('Delete all saved scores on this device?')) { Store.clearResults(); render(); }
   });

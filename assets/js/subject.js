@@ -5,12 +5,6 @@
   var titleEl = document.getElementById('courseTitle');
   var summaryEl = document.getElementById('courseSummary');
 
-  document.getElementById('themeToggle').addEventListener('click', function () {
-    var now = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', now);
-    Store.setTheme(now);
-  });
-
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;

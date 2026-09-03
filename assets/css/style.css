@@ -318,8 +318,42 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   gap: 1rem; flex-wrap: wrap;
 }
 .footer-inner p { margin: 0; }
-.credit { color: var(--muted); white-space: nowrap; }
+.credit {
+  color: var(--muted); white-space: nowrap;
+  display: inline-flex; align-items: center; gap: .45rem;
+}
 .credit strong { color: var(--text); font-weight: 650; }
+/* The way through to the credits page: small enough to be a footnote on the
+   footer line, big enough to be a tap target on a phone. */
+.credit-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; flex: none;
+  border: 1px solid var(--line); border-radius: 50%;
+  color: var(--muted); text-decoration: none;
+  transition: color .12s, border-color .12s;
+}
+.credit-link svg { width: 15px; height: 15px; display: block; }
+.credit-link:hover, .credit-link:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- the credits page ---------- */
+.credit-page {
+  display: grid; gap: 1rem; margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.credit-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.1rem 1.2rem;
+}
+.credit-card p { margin: 0; }
+.credit-role {
+  color: var(--muted); text-transform: uppercase;
+  letter-spacing: .07em; font-weight: 650;
+}
+.credit-who { font-size: 1.45rem; font-weight: 700; margin: .15rem 0 .4rem !important; }
+.credit-notes { margin-bottom: 3rem; }
+.credit-list { margin: .8rem 0 0; padding-left: 1.1rem; display: grid; gap: .6rem; }
+.credit-list li { color: var(--muted); line-height: 1.55; }
+.credit-list strong { color: var(--text); }
 
 /* ---------- start screen: which lectures to sit ---------- */
 .lecture-head {
