@@ -362,14 +362,16 @@ of the page, shrinking over three seconds into the corner with a line; 90 second
 after that it comes back once more to point out that flagging a question and coming
 back is allowed. Tapping it sends it away for that question.
 
-**Put photos in `assets/img/companion/`** and it uses one of those instead of the
-drawn cat, cropped to a circle, a random one each time. Name them `companion-1.png`,
-`companion-2.png` and so on (`.jpg`, `.jpeg` and `.webp` also work); the search stops
-at the first missing number, so leave no gaps. Nothing else needs changing — there is
-no list to keep in step and nothing to rebuild. With no photos there it draws the cat,
-so the feature can never break. The folder's own README says the same in more detail.
+**Put pictures in `assets/img/companion/`** and it uses one of those instead of the
+drawn cat, a random one each time. Name them `companion-1.jpg`, `companion-2.jpg` and
+so on (`.png`, `.jpeg` and `.webp` also work); the search stops at the first missing
+number, so leave no gaps. Nothing else needs changing — there is no list to keep in
+step and nothing to rebuild. With none there it draws the cat, so the feature can
+never break. The picture is shown whole and never cropped, because half of these are
+memes with writing across them and a square crop would cut the joke in half; it keeps
+its own shape and is only bounded, tall ones by the height and wide ones by the width.
 Nothing is fetched until the buddy is actually due, so a reader who never stalls makes
-no requests for photos at all.
+no requests for pictures at all. The folder's own README has the rest.
 
 It never says anything about the question itself. Anything it knew would be a hint,
 and a mock exam that helps you is not worth sitting — `assets/js/companion.js` has
@@ -393,7 +395,7 @@ assets/js/icons.js    the drawn icons the cards use
 assets/js/companion.js the study buddy that turns up on a long question
 assets/fonts/         Inter, self-hosted (SIL OFL)
 assets/img/           the college logo and the tab icon
-assets/img/companion/ drop photos here for the study buddy
+assets/img/companion/ drop pictures here for the study buddy
 assets/js/exam.js     timer, paper, navigator, marking, review
 assets/js/analytics.js    optional visit counting (off until configured)
 assets/js/feedback.js     question reports → Google Sheet (off until configured)

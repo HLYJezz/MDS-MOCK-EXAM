@@ -352,13 +352,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   transition: opacity .25s, transform .25s;
 }
 .companion.hidden { display: none !important; }
-.companion-face { width: 62px; height: auto; display: block; }
-/* A photo is cropped to a circle, so whatever the shape of the file it lands
-   in the corner the same size as the cat and reads as a face, not a snapshot.
-   The ring keeps it off a dark photo's edge on either theme. */
+.companion-face { display: block; }
+.cat-svg { width: 62px; height: auto; }
+/* A photo is shown whole, never cropped: half of these have writing on them,
+   and a square crop would cut the joke in half. So it keeps its own shape and
+   is only bounded — tall ones by the height, wide ones by the width. */
 .companion-photo {
-  width: 62px; height: 62px; border-radius: 50%;
-  object-fit: cover; background: var(--surface);
+  width: auto; height: auto;
+  max-width: 132px; max-height: 104px;
+  border-radius: 12px; background: var(--surface);
   border: 2px solid var(--surface); box-shadow: var(--shadow);
 }
 .companion-bubble {
@@ -404,10 +406,10 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   .cat-eye { animation: none; }
 }
 @media (max-width: 560px) {
-  .companion-face { width: 50px; }
-  .companion-photo { height: 50px; }
+  .cat-svg { width: 50px; }
+  .companion-photo { max-width: 104px; max-height: 84px; }
   .companion { right: 10px; bottom: 12px; }
-  .companion-bubble { max-width: 58vw; font-size: .78rem; }
+  .companion-bubble { max-width: 50vw; font-size: .78rem; }
 }
 
 /* ---------- results: how each lecture went ---------- */
