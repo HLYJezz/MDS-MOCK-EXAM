@@ -890,8 +890,9 @@
     $('examSub').textContent = (exam.course ? exam.course + ' · ' : '') +
       state.order.length + ' questions' + (state.subset ? ' · ' + state.subset : '');
     showScreen('screenExam');
-    /* On phones the navigator starts hidden behind the "Questions" button. */
-    $('palette').classList.toggle('collapsed', window.innerWidth <= 860);
+    /* Hidden if that is what was chosen last time, and on a phone by default,
+       where a grid of 60 numbers above the question is not a help. */
+    setPalette(Store.paletteHidden() || window.innerWidth <= 860);
     renderQuestion();
     renderPalette();
     startTimer();
@@ -932,8 +933,20 @@
   });
   $('confirmBtn').addEventListener('click', confirmAnswer);
   $('submitBtn').addEventListener('click', confirmSubmit);
+  /* The navigator folds away at any width, not just on a phone, for anyone who
+     wants nothing on screen but the question. The choice is remembered. */
+  function setPalette(hidden) {
+    $('palette').classList.toggle('collapsed', hidden);
+    document.body.classList.toggle('palette-off', hidden);
+    var b = $('paletteToggle');
+    b.textContent = hidden ? 'Questions' : 'Hide list';
+    b.setAttribute('aria-pressed', String(!hidden));
+    b.title = hidden ? 'Show the question navigator' : 'Hide the question navigator';
+  }
   $('paletteToggle').addEventListener('click', function () {
-    $('palette').classList.toggle('collapsed');
+    var hidden = !$('palette').classList.contains('collapsed');
+    Store.setPaletteHidden(hidden);
+    setPalette(hidden);
   });
   document.addEventListener('keydown', function (e) {
     if ($('screenExam').classList.contains('hidden')) return;

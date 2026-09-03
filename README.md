@@ -24,7 +24,7 @@ Three screens:
 
 ## The papers
 
-24 papers, 3,020 questions, generated from the files in `source-papers/`. Cards appear in
+25 papers, 3,040 questions, generated from the files in `source-papers/`. Cards appear in
 the order the papers are listed in `tools/convert_papers.py`, except that papers carrying a
 `badge` lead their subset, so a recommended paper added later still sits with its siblings.
 A course can be split into subsets — MDS210, MDS211 and BCH212 each into SA1 and SA2 — by
@@ -42,6 +42,7 @@ since SA1 means Lectures 1–16 in MDS211, 1–9 in BCH212 and 1–5 in MDS210:
 | | | SA2 Mock Exam 2 | 77 | 60 min |
 | | | SA2 Mock Exam 3 | 77 | 60 min |
 | | | Neuro Past Paper | 225 | 170 min |
+| | | Lecture 28 New Professor Practice Set | 20 | 15 min |
 | | | SA2 Lecture-Grouped Question Bank | 155 | 115 min |
 | MDS220 — Musculoskeletal 1 | | Full Practice Exam | 202 | 150 min |
 | | | Hard Practice Exam | 151 | 115 min |
@@ -90,7 +91,8 @@ recorded as illegible (105 and 238) are answered in the current edition of that 
 - Papers grouped by course, each card showing question count, time and best score
 - Exam mode (marked at the end) or practice mode (marked as you go, with explanations)
 - Countdown that turns amber at 5 minutes and red at 1 minute, and auto-submits at zero
-- One question at a time, with a navigator showing answered and flagged questions
+- One question at a time, with a navigator showing answered and flagged questions —
+  foldable at any width, and it stays folded until you say otherwise
 - Flag for review, jump around freely, arrow keys to move between questions
 - Answers auto-save — closing the tab does not lose the attempt, reopening offers to resume
 - Sit the whole paper, or tick the lectures you want; retry just what you got wrong
@@ -355,8 +357,8 @@ The footer says in as many words that this is a student's unofficial study site.
 
 ## The cat
 
-Sit on one question without answering for 75 seconds and a small cat climbs into
-the corner with a line of encouragement; 90 seconds after that it comes back once
+Sit on one question without answering for 75 seconds and a cat arrives the size of
+the page, shrinking over three seconds into the corner with a line of encouragement; 90 seconds after that it comes back once
 more to point out that flagging a question and coming back is allowed. Tapping it
 sends it away for that question.
 

@@ -88,6 +88,17 @@
     return box;
   }
 
+  /* It arrives filling the page and shrinks down into its corner. The scale it
+     starts at is worked out from the window, because a fixed number would swamp
+     a phone and look timid on a monitor. It starts faint and gains its colour
+     on the way down, so the question underneath stays readable throughout. */
+  function entranceScale(node) {
+    var r = node.getBoundingClientRect();
+    if (!r.width || !r.height) return 6;
+    return Math.max(1, Math.min(window.innerWidth * 0.92 / r.width,
+                                window.innerHeight * 0.86 / r.height));
+  }
+
   function show(text) {
     var b = build();
     b._bubble.textContent = text;
@@ -95,6 +106,8 @@
     /* Restart the entrance every time, so a second visit is not silent. */
     b.classList.remove('is-in');
     void b.offsetWidth;
+    var cat = b.querySelector('.cat-svg');
+    cat.style.setProperty('--cat-scale', entranceScale(cat).toFixed(2));
     b.classList.add('is-in');
   }
 

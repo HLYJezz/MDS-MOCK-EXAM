@@ -57,6 +57,10 @@
     },
     reporterName: function () { return read('reporterName', ''); },
     setReporterName: function (n) { write('reporterName', n || ''); },
+    /* Whether the question navigator is folded away, so someone who wants a
+       bare question keeps it that way from paper to paper. */
+    paletteHidden: function () { return read('paletteHidden', false) === true; },
+    setPaletteHidden: function (v) { write('paletteHidden', !!v); },
     /* 'exam' marks everything at the end; 'practice' checks each answer as it
        is given. Chosen on the start screen. */
     mode: function () { return read('mode', 'exam') === 'practice' ? 'practice' : 'exam'; },

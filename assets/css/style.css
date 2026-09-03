@@ -360,22 +360,38 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   font-size: .82rem; line-height: 1.35;
 }
 
-/* It climbs up from below the edge, then settles. */
-@keyframes cat-climb {
-  0%   { transform: translateY(34px); opacity: 0; }
-  60%  { transform: translateY(-5px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 1; }
+/* It arrives the size of the page and shrinks into the corner over a couple of
+   seconds. Scaling from its own bottom-right corner means it grows up and
+   across the page and lands back exactly where it rests, with no drift. */
+@keyframes cat-arrive {
+  /* It holds at full size for the first stretch — an ease that starts fast
+     swallows the big moment in a blink — then comes down and settles. */
+  0%   { transform: scale(var(--cat-scale, 6)); opacity: .13; }
+  22%  { transform: scale(calc(var(--cat-scale, 6) * .88)); opacity: .26; }
+  65%  { opacity: .62; }
+  92%  { transform: scale(.95); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 @keyframes cat-blink {
   0%, 92%, 100% { transform: scaleY(1); }
   95%           { transform: scaleY(.12); }
 }
-.companion.is-in { animation: cat-climb .5s cubic-bezier(.2, .9, .3, 1.2) both; }
+/* The bubble waits for the cat to be nearly down before speaking. */
+@keyframes cat-speak {
+  0%, 72% { opacity: 0; transform: translateY(6px); }
+  100%    { opacity: 1; transform: translateY(0); }
+}
+.companion.is-in .cat-svg {
+  transform-origin: 100% 100%;
+  animation: cat-arrive 3s cubic-bezier(.45, .05, .3, 1) both;
+}
+.companion.is-in .companion-bubble { animation: cat-speak 3s ease-out both; }
 .cat-eye { transform-box: fill-box; transform-origin: center; animation: cat-blink 5.5s infinite; }
 .cat-eye:last-of-type { animation-delay: .12s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .companion.is-in { animation: none; }
+  .companion.is-in .cat-svg,
+  .companion.is-in .companion-bubble { animation: none; }
   .cat-eye { animation: none; }
 }
 @media (max-width: 560px) {
@@ -640,7 +656,13 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   .palette-grid { grid-template-columns: repeat(8, 1fr); }
   h1 { font-size: 1.55rem; }
 }
-@media (min-width: 861px) { #paletteToggle { display: none !important; } }
+/* The navigator folds away at any width, so the toggle is always offered and
+   the question takes the whole width when it is gone. */
+.palette.collapsed { display: none; }
+/* Wider than the question had with the navigator beside it — hiding it is
+   meant to give the question room — but still short of a full-width line of
+   text on a big monitor. */
+body.palette-off .exam-layout { grid-template-columns: minmax(0, 1fr); max-width: 1080px; }
 @media (max-width: 620px) {
   .exam-header-inner { padding: .55rem 14px; gap: .5rem; }
   .exam-sub { display: none; }
