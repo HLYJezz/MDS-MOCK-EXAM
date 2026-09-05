@@ -339,6 +339,9 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .credit-page {
   display: grid; gap: 1rem; margin-bottom: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* Each card as tall as its own contents: one member has a note under their
+     name, and stretching the whole row to match leaves the others hollow. */
+  align-items: start;
 }
 .credit-card {
   background: var(--surface); border: 1px solid var(--line);
@@ -349,7 +352,40 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   color: var(--muted); text-transform: uppercase;
   letter-spacing: .07em; font-weight: 650;
 }
-.credit-who { font-size: 1.45rem; font-weight: 700; margin: .15rem 0 .4rem !important; }
+/* The nickname is what anyone in the cohort would actually call them, so it
+   leads and the full name sits under it. */
+.credit-who { font-size: 1.45rem; font-weight: 700; margin: .15rem 0 .1rem !important; }
+.credit-full { margin-bottom: .4rem !important; }
+.credit-card .muted + .muted { margin-top: .5rem !important; }
+
+/* ---------- contact ---------- */
+.contact { margin-bottom: 2.4rem; }
+.contact h2 { margin-bottom: .2rem; }
+.contact-who { color: var(--accent); }
+.contact-quote {
+  margin: .6rem 0 1.1rem; padding: .1rem 0 .1rem 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted); font-size: 1.05rem; font-style: italic;
+}
+.contact-btns { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.2rem; }
+.contact-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  padding: .55rem 1.05rem; text-decoration: none; color: inherit; font-weight: 650;
+  transition: transform .12s, border-color .12s, color .12s;
+}
+.contact-btn svg { width: 19px; height: 19px; flex: none; }
+.contact-btn:hover, .contact-btn:focus-visible {
+  transform: translateY(-2px); border-color: var(--accent); color: var(--accent);
+}
+/* Label above value, so a long address never has to share a line with its
+   label on a phone. */
+.contact-mail { margin: 0; display: grid; gap: .15rem; }
+.contact-mail dt { color: var(--muted); font-size: .85rem; }
+.contact-mail dd { margin: 0 0 .7rem; }
+.contact-mail dd:last-child { margin-bottom: 0; }
+.contact-mail a { color: var(--accent); overflow-wrap: anywhere; }
+
 .credit-notes { margin-bottom: 3rem; }
 .credit-list { margin: .8rem 0 0; padding-left: 1.1rem; display: grid; gap: .6rem; }
 .credit-list li { color: var(--muted); line-height: 1.55; }
