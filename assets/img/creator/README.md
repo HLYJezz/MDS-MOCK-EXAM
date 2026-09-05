@@ -23,8 +23,11 @@ broken picture. So the easter egg only exists once there is a face to show.
 ## What makes a good one
 
 - **The card is a wide, short letterbox** — about 2:1 — so the photo is cropped
-  to a band across it. The band sits a little above centre, where a face
-  usually is, but a full-length photo will lose everything but a strip.
+  to a band across it, a little above centre. **A landscape close-up of a face
+  is what fits.** A tall phone selfie loses everything but a strip: shot
+  portrait, a whole face is four times taller than the band, so what survives is
+  usually hair and a forehead. Crop it to a wide strip around the face before
+  dropping it in, and what you cropped is exactly what shows.
 - **At least 700px wide.** The card is about 340px across on a big screen, so
   twice that keeps it sharp on a retina one.
 - The photo is nothing to do with the exams, so it is only fetched once someone
