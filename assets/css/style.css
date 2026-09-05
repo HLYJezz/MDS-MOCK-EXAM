@@ -358,13 +358,6 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .credit-full { margin-bottom: .4rem !important; }
 .credit-card .muted + .muted { margin-top: .5rem !important; }
 
-/* One card on its own, held to the width of a card in the grid above rather
-   than stretched across the page as a lone full-width column would be. */
-.credit-thanks {
-  display: grid; grid-template-columns: minmax(0, 340px);
-  margin-bottom: 2.2rem;
-}
-
 /* ---------- contact ---------- */
 .contact { margin-bottom: 2.4rem; }
 .contact h2 { margin-bottom: .2rem; }
