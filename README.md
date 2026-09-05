@@ -22,8 +22,10 @@ Three screens, plus a credits page:
 3. `exam.html?subject=<paper>` — the paper itself. Its back links return to the
    subject, not the front page, so the next paper is one tap away.
 
-The footer credit carries a small button through to `credit.html`, which names who
-made the site and what it is built out of.
+The footer credit carries a small button through to `credit.html`: the committee, how
+to reach VICHAKARN37, and what the site is built out of. Tap the IT card on that page
+seven times in a row and it turns over to a photo — drop one in `assets/img/creator/`
+to switch it on, and with that folder empty the card does nothing at all.
 
 ## The papers
 
@@ -393,10 +395,11 @@ no clicks except its own, so it can never swallow a tap meant for an answer.
 index.html            subject chooser, grouped by year
 subject.html          one subject's papers, split into its subsets
 exam.html             instructions → paper → results
-credit.html           who made it, and what it is built out of
+credit.html           the committee, how to reach them, and what the site is built out of
 assets/css/style.css  all styling
 assets/js/store.js    localStorage (progress, results, theme)
 assets/js/theme.js    the light/dark toggle in the header
+assets/js/credit.js   the credits page's easter egg
 assets/js/registry.js registerExam() and question normalising
 assets/js/loader.js   loads one paper's questions on demand
 assets/js/home.js     subjects by year, resource links, attempt history
