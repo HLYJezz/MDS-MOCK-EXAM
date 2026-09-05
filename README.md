@@ -22,6 +22,10 @@ Three screens, plus a credits page:
 3. `exam.html?subject=<paper>` — the paper itself. Its back links return to the
    subject, not the front page, so the next paper is one tap away.
 
+The credits page carries the site's version, in small type under the notes. It is
+bumped by hand in `credit.html` on each release — worth keeping current, because when
+someone says the site looks wrong it is how you tell a stale cache from a real bug.
+
 The footer credit carries a small button through to `credit.html`: the committee, how
 to reach VICHAKARN37, and what the site is built out of. Tap the IT card on that page
 seven times in a row and it turns over to a photo — drop one in `assets/img/creator/`

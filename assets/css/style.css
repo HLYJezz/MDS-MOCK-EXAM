@@ -431,6 +431,12 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 }
 
 .credit-notes { margin-bottom: 3rem; }
+/* Quieter than the notes above it: something to read out when a page looks
+   wrong, not something to notice on the way past. */
+.site-version {
+  margin: 1.4rem 0 0; font-size: .78rem;
+  font-variant-numeric: tabular-nums;
+}
 .credit-list { margin: .8rem 0 0; padding-left: 1.1rem; display: grid; gap: .6rem; }
 .credit-list li { color: var(--muted); line-height: 1.55; }
 .credit-list strong { color: var(--text); }
