@@ -42,45 +42,60 @@
       and how to reach us.</p>
   </section>
 
+  <!-- Every card turns over when it is tapped enough times in a row, to a
+       picture named after the person: day-1.jpg, mew-1.jpg and so on in
+       assets/img/creator/. A card with no picture there does nothing.
+       See assets/js/credit.js. -->
   <section class="credit-page">
-    <div class="credit-card">
-      <p class="credit-role small">Student President, MEDRSU37</p>
-      <p class="credit-who">Mew</p>
-      <p class="credit-full muted">Isareeya Dusdeesurapot</p>
+    <div class="credit-card egg-card" data-egg="mew">
+      <div class="egg-face egg-front">
+        <p class="credit-role small">Student President, MEDRSU37</p>
+        <p class="credit-who">Mew</p>
+        <p class="credit-full muted">Isareeya Dusdeesurapot</p>
+      </div>
     </div>
 
-    <div class="credit-card">
-      <p class="credit-role small">President</p>
-      <p class="credit-who">Dunk</p>
-      <p class="credit-full muted">Okard Chinkunkitniwat</p>
+    <div class="credit-card egg-card" data-egg="dunk">
+      <div class="egg-face egg-front">
+        <p class="credit-role small">President</p>
+        <p class="credit-who">Dunk</p>
+        <p class="credit-full muted">Okard Chinkunkitniwat</p>
+      </div>
     </div>
 
-    <div class="credit-card">
-      <p class="credit-role small">Vice President</p>
-      <p class="credit-who">Am</p>
-      <p class="credit-full muted">Varinton Srisuwan</p>
+    <div class="credit-card egg-card" data-egg="am">
+      <div class="egg-face egg-front">
+        <p class="credit-role small">Vice President</p>
+        <p class="credit-who">Am</p>
+        <p class="credit-full muted">Varinton Srisuwan</p>
+      </div>
     </div>
 
-    <div class="credit-card">
-      <p class="credit-role small">President’s Mom (consultant)</p>
-      <p class="credit-who">Rami</p>
-      <p class="credit-full muted">Ramida Thanakunphorn</p>
+    <div class="credit-card egg-card" data-egg="rami">
+      <div class="egg-face egg-front">
+        <p class="credit-role small">President’s Mom (consultant)</p>
+        <p class="credit-who">Rami</p>
+        <p class="credit-full muted">Ramida Thanakunphorn</p>
+      </div>
     </div>
 
-    <div class="credit-card">
-      <p class="credit-role small">Public Relations (PR)</p>
-      <p class="credit-who">Bam</p>
-      <p class="credit-full muted">Jiratchaya Prabumrung</p>
+    <div class="credit-card egg-card" data-egg="bam">
+      <div class="egg-face egg-front">
+        <p class="credit-role small">Public Relations (PR)</p>
+        <p class="credit-who">Bam</p>
+        <p class="credit-full muted">Jiratchaya Prabumrung</p>
+      </div>
     </div>
 
-    <div class="credit-card">
-      <p class="credit-role small">Public Relations (PR)</p>
-      <p class="credit-who">Pie</p>
-      <p class="credit-full muted">Pichayadha Penchamrush</p>
+    <div class="credit-card egg-card" data-egg="pie">
+      <div class="egg-face egg-front">
+        <p class="credit-role small">Public Relations (PR)</p>
+        <p class="credit-who">Pie</p>
+        <p class="credit-full muted">Pichayadha Penchamrush</p>
+      </div>
     </div>
 
-    <!-- Tap this one enough times and it turns over. See assets/js/credit.js. -->
-    <div class="credit-card egg-card" data-egg="creator">
+    <div class="credit-card egg-card" data-egg="day">
       <div class="egg-face egg-front">
         <p class="credit-role small">Information Technology (IT)</p>
         <p class="credit-who">Day</p>
@@ -145,7 +160,7 @@
 
     <!-- Bumped by hand on each release. Worth having: when someone says the
          site looks wrong, this is how you tell a stale cache from a real bug. -->
-    <p class="site-version small muted">Version 1.1 · 5 September 2026</p>
+    <p class="site-version small muted">Version 1.2 · 5 September 2026</p>
   </section>
 </main>
 

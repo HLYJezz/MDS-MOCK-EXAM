@@ -27,9 +27,10 @@ bumped by hand in `credit.html` on each release — worth keeping current, becau
 someone says the site looks wrong it is how you tell a stale cache from a real bug.
 
 The footer credit carries a small button through to `credit.html`: the committee, how
-to reach VICHAKARN37, and what the site is built out of. Tap the IT card on that page
-seven times in a row and it turns over to a photo — drop one in `assets/img/creator/`
-to switch it on, and with that folder empty the card does nothing at all.
+to reach VICHAKARN37, and what the site is built out of. Tap **any** name card on that
+page seven times in a row and it turns over to a photo of that person — named after
+them, `day-1.jpg`, `mew-1.jpg` and so on in `assets/img/creator/`. A card with no photo
+there does nothing at all, so people can be added one at a time.
 
 ## The papers
 
