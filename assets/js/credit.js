@@ -11,7 +11,14 @@
    someone is dropping a file in and nothing else.
    --------------------------------------------------------------------------- */
 (function () {
-  var cards = document.querySelectorAll('[data-egg]');
+  /* Found by the shape of the page rather than by an attribute, and the person
+     taken from the nickname on the card. This is deliberate: twice now a
+     browser holding yesterday's HTML alongside today's script has killed this
+     feature outright, because the two had to agree on a name that changed.
+     A card is a card in every version of this page, so nothing here breaks
+     when the markup moves on — and adding somebody to the page needs no
+     change here at all. */
+  var cards = document.querySelectorAll('.credit-page .credit-card');
   if (!cards.length) return;
 
   var TAPS = 7;           // how many it takes
@@ -92,7 +99,24 @@
   /* Each card counts its own taps and searches for its own photos, so tapping
      one has nothing to do with any of the others. */
   function wire(card) {
-    var who = card.getAttribute('data-egg');
+    var named = card.querySelector('.credit-who');
+    if (!named) return;
+    var who = (card.getAttribute('data-egg') || named.textContent)
+      .trim().toLowerCase().replace(/[^a-z0-9-]/g, '');
+    /* What the attribute was called when only one card had it. */
+    if (who === 'creator') who = 'day';
+    if (!who) return;
+
+    /* A page from before every card could turn has neither the class that
+       gives it a hinge nor a front face to turn away — so give it both. */
+    card.classList.add('egg-card');
+    if (!card.querySelector('.egg-front')) {
+      var front = document.createElement('div');
+      front.className = 'egg-face egg-front';
+      while (card.firstChild) front.appendChild(card.firstChild);
+      card.appendChild(front);
+    }
+
     var taps = 0, last = 0, flipped = false, back = null, timer = null, shownAt = 0;
     var photos = [], probed = false, probing = false, waiting = [];
 
