@@ -22,9 +22,31 @@ Three screens, plus a credits page:
 3. `exam.html?subject=<paper>` — the paper itself. Its back links return to the
    subject, not the front page, so the next paper is one tap away.
 
-The credits page carries the site's version, in small type under the notes. It is
-bumped by hand in `credit.html` on each release — worth keeping current, because when
-someone says the site looks wrong it is how you tell a stale cache from a real bug.
+## Releasing
+
+Before pushing a set of changes, stamp them:
+
+```
+python3 tools/stamp_version.py 1.4
+```
+
+That puts `?v=1.4` on every stylesheet, script and image the pages ask for, and sets
+the version line at the bottom of the credits page to match. `loader.js` reads the
+stamp off its own URL and passes it on to the paper it fetches, so the papers are
+covered too.
+
+This matters more than it looks. GitHub Pages will not let us set cache headers and
+tells browsers a page is good for ten minutes, while the scripts beside it are fetched
+on their own clocks — so for a while after every push a browser can run one release's
+page against another release's JavaScript. That broke this site three times, silently
+each time. A version in the URL makes each release's assets a different address, so a
+page can only load the scripts it shipped with.
+
+It does **not** make a stale page fresh; nothing hosted here can. Two things follow:
+write JavaScript that still works against an older page (`assets/js/credit.js` finds
+its cards by shape rather than by a name that might change), and expect up to ten
+minutes before a push is visible. The version line on the credits page is how anyone
+tells which release they are actually looking at.
 
 The footer credit carries a small button through to `credit.html`: the committee, how
 to reach VICHAKARN37, and what the site is built out of. Tap **any** name card on that

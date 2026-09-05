@@ -6,6 +6,21 @@
 (function () {
   window.MockExam = window.MockExam || {};
 
+  /* The release this page was built as, read off this script's own URL —
+     tools/stamp_version.py puts ?v=… on every asset the pages ask for. The
+     papers are fetched later, by JavaScript rather than by the page, so they
+     would miss that stamp; carrying it forward means a paper and the page that
+     asked for it always come from the same release, however long a browser has
+     been sitting on either. */
+  var VERSION = (function () {
+    var me = document.currentScript;
+    var m = me && /[?&]v=([^&"]+)/.exec(me.src || '');
+    return m ? m[1] : '';
+  })();
+  function stamped(url) {
+    return VERSION ? url + (url.indexOf('?') < 0 ? '?' : '&') + 'v=' + VERSION : url;
+  }
+
   /* The pace choices offered on the exam's start screen. */
   window.MockExam.PACES = [
     { seconds: 30, label: '30 sec' },
@@ -42,7 +57,7 @@
     if (window.MockExam.get(id)) return done(window.MockExam.get(id));
 
     var s = document.createElement('script');
-    s.src = meta.file;
+    s.src = stamped(meta.file);
     s.onload = function () { done(window.MockExam.get(id)); };
     s.onerror = function () {
       console.error('Could not load ' + meta.file);
