@@ -403,6 +403,8 @@ credit.html           the committee, how to reach them, and what the site is bui
 assets/css/style.css  all styling
 assets/js/store.js    localStorage (progress, results, theme)
 assets/js/theme.js    the light/dark toggle in the header
+assets/js/modal.js    Escape and tap-outside for any dialog
+assets/js/photos.js   finds the pictures dropped into a folder
 assets/js/credit.js   the credits page's easter egg
 assets/js/registry.js registerExam() and question normalising
 assets/js/loader.js   loads one paper's questions on demand

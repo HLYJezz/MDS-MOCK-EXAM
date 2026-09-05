@@ -951,6 +951,9 @@
   document.addEventListener('keydown', function (e) {
     if ($('screenExam').classList.contains('hidden')) return;
     if (e.target.tagName === 'INPUT') return;
+    /* A dialog is in front: the arrows belong to it, not to the paper
+       underneath, which the reader cannot even see. */
+    if (document.querySelector('.modal:not(.hidden)')) return;
     if (e.key === 'ArrowRight' && state.current < state.order.length - 1) goTo(state.current + 1);
     if (e.key === 'ArrowLeft') goTo(state.current - 1);
   });

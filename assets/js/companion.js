@@ -20,8 +20,6 @@
   var AGAIN = 90000;      // and again, once, with the flagging tip
 
   var DIR = 'assets/img/companion/';
-  var EXTS = ['png', 'jpg', 'jpeg', 'webp'];
-  var MAX_PHOTOS = 12;    // a sane ceiling on the search, not a limit worth hitting
 
   /* Two folders, because a meme with writing across it has already said its
      piece: putting a speech bubble next to it is two jokes fighting. So a
@@ -64,11 +62,9 @@
   var current = null;     // a key for the question on screen
 
   /* ---------- the pictures ----------
-     Named companion-1, companion-2 … in each folder, so that dropping a file
-     in is the whole job: no list to keep in step, nothing to rebuild. The
-     search stops at the first missing number, which is why the READMEs ask for
-     no gaps. It runs once, and not until the buddy is actually about to turn
-     up, so a reader who never idles makes no requests at all. */
+     Found by name so that dropping a file in is the whole job. It runs once,
+     and not until the buddy is actually about to turn up, so a reader who
+     never idles asks for nothing at all. */
   var photos = [], probed = false, probing = false, waiting = [];
 
   function findPhotos(done) {
@@ -77,34 +73,18 @@
     if (probing) return;
     probing = true;
 
-    function finish() {
-      probed = true; probing = false;
-      var queue = waiting; waiting = [];
-      queue.forEach(function (fn) { fn(); });
-    }
-    /* One folder at a time, and within it one number at a time. */
-    function scan(set, then) {
-      var n = 1, e = 0;
-      function step() {
-        if (n > MAX_PHOTOS) return then();
-        var img = new Image();
-        img.onload = function () {
-          photos.push({ src: img.src, wordless: set.wordless });
-          n++; e = 0; step();
-        };
-        img.onerror = function () {
-          e++;
-          if (e < EXTS.length) return step();  // same number, another file type
-          then();                              // a gap in the numbering: that is all of them
-        };
-        img.src = set.dir + 'companion-' + n + '.' + EXTS[e];
-      }
-      step();
-    }
     var i = 0;
     (function nextSet() {
-      if (i >= SETS.length) return finish();
-      scan(SETS[i++], nextSet);
+      if (i >= SETS.length) {
+        probed = true; probing = false;
+        var q = waiting; waiting = [];
+        return q.forEach(function (fn) { fn(); });
+      }
+      var set = SETS[i++];
+      MockPhotos.find(set.dir, 'companion', function (urls) {
+        urls.forEach(function (u) { photos.push({ src: u, wordless: set.wordless }); });
+        nextSet();
+      });
     })();
   }
 
@@ -165,11 +145,12 @@
   }
 
   /* A fresh face each visit, so with several pictures a different one turns up. */
-  function setFace(b, photo) {
+  function setFace(b, photo, node) {
     var old = b.querySelector('.companion-face');
     if (old) b.removeChild(old);
     if (!photo) { var drawn = cat(); b.appendChild(drawn); return drawn; }
-    var node = document.createElement('img');
+    /* The element handed over is the one that was loaded a moment ago, so
+       putting it on the page costs nothing further. */
     node.className = 'companion-face companion-photo';
     node.alt = '';
     node.setAttribute('aria-hidden', 'true');
@@ -184,7 +165,6 @@
       b.replaceChild(cat(), node);
       say(b, b._pending);
     };
-    node.src = photo.src;
     b.appendChild(node);
     return node;
   }
@@ -226,14 +206,13 @@
 
   /* Picture and words are drawn independently, so any line can turn up beside
      any face. useTip is the second visit, whose line is fixed. */
-  function show(useTip) {
+  function show(photo, useTip, img) {
     var b = build();
-    var photo = pick(useTip);
     var text = useTip ? TIP : any(LINES);
     b._pending = text;
     /* The cat always speaks; a picture only if it has no words of its own. */
     say(b, (!photo || photo.wordless) ? text : null);
-    var face = setFace(b, photo);
+    var face = setFace(b, photo, img);
     b.classList.remove('hidden');
     /* Restart the entrance every time, so a second visit is not silent. */
     b.classList.remove('is-in');
@@ -260,11 +239,20 @@
       if (document.hidden || !key || dismissed[key]) return;
       /* Looking for the pictures can take a moment; check nothing has moved on
          in the meantime before putting the buddy on screen. */
-      findPhotos(function () {
-        if (document.hidden || current !== key || dismissed[key]) return;
-        show(useTip);
+      function stale() { return document.hidden || current !== key || dismissed[key]; }
+      function appear(photo, img) {
+        if (stale()) return;
+        show(photo, useTip, img);
         shownFor = key;
         if (stage === 0) { stage = 1; arm(AGAIN, true); }
+      }
+      findPhotos(function () {
+        if (stale()) return;
+        var photo = pick(useTip);
+        /* Have the picture before the entrance starts: it is measured as it
+           arrives, and one that has not loaded measures as nothing. */
+        if (!photo) return appear(null);
+        MockPhotos.load(photo.src, function (img) { appear(photo, img); });
       });
     }, delay);
   }

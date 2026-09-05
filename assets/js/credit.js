@@ -23,8 +23,6 @@
   var GRACE = 1500;
 
   var DIR = 'assets/img/creator/';
-  var EXTS = ['jpg', 'png', 'jpeg', 'webp'];
-  var MAX = 8;
 
   /* Said over the photo. Dry, and nothing anyone would mind being said about
      their own face. */
@@ -46,34 +44,22 @@
     waiting.push(done);
     if (probing) return;
     probing = true;
-    var n = 1, e = 0;
-    function finish() {
+    MockPhotos.find(DIR, 'face', function (urls) {
+      photos = urls;
       probed = true; probing = false;
       var q = waiting; waiting = [];
       q.forEach(function (fn) { fn(); });
-    }
-    function step() {
-      if (n > MAX) return finish();
-      var img = new Image();
-      img.onload = function () { photos.push(img.src); n++; e = 0; step(); };
-      img.onerror = function () {
-        e++;
-        if (e < EXTS.length) return step();
-        finish();
-      };
-      img.src = DIR + 'face-' + n + '.' + EXTS[e];
-    }
-    step();
+    });
   }
 
-  function buildBack(src) {
+  /* img is the element already loaded, so the card turns onto a picture that
+     is there rather than one still arriving. */
+  function buildBack(img) {
     var b = document.createElement('div');
     b.className = 'egg-face egg-back';
     b.setAttribute('aria-hidden', 'true');
-    var img = document.createElement('img');
     img.className = 'egg-photo';
     img.alt = '';
-    img.src = src;
     var cap = document.createElement('p');
     cap.className = 'egg-caption';
     cap.textContent = LINES[Math.floor(Math.random() * LINES.length)];
@@ -96,15 +82,23 @@
   function flip() {
     findPhotos(function () {
       if (!photos.length || flipped) return;       // nothing to show: no easter egg
-      flipped = true;
-      shownAt = Date.now();
-      if (back && back.parentNode === card) card.removeChild(back);
-      back = buildBack(photos[Math.floor(Math.random() * photos.length)]);
-      card.appendChild(back);
-      void card.offsetWidth;
-      card.classList.add('flipped');
-      timer = setTimeout(unflip, HOLD);
+      var src = photos[Math.floor(Math.random() * photos.length)];
+      /* Load it before turning: a card that flips to a blank while the picture
+         arrives is worse than one that takes a moment to flip. */
+      MockPhotos.load(src, turn);
     });
+  }
+
+  function turn(img) {
+    if (flipped) return;
+    flipped = true;
+    shownAt = Date.now();
+    if (back && back.parentNode === card) card.removeChild(back);
+    back = buildBack(img);
+    card.appendChild(back);
+    void card.offsetWidth;
+    card.classList.add('flipped');
+    timer = setTimeout(unflip, HOLD);
   }
 
   card.addEventListener('click', function () {

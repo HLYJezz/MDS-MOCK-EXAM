@@ -634,8 +634,22 @@ def parse_questions(lines, cfg, acronyms=frozenset()):
             # key repeats that in the explanation, so they go from the stem.
             q['stem'] = strip_re.sub('', q['stem'], count=1).strip()
         q['options'] = [{'id': o['id'], 'text': join_wrapped(o['parts'])} for o in q['options']]
+        drop_placeholder_options(q)
         del q['stem_parts']
     return questions
+
+
+# An option printed as a bare dash is an archive that could not read that line,
+# not a choice anyone can pick — two of them side by side look like a rendering
+# fault. Only trailing ones go: dropping one from the middle would shift every
+# letter after it and silently move the answer key.
+PLACEHOLDER_OPTION = re.compile(r'^[\s\-–—.·_]*$')
+
+
+def drop_placeholder_options(q):
+    opts = q['options']
+    while len(opts) > 2 and PLACEHOLDER_OPTION.match(opts[-1]['text'] or ''):
+        opts.pop()
 
 
 # --------------------------------------------------------------------------

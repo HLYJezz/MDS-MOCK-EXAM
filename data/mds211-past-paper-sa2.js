@@ -741,8 +741,6 @@ registerExam({
         "Anterior commissure",
         "Arcuate loops",
         "Arcuate fasciculus",
-        "–",
-        "–",
       ],
       answer: "C",
       explanation: "The arcuate fasciculus connects Wernicke's and Broca's areas; its damage causes conduction aphasia.",
