@@ -16,6 +16,11 @@
   var TAPS = 7;           // how many it takes
   var GAP = 1800;         // ms allowed between them: this is spamming, not clicking
   var HOLD = 4200;        // ms the photo stays up
+  /* Nobody stops dead on the seventh tap. The taps still coming while the card
+     turns would otherwise shut it again before it had been seen, so for this
+     long after the flip the card ignores them; a tap after that still puts it
+     back early for anyone who wants it gone. */
+  var GRACE = 1500;
 
   var DIR = 'assets/img/creator/';
   var EXTS = ['jpg', 'png', 'jpeg', 'webp'];
@@ -31,7 +36,7 @@
     'This is what writing answer keys does to you.'
   ];
 
-  var taps = 0, last = 0, flipped = false, back = null, timer = null;
+  var taps = 0, last = 0, flipped = false, back = null, timer = null, shownAt = 0;
   var photos = [], probed = false, probing = false, waiting = [];
 
   /* Same rule as the study buddy's folders: face-1, face-2 … stopping at the
@@ -92,6 +97,7 @@
     findPhotos(function () {
       if (!photos.length || flipped) return;       // nothing to show: no easter egg
       flipped = true;
+      shownAt = Date.now();
       if (back && back.parentNode === card) card.removeChild(back);
       back = buildBack(photos[Math.floor(Math.random() * photos.length)]);
       card.appendChild(back);
@@ -102,7 +108,11 @@
   }
 
   card.addEventListener('click', function () {
-    if (flipped) return unflip();                  // a tap puts it back early
+    if (flipped) {
+      /* Still settling: this is the tail of the spam that opened it. */
+      if (Date.now() - shownAt < GRACE) return;
+      return unflip();                             // a tap puts it back early
+    }
     var now = Date.now();
     taps = (now - last <= GAP) ? taps + 1 : 1;
     last = now;
