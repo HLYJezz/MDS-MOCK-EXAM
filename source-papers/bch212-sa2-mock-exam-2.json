@@ -1,0 +1,1234 @@
+{
+  "id": "bch212-sa2-mock-exam-2",
+  "name": "BCH212 SA2 Mock Exam (Set 2)",
+  "subtitle": "Lectures 10-21: Molecular Biology, Hematology, Nutrition & Clinical Biochemistry",
+  "course": "BCH212",
+  "group": "SA2",
+  "icon": "📝",
+  "description": "A second, entirely new full-length mock exam covering Lectures 10-21, with no repeated questions from the first mock exam set. Follows the real Summative Assessment II per-lecture question distribution.",
+  "questionCount": 94,
+  "questions": [
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "Origins of replication in the genome are typically located at sequences rich in adenine and thymine bases mainly because:",
+      "options": [
+        "Helicase can only bind to G-C rich sequences",
+        "A-T base pairs are held by only two hydrogen bonds, making the double helix easier to locally unwind at that site",
+        "DNA polymerase cannot function near A-T rich sequences",
+        "A-T rich sequences cannot be transcribed",
+        "A-T rich regions are always found at chromosome telomeres"
+      ],
+      "answer": "B",
+      "explanation": "Because adenine-thymine base pairs form only two hydrogen bonds (compared to three for guanine-cytosine pairs), AT-rich sequences require less energy to separate, making them favourable locations for initiator proteins and helicase to begin unwinding the double helix at an origin of replication."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "Single-strand binding proteins (SSBs) function during DNA replication to:",
+      "options": [
+        "Seal nicks between Okazaki fragments",
+        "Coat and stabilise the unwound single-stranded DNA at the replication fork, preventing it from reannealing or forming secondary structures",
+        "Directly synthesise new DNA strands",
+        "Relieve torsional strain ahead of the replication fork",
+        "Add RNA primers to the lagging strand"
+      ],
+      "answer": "B",
+      "explanation": "After helicase unwinds the double helix, the exposed single-stranded template DNA is vulnerable to reannealing or folding into secondary structures. SSB proteins bind and coat these single strands, keeping them extended and accessible as templates for DNA polymerase."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "The sliding clamp protein (PCNA in eukaryotes), which encircles DNA and tethers DNA polymerase to the template, primarily functions to increase:",
+      "options": [
+        "The efficiency of Okazaki fragment ligation only",
+        "The speed at which helicase unwinds the double helix",
+        "The processivity of DNA polymerase, allowing it to synthesise long stretches of DNA without dissociating",
+        "The rate of RNA primer synthesis by primase",
+        "The fidelity (proofreading accuracy) of DNA polymerase"
+      ],
+      "answer": "C",
+      "explanation": "By forming a ring that encircles the DNA and physically tethers DNA polymerase to it, the sliding clamp dramatically increases processivity — the number of nucleotides the polymerase can add before dissociating from the template — greatly speeding up overall replication."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "Among the three eukaryotic RNA polymerases, protein-coding genes are transcribed into mRNA by:",
+      "options": [
+        "None of the RNA polymerases; mRNA is made by DNA polymerase",
+        "RNA polymerase I",
+        "All three RNA polymerases equally",
+        "RNA polymerase II",
+        "RNA polymerase III"
+      ],
+      "answer": "D",
+      "explanation": "RNA polymerase I mainly transcribes most ribosomal RNA genes, RNA polymerase II transcribes protein-coding genes into pre-mRNA (as well as some small nuclear RNAs), and RNA polymerase III transcribes tRNA, 5S rRNA, and certain other small RNAs — a functional division unique to eukaryotes (bacteria use a single RNA polymerase for all RNA types)."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "The 7-methylguanosine 'cap' added to the 5' end of eukaryotic pre-mRNA during transcription primarily functions to:",
+      "options": [
+        "Provide the energy needed for RNA polymerase to continue transcription",
+        "Directly encode additional amino acids at the protein's N-terminus",
+        "Protect the transcript from exonuclease degradation and facilitate recognition by the ribosome during translation initiation",
+        "Signal the exact location for intron removal",
+        "Mark the transcript for immediate degradation"
+      ],
+      "answer": "C",
+      "explanation": "The 5' cap, added co-transcriptionally, protects the growing transcript from 5' exonucleases, aids in intron splicing, promotes nuclear export, and is specifically recognised by eIF4E and other initiation factors that recruit the ribosome to begin cap-dependent translation."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "The poly-A tail added to the 3' end of most eukaryotic mRNAs after transcription functions mainly to:",
+      "options": [
+        "Directly encode a poly-lysine tag on the resulting protein",
+        "Provide the template for reverse transcription",
+        "Prevent the mRNA from ever being translated",
+        "Enhance mRNA stability and facilitate nuclear export and translation",
+        "Serve as the actual stop codon recognised by the ribosome"
+      ],
+      "answer": "D",
+      "explanation": "The poly-A tail, added by poly-A polymerase after cleavage of the pre-mRNA at a specific polyadenylation signal, protects the transcript's 3' end from exonuclease degradation, and is bound by poly-A binding proteins that assist in efficient export from the nucleus and initiation of translation."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "The consensus sequences marking the boundaries of introns for spliceosome recognition typically begin with GT at the 5' splice site and end with AG at the 3' splice site — this pattern is commonly referred to as the:",
+      "options": [
+        "Wobble rule",
+        "Central dogma rule",
+        "GT-AG rule",
+        "Kozak rule",
+        "Chargaff rule"
+      ],
+      "answer": "C",
+      "explanation": "Nearly all eukaryotic introns begin with the dinucleotide GT (donor site) and end with AG (acceptor site), a highly conserved pattern (the 'GT-AG rule') that snRNPs within the spliceosome recognise to accurately identify intron boundaries for removal during pre-mRNA splicing."
+    },
+    {
+      "section": "Lec10: DNA & RNA Synthesis",
+      "stem": "Compared to DNA replication, transcription by RNA polymerase is generally considered less accurate mainly because RNA polymerase:",
+      "options": [
+        "Lacks significant 3' to 5' proofreading exonuclease activity",
+        "Cannot initiate synthesis without a DNA primer",
+        "Uses ribonucleotides, which are inherently more stable than deoxyribonucleotides",
+        "Copies only one strand of DNA per gene, unlike DNA polymerase",
+        "Works exclusively in the cytoplasm, away from repair enzymes"
+      ],
+      "answer": "A",
+      "explanation": "Unlike replicative DNA polymerases, which possess proofreading exonuclease activity that removes misincorporated nucleotides immediately after they are added, most RNA polymerases lack this proofreading function, resulting in a higher error rate during transcription — generally well tolerated because mRNA is transient and produced in multiple copies."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "The 'wobble' hypothesis explains how:",
+      "options": [
+        "Multiple different amino acids can be attached to the same tRNA",
+        "A single tRNA species can recognise more than one synonymous codon due to flexible base pairing at the third codon position",
+        "mRNA can be translated without an initiator tRNA",
+        "The stop codon can occasionally code for an amino acid",
+        "Ribosomes can translate mRNA in either direction, 5' to 3' or 3' to 5'"
+      ],
+      "answer": "B",
+      "explanation": "Because the pairing between the third nucleotide of the mRNA codon and the first nucleotide of the tRNA anticodon is less geometrically constrained ('wobble'), some tRNAs can correctly pair with more than one codon differing only at that third position, reducing the total number of distinct tRNA species a cell needs to translate all 61 sense codons."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "A polysome (polyribosome) refers to:",
+      "options": [
+        "An inactive, non-translating ribosome complex",
+        "A ribosome found exclusively within the nucleus",
+        "A single ribosome that has fused with another ribosome",
+        "Multiple ribosomes simultaneously translating the same mRNA molecule at different points along its length",
+        "A ribosome bound to multiple different mRNA molecules at once"
+      ],
+      "answer": "D",
+      "explanation": "As soon as the 5' region of an mRNA has been translated by one ribosome, another ribosome can attach and begin translating the same transcript. Multiple ribosomes working simultaneously along one mRNA (a polysome) substantially increases the overall rate of protein production from that transcript."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "The stop codons UAA, UAG, and UGA terminate translation because they:",
+      "options": [
+        "Can only be recognised in the presence of excess ATP",
+        "Are recognised by a special stop-codon-specific tRNA carrying no amino acid",
+        "Code for a unique 'stop' amino acid that blocks further elongation",
+        "Are recognised directly by release factor proteins rather than by any aminoacyl-tRNA",
+        "Cause the ribosome to physically disassemble immediately upon transcription"
+      ],
+      "answer": "D",
+      "explanation": "Unlike sense codons, which are read by aminoacyl-tRNAs, stop codons have no corresponding tRNA. Instead, they are directly recognised by release factor proteins, which trigger hydrolysis of the bond linking the completed polypeptide to the final tRNA, releasing the finished protein."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "The Kozak sequence, a consensus sequence surrounding the AUG start codon in eukaryotic mRNA, primarily influences:",
+      "options": [
+        "The rate of mRNA splicing",
+        "The efficiency with which the ribosome recognises and initiates translation at that particular start codon",
+        "The addition of the poly-A tail",
+        "The type of amino acid encoded by the start codon",
+        "The rate of mRNA degradation"
+      ],
+      "answer": "B",
+      "explanation": "A strong Kozak consensus sequence (with a purine at position -3 and a guanine at position +4 relative to the A of AUG) improves the likelihood that the scanning ribosome will initiate translation efficiently at that AUG, rather than potentially skipping past it to a downstream start codon."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "O-linked glycosylation, in which sugar residues are attached to the hydroxyl group of serine or threonine residues, occurs primarily within which cellular compartment?",
+      "options": [
+        "The nucleus",
+        "The cytosol",
+        "The mitochondrial matrix",
+        "The rough endoplasmic reticulum",
+        "The Golgi apparatus"
+      ],
+      "answer": "E",
+      "explanation": "Unlike N-linked glycosylation, which begins co-translationally in the rough ER, O-linked glycosylation is added post-translationally as proteins pass through the Golgi apparatus, where specific glycosyltransferases sequentially attach sugar residues to serine or threonine hydroxyl groups."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "Protein disulfide isomerase (PDI), an enzyme resident in the endoplasmic reticulum, assists protein folding by:",
+      "options": [
+        "Adding phosphate groups to serine and threonine residues",
+        "Attaching ubiquitin chains to misfolded proteins",
+        "Catalysing the formation, breakage, and rearrangement of disulfide bonds between cysteine residues",
+        "Synthesising new peptide bonds independent of the ribosome",
+        "Cleaving signal peptides from nascent secretory proteins"
+      ],
+      "answer": "C",
+      "explanation": "PDI catalyses thiol-disulfide exchange reactions, allowing incorrectly formed disulfide bonds to be broken and reformed correctly as a protein folds, helping newly synthesised secretory and membrane proteins achieve their proper, stable three-dimensional conformation within the oxidising environment of the ER."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "Mannose-6-phosphate, a specific sugar modification added to certain proteins in the Golgi apparatus, functions as a molecular tag that directs those proteins to:",
+      "options": [
+        "The lysosome",
+        "The peroxisome",
+        "The nucleus",
+        "The plasma membrane for secretion",
+        "The mitochondrial matrix"
+      ],
+      "answer": "A",
+      "explanation": "Lysosomal enzymes are specifically tagged in the Golgi with mannose-6-phosphate, which is recognised by mannose-6-phosphate receptors that package these proteins into vesicles destined for the lysosome, rather than the default secretory pathway."
+    },
+    {
+      "section": "Lec11: Protein Synthesis & Transport Protein",
+      "stem": "The eukaryotic initiation factor eIF4E contributes to translation initiation primarily by:",
+      "options": [
+        "Binding the 5' cap of mRNA and helping recruit the small ribosomal subunit to the transcript",
+        "Adding the poly-A tail to the 3' end of mRNA",
+        "Recognising stop codons to terminate translation",
+        "Directly catalysing peptide bond formation at the ribosome",
+        "Attaching amino acids to their corresponding tRNAs"
+      ],
+      "answer": "A",
+      "explanation": "eIF4E is the cap-binding protein component of the eIF4F complex; by binding the 7-methylguanosine cap at the 5' end of the mRNA, it helps recruit the 43S pre-initiation complex (including the small ribosomal subunit) to begin scanning for the start codon — a key, often rate-limiting, regulatory step in cap-dependent translation initiation."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "The concept of 'first-pass metabolism' refers to the phenomenon in which orally administered drugs:",
+      "options": [
+        "Undergo metabolism only in the kidney before reaching the liver",
+        "Are absorbed exclusively through the lymphatic system, avoiding the liver",
+        "Bypass the liver entirely and enter systemic circulation directly",
+        "Are absorbed from the gastrointestinal tract and travel via the portal vein to the liver, where they may be extensively metabolised before reaching the systemic circulation",
+        "Are metabolised only after being distributed throughout the entire body"
+      ],
+      "answer": "D",
+      "explanation": "Because venous blood from the stomach and intestines drains into the portal vein and passes through the liver before reaching the general circulation, orally administered drugs are exposed to hepatic metabolising enzymes early, and for some drugs this first-pass effect substantially reduces the fraction of active drug that ultimately reaches systemic circulation."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Cytochrome P450 enzymes, concentrated mainly in the hepatic smooth endoplasmic reticulum, are principally responsible for:",
+      "options": [
+        "Synthesis of plasma albumin",
+        "Bile acid reabsorption in the intestine",
+        "Phase I oxidative metabolism of drugs and other xenobiotics",
+        "Storage of vitamin A",
+        "Phase II conjugation reactions exclusively"
+      ],
+      "answer": "C",
+      "explanation": "Cytochrome P450 enzymes are a large family of haem-containing monooxygenases that catalyse Phase I reactions (oxidation, reduction, hydroxylation) on a vast range of drugs and xenobiotics, typically introducing or exposing a reactive functional group in preparation for subsequent Phase II conjugation."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Glutathione conjugation, a Phase II detoxification reaction, is clinically important in paracetamol (acetaminophen) overdose because it normally:",
+      "options": [
+        "Prevents paracetamol from ever being absorbed from the gut",
+        "Converts paracetamol into a more toxic compound",
+        "Directly converts paracetamol into its active analgesic form",
+        "Has no role in paracetamol metabolism",
+        "Neutralises NAPQI, the toxic reactive metabolite generated by CYP450-mediated paracetamol metabolism"
+      ],
+      "answer": "E",
+      "explanation": "A small fraction of paracetamol is normally converted by CYP2E1 into the reactive, hepatotoxic metabolite NAPQI, which is rapidly conjugated with glutathione and rendered harmless. In overdose, hepatic glutathione stores become depleted, allowing NAPQI to accumulate and cause severe hepatocyte injury — the rationale for using N-acetylcysteine (which replenishes glutathione) as an antidote."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "The hepatic portal vein carries blood to the liver primarily from which sources?",
+      "options": [
+        "The kidneys exclusively",
+        "The lungs, carrying oxygenated blood",
+        "The gastrointestinal tract and the spleen",
+        "The heart directly, via the aorta",
+        "The systemic venous circulation, bypassing the intestines"
+      ],
+      "answer": "C",
+      "explanation": "The portal vein collects nutrient- (and potentially toxin-) rich venous blood draining from the stomach, intestines, pancreas, and spleen, delivering it to the liver for processing before this blood eventually joins the systemic circulation via the hepatic veins."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Hepatic stellate cells, normally quiescent storage sites for vitamin A within the space of Disse, contribute to liver fibrosis in chronic liver injury by:",
+      "options": [
+        "Secreting increased amounts of albumin",
+        "Directly producing bile acids in excess",
+        "Synthesising clotting factors in excess",
+        "Phagocytosing bacteria within the sinusoids",
+        "Becoming activated into myofibroblast-like cells that produce excess collagen"
+      ],
+      "answer": "E",
+      "explanation": "In response to chronic hepatocyte injury and inflammation, quiescent hepatic stellate cells transform into activated, proliferative myofibroblast-like cells that deposit excess extracellular matrix (collagen), progressively distorting the normal liver architecture and driving the development of fibrosis and eventually cirrhosis."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Cirrhosis is defined pathologically by which combination of changes to the liver's normal architecture?",
+      "options": [
+        "A single, well-circumscribed benign tumour",
+        "Diffuse fibrosis together with disorganised nodular regeneration of hepatocytes",
+        "Isolated fatty infiltration without any fibrosis",
+        "Complete absence of any hepatocyte regeneration",
+        "Isolated bile duct dilation without fibrosis"
+      ],
+      "answer": "B",
+      "explanation": "Cirrhosis represents the end-stage response to chronic liver injury, characterised by widespread fibrous scarring that disrupts normal lobular architecture, combined with disorganised regenerative nodules of hepatocytes — together impairing both blood flow through the liver and overall hepatocyte function."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Ascites (abnormal fluid accumulation in the peritoneal cavity) commonly seen in advanced liver disease results from the combined effects of:",
+      "options": [
+        "Excess bile acid reabsorption alone",
+        "Isolated dehydration, unrelated to liver function",
+        "Increased hepatic glycogen storage",
+        "Increased hepatic albumin synthesis and low portal pressure",
+        "Portal hypertension and reduced hepatic synthesis of albumin (lowering plasma oncotic pressure)"
+      ],
+      "answer": "E",
+      "explanation": "Cirrhosis raises resistance to blood flow through the liver, causing portal hypertension (increasing hydrostatic pressure that pushes fluid out of the vasculature) while simultaneously impairing hepatic albumin synthesis (reducing plasma oncotic pressure that would otherwise retain fluid within vessels) — the combination favours fluid accumulation in the peritoneal cavity."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "The liver serves as the body's principal glycogen reservoir, playing a central role in:",
+      "options": [
+        "Producing red blood cells throughout adult life",
+        "Regulating body temperature directly",
+        "Storing the majority of the body's calcium",
+        "Maintaining blood glucose levels between meals via coordinated glycogenolysis and gluconeogenesis",
+        "Synthesising digestive enzymes for the pancreas"
+      ],
+      "answer": "D",
+      "explanation": "Hepatic glycogen stores, mobilised via glycogenolysis, provide a rapidly accessible glucose supply in the early fasting state, while the liver's capacity for gluconeogenesis extends glucose availability into more prolonged fasting — together making the liver central to maintaining stable blood glucose levels between meals."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Although the liver actively produces ketone bodies during prolonged fasting, it cannot itself use them as a fuel source because it lacks the enzyme:",
+      "options": [
+        "HMG-CoA synthase, needed to initiate ketone body synthesis",
+        "Succinyl-CoA:3-ketoacid CoA transferase (thiophorase), needed to reactivate acetoacetate for further metabolism",
+        "Acetyl-CoA carboxylase, needed for fatty acid synthesis",
+        "Carnitine palmitoyltransferase I, needed for fatty acid uptake",
+        "Beta-hydroxybutyrate dehydrogenase, needed to interconvert ketone bodies"
+      ],
+      "answer": "B",
+      "explanation": "The liver possesses all the enzymes needed to synthesise ketone bodies from acetyl-CoA, but it lacks thiophorase, the enzyme required to convert acetoacetate back into acetoacetyl-CoA for further oxidation. This ensures ketone bodies produced by the liver are exported for use by extrahepatic tissues (brain, muscle, heart) rather than being consumed by the liver itself."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Conjugated bilirubin excreted into bile is converted into urobilinogen only after reaching the intestine, where this conversion is carried out by:",
+      "options": [
+        "Pancreatic lipase",
+        "Intestinal (gut) bacteria",
+        "Renal tubular cells",
+        "Gastric acid alone",
+        "Hepatocyte enzymes acting after bile secretion"
+      ],
+      "answer": "B",
+      "explanation": "Once conjugated bilirubin reaches the intestine via bile, gut bacteria deconjugate and reduce it to urobilinogen, most of which is further oxidised to stercobilin (giving stool its brown colour); a portion of urobilinogen is reabsorbed into the portal circulation, with some re-excreted in bile (enterohepatic circulation) and some excreted by the kidney as urobilin, contributing to the normal colour of urine."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "The major established risk factors for the development of hepatocellular carcinoma include:",
+      "options": [
+        "Mild, isolated elevation of unconjugated bilirubin alone",
+        "Isolated Gilbert's syndrome, without any other liver disease",
+        "Chronic hepatitis B or C infection and cirrhosis of any cause",
+        "Vitamin C deficiency",
+        "A single episode of acute viral hepatitis A with full recovery"
+      ],
+      "answer": "C",
+      "explanation": "Chronic viral hepatitis (particularly hepatitis B and C) and cirrhosis (regardless of underlying cause, including alcohol, non-alcoholic fatty liver disease, or viral hepatitis) are the dominant risk factors for hepatocellular carcinoma, reflecting the cumulative effect of chronic hepatocyte injury, regeneration, and genomic instability."
+    },
+    {
+      "section": "Lec12: Liver Function",
+      "stem": "Reye syndrome, a rare but serious paediatric condition associated with mitochondrial injury, fatty liver, and encephalopathy, has classically been linked to the use of:",
+      "options": [
+        "Paracetamol at standard therapeutic doses in children",
+        "Ibuprofen used briefly for fever in adults",
+        "Antibiotic therapy for a bacterial infection",
+        "Antihistamine use for seasonal allergies",
+        "Aspirin during a viral illness (such as influenza or varicella) in children"
+      ],
+      "answer": "E",
+      "explanation": "Reye syndrome has been strongly epidemiologically associated with aspirin use during certain viral infections in children, leading to current recommendations against aspirin use in children and adolescents with viral illnesses; the underlying mechanism is thought to involve aspirin-related mitochondrial dysfunction in a susceptible host."
+    },
+    {
+      "section": "Lec13: Thalassemia",
+      "stem": "Beta-thalassemia minor (trait), the heterozygous carrier state, typically presents clinically as:",
+      "options": [
+        "Complete absence of any detectable haematologic abnormality",
+        "Severe, transfusion-dependent anaemia identical to thalassemia major",
+        "Mild, often asymptomatic microcytic anaemia, frequently discovered incidentally or through family/carrier screening",
+        "Life-threatening hydrops fetalis in utero",
+        "Marked hepatosplenomegaly requiring regular transfusions"
+      ],
+      "answer": "C",
+      "explanation": "Individuals heterozygous for a beta-thalassemia mutation typically retain enough functional beta-globin production to avoid significant clinical disease, presenting instead with mild microcytosis and hypochromia, often detected only on routine blood counts or during carrier screening (e.g., for reproductive planning)."
+    },
+    {
+      "section": "Lec13: Thalassemia",
+      "stem": "On haemoglobin electrophoresis, the finding most useful for diagnosing beta-thalassemia trait (and distinguishing it from iron deficiency anaemia) is:",
+      "options": [
+        "Presence of HbH",
+        "An elevated HbF fraction with normal HbA2",
+        "A complete absence of HbA",
+        "Presence of Hb Bart's",
+        "An elevated HbA2 (alpha2delta2) fraction"
+      ],
+      "answer": "E",
+      "explanation": "In beta-thalassemia trait, reduced beta-globin chain production shifts relatively more alpha chains toward pairing with delta chains, raising the proportion of HbA2. This elevated HbA2 (typically above 3.5%) is a key laboratory clue distinguishing beta-thalassemia trait from iron deficiency anaemia, which also causes microcytosis but does not raise HbA2."
+    },
+    {
+      "section": "Lec13: Thalassemia",
+      "stem": "The alpha-thalassemia silent carrier state, in which only one of the four alpha-globin genes is deleted or non-functional, is characterised by:",
+      "options": [
+        "Essentially normal or only minimally altered red blood cell indices, with no clinically significant anaemia",
+        "Severe haemolytic anaemia requiring regular blood transfusions",
+        "Fatal hydrops fetalis",
+        "Marked splenomegaly and skeletal deformities",
+        "A haemoglobin electrophoresis showing Hb Bart's in adulthood"
+      ],
+      "answer": "A",
+      "explanation": "With three of four alpha-globin genes still functional, alpha chain production remains largely sufficient, so silent carriers are typically clinically and haematologically normal (or show only very subtle changes), detectable mainly through molecular genetic testing rather than routine blood counts."
+    },
+    {
+      "section": "Lec13: Thalassemia",
+      "stem": "In children with severe thalassemia, chronic marrow expansion from extramedullary haematopoiesis can produce characteristic skeletal changes, sometimes described clinically as:",
+      "options": [
+        "Joint destruction typical of gout",
+        "Frontal bossing and maxillary hyperplasia ('chipmunk facies')",
+        "Pathological fractures typical of osteoporosis alone",
+        "Bamboo spine typical of ankylosing spondylitis",
+        "Bowing of the long bones typical of rickets"
+      ],
+      "answer": "B",
+      "explanation": "Persistent, severe anaemia drives ongoing compensatory expansion of haematopoietically active marrow, including within the bones of the skull and face. Over time, this can produce characteristic craniofacial changes, including frontal bossing and maxillary overgrowth, sometimes referred to descriptively as 'chipmunk facies'."
+    },
+    {
+      "section": "Lec13: Thalassemia",
+      "stem": "Iron chelation therapy (using agents such as deferoxamine or deferasirox) is a mandatory part of long-term management for transfusion-dependent thalassemia patients specifically because:",
+      "options": [
+        "Chelation therapy directly cures the underlying globin gene mutation",
+        "The human body has no active physiological mechanism to excrete the excess iron delivered by repeated blood transfusions",
+        "Chelation is used only to treat the anaemia itself, not iron levels",
+        "Iron overload only occurs if patients also have a separate haemochromatosis mutation",
+        "Iron is otherwise rapidly and completely excreted by the kidneys without treatment"
+      ],
+      "answer": "B",
+      "explanation": "Because humans lack a regulated pathway for excreting excess iron (iron balance is normally controlled almost entirely at the level of intestinal absorption), each transfused unit of blood contributes iron that steadily accumulates in the body of a chronically transfused patient, requiring chelation therapy to prevent iron-related organ damage (cardiac, hepatic, endocrine)."
+    },
+    {
+      "section": "Lec13: Thalassemia",
+      "stem": "Thalassemia intermedia describes a clinical category of disease severity that is best characterised as:",
+      "options": [
+        "Always more severe than thalassemia major, requiring the most intensive transfusion support",
+        "Exclusively caused by alpha-globin gene deletions",
+        "A form of thalassemia found only in adults, never presenting in childhood",
+        "Intermediate between thalassemia minor and thalassemia major, with moderate anaemia and only intermittent transfusion requirements",
+        "Clinically identical and interchangeable with thalassemia minor"
+      ],
+      "answer": "D",
+      "explanation": "Thalassemia intermedia encompasses a spectrum of genotypes that produce a phenotype more severe than the largely asymptomatic thalassemia trait but generally milder than the severe, fully transfusion-dependent thalassemia major, with variable degrees of anaemia and only occasional transfusion needs (e.g., during illness or growth spurts) rather than a lifelong regular transfusion regimen."
+    },
+    {
+      "section": "Lec14: Apoptosis",
+      "stem": "Compared to apoptosis, necrosis is generally distinguished as being:",
+      "options": [
+        "Exclusively triggered by internal DNA damage signals",
+        "Always accompanied by chromatin condensation and nuclear fragmentation identical to apoptosis",
+        "A passive, energy (ATP)-independent form of cell death typically triggered by severe or overwhelming cellular injury",
+        "An active, tightly regulated, ATP-dependent programmed process",
+        "A process that never triggers any local inflammatory response"
+      ],
+      "answer": "C",
+      "explanation": "Necrosis typically results from severe insults (ischaemia, toxins, trauma) that overwhelm the cell's capacity for regulated, ATP-dependent processes, leading to passive membrane rupture, release of cellular contents, and a local inflammatory response — in contrast to the active, energy-dependent, and immunologically 'silent' process of apoptosis."
+    },
+    {
+      "section": "Lec14: Apoptosis",
+      "stem": "Autophagy, a cellular process distinct from apoptosis, involves:",
+      "options": [
+        "Fragmentation of the nucleus into apoptotic bodies",
+        "Engulfment of cytoplasmic components by autophagosomes, which then fuse with lysosomes for degradation, often supporting cell survival under nutrient stress",
+        "Direct activation of caspase-3 as its primary mechanism",
+        "Exclusive activation by death receptor-ligand binding at the cell surface",
+        "Irreversible commitment to cell death in every case"
+      ],
+      "answer": "B",
+      "explanation": "Unlike apoptosis, which is generally a pathway toward cell death, autophagy is often a pro-survival adaptive response — cells engulf and recycle their own organelles and macromolecules via autophagosome-lysosome fusion, providing nutrients and removing damaged components during periods of starvation or stress."
+    },
+    {
+      "section": "Lec14: Apoptosis",
+      "stem": "Inhibitor of apoptosis proteins (IAPs), such as survivin, promote cell survival mainly by:",
+      "options": [
+        "Directly stimulating Fas ligand expression",
+        "Promoting cytochrome c release from mitochondria",
+        "Directly cleaving and degrading Bcl-2 family proteins",
+        "Directly binding to and inhibiting the activity of caspases",
+        "Activating p53-mediated transcription of pro-apoptotic genes"
+      ],
+      "answer": "D",
+      "explanation": "IAPs act as endogenous caspase inhibitors, physically binding active caspases (including executioner caspases) and blocking their proteolytic activity. Many cancers exploit this by overexpressing IAPs such as survivin, helping malignant cells evade apoptosis despite accumulating genetic damage."
+    },
+    {
+      "section": "Lec14: Apoptosis",
+      "stem": "Smac/DIABLO, released from the mitochondrial intermembrane space alongside cytochrome c during intrinsic apoptosis, promotes cell death by:",
+      "options": [
+        "Inhibiting cytochrome c function",
+        "Binding and neutralising inhibitor of apoptosis proteins (IAPs), relieving their inhibitory effect on caspases",
+        "Stabilising Bcl-2 to further suppress apoptosis",
+        "Directly activating caspase-8 at the cell surface",
+        "Directly forming the apoptosome in place of APAF-1"
+      ],
+      "answer": "B",
+      "explanation": "Smac/DIABLO release is a second key consequence of mitochondrial outer membrane permeabilisation, alongside cytochrome c release. By binding and sequestering IAPs, Smac/DIABLO removes their brake on caspase activity, reinforcing commitment to apoptosis once the intrinsic pathway has been triggered."
+    },
+    {
+      "section": "Lec14: Apoptosis",
+      "stem": "Signalling through the TNF receptor 1 can lead to divergent cellular outcomes because:",
+      "options": [
+        "Depending on which downstream adaptor complex assembles, signalling can activate either the pro-survival NF-kB pathway or a caspase-8-mediated apoptotic pathway",
+        "TNF receptor 1 signalling never involves any adaptor proteins",
+        "TNF receptor 1 can only ever trigger apoptosis, with no other possible outcome",
+        "TNF receptor 1 functions identically to the Fas receptor in every respect",
+        "TNF receptor 1 exclusively activates the intrinsic mitochondrial pathway"
+      ],
+      "answer": "A",
+      "explanation": "TNF receptor 1 engagement can nucleate different signalling complexes: an initial membrane-associated complex favouring pro-survival NF-kB activation, or, under certain conditions (e.g., when NF-kB signalling is compromised), a cytoplasmic complex that instead recruits and activates caspase-8, driving apoptosis — illustrating the context-dependent nature of death receptor signalling."
+    },
+    {
+      "section": "Lec14: Apoptosis",
+      "stem": "Phagocytic clearance of apoptotic cells occurs without triggering local inflammation largely because phagocytes recognise which specific 'eat-me' signal displayed on the apoptotic cell surface?",
+      "options": [
+        "Surface-bound cytochrome c",
+        "Surface-expressed caspase-3",
+        "Externalised haemoglobin",
+        "Externalised phosphatidylserine",
+        "Externalised DNA fragments"
+      ],
+      "answer": "D",
+      "explanation": "During apoptosis, phosphatidylserine — normally confined to the inner leaflet of the plasma membrane — is actively flipped to the outer leaflet. Phagocytes specifically recognise this externalised phosphatidylserine as an 'eat-me' signal, enabling prompt, non-inflammatory engulfment and clearance of apoptotic cells and bodies."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "Enhancers, as cis-regulatory DNA elements, are notable for being able to increase transcription of a target gene even when they are:",
+      "options": [
+        "Found exclusively within exons",
+        "Transcribed directly into a functional protein",
+        "Located a considerable distance away from the gene and regardless of their orientation",
+        "Located immediately adjacent to the transcription start site only",
+        "Present in only one specific orientation relative to the gene"
+      ],
+      "answer": "C",
+      "explanation": "Unlike core promoter elements, enhancers can act on a target gene's transcription even when located many kilobases away (upstream, downstream, or even within an intron) and irrespective of their orientation, typically by looping the intervening DNA to bring bound activator proteins into contact with the transcription machinery at the promoter."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "The TATA box, a core promoter element found upstream of the transcription start site in many eukaryotic genes, is specifically recognised by:",
+      "options": [
+        "The spliceosome",
+        "Histone deacetylases exclusively",
+        "RNA polymerase II directly, without any transcription factor involvement",
+        "The general transcription factor TFIID",
+        "DNA methyltransferases"
+      ],
+      "answer": "D",
+      "explanation": "TFIID (via its TATA-binding protein subunit) binds the TATA box, nucleating assembly of the remaining general transcription factors and RNA polymerase II into the pre-initiation complex, correctly positioning the polymerase to begin transcription at the appropriate start site."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "DNA methylation at CpG islands near gene promoters, catalysed by DNA methyltransferases, is generally associated with:",
+      "options": [
+        "Immediate deletion of the gene from the genome",
+        "No effect whatsoever on gene transcription",
+        "Transcriptional silencing of the associated gene",
+        "Strong activation of the associated gene",
+        "Conversion of the gene into an enhancer element"
+      ],
+      "answer": "C",
+      "explanation": "Methylation of cytosine residues within CpG islands typically recruits methyl-binding proteins and associated chromatin-modifying complexes (including histone deacetylases), promoting a condensed, transcriptionally inactive chromatin state at that locus — an important mechanism of epigenetic gene silencing."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "Genomic imprinting, in which only the maternally or only the paternally inherited copy of certain genes is normally expressed, explains the distinct clinical syndromes that result from deletions of the same region of chromosome 15, depending on parental origin:",
+      "options": [
+        "Down syndrome versus Turner syndrome",
+        "Marfan syndrome versus Ehlers-Danlos syndrome",
+        "Fragile X syndrome versus Rett syndrome",
+        "Klinefelter syndrome versus Turner syndrome",
+        "Prader-Willi syndrome (paternal deletion) versus Angelman syndrome (maternal deletion)"
+      ],
+      "answer": "E",
+      "explanation": "Because normally only the paternal copy of certain genes in this chromosome 15 region is expressed (the maternal copy being imprinted/silenced), a deletion on the paternally inherited chromosome eliminates the only active copy, causing Prader-Willi syndrome; conversely, a deletion on the maternally inherited chromosome (affecting a different, maternally expressed gene in the same region) causes Angelman syndrome."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "Pseudogenes are best described as:",
+      "options": [
+        "Genes found exclusively in mitochondrial DNA",
+        "Genes that encode only structural RNA, never any protein even when functional",
+        "Fully functional genes with unusually high expression levels",
+        "Gene-like DNA sequences that have lost the capacity to encode a functional protein, often due to disabling mutations or (for processed pseudogenes) lack of introns",
+        "RNA molecules that directly catalyse peptide bond formation"
+      ],
+      "answer": "D",
+      "explanation": "Pseudogenes arise either from gene duplication events followed by degenerative mutations (unprocessed pseudogenes, which typically retain intron-exon structure) or from reverse transcription and reinsertion of a processed mRNA back into the genome (processed pseudogenes, which characteristically lack introns) — both types are generally non-functional remnants of once-active genes."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "Alu elements, short repetitive transposable DNA sequences, are notable for:",
+      "options": [
+        "Being found only within mitochondrial DNA",
+        "Comprising a very large proportion (over 10%) of the total human genome",
+        "Being completely absent from the human genome",
+        "Occurring exclusively within the coding sequence of genes",
+        "Encoding functional structural proteins in most cases"
+      ],
+      "answer": "B",
+      "explanation": "Alu elements are a family of short interspersed nuclear elements (SINEs), roughly 300 base pairs long, present in over a million copies scattered throughout the human genome — together making up more than 10% of total genomic DNA. Although mostly non-functional, their insertion can occasionally disrupt genes and cause disease."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "Chromatin remodelling complexes, such as SWI/SNF, regulate gene expression by using energy from ATP hydrolysis to:",
+      "options": [
+        "Add a poly-A tail to newly transcribed RNA",
+        "Cleave DNA at specific palindromic sequences",
+        "Directly synthesise new histone proteins",
+        "Directly methylate cytosine residues in DNA",
+        "Reposition or restructure nucleosomes along the DNA, altering its accessibility to transcription factors"
+      ],
+      "answer": "E",
+      "explanation": "SWI/SNF and related ATP-dependent chromatin remodelling complexes physically slide, eject, or restructure nucleosomes along the DNA, exposing or occluding specific regulatory sequences and thereby modulating whether transcription factors and RNA polymerase can access a given gene."
+    },
+    {
+      "section": "Lec15: Human Genome & Gene Regulation",
+      "stem": "Klinefelter syndrome, resulting from the karyotype 47,XXY due to meiotic non-disjunction, is characteristically associated with:",
+      "options": [
+        "Complete absence of any distinguishing physical features",
+        "Short stature, webbed neck, and ovarian failure",
+        "Tall stature, small testes, infertility, and often gynecomastia",
+        "Microcephaly and a small, malformed heart as the dominant features",
+        "Severe intellectual disability with a characteristic 'cat-cry' voice in infancy"
+      ],
+      "answer": "C",
+      "explanation": "The extra X chromosome in Klinefelter syndrome (47,XXY) affects testicular development, typically resulting in small, firm testes and infertility (azoospermia), along with tall stature, relatively long limbs, and often gynecomastia (breast tissue development) due to altered testosterone-to-oestrogen ratios."
+    },
+    {
+      "section": "Lec16: Blood & Heme Metabolism",
+      "stem": "2,3-bisphosphoglycerate (2,3-BPG), produced by red blood cells, regulates oxygen delivery to tissues by:",
+      "options": [
+        "Directly binding oxygen in place of haemoglobin's iron atom",
+        "Having no effect on haemoglobin's oxygen affinity",
+        "Preferentially binding deoxygenated haemoglobin, stabilising its low-oxygen-affinity form and shifting the oxygen dissociation curve to the right",
+        "Binding oxygenated haemoglobin exclusively, increasing its oxygen affinity",
+        "Converting haemoglobin permanently into methemoglobin"
+      ],
+      "answer": "C",
+      "explanation": "2,3-BPG binds within the central cavity of deoxyhaemoglobin's tetramer (specifically favoured by the beta-chain conformation of the deoxy 'T' state), stabilising this lower-affinity form and shifting the oxygen dissociation curve rightward — promoting oxygen unloading to tissues. Its concentration rises adaptively during chronic hypoxia and at high altitude."
+    },
+    {
+      "section": "Lec16: Blood & Heme Metabolism",
+      "stem": "Haptoglobin, a plasma protein synthesised by the liver, plays a protective role during intravascular haemolysis by:",
+      "options": [
+        "Binding directly to the haem iron atom to prevent oxygen binding",
+        "Binding free haemoglobin released into the circulation, forming a complex cleared by the reticuloendothelial system",
+        "Inhibiting haemoglobin synthesis in the bone marrow",
+        "Directly converting free haemoglobin back into functional red blood cells",
+        "Converting free bilirubin into urobilinogen"
+      ],
+      "answer": "B",
+      "explanation": "By binding and sequestering free haemoglobin released during haemolysis, haptoglobin prevents this haemoglobin from being filtered and causing damage in the renal tubules, while also conserving iron by directing the Hb-haptoglobin complex to macrophages for controlled breakdown — serum haptoglobin levels fall in states of significant haemolysis due to this consumption."
+    },
+    {
+      "section": "Lec16: Blood & Heme Metabolism",
+      "stem": "Fetal haemoglobin (HbF) has a higher oxygen affinity than adult haemoglobin (HbA) largely because:",
+      "options": [
+        "It binds oxygen irreversibly, unlike HbA",
+        "It lacks any globin chains, consisting of haem alone",
+        "Its gamma-globin chains bind 2,3-BPG more weakly than the beta-globin chains of HbA",
+        "It contains no iron atoms and instead uses a copper-based oxygen carrier",
+        "It is structurally identical to HbA in every respect"
+      ],
+      "answer": "C",
+      "explanation": "Because gamma-globin chains have a different amino acid sequence at key 2,3-BPG binding residues compared to beta-globin chains, HbF binds 2,3-BPG less avidly. With less 2,3-BPG stabilising the low-affinity state, HbF favours the high-affinity (oxygenated) conformation, facilitating the transfer of oxygen from maternal HbA to fetal HbF across the placenta."
+    },
+    {
+      "section": "Lec16: Blood & Heme Metabolism",
+      "stem": "The sigmoidal (S-shaped) oxygen dissociation curve of haemoglobin, in contrast to the hyperbolic curve of myoglobin, reflects the fact that haemoglobin exhibits:",
+      "options": [
+        "The complete absence of any oxygen-binding capability at low oxygen tension",
+        "Irreversible, non-competitive oxygen binding",
+        "A single, fixed binding site with no subunit interactions at all",
+        "Complete independence between its subunits during oxygen binding",
+        "Positive cooperativity in oxygen binding among its four subunits"
+      ],
+      "answer": "E",
+      "explanation": "Because haemoglobin is a tetramer whose subunits communicate conformational changes to one another, binding of oxygen at one subunit increases the oxygen affinity of the remaining subunits (positive cooperativity), producing the characteristic sigmoidal curve. Myoglobin, being a single polypeptide with only one haem group, shows no such cooperativity and instead displays a simple hyperbolic binding curve."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Von Willebrand factor contributes to primary haemostasis mainly by:",
+      "options": [
+        "Directly activating plasminogen to plasmin",
+        "Functioning exclusively within the intrinsic coagulation pathway, with no role in platelet function",
+        "Directly converting fibrinogen into fibrin",
+        "Serving as the primary inhibitor of thrombin",
+        "Mediating platelet adhesion to exposed subendothelial collagen at sites of vascular injury, and by stabilising circulating factor VIII"
+      ],
+      "answer": "E",
+      "explanation": "Von Willebrand factor acts as a molecular bridge, binding both exposed subendothelial collagen and the platelet glycoprotein Ib/IX receptor, anchoring platelets at sites of vessel injury. It also binds and protects factor VIII in the circulation from premature proteolytic degradation, explaining why von Willebrand disease can also cause mildly reduced factor VIII levels."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Platelet aggregation during primary haemostasis is mediated mainly by fibrinogen forming bridges between adjacent activated platelets via which platelet surface receptor?",
+      "options": [
+        "The insulin receptor",
+        "The thrombin receptor exclusively, with no fibrinogen involvement",
+        "The Fc receptor",
+        "Glycoprotein Ib/IX (GPIb/IX)",
+        "Glycoprotein IIb/IIIa (GPIIb/IIIa)"
+      ],
+      "answer": "E",
+      "explanation": "Upon platelet activation, GPIIb/IIIa receptors undergo a conformational change that allows them to bind fibrinogen; because fibrinogen is a symmetric, bivalent molecule, it can simultaneously bind GPIIb/IIIa receptors on two different platelets, cross-linking them together to build the platelet aggregate (GPIb/IX instead mediates the initial adhesion step, binding von Willebrand factor)."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Prothrombin time (PT), a standard coagulation test, is used clinically to monitor therapy with which anticoagulant medication?",
+      "options": [
+        "Heparin",
+        "Aspirin",
+        "Direct oral factor Xa inhibitors exclusively, with no clinical use for warfarin monitoring",
+        "Clopidogrel",
+        "Warfarin"
+      ],
+      "answer": "E",
+      "explanation": "PT evaluates the extrinsic (factor VII) and common coagulation pathways, both of which include vitamin K-dependent clotting factors targeted by warfarin. Because warfarin reduces the activity of these factors, PT (often expressed as the standardised INR) is the standard test used to monitor and adjust warfarin dosing."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Warfarin exerts its anticoagulant effect by inhibiting which specific enzyme?",
+      "options": [
+        "Thrombin directly",
+        "Gamma-glutamyl carboxylase directly",
+        "Antithrombin III",
+        "Vitamin K epoxide reductase",
+        "Factor Xa directly"
+      ],
+      "answer": "D",
+      "explanation": "Warfarin blocks vitamin K epoxide reductase, the enzyme that regenerates the reduced (active) form of vitamin K from its oxidised (epoxide) form after each round of gamma-carboxylation. Without regenerated active vitamin K, gamma-glutamyl carboxylase cannot properly carboxylate clotting factors II, VII, IX, and X, reducing their functional activity."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "D-dimer, a laboratory marker used to help exclude conditions such as deep vein thrombosis or pulmonary embolism, is generated specifically when:",
+      "options": [
+        "Antithrombin III inhibits thrombin",
+        "Vitamin K is activated by gamma-glutamyl carboxylase",
+        "Fibrinogen is first converted into fibrin by thrombin",
+        "Plasmin degrades cross-linked fibrin within an already-formed clot",
+        "Platelets aggregate via GPIIb/IIIa receptors"
+      ],
+      "answer": "D",
+      "explanation": "D-dimer fragments are specifically produced when plasmin breaks down fibrin that has already been cross-linked by activated factor XIII. Because D-dimer formation requires both clot formation and its subsequent breakdown, an elevated D-dimer indicates recent or ongoing thrombus formation and fibrinolysis, though it is not specific to any one underlying cause."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Alpha-1 antitrypsin deficiency (particularly the PiZZ genotype) predisposes affected individuals to both early-onset emphysema and liver disease because the deficient/misfolded protein leads respectively to:",
+      "options": [
+        "Unchecked neutrophil elastase activity in the lungs, and accumulation of misfolded protein aggregates within hepatocytes",
+        "Excessive bile acid synthesis damaging both organs",
+        "Direct viral infection of both the lung and liver",
+        "Iron overload damaging both the lung and liver",
+        "Excess neutrophil elastase inhibition in the lungs, and complete absence of any liver pathology"
+      ],
+      "answer": "A",
+      "explanation": "Alpha-1 antitrypsin normally restrains neutrophil elastase activity in the lungs; without adequate functional protein, unopposed elastase gradually destroys lung elastin, causing panacinar emphysema. Separately, the abnormal (Z-variant) protein tends to misfold and polymerise within hepatocytes rather than being secreted normally, and this intracellular accumulation can itself cause progressive liver injury and cirrhosis."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Fibrinolysis, the physiological process that breaks down an established fibrin clot, is carried out directly by the enzyme:",
+      "options": [
+        "Factor XIII",
+        "Thrombin",
+        "Plasmin",
+        "Protein C",
+        "Antithrombin III"
+      ],
+      "answer": "C",
+      "explanation": "Plasmin, generated from its inactive precursor plasminogen by tissue plasminogen activator (t-PA), directly cleaves cross-linked fibrin strands within a clot into soluble fibrin degradation products, gradually dissolving the clot once it is no longer needed for haemostasis."
+    },
+    {
+      "section": "Lec17: Plasma Protein & Blood Clotting Factor",
+      "stem": "Haemophilia A and haemophilia B are X-linked recessive bleeding disorders caused by deficiency of which clotting factors, respectively?",
+      "options": [
+        "Factor V (haemophilia A) and factor VII (haemophilia B)",
+        "Factor II (haemophilia A) and factor X (haemophilia B)",
+        "Von Willebrand factor (haemophilia A) and factor XIII (haemophilia B)",
+        "Factor VIII (haemophilia A) and factor IX (haemophilia B)",
+        "Factor XI (haemophilia A) and factor XII (haemophilia B)"
+      ],
+      "answer": "D",
+      "explanation": "Haemophilia A (factor VIII deficiency) and haemophilia B (factor IX deficiency) are both X-linked recessive disorders, predominantly affecting males, and both prolong the activated partial thromboplastin time (aPTT), which reflects the intrinsic and common coagulation pathways, while the PT (extrinsic pathway) remains normal."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Kwashiorkor, resulting from severe dietary protein deficiency with relatively preserved calorie intake, classically presents with oedema, hepatomegaly (from hepatic fatty infiltration), and:",
+      "options": [
+        "Marked hyperpigmentation of all skin without any peeling",
+        "Normal serum albumin levels throughout the illness",
+        "Complete absence of any skin changes",
+        "Severe generalised wasting with no oedema at all",
+        "A characteristic 'flaky-paint' dermatosis with patches of skin depigmentation"
+      ],
+      "answer": "E",
+      "explanation": "In kwashiorkor, severely reduced protein intake impairs synthesis of both plasma albumin (contributing to oedema via low oncotic pressure) and apolipoproteins needed to export hepatic triglycerides (contributing to fatty liver and hepatomegaly), while skin changes including a distinctive flaky, depigmented dermatosis are also characteristic — distinguishing it from the pure calorie-deficient wasting of marasmus."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Pernicious anaemia, a major cause of vitamin B12 deficiency, results from autoimmune destruction of gastric parietal cells (or intrinsic factor itself), because absorption of dietary B12 in the terminal ileum specifically requires binding to:",
+      "options": [
+        "Gastrin",
+        "Pepsin",
+        "Intrinsic factor",
+        "Haptoglobin",
+        "Transcobalamin exclusively, with no role for intrinsic factor"
+      ],
+      "answer": "C",
+      "explanation": "Intrinsic factor, secreted by gastric parietal cells, binds dietary vitamin B12 after it is released from food by gastric acid and pepsin, forming a complex that is specifically recognised and absorbed by receptors in the terminal ileum. Autoimmune destruction of parietal cells (or antibodies against intrinsic factor itself) prevents this absorption, causing pernicious anaemia."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Vitamin B6 (pyridoxine) deficiency can cause sideroblastic anaemia mainly because pyridoxal phosphate is a required cofactor for:",
+      "options": [
+        "Globin chain translation on the ribosome",
+        "Hepcidin synthesis in the liver",
+        "Ferrochelatase, the final enzyme of haem biosynthesis",
+        "Transferrin receptor expression on erythroid precursors",
+        "ALA synthase, the first and rate-limiting enzyme of haem biosynthesis"
+      ],
+      "answer": "E",
+      "explanation": "ALA synthase requires pyridoxal phosphate (the active form of vitamin B6) to catalyse the condensation of glycine and succinyl-CoA, the first committed step of haem synthesis. Inadequate B6 (including isoniazid-induced B6 deficiency) impairs this step, leading to iron-laden mitochondria within erythroid precursors — the defining feature of sideroblastic anaemia."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Vitamin C deficiency impairs collagen synthesis and causes scurvy primarily because ascorbic acid is a required cofactor for:",
+      "options": [
+        "Prolyl and lysyl hydroxylase, enzymes that hydroxylate proline and lysine residues in procollagen",
+        "Lysyl oxidase, which cross-links elastin exclusively (with no role in collagen)",
+        "Prolyl endopeptidase, which cleaves finished collagen fibres",
+        "Signal peptidase, which removes the collagen signal sequence",
+        "Collagenase, the enzyme that degrades mature collagen"
+      ],
+      "answer": "A",
+      "explanation": "Hydroxylation of specific proline and lysine residues by prolyl and lysyl hydroxylase (both requiring vitamin C as a cofactor to keep their iron centre in the reduced, active state) is essential for forming a stable collagen triple helix. Without adequate vitamin C, under-hydroxylated collagen is unstable, producing scurvy's characteristic bleeding gums, poor wound healing, and easy bruising."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "The synthesis of active vitamin D begins in the skin, where ultraviolet B light converts 7-dehydrocholesterol into:",
+      "options": [
+        "1,25-dihydroxyvitamin D (calcitriol) directly",
+        "Cholecalciferol (vitamin D3)",
+        "25-hydroxyvitamin D directly",
+        "Cholesterol directly",
+        "Ergocalciferol (vitamin D2) directly"
+      ],
+      "answer": "B",
+      "explanation": "UVB radiation converts 7-dehydrocholesterol in the skin to cholecalciferol (vitamin D3), which is subsequently hydroxylated in the liver to 25-hydroxyvitamin D (the main circulating storage form) and then again in the kidney to the biologically active form, 1,25-dihydroxyvitamin D (calcitriol)."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Parathyroid hormone (PTH) raises serum calcium concentration through a combination of actions that includes:",
+      "options": [
+        "Suppressing bone turnover completely",
+        "Stimulating bone resorption, increasing renal calcium reabsorption, and promoting renal activation of vitamin D",
+        "Increasing renal calcium excretion while decreasing phosphate excretion",
+        "Directly stimulating intestinal calcium absorption without any involvement of vitamin D",
+        "Directly inhibiting vitamin D synthesis in the kidney"
+      ],
+      "answer": "B",
+      "explanation": "PTH acts directly on bone (stimulating osteoclastic resorption, releasing calcium and phosphate) and kidney (increasing calcium reabsorption while promoting phosphate excretion), and indirectly on the intestine by stimulating renal 1-alpha-hydroxylase to increase active vitamin D production, which in turn enhances intestinal calcium absorption — together raising serum calcium."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Copper deficiency can present with a combination of microcytic anaemia, neutropenia, and connective tissue abnormalities, largely because copper is a required cofactor for:",
+      "options": [
+        "DNA polymerase directly",
+        "Thyroid peroxidase",
+        "Ferrochelatase exclusively, with no other copper-dependent enzymes involved",
+        "Lysyl oxidase, the enzyme that cross-links collagen and elastin fibres",
+        "Carbonic anhydrase exclusively"
+      ],
+      "answer": "D",
+      "explanation": "Lysyl oxidase, a copper-dependent enzyme, catalyses the cross-linking reactions essential for the tensile strength of mature collagen and elastin; its impairment in copper deficiency contributes to connective tissue fragility, while copper's additional roles in iron metabolism and haematopoiesis (via ceruloplasmin's ferroxidase activity, among other pathways) contribute to the associated anaemia."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Endogenous synthesis of niacin (vitamin B3) from dietary tryptophan is relatively inefficient, requiring approximately how much tryptophan to produce just 1 mg of niacin?",
+      "options": [
+        "Tryptophan cannot be converted to niacin at all",
+        "10 mg",
+        "1 mg",
+        "500 mg",
+        "60 mg"
+      ],
+      "answer": "E",
+      "explanation": "The conversion of tryptophan to niacin via the kynurenine pathway is metabolically inefficient, with roughly 60 mg of dietary tryptophan required to yield approximately 1 mg of niacin equivalent — meaning diets low in both preformed niacin and tryptophan (e.g., those based heavily on untreated maize) carry a significant risk of pellagra."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Body mass index (BMI), the standard clinical measure used to classify obesity, is calculated as:",
+      "options": [
+        "Waist circumference divided by hip circumference",
+        "Height in centimetres divided by weight in kilograms",
+        "Weight in kilograms divided by height in metres squared",
+        "Total body fat mass divided by total body water",
+        "Weight in kilograms divided by height in metres (not squared)"
+      ],
+      "answer": "C",
+      "explanation": "BMI = weight (kg) / height (m)^2. A BMI of 30 kg/m^2 or higher is generally classified as obese, while 25.0-29.9 kg/m^2 is classified as overweight, though BMI does not directly distinguish fat mass from lean muscle mass."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Trans fatty acids, produced during partial hydrogenation of vegetable oils, are considered particularly harmful to cardiovascular health because they:",
+      "options": [
+        "Have no measurable effect on any lipoprotein levels",
+        "Raise LDL cholesterol while simultaneously lowering HDL cholesterol",
+        "Only affect triglyceride levels, with no effect on cholesterol",
+        "Raise HDL cholesterol while lowering LDL cholesterol",
+        "Lower both LDL and HDL cholesterol equally"
+      ],
+      "answer": "B",
+      "explanation": "Unlike most saturated fats (which mainly raise LDL) or unsaturated fats (which can lower LDL), trans fats uniquely produce an unfavourable dual effect — raising LDL ('bad') cholesterol while also lowering HDL ('good') cholesterol — a combination associated with a disproportionately increased risk of cardiovascular disease, prompting many countries to restrict their use in food production."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Omega-3 fatty acids (such as EPA and DHA, abundant in fish oil) are considered cardioprotective largely because they serve as precursors for:",
+      "options": [
+        "Vitamin D synthesis directly",
+        "Pro-inflammatory eicosanoids exclusively, with no cardiovascular benefit",
+        "Anti-inflammatory eicosanoids, and are associated with modest reductions in triglycerides and blood pressure",
+        "Cholesterol synthesis directly",
+        "Bile acid synthesis directly"
+      ],
+      "answer": "C",
+      "explanation": "Omega-3 fatty acids compete with arachidonic acid (an omega-6 fatty acid) as substrates for eicosanoid synthesis, generally yielding less inflammatory prostaglandin and thromboxane products; clinically, adequate omega-3 intake is associated with modest reductions in serum triglycerides and blood pressure, contributing to their cardioprotective reputation."
+    },
+    {
+      "section": "Lec18: Nutrition",
+      "stem": "Endemic goitre resulting from dietary iodine deficiency develops through which sequence of events?",
+      "options": [
+        "Impaired thyroid hormone synthesis leads to reduced negative feedback on the pituitary, raising TSH, which drives compensatory thyroid gland enlargement",
+        "TSH secretion is directly suppressed by iodine deficiency, preventing any gland enlargement",
+        "Iodine deficiency has no effect on TSH or thyroid gland size",
+        "Thyroid hormone levels rise directly due to iodine deficiency, suppressing TSH",
+        "Excess iodine directly damages thyroid follicular cells, causing gland shrinkage"
+      ],
+      "answer": "A",
+      "explanation": "Without sufficient iodine, the thyroid cannot synthesise adequate T3/T4. The resulting low circulating thyroid hormone reduces negative feedback inhibition on the pituitary, causing TSH secretion to rise; chronically elevated TSH stimulates thyroid follicular cell growth and gland enlargement, producing a goitre, in an ultimately futile compensatory attempt to increase hormone output."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "Southern blotting is a molecular biology technique used specifically to detect and analyse:",
+      "options": [
+        "Specific proteins, using antibody-based detection",
+        "Enzyme activity levels directly, without any electrophoresis",
+        "Live cell viability in culture",
+        "Specific RNA transcripts, using the same overall method as Northern blotting",
+        "Specific DNA sequences within a complex sample, using gel electrophoresis, membrane transfer, and probe hybridisation"
+      ],
+      "answer": "E",
+      "explanation": "In Southern blotting, DNA fragments are separated by size using gel electrophoresis, transferred ('blotted') onto a membrane, and then hybridised with a labelled probe complementary to the DNA sequence of interest, allowing detection of specific DNA sequences (e.g., for gene mapping, VNTR analysis, or detecting gene rearrangements)."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "Northern blotting, methodologically analogous to Southern blotting, is instead used to detect and analyse:",
+      "options": [
+        "Specific proteins exclusively",
+        "Specific RNA sequences, typically messenger RNA",
+        "Specific DNA sequences exclusively",
+        "Whole intact cells",
+        "Small molecules and metabolites"
+      ],
+      "answer": "B",
+      "explanation": "Northern blotting follows the same general workflow as Southern blotting (electrophoretic separation, membrane transfer, probe hybridisation) but is applied to an RNA sample rather than DNA, commonly used to detect the presence, size, and relative abundance of a specific mRNA transcript."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "Western blotting differs from Southern and Northern blotting in that it is used to detect a specific:",
+      "options": [
+        "Protein, using a specific antibody as the detection probe",
+        "Lipid molecule, using mass spectrometry exclusively",
+        "DNA sequence, using a labelled DNA probe",
+        "RNA sequence, using a labelled RNA probe",
+        "Carbohydrate structure, using a lectin probe exclusively"
+      ],
+      "answer": "A",
+      "explanation": "In Western blotting, proteins are separated by gel electrophoresis, transferred to a membrane, and probed using a specific antibody directed against the target protein (often followed by a labelled secondary antibody for detection), allowing identification and semi-quantitative assessment of a particular protein within a complex sample."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "ELISA (enzyme-linked immunosorbent assay), a widely used diagnostic technique, detects and quantifies a target antigen or protein through:",
+      "options": [
+        "Restriction enzyme digestion of the sample",
+        "Direct sequencing of the target protein's amino acid chain",
+        "Fluorescence in situ hybridisation to chromosomal DNA",
+        "Gel electrophoresis followed by ethidium bromide staining",
+        "Antibodies linked to an enzyme reporter that produces a measurable colour or signal change upon binding the target"
+      ],
+      "answer": "E",
+      "explanation": "ELISA relies on antibodies (often in a 'sandwich' format using two different antibodies) that specifically bind the target antigen; an enzyme conjugated to one antibody then converts a substrate into a detectable coloured or fluorescent product, with signal intensity proportional to the amount of antigen present in the sample."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "Gene knockout technology in mice, commonly used to study the function of a specific gene, is typically achieved by:",
+      "options": [
+        "Simply feeding the mouse a diet lacking the corresponding nutrient",
+        "Surgically removing the corresponding organ from an adult mouse",
+        "Introducing a disrupted version of the target gene into embryonic stem cells via homologous recombination",
+        "Injecting antisense RNA directly into an adult mouse's bloodstream only",
+        "Randomly irradiating the entire mouse genome"
+      ],
+      "answer": "C",
+      "explanation": "In classical gene knockout technology, a modified, non-functional version of the target gene (typically replacing part of the coding sequence with a selectable marker) is introduced into embryonic stem cells, where it can recombine with and replace the endogenous gene via homologous recombination; these modified stem cells are then used to generate mice lacking a functional copy of the gene, allowing study of the resulting phenotype."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "Reverse transcription PCR (RT-PCR) differs from standard PCR in that it first requires:",
+      "options": [
+        "Addition of a poly-A tail to the DNA template",
+        "Sequencing of the target region before amplification can begin",
+        "Digestion of the sample with a restriction enzyme before amplification",
+        "Conversion of DNA into RNA using RNA polymerase",
+        "Conversion of an RNA sample into complementary DNA (cDNA) using reverse transcriptase, before the standard PCR amplification steps"
+      ],
+      "answer": "E",
+      "explanation": "Because standard DNA polymerase (used in PCR) cannot use RNA as a template, RT-PCR first uses reverse transcriptase to synthesise a complementary DNA copy of the RNA sample; this cDNA can then be amplified by conventional PCR, enabling detection and quantification of RNA targets such as viral genomes (e.g., SARS-CoV-2) or specific mRNA transcripts."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "DNA microarrays allow simultaneous measurement of the expression levels of thousands of genes by relying on:",
+      "options": [
+        "A single restriction enzyme digest of the entire genome",
+        "Mass spectrometry analysis of protein fragments",
+        "Direct Sanger sequencing of every gene in the sample simultaneously",
+        "Manual counting of mRNA molecules under a microscope",
+        "Hybridisation of labelled sample cDNA/cRNA to thousands of distinct, known DNA probe sequences arranged on a solid surface"
+      ],
+      "answer": "E",
+      "explanation": "Each spot on a DNA microarray contains many copies of a specific, known DNA probe sequence corresponding to a particular gene. Labelled cDNA or cRNA generated from a biological sample is hybridised to the array, and the amount of signal at each spot reflects the relative expression level of that corresponding gene in the original sample, allowing genome-wide expression profiling in a single experiment."
+    },
+    {
+      "section": "Lec19: Genetic Engineering",
+      "stem": "Large-scale industrial production of recombinant human insulin is achieved by:",
+      "options": [
+        "Using CRISPR to directly edit a patient's own pancreatic cells in vivo",
+        "Inserting the human insulin gene into a bacterial (or yeast) expression vector, allowing the microorganism to produce human insulin protein",
+        "Extracting and purifying insulin directly from human pancreatic tissue on an industrial scale",
+        "Extracting insulin exclusively from genetically unmodified pig pancreases, as the sole modern method",
+        "Chemically synthesising the entire insulin protein one amino acid at a time for every dose"
+      ],
+      "answer": "B",
+      "explanation": "Recombinant DNA technology allows the human insulin gene to be inserted into a plasmid vector and expressed in a host organism such as E. coli or yeast, which then manufactures authentic human insulin protein at industrial scale — replacing the older method of extracting and purifying insulin from animal (bovine or porcine) pancreatic tissue, and avoiding associated allergenicity and supply limitations."
+    },
+    {
+      "section": "Lec20: Free Radical & Antioxidant",
+      "stem": "The enzyme superoxide dismutase (SOD) provides antioxidant protection by catalysing the conversion of superoxide radical into:",
+      "options": [
+        "Peroxynitrite",
+        "Water and molecular oxygen directly",
+        "Nitric oxide and water",
+        "Hydrogen peroxide and molecular oxygen",
+        "Hydroxyl radical directly"
+      ],
+      "answer": "D",
+      "explanation": "SOD catalyses the dismutation reaction: two superoxide radicals plus two protons yield hydrogen peroxide and molecular oxygen. While this converts the highly reactive superoxide into a somewhat less reactive species, the resulting hydrogen peroxide must still be further detoxified (e.g., by catalase or glutathione peroxidase) to prevent formation of the even more damaging hydroxyl radical via the Fenton reaction."
+    },
+    {
+      "section": "Lec20: Free Radical & Antioxidant",
+      "stem": "Glutathione peroxidase, a selenium-dependent enzyme, protects cells from oxidative damage by using reduced glutathione (GSH) to detoxify:",
+      "options": [
+        "Hydrogen peroxide and lipid peroxides",
+        "Nitric oxide exclusively",
+        "Molecular oxygen directly, converting it to ozone",
+        "Bilirubin, converting it to biliverdin",
+        "Superoxide radical exclusively"
+      ],
+      "answer": "A",
+      "explanation": "Glutathione peroxidase reduces hydrogen peroxide (to water) and lipid hydroperoxides (to the corresponding alcohols) using GSH as the electron donor, generating oxidised glutathione (GSSG), which is subsequently regenerated back to GSH by glutathione reductase using NADPH — selenium is a required component of the enzyme's active site."
+    },
+    {
+      "section": "Lec20: Free Radical & Antioxidant",
+      "stem": "Nitric oxide (NO), itself a free radical, can react rapidly with superoxide anion to generate:",
+      "options": [
+        "Ozone",
+        "Water and molecular oxygen only, with no reactive intermediate formed",
+        "Peroxynitrite (ONOO-), a highly reactive and damaging oxidant species",
+        "Hydrogen peroxide exclusively",
+        "Ammonia"
+      ],
+      "answer": "C",
+      "explanation": "The reaction between nitric oxide and superoxide occurs extremely rapidly (even faster than superoxide's reaction with SOD) to form peroxynitrite, a potent oxidant capable of nitrating tyrosine residues in proteins, damaging DNA, and initiating lipid peroxidation — contributing to oxidative and nitrosative tissue damage in conditions of excessive NO and superoxide production."
+    },
+    {
+      "section": "Lec20: Free Radical & Antioxidant",
+      "stem": "Under normal physiological conditions, a significant proportion of endogenous reactive oxygen species arises as a byproduct of:",
+      "options": [
+        "Routine protein synthesis on the ribosome",
+        "Deliberate enzymatic synthesis by DNA polymerase",
+        "The action of digestive enzymes in the gastrointestinal tract",
+        "Electron 'leakage' from Complex I and Complex III of the mitochondrial electron transport chain, reacting directly with molecular oxygen",
+        "Normal haemoglobin oxygen binding and release"
+      ],
+      "answer": "D",
+      "explanation": "Although the electron transport chain is highly efficient, a small fraction of electrons passing through Complex I and Complex III can 'leak' and react prematurely with molecular oxygen, generating superoxide radicals as an inevitable byproduct of normal aerobic mitochondrial respiration — making mitochondria a major endogenous source of oxidative stress even under healthy conditions."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A young adult presenting with liver disease, neuropsychiatric symptoms, and Kayser-Fleischer rings on slit-lamp examination, along with markedly reduced serum ceruloplasmin, most likely has:",
+      "options": [
+        "Acute intermittent porphyria",
+        "Wilson's disease",
+        "Alpha-1 antitrypsin deficiency",
+        "Haemochromatosis",
+        "Gilbert's syndrome"
+      ],
+      "answer": "B",
+      "explanation": "Wilson's disease results from a defect in the ATP7B copper-transporting ATPase, impairing biliary copper excretion and incorporation of copper into ceruloplasmin. Copper progressively accumulates in the liver, brain (causing neuropsychiatric symptoms), and cornea (Kayser-Fleischer rings), while serum ceruloplasmin is characteristically low."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "An infant presenting with hepatosplenomegaly, a cherry-red spot on macular examination (in some cases), and progressive neurodegeneration, found to have sphingomyelin accumulation within reticuloendothelial cells, most likely has:",
+      "options": [
+        "Phenylketonuria",
+        "Von Gierke disease",
+        "Gaucher disease",
+        "Maple syrup urine disease",
+        "Niemann-Pick disease type A"
+      ],
+      "answer": "E",
+      "explanation": "Niemann-Pick disease type A results from deficiency of acid sphingomyelinase, causing sphingomyelin to accumulate within lysosomes of cells in the reticuloendothelial system (causing hepatosplenomegaly) and the central nervous system, leading to severe, progressive neurodegeneration typically presenting in infancy."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A young woman experiences recurrent episodes of severe abdominal pain, psychiatric disturbance, and port-wine coloured urine, precipitated by a new medication; she has no photosensitivity. This presentation is most consistent with:",
+      "options": [
+        "Porphyria cutanea tarda",
+        "Vitamin B12 deficiency",
+        "Acute intermittent porphyria",
+        "Iron deficiency anaemia",
+        "Lead poisoning"
+      ],
+      "answer": "C",
+      "explanation": "Acute intermittent porphyria, caused by porphobilinogen deaminase deficiency, produces neurovisceral symptoms (abdominal pain, psychiatric disturbance, peripheral neuropathy) and port-wine urine from accumulated porphobilinogen, but characteristically no photosensitivity, distinguishing it from the cutaneous porphyrias. Attacks are classically precipitated by certain drugs, fasting, or hormonal changes that induce ALA synthase."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A child with developmental delay is found to have a microcytic anaemia with basophilic stippling on peripheral smear, along with inhibition of both ALA dehydratase and ferrochelatase. This presentation is most consistent with:",
+      "options": [
+        "Lead poisoning",
+        "Vitamin B12 deficiency",
+        "Acute intermittent porphyria",
+        "Thalassemia trait",
+        "Iron deficiency anaemia alone"
+      ],
+      "answer": "A",
+      "explanation": "Lead inhibits ALA dehydratase (causing ALA accumulation) and ferrochelatase (preventing iron insertion into protoporphyrin IX to form haem), producing a microcytic, hypochromic anaemia with basophilic stippling of red cells (aggregated ribosomal material), along with the neurodevelopmental effects of lead toxicity, particularly concerning in children."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A patient recently started on chemotherapy for a high-grade lymphoma develops hyperkalaemia, hyperphosphataemia, hyperuricaemia, and acute kidney injury within days of treatment. This presentation is most consistent with:",
+      "options": [
+        "Tumour lysis syndrome",
+        "Reye syndrome",
+        "Refeeding syndrome",
+        "Zellweger syndrome",
+        "Wilson's disease"
+      ],
+      "answer": "A",
+      "explanation": "Tumour lysis syndrome occurs when rapid destruction of a large number of malignant cells (often triggered by chemotherapy in a bulky, rapidly proliferating tumour) releases large amounts of intracellular potassium, phosphate, and nucleic acid breakdown products (metabolised to uric acid) into the circulation, potentially overwhelming renal excretory capacity and precipitating acute kidney injury."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A severely malnourished patient develops profound hypophosphataemia, along with cardiac and respiratory complications, shortly after aggressive reintroduction of carbohydrate-containing nutrition. This presentation is most consistent with:",
+      "options": [
+        "Refeeding syndrome",
+        "Acute intermittent porphyria",
+        "Alkaptonuria",
+        "Tumour lysis syndrome",
+        "Wilson's disease"
+      ],
+      "answer": "A",
+      "explanation": "In a chronically starved patient, sudden carbohydrate reintroduction triggers a surge in insulin secretion, which drives glucose, phosphate, potassium, and magnesium into cells for glycolysis and glycogen/protein synthesis, causing a rapid and potentially severe fall in serum phosphate (and other electrolytes) — refeeding syndrome — which can precipitate cardiac arrhythmias and respiratory failure if not anticipated and managed cautiously."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "An infant with hypotonia, characteristic craniofacial abnormalities, and markedly elevated plasma very-long-chain fatty acids is found to have a defect in peroxisome biogenesis. This presentation is most consistent with:",
+      "options": [
+        "Pompe disease",
+        "Von Gierke disease",
+        "Zellweger syndrome",
+        "Tay-Sachs disease",
+        "Wilson's disease"
+      ],
+      "answer": "C",
+      "explanation": "Zellweger syndrome, the most severe of the peroxisome biogenesis disorders, results from mutations impairing normal peroxisome assembly, preventing peroxisomal beta-oxidation of very-long-chain fatty acids, which then accumulate to pathological levels, contributing to the severe neurological, craniofacial, and hepatic abnormalities seen in affected infants."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A child presents with bone pain, bowed legs, delayed closure of the fontanelles, and laboratory findings of low serum calcium, low phosphate, and elevated parathyroid hormone. This presentation is most consistent with:",
+      "options": [
+        "Gout",
+        "Acute intermittent porphyria",
+        "Scurvy",
+        "Rickets (vitamin D deficiency)",
+        "Osteoporosis"
+      ],
+      "answer": "D",
+      "explanation": "Vitamin D deficiency impairs intestinal calcium and phosphate absorption, causing hypocalcaemia and hypophosphataemia; the resulting secondary hyperparathyroidism (an appropriate physiological response attempting to normalise calcium) further lowers phosphate and, combined with impaired mineralisation, produces the characteristic skeletal deformities of rickets in growing children."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "A patient with a pituitary adenoma secreting excess ACTH develops central obesity, muscle wasting of the limbs, hypertension, and new-onset hyperglycaemia. This clinical picture, driven by chronic cortisol excess, is most consistent with:",
+      "options": [
+        "Cushing's syndrome",
+        "Conn's syndrome (primary hyperaldosteronism)",
+        "Graves' disease",
+        "Addison's disease",
+        "Diabetes insipidus"
+      ],
+      "answer": "A",
+      "explanation": "Chronic excess cortisol (whether from a pituitary ACTH-secreting adenoma, an adrenal tumour, or exogenous corticosteroid use) produces Cushing's syndrome, characterised by central/truncal obesity with relatively thin limbs (from cortisol-driven peripheral muscle protein catabolism), hypertension, and hyperglycaemia (from cortisol's stimulation of gluconeogenesis and antagonism of insulin action)."
+    },
+    {
+      "section": "Lec21: Clinical Correlation",
+      "stem": "An infant of Ashkenazi Jewish descent presents with progressive weakness, an exaggerated startle response, and a cherry-red spot on macular examination, with laboratory testing confirming deficiency of hexosaminidase A. This presentation is diagnostic of:",
+      "options": [
+        "Niemann-Pick disease type A",
+        "Gaucher disease",
+        "Tay-Sachs disease",
+        "Fabry disease",
+        "Wilson's disease"
+      ],
+      "answer": "C",
+      "explanation": "Tay-Sachs disease, a lysosomal storage disorder more common in individuals of Ashkenazi Jewish descent, results from hexosaminidase A deficiency, causing GM2 ganglioside to accumulate progressively within neurons, producing an exaggerated startle response, progressive motor and cognitive deterioration, and the classic cherry-red macular spot, typically leading to death in early childhood."
+    }
+  ]
+}
