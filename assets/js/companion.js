@@ -61,9 +61,59 @@
   var box = null, timer = null, shownFor = null, stage = 0, dismissed = {};
   var current = null;     // a key for the question on screen
 
-  /* ---------- the pictures ----------
-     Found by name so that dropping a file in is the whole job. It runs once,
-     and not until the buddy is actually about to turn up, so a reader who
+  /* Finding the pictures.
+     ---------------------------------------------------------------------
+     Kept in this file on purpose. It lived in a shared one for a while, and
+     any page still cached from before that file existed never asked for it,
+     so this feature died on a missing global — no error a reader could see,
+     just nothing happening. A copy in each of the two files that need it is
+     cheaper than a dependency that can half-arrive.
+
+     Pointing an <img> at a file to ask whether it is there answers by
+     downloading the whole thing; a HEAD request brings back only the answer,
+     so only the picture actually shown is fetched. Off the local disk there
+     is no server to ask, and there the cost does not matter. */
+  var EXTS = ['jpg', 'png', 'jpeg', 'webp'];
+  var MAX = 24;
+  var CAN_ASK = !!window.fetch && location.protocol !== 'file:';
+
+  function exists(url, cb) {
+    if (!CAN_ASK) {
+      var probe = new Image();
+      probe.onload = function () { cb(true); };
+      probe.onerror = function () { cb(false); };
+      probe.src = url;
+      return;
+    }
+    fetch(url, { method: 'HEAD' })
+      .then(function (r) { cb(r.ok); })
+      .catch(function () { cb(false); });
+  }
+
+  /* dir/<base>-1.<ext>, then -2, stopping at the first number missing in
+     every file type — which is why the READMEs ask for no gaps. */
+  function findIn(dir, base, done) {
+    var found = [], n = 1, e = 0;
+    (function step() {
+      if (n > MAX) return done(found);
+      exists(dir + base + '-' + n + '.' + EXTS[e], function (yes) {
+        if (yes) { found.push(dir + base + '-' + n + '.' + EXTS[e]); n++; e = 0; return step(); }
+        e++;
+        if (e < EXTS.length) return step();
+        done(found);
+      });
+    })();
+  }
+
+  /* Have the picture in hand before it goes on screen: it is measured as it
+     arrives, and one that has not loaded measures as nothing. */
+  function loadPhoto(src, done) {
+    var img = new Image(), called = false;
+    img.onload = img.onerror = function () { if (!called) { called = true; done(img); } };
+    img.src = src;
+  }
+
+  /* Runs once, and not until the buddy is about to turn up, so a reader who
      never idles asks for nothing at all. */
   var photos = [], probed = false, probing = false, waiting = [];
 
@@ -81,7 +131,7 @@
         return q.forEach(function (fn) { fn(); });
       }
       var set = SETS[i++];
-      MockPhotos.find(set.dir, 'companion', function (urls) {
+      findIn(set.dir, 'companion', function (urls) {
         urls.forEach(function (u) { photos.push({ src: u, wordless: set.wordless }); });
         nextSet();
       });
@@ -252,7 +302,7 @@
         /* Have the picture before the entrance starts: it is measured as it
            arrives, and one that has not loaded measures as nothing. */
         if (!photo) return appear(null);
-        MockPhotos.load(photo.src, function (img) { appear(photo, img); });
+        loadPhoto(photo.src, function (img) { appear(photo, img); });
       });
     }, delay);
   }
